@@ -37,7 +37,7 @@ struct JuzRowView: View {
                         self.hiddenBar = true
                     }
                 ) {
-                    Label(LocalizedStringKey(surahs.title.lowercased().replacingOccurrences(of: "-", with: "_")), systemImage: "party.popper")
+                    Label(LocalizedStringKey(surahs.title.lowercased().replacingOccurrences(of: "-", with: "_")), systemImage: surahs.type == "Makkiyah" ? "moon.fill" : "sun.max.fill")
                 }
             }
         }
@@ -47,7 +47,7 @@ struct JuzRowView: View {
 struct JuzRowView_Previews: PreviewProvider {
     static var previews: some View {
         List{
-            JuzRowView(item: JuzModel(index: 12, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "12")]), hiddenBar: .constant(false))
+            JuzRowView(item: JuzModel(index: 12, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "12",type: "Makkiyah")]), hiddenBar: .constant(false))
         }
         .environmentObject(LanguageViewModel())
         .environment(\.locale, Locale.init(identifier: "ar"))

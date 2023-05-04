@@ -20,6 +20,7 @@ struct Surah: Codable {
     let index: Int
     let verse: VerseNew
     let pageNumber: String
+    let type: String
 }
 
 // MARK: - Verse
