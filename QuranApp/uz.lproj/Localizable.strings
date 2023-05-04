@@ -5,12 +5,11 @@
   Created by Sulaymon on 04/05/23.
   
 */
-"surahs" = "Suralar";
 "arabic" = "Arabcha";
 "english" = "Inglischa";
 "uzbek" = "Uzbekcha";
 "russian" = "Ruscha";
-"surahs" = "suralar";
+"surahs" = "Suralar";
 "juz" = "juz";
 "bookmarks" = "xatcho'plar";
 "backtext" = "Qaytish";

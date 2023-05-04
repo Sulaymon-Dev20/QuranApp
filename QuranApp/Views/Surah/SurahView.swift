@@ -12,19 +12,37 @@ struct SurahView: View {
     
     @State private var searchBarStatus = false
     @State private var searchFilter: String = ""
+    @Binding var selectedTab: Int
     @Binding var hiddenBar: Bool
-    
+
     var body: some View {
         NavigationView{
             SurahListView(list: filterData(),hiddenBar: $hiddenBar)
                 .navigationBarTitleDisplayMode(.inline)
-                .toolbar(hiddenBar ? .hidden : .visible, for: .tabBar)
+                .toolbar(hiddenBar || UIDevice.current.model == "iPad" ? .hidden : .visible, for: .tabBar)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         if searchBarStatus {
                             TextField("search_surah", text: $searchFilter)
                         } else{
-                            Text("surahs")
+                            if UIDevice.current.model == "iPad" {
+                                Menu {
+                                    Button {
+                                        selectedTab = 1
+                                    } label: {
+                                        Text("juz")
+                                    }
+                                    Button {
+                                        selectedTab = 2
+                                    } label: {
+                                        Text("bookmarks")
+                                    }
+                                } label: {
+                                    Text("surahs")
+                                }
+                            } else {
+                                Text("surahs")
+                            }
                         }
                     }
                     ToolbarItem(placement: .navigationBarLeading) {
@@ -57,8 +75,9 @@ struct SurahView: View {
 
 struct SurahView_Previews: PreviewProvider {
     static var previews: some View {
-        SurahView(hiddenBar: .constant(false))
+        SurahView(selectedTab: .constant(0), hiddenBar: .constant(false))
             .environmentObject(BookMarkViewModel())
+            .environmentObject(LanguageViewModel())
             .environment(\.locale, Locale.init(identifier: "uz"))
     }
 }

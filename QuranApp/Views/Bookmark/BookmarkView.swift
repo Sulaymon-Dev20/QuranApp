@@ -17,13 +17,31 @@ struct BookmarkView: View {
     var body: some View {
         NavigationView {
             BookmarkListView(list: filterData(), selectedTab: $selectedTab, hiddenBar: $hiddenBar)
-                .toolbar(hiddenBar ? .hidden : .visible, for: .tabBar)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar(hiddenBar || UIDevice.current.model == "iPad" ? .hidden : .visible, for: .tabBar)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         if searchBarStatus {
                             TextField("Booked name ", text: $searchFilter)
-                        } else{
-                            Text("bookmarks")
+                        } else {
+                            if UIDevice.current.model == "iPad" {
+                                Menu {
+                                    Button {
+                                        selectedTab = 0
+                                    } label: {
+                                        Text("surahs")
+                                    }
+                                    Button {
+                                        selectedTab = 1
+                                    } label: {
+                                        Text("juz")
+                                    }
+                                } label: {
+                                    Text("bookmarks")
+                                }
+                            } else {
+                                Text("bookmarks")
+                            }
                         }
                     }
                     ToolbarItem(placement: .navigationBarLeading) {
@@ -42,7 +60,6 @@ struct BookmarkView: View {
                         }
                     }
                 }
-                .navigationBarTitleDisplayMode(.inline)
         }
     }
     
@@ -62,6 +79,6 @@ struct BookmarkView_Previews: PreviewProvider {
         BookmarkView(selectedTab: .constant(1), hiddenBar: .constant(false))
             .environmentObject(BookMarkViewModel())
             .environmentObject(LanguageViewModel())
-            .environment(\.locale, Locale.init(identifier: "ar"))
+//            .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

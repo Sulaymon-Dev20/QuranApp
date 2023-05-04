@@ -27,13 +27,15 @@ struct PDFViewUI: View {
         .navigationBarBackButtonHidden(true)
         .toolbar{
             ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    self.hiddenBar = false
-                    dismiss()
-                } label: {
-                    HStack {
-                        Image(systemName: "chevron.backward")
-                        Text("back")
+                if UIDevice.current.model != "iPad" {
+                    Button {
+                        self.hiddenBar = false
+                        dismiss()
+                    } label: {
+                        HStack {
+                            Image(systemName: "chevron.backward")
+                            Text("back")
+                        }
                     }
                 }
             }
@@ -62,7 +64,7 @@ struct PDFViewUI: View {
 
 struct PDFViewUI_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        NavigationStack {
             PDFViewUI(pageNumber: 100, hiddenBar: .constant(true))
         }
         .environmentObject(BookMarkViewModel())
