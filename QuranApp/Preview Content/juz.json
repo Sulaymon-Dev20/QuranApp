@@ -1,0 +1,1502 @@
+[
+  {
+    "index": 1,
+    "surahs": [
+      {
+        "titleAr": "الفاتحة",
+        "title": "Al-Fatiha",
+        "index": 1,
+        "verse": {
+          "start": 1,
+          "end": 7
+        },
+        "pageNumber": "1"
+      },
+      {
+        "titleAr": "البقرة",
+        "title": "Al-Baqara",
+        "index": 2,
+        "verse": {
+          "start": 1,
+          "end": 141
+        },
+        "pageNumber": "2"
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "surahs": [
+      {
+        "titleAr": "البقرة",
+        "title": "Al-Baqara",
+        "index": 2,
+        "verse": {
+          "start": 142,
+          "end": 252
+        },
+        "pageNumber": "2"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "surahs": [
+      {
+        "titleAr": "البقرة",
+        "title": "Al-Baqara",
+        "index": 2,
+        "verse": {
+          "start": 253,
+          "end": 286
+        },
+        "pageNumber": "2"
+      },
+      {
+        "titleAr": "آل عمران",
+        "title": "Al-Imran",
+        "index": 3,
+        "verse": {
+          "start": 1,
+          "end": 92
+        },
+        "pageNumber": "45"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "surahs": [
+      {
+        "titleAr": "آل عمران",
+        "title": "Al-Imran",
+        "index": 3,
+        "verse": {
+          "start": 93,
+          "end": 200
+        },
+        "pageNumber": "45"
+      },
+      {
+        "titleAr": "النساء",
+        "title": "An-Nisaa'",
+        "index": 4,
+        "verse": {
+          "start": 1,
+          "end": 23
+        },
+        "pageNumber": "69"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "surahs": [
+      {
+        "titleAr": "النساء",
+        "title": "An-Nisaa'",
+        "index": 4,
+        "verse": {
+          "start": 24,
+          "end": 147
+        },
+        "pageNumber": "69"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "surahs": [
+      {
+        "titleAr": "النساء",
+        "title": "An-Nisaa'",
+        "index": 4,
+        "verse": {
+          "start": 148,
+          "end": 176
+        },
+        "pageNumber": "69"
+      },
+      {
+        "titleAr": "المائدة",
+        "title": "Al-Ma'ida",
+        "index": 5,
+        "verse": {
+          "start": 1,
+          "end": 81
+        },
+        "pageNumber": "95"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "surahs": [
+      {
+        "titleAr": "المائدة",
+        "title": "Al-Ma'ida",
+        "index": 5,
+        "verse": {
+          "start": 82,
+          "end": 120
+        },
+        "pageNumber": "95"
+      },
+      {
+        "titleAr": "الأنعام",
+        "title": "Al-An'am",
+        "index": 6,
+        "verse": {
+          "start": 1,
+          "end": 110
+        },
+        "pageNumber": "115"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "surahs": [
+      {
+        "titleAr": "الأنعام",
+        "title": "Al-An'am",
+        "index": 6,
+        "verse": {
+          "start": 111,
+          "end": 165
+        },
+        "pageNumber": "115"
+      },
+      {
+        "titleAr": "الأعراف",
+        "title": "Al-A'raf",
+        "index": 7,
+        "verse": {
+          "start": 1,
+          "end": 87
+        },
+        "pageNumber": "136"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "surahs": [
+      {
+        "titleAr": "الأعراف",
+        "title": "Al-A'raf",
+        "index": 7,
+        "verse": {
+          "start": 88,
+          "end": 206
+        },
+        "pageNumber": "136"
+      },
+      {
+        "titleAr": "الأنفال",
+        "title": "Al-Anfal",
+        "index": 8,
+        "verse": {
+          "start": 1,
+          "end": 40
+        },
+        "pageNumber": "160"
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "surahs": [
+      {
+        "titleAr": "الأنفال",
+        "title": "Al-Anfal",
+        "index": 8,
+        "verse": {
+          "start": 41,
+          "end": 75
+        },
+        "pageNumber": "160"
+      },
+      {
+        "titleAr": "التوبة",
+        "title": "Al-Tawba",
+        "index": 9,
+        "verse": {
+          "start": 1,
+          "end": 92
+        },
+        "pageNumber": "169"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "surahs": [
+      {
+        "titleAr": "التوبة",
+        "title": "Al-Tawba",
+        "index": 9,
+        "verse": {
+          "start": 93,
+          "end": 129
+        },
+        "pageNumber": "169"
+      },
+      {
+        "titleAr": "يونس",
+        "title": "Yunus",
+        "index": 10,
+        "verse": {
+          "start": 1,
+          "end": 109
+        },
+        "pageNumber": "187"
+      },
+      {
+        "titleAr": "هود",
+        "title": "Hud",
+        "index": 11,
+        "verse": {
+          "start": 1,
+          "end": 5
+        },
+        "pageNumber": "199"
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "surahs": [
+      {
+        "titleAr": "هود",
+        "title": "Hud",
+        "index": 11,
+        "verse": {
+          "start": 6,
+          "end": 123
+        },
+        "pageNumber": "199"
+      },
+      {
+        "titleAr": "يوسف",
+        "title": "Yusuf",
+        "index": 12,
+        "verse": {
+          "start": 1,
+          "end": 52
+        },
+        "pageNumber": "212"
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "surahs": [
+      {
+        "titleAr": "يوسف",
+        "title": "Yusuf",
+        "index": 12,
+        "verse": {
+          "start": 53,
+          "end": 111
+        },
+        "pageNumber": "212"
+      },
+      {
+        "titleAr": "الرعد",
+        "title": "Ar-Ra'd",
+        "index": 13,
+        "verse": {
+          "start": 1,
+          "end": 43
+        },
+        "pageNumber": "225"
+      },
+      {
+        "titleAr": "إبراهيم",
+        "title": "Ibrahim",
+        "index": 14,
+        "verse": {
+          "start": 1,
+          "end": 52
+        },
+        "pageNumber": "231"
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "surahs": [
+      {
+        "titleAr": "الحجر",
+        "title": "Al-Hijr",
+        "index": 15,
+        "verse": {
+          "start": 1,
+          "end": 99
+        },
+        "pageNumber": "237"
+      },
+      {
+        "titleAr": "النحل",
+        "title": "An-Nahl",
+        "index": 16,
+        "verse": {
+          "start": 1,
+          "end": 128
+        },
+        "pageNumber": "242"
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "surahs": [
+      {
+        "titleAr": "الإسراء",
+        "title": "Al-Israa",
+        "index": 17,
+        "verse": {
+          "start": 1,
+          "end": 111
+        },
+        "pageNumber": "255"
+      },
+      {
+        "titleAr": "الكهف",
+        "title": "Al-Kahf",
+        "index": 18,
+        "verse": {
+          "start": 1,
+          "end": 74
+        },
+        "pageNumber": "266"
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "surahs": [
+      {
+        "titleAr": "الكهف",
+        "title": "Al-Kahf",
+        "index": 18,
+        "verse": {
+          "start": 75,
+          "end": 110
+        },
+        "pageNumber": "266"
+      },
+      {
+        "titleAr": "مريم",
+        "title": "Maryam",
+        "index": 19,
+        "verse": {
+          "start": 1,
+          "end": 98
+        },
+        "pageNumber": "277"
+      },
+      {
+        "titleAr": "طه",
+        "title": "Ta-Ha",
+        "index": 20,
+        "verse": {
+          "start": 1,
+          "end": 135
+        },
+        "pageNumber": "284"
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "surahs": [
+      {
+        "titleAr": "الأنبياء",
+        "title": "Al-Anbiya",
+        "index": 21,
+        "verse": {
+          "start": 1,
+          "end": 112
+        },
+        "pageNumber": "294"
+      },
+      {
+        "titleAr": "الحج",
+        "title": "Al-Hajj",
+        "index": 22,
+        "verse": {
+          "start": 1,
+          "end": 78
+        },
+        "pageNumber": "302"
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "surahs": [
+      {
+        "titleAr": "المؤمنون",
+        "title": "Al-Muminun",
+        "index": 23,
+        "verse": {
+          "start": 1,
+          "end": 118
+        },
+        "pageNumber": "311"
+      },
+      {
+        "titleAr": "النور",
+        "title": "An-Nur",
+        "index": 24,
+        "verse": {
+          "start": 1,
+          "end": 64
+        },
+        "pageNumber": "319"
+      },
+      {
+        "titleAr": "الفرقان",
+        "title": "Al-Furqan",
+        "index": 25,
+        "verse": {
+          "start": 1,
+          "end": 20
+        },
+        "pageNumber": "329"
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "surahs": [
+      {
+        "titleAr": "الفرقان",
+        "title": "Al-Furqan",
+        "index": 25,
+        "verse": {
+          "start": 21,
+          "end": 77
+        },
+        "pageNumber": "329"
+      },
+      {
+        "titleAr": "الشعراء",
+        "title": "Ash-Shuara",
+        "index": 26,
+        "verse": {
+          "start": 1,
+          "end": 227
+        },
+        "pageNumber": "335"
+      },
+      {
+        "titleAr": "النمل",
+        "title": "An-Naml",
+        "index": 27,
+        "verse": {
+          "start": 1,
+          "end": 55
+        },
+        "pageNumber": "345"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "surahs": [
+      {
+        "titleAr": "النمل",
+        "title": "An-Naml",
+        "index": 27,
+        "verse": {
+          "start": 56,
+          "end": 93
+        },
+        "pageNumber": "345"
+      },
+      {
+        "titleAr": "القصص",
+        "title": "Al-Qasas",
+        "index": 28,
+        "verse": {
+          "start": 1,
+          "end": 88
+        },
+        "pageNumber": "354"
+      },
+      {
+        "titleAr": "العنكبوت",
+        "title": "Al-Ankabut",
+        "index": 29,
+        "verse": {
+          "start": 1,
+          "end": 45
+        },
+        "pageNumber": "364"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "surahs": [
+      {
+        "titleAr": "العنكبوت",
+        "title": "Al-Ankabut",
+        "index": 29,
+        "verse": {
+          "start": 46,
+          "end": 69
+        },
+        "pageNumber": "364"
+      },
+      {
+        "titleAr": "الروم",
+        "title": "Ar-Rum",
+        "index": 30,
+        "verse": {
+          "start": 1,
+          "end": 60
+        },
+        "pageNumber": "371"
+      },
+      {
+        "titleAr": "لقمان",
+        "title": "Luqman",
+        "index": 31,
+        "verse": {
+          "start": 1,
+          "end": 34
+        },
+        "pageNumber": "377"
+      },
+      {
+        "titleAr": "السجدة",
+        "title": "As-Sajdah",
+        "index": 32,
+        "verse": {
+          "start": 1,
+          "end": 30
+        },
+        "pageNumber": "381"
+      },
+      {
+        "titleAr": "الأحزاب",
+        "title": "Al-Ahzab",
+        "index": 33,
+        "verse": {
+          "start": 1,
+          "end": 30
+        },
+        "pageNumber": "383"
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "surahs": [
+      {
+        "titleAr": "الأحزاب",
+        "title": "Al-Ahzab",
+        "index": 33,
+        "verse": {
+          "start": 31,
+          "end": 73
+        },
+        "pageNumber": "383"
+      },
+      {
+        "titleAr": "سبأ",
+        "title": "Saba",
+        "index": 34,
+        "verse": {
+          "start": 1,
+          "end": 54
+        },
+        "pageNumber": "393"
+      },
+      {
+        "titleAr": "فاطر",
+        "title": "Fatir",
+        "index": 35,
+        "verse": {
+          "start": 1,
+          "end": 45
+        },
+        "pageNumber": "399"
+      },
+      {
+        "titleAr": "يس",
+        "title": "Yasin",
+        "index": 36,
+        "verse": {
+          "start": 1,
+          "end": 27
+        },
+        "pageNumber": "404"
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "surahs": [
+      {
+        "titleAr": "يس",
+        "title": "Yasin",
+        "index": 36,
+        "verse": {
+          "start": 28,
+          "end": 83
+        },
+        "pageNumber": "404"
+      },
+      {
+        "titleAr": "الصافات",
+        "title": "As-Saffat",
+        "index": 37,
+        "verse": {
+          "start": 1,
+          "end": 182
+        },
+        "pageNumber": "410"
+      },
+      {
+        "titleAr": "ص",
+        "title": "Sad",
+        "index": 38,
+        "verse": {
+          "start": 1,
+          "end": 88
+        },
+        "pageNumber": "417"
+      },
+      {
+        "titleAr": "الزمر",
+        "title": "Az-Zumar",
+        "index": 39,
+        "verse": {
+          "start": 1,
+          "end": 31
+        },
+        "pageNumber": "422"
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "surahs": [
+      {
+        "titleAr": "الزمر",
+        "title": "Az-Zumar",
+        "index": 39,
+        "verse": {
+          "start": 32,
+          "end": 75
+        },
+        "pageNumber": "422"
+      },
+      {
+        "titleAr": "غافر",
+        "title": "Ghafir",
+        "index": 40,
+        "verse": {
+          "start": 1,
+          "end": 85
+        },
+        "pageNumber": "431"
+      },
+      {
+        "titleAr": "فصلت",
+        "title": "Fussilat",
+        "index": 41,
+        "verse": {
+          "start": 1,
+          "end": 46
+        },
+        "pageNumber": "439"
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "surahs": [
+      {
+        "titleAr": "فصلت",
+        "title": "Fussilat",
+        "index": 41,
+        "verse": {
+          "start": 47,
+          "end": 54
+        },
+        "pageNumber": "439"
+      },
+      {
+        "titleAr": "الشورى",
+        "title": "Ash-Shura",
+        "index": 42,
+        "verse": {
+          "start": 1,
+          "end": 53
+        },
+        "pageNumber": "445"
+      },
+      {
+        "titleAr": "الزخرف",
+        "title": "Az-Zukhruf",
+        "index": 43,
+        "verse": {
+          "start": 1,
+          "end": 89
+        },
+        "pageNumber": "451"
+      },
+      {
+        "titleAr": "الدخان",
+        "title": "Ad-Dukhan",
+        "index": 44,
+        "verse": {
+          "start": 1,
+          "end": 59
+        },
+        "pageNumber": "457"
+      },
+      {
+        "titleAr": "الجاثية",
+        "title": "Al-Jathiya",
+        "index": 45,
+        "verse": {
+          "start": 1,
+          "end": 37
+        },
+        "pageNumber": "460"
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "surahs": [
+      {
+        "titleAr": "الأحقاف",
+        "title": "Al-Ahqaf",
+        "index": 46,
+        "verse": {
+          "start": 1,
+          "end": 35
+        },
+        "pageNumber": "464"
+      },
+      {
+        "titleAr": "محمد",
+        "title": "Muhammad",
+        "index": 47,
+        "verse": {
+          "start": 1,
+          "end": 38
+        },
+        "pageNumber": "468"
+      },
+      {
+        "titleAr": "الفتح",
+        "title": "Al-Fath",
+        "index": 48,
+        "verse": {
+          "start": 1,
+          "end": 29
+        },
+        "pageNumber": "472"
+      },
+      {
+        "titleAr": "الحجرات",
+        "title": "Al-Hujurat",
+        "index": 49,
+        "verse": {
+          "start": 1,
+          "end": 18
+        },
+        "pageNumber": "477"
+      },
+      {
+        "titleAr": "ق",
+        "title": "Qaf",
+        "index": 50,
+        "verse": {
+          "start": 1,
+          "end": 45
+        },
+        "pageNumber": "479"
+      },
+      {
+        "titleAr": "الذاريات",
+        "title": "Az-Zariyat",
+        "index": 51,
+        "verse": {
+          "start": 1,
+          "end": 30
+        },
+        "pageNumber": "482"
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "surahs": [
+      {
+        "titleAr": "الذاريات",
+        "title": "Az-Zariyat",
+        "index": 51,
+        "verse": {
+          "start": 31,
+          "end": 60
+        },
+        "pageNumber": "482"
+      },
+      {
+        "titleAr": "الطور",
+        "title": "At-Tur",
+        "index": 52,
+        "verse": {
+          "start": 1,
+          "end": 49
+        },
+        "pageNumber": "485"
+      },
+      {
+        "titleAr": "النجم",
+        "title": "An-Najm",
+        "index": 53,
+        "verse": {
+          "start": 1,
+          "end": 62
+        },
+        "pageNumber": "487"
+      },
+      {
+        "titleAr": "القمر",
+        "title": "Al-Qamar",
+        "index": 54,
+        "verse": {
+          "start": 1,
+          "end": 55
+        },
+        "pageNumber": "490"
+      },
+      {
+        "titleAr": "الرحمن",
+        "title": "Ar-Rahman",
+        "index": 55,
+        "verse": {
+          "start": 1,
+          "end": 78
+        },
+        "pageNumber": "493"
+      },
+      {
+        "titleAr": "الواقعة",
+        "title": "Al-Waqia",
+        "index": 56,
+        "verse": {
+          "start": 1,
+          "end": 96
+        },
+        "pageNumber": "496"
+      },
+      {
+        "titleAr": "الحديد",
+        "title": "Al-Hadid",
+        "index": 57,
+        "verse": {
+          "start": 1,
+          "end": 29
+        },
+        "pageNumber": "499"
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "surahs": [
+      {
+        "titleAr": "المجادلة",
+        "title": "Al-Mujadilah",
+        "index": 58,
+        "verse": {
+          "start": 1,
+          "end": 22
+        },
+        "pageNumber": "504"
+      },
+      {
+        "titleAr": "الحشر",
+        "title": "Al-Hashr",
+        "index": 59,
+        "verse": {
+          "start": 1,
+          "end": 24
+        },
+        "pageNumber": "507"
+      },
+      {
+        "titleAr": "الممتحنة",
+        "title": "Al-Mumtahinah",
+        "index": 60,
+        "verse": {
+          "start": 1,
+          "end": 13
+        },
+        "pageNumber": "510"
+      },
+      {
+        "titleAr": "الصف",
+        "title": "As-Saff",
+        "index": 61,
+        "verse": {
+          "start": 1,
+          "end": 14
+        },
+        "pageNumber": "513"
+      },
+      {
+        "titleAr": "الجمعة",
+        "title": "Al-Jumu'ah",
+        "index": 62,
+        "verse": {
+          "start": 1,
+          "end": 11
+        },
+        "pageNumber": "515"
+      },
+      {
+        "titleAr": "المنافقون",
+        "title": "Al-Munafiqun",
+        "index": 63,
+        "verse": {
+          "start": 1,
+          "end": 11
+        },
+        "pageNumber": "516"
+      },
+      {
+        "titleAr": "التغابن",
+        "title": "At-Taghabun",
+        "index": 64,
+        "verse": {
+          "start": 1,
+          "end": 18
+        },
+        "pageNumber": "518"
+      },
+      {
+        "titleAr": "الطلاق",
+        "title": "At-Talaq",
+        "index": 65,
+        "verse": {
+          "start": 1,
+          "end": 12
+        },
+        "pageNumber": "520"
+      },
+      {
+        "titleAr": "التحريم",
+        "title": "At-Tahrim",
+        "index": 66,
+        "verse": {
+          "start": 1,
+          "end": 12
+        },
+        "pageNumber": "522"
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "surahs": [
+      {
+        "titleAr": "الملك",
+        "title": "Al-Mulk",
+        "index": 67,
+        "verse": {
+          "start": 1,
+          "end": 30
+        },
+        "pageNumber": "524"
+      },
+      {
+        "titleAr": "القلم",
+        "title": "Al-Qalam",
+        "index": 68,
+        "verse": {
+          "start": 1,
+          "end": 52
+        },
+        "pageNumber": "526"
+      },
+      {
+        "titleAr": "الحاقة",
+        "title": "Al-Haqqah",
+        "index": 69,
+        "verse": {
+          "start": 1,
+          "end": 52
+        },
+        "pageNumber": "529"
+      },
+      {
+        "titleAr": "المعارج",
+        "title": "Al-Ma'arij",
+        "index": 70,
+        "verse": {
+          "start": 1,
+          "end": 44
+        },
+        "pageNumber": "531"
+      },
+      {
+        "titleAr": "نوح",
+        "title": "Nuh",
+        "index": 71,
+        "verse": {
+          "start": 1,
+          "end": 28
+        },
+        "pageNumber": "533"
+      },
+      {
+        "titleAr": "الجن",
+        "title": "Al-Jinn",
+        "index": 72,
+        "verse": {
+          "start": 1,
+          "end": 28
+        },
+        "pageNumber": "534"
+      },
+      {
+        "titleAr": "المزمل",
+        "title": "Al-Muzzammil",
+        "index": 73,
+        "verse": {
+          "start": 1,
+          "end": 20
+        },
+        "pageNumber": "537"
+      },
+      {
+        "titleAr": "المدثر",
+        "title": "Al-Muddaththir",
+        "index": 74,
+        "verse": {
+          "start": 1,
+          "end": 56
+        },
+        "pageNumber": "538"
+      },
+      {
+        "titleAr": "القيامة",
+        "title": "Al-Qiyamah",
+        "index": 75,
+        "verse": {
+          "start": 1,
+          "end": 40
+        },
+        "pageNumber": "540"
+      },
+      {
+        "titleAr": "الإنسان",
+        "title": "Al-Insan",
+        "index": 76,
+        "verse": {
+          "start": 1,
+          "end": 31
+        },
+        "pageNumber": "542"
+      },
+      {
+        "titleAr": "المرسلات",
+        "title": "Al-Mursalat",
+        "index": 77,
+        "verse": {
+          "start": 1,
+          "end": 50
+        },
+        "pageNumber": "544"
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "surahs": [
+      {
+        "titleAr": "النبأ",
+        "title": "An-Naba",
+        "index": 78,
+        "verse": {
+          "start": 1,
+          "end": 40
+        },
+        "pageNumber": "545"
+      },
+      {
+        "titleAr": "النازعات",
+        "title": "An-Naziat",
+        "index": 79,
+        "verse": {
+          "start": 1,
+          "end": 46
+        },
+        "pageNumber": "547"
+      },
+      {
+        "titleAr": "عبس",
+        "title": "Abasa",
+        "index": 80,
+        "verse": {
+          "start": 1,
+          "end": 42
+        },
+        "pageNumber": "548"
+      },
+      {
+        "titleAr": "التكوير",
+        "title": "At-Takwir",
+        "index": 81,
+        "verse": {
+          "start": 1,
+          "end": 29
+        },
+        "pageNumber": "550"
+      },
+      {
+        "titleAr": "الإنفطار",
+        "title": "Al-Infitar",
+        "index": 82,
+        "verse": {
+          "start": 1,
+          "end": 19
+        },
+        "pageNumber": "551"
+      },
+      {
+        "titleAr": "المطففين",
+        "title": "Al-Mutaffifin",
+        "index": 83,
+        "verse": {
+          "start": 1,
+          "end": 36
+        },
+        "pageNumber": "552"
+      },
+      {
+        "titleAr": "الإنشقاق",
+        "title": "Al-Inshiqaq",
+        "index": 84,
+        "verse": {
+          "start": 1,
+          "end": 25
+        },
+        "pageNumber": "553"
+      },
+      {
+        "titleAr": "البروج",
+        "title": "Al-Buruj",
+        "index": 85,
+        "verse": {
+          "start": 1,
+          "end": 22
+        },
+        "pageNumber": "554"
+      },
+      {
+        "titleAr": "الطارق",
+        "title": "At-Tariq",
+        "index": 86,
+        "verse": {
+          "start": 1,
+          "end": 17
+        },
+        "pageNumber": "555"
+      },
+      {
+        "titleAr": "الأعلى",
+        "title": "Al-Ala",
+        "index": 87,
+        "verse": {
+          "start": 1,
+          "end": 19
+        },
+        "pageNumber": "556"
+      },
+      {
+        "titleAr": "الغاشية",
+        "title": "Al-Ghashiyah",
+        "index": 88,
+        "verse": {
+          "start": 1,
+          "end": 26
+        },
+        "pageNumber": "556"
+      },
+      {
+        "titleAr": "الفجر",
+        "title": "Al-Fajr",
+        "index": 89,
+        "verse": {
+          "start": 1,
+          "end": 30
+        },
+        "pageNumber": "557"
+      },
+      {
+        "titleAr": "البلد",
+        "title": "Al-Balad",
+        "index": 90,
+        "verse": {
+          "start": 1,
+          "end": 20
+        },
+        "pageNumber": "559"
+      },
+      {
+        "titleAr": "الشمس",
+        "title": "Ash-Shams",
+        "index": 91,
+        "verse": {
+          "start": 1,
+          "end": 15
+        },
+        "pageNumber": "559"
+      },
+      {
+        "titleAr": "الليل",
+        "title": "Al-Lail",
+        "index": 92,
+        "verse": {
+          "start": 1,
+          "end": 21
+        },
+        "pageNumber": "560"
+      },
+      {
+        "titleAr": "الضحى",
+        "title": "Ad-Duha",
+        "index": 93,
+        "verse": {
+          "start": 1,
+          "end": 11
+        },
+        "pageNumber": "561"
+      },
+      {
+        "titleAr": "الشرح",
+        "title": "Ash-Sharh",
+        "index": 94,
+        "verse": {
+          "start": 1,
+          "end": 8
+        },
+        "pageNumber": "561"
+      },
+      {
+        "titleAr": "التين",
+        "title": "At-Tin",
+        "index": 95,
+        "verse": {
+          "start": 1,
+          "end": 8
+        },
+        "pageNumber": "562"
+      },
+      {
+        "titleAr": "العلق",
+        "title": "Al-Alaq",
+        "index": 96,
+        "verse": {
+          "start": 1,
+          "end": 19
+        },
+        "pageNumber": "562"
+      },
+      {
+        "titleAr": "القدر",
+        "title": "Al-Qadr",
+        "index": 97,
+        "verse": {
+          "start": 1,
+          "end": 5
+        },
+        "pageNumber": "563"
+      },
+      {
+        "titleAr": "البينة",
+        "title": "Al-Bayinah",
+        "index": 98,
+        "verse": {
+          "start": 1,
+          "end": 8
+        },
+        "pageNumber": "563"
+      },
+      {
+        "titleAr": "الزلزلة",
+        "title": "Az-Zalzalah",
+        "index": 99,
+        "verse": {
+          "start": 1,
+          "end": 8
+        },
+        "pageNumber": "564"
+      },
+      {
+        "titleAr": "العاديات",
+        "title": "Al-Adiyat",
+        "index": 100,
+        "verse": {
+          "start": 1,
+          "end": 11
+        },
+        "pageNumber": "564"
+      },
+      {
+        "titleAr": "القارعة",
+        "title": "Al-Qariah",
+        "index": 101,
+        "verse": {
+          "start": 1,
+          "end": 11
+        },
+        "pageNumber": "565"
+      },
+      {
+        "titleAr": "التكاثر",
+        "title": "Al-Takathur",
+        "index": 102,
+        "verse": {
+          "start": 1,
+          "end": 8
+        },
+        "pageNumber": "565"
+      },
+      {
+        "titleAr": "العصر",
+        "title": "Al-Asr",
+        "index": 103,
+        "verse": {
+          "start": 1,
+          "end": 3
+        },
+        "pageNumber": "566"
+      },
+      {
+        "titleAr": "الهمزة",
+        "title": "Al-Humazah",
+        "index": 104,
+        "verse": {
+          "start": 1,
+          "end": 9
+        },
+        "pageNumber": "566"
+      },
+      {
+        "titleAr": "الفيل",
+        "title": "Al-Fil",
+        "index": 105,
+        "verse": {
+          "start": 1,
+          "end": 5
+        },
+        "pageNumber": "566"
+      },
+      {
+        "titleAr": "قريش",
+        "title": "Quraish",
+        "index": 106,
+        "verse": {
+          "start": 1,
+          "end": 4
+        },
+        "pageNumber": "567"
+      },
+      {
+        "titleAr": "الماعون",
+        "title": "Al-Ma'un",
+        "index": 107,
+        "verse": {
+          "start": 1,
+          "end": 7
+        },
+        "pageNumber": "567"
+      },
+      {
+        "titleAr": "الكوثر",
+        "title": "Al-Kauthar",
+        "index": 108,
+        "verse": {
+          "start": 1,
+          "end": 3
+        },
+        "pageNumber": "567"
+      },
+      {
+        "titleAr": "الكافرون",
+        "title": "Al-Kafirun",
+        "index": 109,
+        "verse": {
+          "start": 1,
+          "end": 6
+        },
+        "pageNumber": "568"
+      },
+      {
+        "titleAr": "النصر",
+        "title": "An-Nasr",
+        "index": 110,
+        "verse": {
+          "start": 1,
+          "end": 3
+        },
+        "pageNumber": "568"
+      },
+      {
+        "titleAr": "المسد",
+        "title": "Al-Masad",
+        "index": 111,
+        "verse": {
+          "start": 1,
+          "end": 5
+        },
+        "pageNumber": "568"
+      },
+      {
+        "titleAr": "الإخلاص",
+        "title": "Al-Ikhlas",
+        "index": 112,
+        "verse": {
+          "start": 1,
+          "end": 4
+        },
+        "pageNumber": "569"
+      },
+      {
+        "titleAr": "الفلق",
+        "title": "Al-Falaq",
+        "index": 113,
+        "verse": {
+          "start": 1,
+          "end": 5
+        },
+        "pageNumber": "569"
+      },
+      {
+        "titleAr": "الناس",
+        "title": "An-Nas",
+        "index": 114,
+        "verse": {
+          "start": 1,
+          "end": 6
+        },
+        "pageNumber": "569"
+      }
+    ]
+  }
+]
