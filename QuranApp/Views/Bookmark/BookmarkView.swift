@@ -61,6 +61,7 @@ struct BookmarkView_Previews: PreviewProvider {
     static var previews: some View {
         BookmarkView(selectedTab: .constant(1), hiddenBar: .constant(false))
             .environmentObject(BookMarkViewModel())
+            .environmentObject(LanguageViewModel())
             .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

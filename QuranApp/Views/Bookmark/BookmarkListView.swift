@@ -18,7 +18,7 @@ struct BookmarkListView: View {
             List {
                 ForEach(list) { item in
                     NavigationLink(destination:
-                                    PDFViewUI(pageNumber: item.pageNumber, hiddenBar: $hiddenBar)
+                                    PDFViewUI(pageNumber: item.pageNumber, permessionBookmarkButton: true, hiddenBar: $hiddenBar)
                         .onAppear {
                             self.hiddenBar = true
                         }
