@@ -10,6 +10,7 @@ import Foundation
 // MARK: - JuzElement
 struct JuzModel: Codable {
     let index: Int
+    let page: Int
     let surahs: [Surah]
 }
 

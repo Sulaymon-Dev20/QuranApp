@@ -56,6 +56,7 @@ struct JuzView_Previews: PreviewProvider {
     static var previews: some View {
         JuzView(hiddenBar: .constant(false))
             .environmentObject(JuzViewModel())
+            .environmentObject(LanguageViewModel())
             .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

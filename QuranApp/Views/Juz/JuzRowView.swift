@@ -12,7 +12,7 @@ struct JuzRowView: View {
     @Binding var hiddenBar: Bool
     var body: some View {
         HStack {
-            NavigationLink(destination: PDFViewUI(pageNumber: (item.surahs[0].pageNumber as NSString).integerValue, hiddenBar: $hiddenBar)
+            NavigationLink(destination: PDFViewUI(pageNumber: item.page, hiddenBar: $hiddenBar)
                 .onAppear {
                     self.hiddenBar = true
                 }
@@ -47,8 +47,9 @@ struct JuzRowView: View {
 struct JuzRowView_Previews: PreviewProvider {
     static var previews: some View {
         List{
-            JuzRowView(item: JuzModel(index: 12, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "12")]), hiddenBar: .constant(false))
+            JuzRowView(item: JuzModel(index: 12, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "12")]), hiddenBar: .constant(false))
         }
+        .environmentObject(LanguageViewModel())
         .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }
