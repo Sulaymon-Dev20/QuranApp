@@ -15,7 +15,7 @@ struct ContentView: View {
         TabMainView()
             .environmentObject(language)
             .environmentObject(bookmarksViewModel)
-            .environment(\.locale, Locale.init(identifier: "ar"))
+            .environment(\.locale, Locale.init(identifier: language.language))
     }
 }
 

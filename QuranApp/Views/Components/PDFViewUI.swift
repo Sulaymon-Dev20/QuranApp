@@ -31,12 +31,13 @@ struct PDFViewUI: View {
                 } label: {
                     HStack {
                         Image(systemName: "chevron.backward")
-                        Text("Custom Back")
+                        Text("back")
                     }
                 }
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
+//                    self.hiddenBar = false
                     bookmarksViewModel.saveOrDelete(item: getSurahByPage(page: pageNumber))
                 } label: {
                     Image(systemName: bookmarksViewModel.getPages().contains(pageNumber) ? "bookmark.slash.fill" : "bookmark.fill")

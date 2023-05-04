@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE6F48642A03E77F0041D881 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6F48632A03E77F0041D881 /* LaunchScreen.storyboard */; };
 		CE7C84ED2A03924200192CC5 /* QuranAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C84EC2A03924200192CC5 /* QuranAppApp.swift */; };
 		CE7C84EF2A03924200192CC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C84EE2A03924200192CC5 /* ContentView.swift */; };
 		CE7C84F12A03924300192CC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7C84F02A03924300192CC5 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE6F48632A03E77F0041D881 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE7C84E92A03924200192CC5 /* QuranApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7C84EC2A03924200192CC5 /* QuranAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranAppApp.swift; sourceTree = "<group>"; };
 		CE7C84EE2A03924200192CC5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				CE7C85322A0394F000192CC5 /* Juz */,
 				CE7C85332A0394F800192CC5 /* Bookmark */,
 				CE7C85342A03959A00192CC5 /* TabMainView.swift */,
+				CE6F48632A03E77F0041D881 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				CE7C853D2A03974600192CC5 /* data.pdf in Resources */,
 				CE7C85182A03925E00192CC5 /* Localizable.strings in Resources */,
 				CE7C84F12A03924300192CC5 /* Assets.xcassets in Resources */,
+				CE6F48642A03E77F0041D881 /* LaunchScreen.storyboard in Resources */,
 				CE7C852B2A03942800192CC5 /* juz.json in Resources */,
 				CE7C852C2A03943D00192CC5 /* surah.json in Resources */,
 			);
@@ -604,7 +608,7 @@
 		CE7C850E2A03924400192CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Quran;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -614,6 +618,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -632,7 +637,7 @@
 		CE7C850F2A03924400192CC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Quran;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -642,6 +647,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

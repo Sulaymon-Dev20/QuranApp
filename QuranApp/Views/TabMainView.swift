@@ -39,6 +39,6 @@ struct TabMainView_Previews: PreviewProvider {
     static var previews: some View {
         TabMainView()
             .environmentObject(BookMarkViewModel())
-            .environment(\.locale, Locale.init(identifier: "ru"))
+            .environmentObject(LanguageViewModel())
     }
 }

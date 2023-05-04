@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct LanguageButtonView: View {
-    @ObservedObject var datas = LanguageViewModel()
-    
+//    @ObservedObject var datas = LanguageViewModel()
+    @EnvironmentObject var datas: LanguageViewModel
+
     var body: some View {
         Menu {
             Button(action: {
