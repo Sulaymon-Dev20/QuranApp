@@ -23,14 +23,14 @@ struct LanguageButtonView: View {
                 Label("english", image: "en")
             }
             Button(action: {
-                datas.changeLanugae(lang: "uz")
-            }) {
-                Label("uzbek", image: "uz")
-            }
-            Button(action: {
                 datas.changeLanugae(lang: "ru")
             }) {
                 Label("russian", image: "ru")
+            }
+            Button(action: {
+                datas.changeLanugae(lang: "uz")
+            }) {
+                Label("uzbek", image: "uz")
             }
         } label: {
             Image(datas.language)
