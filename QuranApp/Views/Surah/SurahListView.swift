@@ -37,6 +37,6 @@ struct SurahListView: View {
 
 struct SurahListView_Previews: PreviewProvider {
     static var previews: some View {
-        SurahListView(list: [SurahModel(place: Place.mecca, type: TypeEnum.makkiyah, count: 22, title: "String", titleAr: "String", index: "12", pages: "12", juz: [])], hiddenBar: .constant(false))
+        SurahListView(list: [SurahModel(place: Place.mecca, type: TypeEnum.makkiyah, count: 22, title: "al_fatiha", titleAr: "String", index: "12", pages: "12", juz: [])], hiddenBar: .constant(false))
     }
 }
