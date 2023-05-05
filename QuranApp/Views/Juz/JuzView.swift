@@ -13,15 +13,21 @@ struct JuzView: View {
     @Binding var selectedTab: Int
     @Binding var hiddenBar: Bool
     @State var sort: Bool = false
-    @State var degree : Double = 0
+    @State var degree: Double = 0
     
     var body: some View {
         NavigationStack {
             NavigationStack {
                 NavigationView {
-                    List {
-                        ForEach(sort ? datas.items.reversed() : datas.items, id: \.index) {item in
-                            JuzRowView(item: item, hiddenBar: $hiddenBar)
+                    ZStack{
+                        if datas.showStatus {
+                            List {
+                                ForEach(sort ? datas.items.reversed() : datas.items, id: \.index) {item in
+                                    JuzRowView(item: item, hiddenBar: $hiddenBar)
+                                }
+                            }
+                        } else{
+                            JuzTestView(item: datas.items, hiddenBar: $hiddenBar)
                         }
                     }
                     .navigationBarTitleDisplayMode(.inline)
@@ -44,22 +50,29 @@ struct JuzView: View {
                                     Text("juz")
                                 }
                             } else {
-                                Text("juz")
+                                Button {
+                                    datas.changeView(status: !datas.showStatus)
+                                } label: {
+                                    Text("juz")
+                                        .foregroundColor(Color.primary)
+                                }
                             }
                         }
                         ToolbarItem(placement: .navigationBarLeading) {
                             LanguageButtonView()
                         }
                         ToolbarItem(placement: .navigationBarTrailing) {
-                            Button {
-                                withAnimation {
-                                    self.sort = !sort
-                                    degree += 180
+                            if datas.showStatus {
+                                Button {
+                                    withAnimation {
+                                        self.sort = !sort
+                                        degree += 180
+                                    }
+                                } label: {
+                                    Image(systemName: "arrow.up")
+                                        .rotationEffect(.degrees(degree))
+                                        .animation(.linear(duration: 0.3), value: sort)
                                 }
-                            } label: {
-                                Image(systemName: "arrow.up")
-                                    .rotationEffect(.degrees(degree))
-                                    .animation(.linear(duration: 0.3), value: sort)
                             }
                         }
                     }
@@ -74,6 +87,6 @@ struct JuzView_Previews: PreviewProvider {
         JuzView(selectedTab: .constant(1), hiddenBar: .constant(false))
             .environmentObject(JuzViewModel())
             .environmentObject(LanguageViewModel())
-            .environment(\.locale, Locale.init(identifier: "ar"))
+        //            .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }
