@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PDFViewUI: View {
-
+    
     @State var pageNumber: Int
     @State var permessionBookmarkButton: Bool = false
     @Binding var hiddenBar: Bool
@@ -16,7 +16,7 @@ struct PDFViewUI: View {
     @ObservedObject var datas = SurahViewModel()
     
     @Environment(\.dismiss) private var dismiss
-
+    
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -27,15 +27,13 @@ struct PDFViewUI: View {
         .navigationBarBackButtonHidden(true)
         .toolbar{
             ToolbarItem(placement: .navigationBarLeading) {
-                if UIDevice.current.model != "iPad" {
-                    Button {
-                        self.hiddenBar = false
-                        dismiss()
-                    } label: {
-                        HStack {
-                            Image(systemName: "chevron.backward")
-                            Text("back")
-                        }
+                Button {
+                    self.hiddenBar = false
+                    dismiss()
+                } label: {
+                    HStack {
+                        Image(systemName: "chevron.backward")
+                        Text("back")
                     }
                 }
             }

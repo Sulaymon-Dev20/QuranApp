@@ -16,9 +16,9 @@ struct JuzCalendarView: View {
             Text("Juzs")
                 .font(.title)
                 .bold()
-            Text("Juzs dsajf asdf jas dfasfdsadf")
-                .font(.caption)
                 .padding(.bottom)
+//            Text("Juzs dsajf asdf jas dfasfdsadf")
+//                .font(.caption)
             VStack{
                 ForEach(0..<(item.count / 5), id: \.self) { i in
                     HStack{
@@ -59,7 +59,7 @@ struct JuzCalendarView: View {
 
 struct JuzCalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
+        NavigationStack {
             JuzCalendarView(item: [
                 JuzModel(index: 1, page: 1, surahs: []),
                 JuzModel(index: 2, page: 1, surahs: []),
@@ -80,5 +80,6 @@ struct JuzCalendarView_Previews: PreviewProvider {
                 JuzModel(index: 14, page: 1, surahs: [])
             ], hiddenBar: .constant(false))
         }
+        .environmentObject(BookMarkViewModel())
     }
 }

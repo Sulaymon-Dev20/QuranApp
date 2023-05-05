@@ -10,6 +10,7 @@ import SwiftUI
 struct SurahListView: View {
     let list: [SurahModel]
     @Binding var hiddenBar: Bool
+    @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     
     var body: some View {
         if !list.isEmpty {
@@ -27,6 +28,24 @@ struct SurahListView: View {
                             }
                             .opacity(0)
                         }
+                        .swipeActions(edge: .trailing) {
+                            if bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue) {
+                                Button {
+                                    bookmarksViewModel.saveOrDelete(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: (item.pages as NSString).integerValue))
+                                } label: {
+                                    Label("Choose", systemImage: "bookmark.slash")
+                                }
+                                .tint(.red)
+                            } else {
+                                Button {
+                                    bookmarksViewModel.saveOrDelete(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: (item.pages as NSString).integerValue))
+                                } label: {
+                                    Label("Choose", systemImage: "bookmark")
+                                }
+                                .tint(.green)
+
+                            }
+                        }
                 }
             }
         } else {
@@ -38,5 +57,6 @@ struct SurahListView: View {
 struct SurahListView_Previews: PreviewProvider {
     static var previews: some View {
         SurahListView(list: [SurahModel(place: Place.mecca, type: TypeEnum.makkiyah, count: 22, title: "al_fatiha", titleAr: "String", index: "12", pages: "12", juz: [])], hiddenBar: .constant(false))
+            .environmentObject(BookMarkViewModel())
     }
 }

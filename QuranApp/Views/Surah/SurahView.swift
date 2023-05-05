@@ -14,12 +14,12 @@ struct SurahView: View {
     @State private var searchFilter: String = ""
     @Binding var selectedTab: Int
     @Binding var hiddenBar: Bool
-
+    
     var body: some View {
-        NavigationView{
+        NavigationStack {
             SurahListView(list: filterData(),hiddenBar: $hiddenBar)
                 .navigationBarTitleDisplayMode(.inline)
-                .toolbar(hiddenBar || UIDevice.current.model == "iPad" ? .hidden : .visible, for: .tabBar)
+                .toolbar(hiddenBar ? .hidden : .visible, for: .tabBar)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         if searchBarStatus {
@@ -78,6 +78,6 @@ struct SurahView_Previews: PreviewProvider {
         SurahView(selectedTab: .constant(0), hiddenBar: .constant(false))
             .environmentObject(BookMarkViewModel())
             .environmentObject(LanguageViewModel())
-            .environment(\.locale, Locale.init(identifier: "uz"))
+//            .environment(\.locale, Locale.init(identifier: "uz"))
     }
 }

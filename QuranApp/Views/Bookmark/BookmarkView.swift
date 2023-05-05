@@ -15,10 +15,10 @@ struct BookmarkView: View {
     @Binding var hiddenBar: Bool
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             BookmarkListView(list: filterData(), selectedTab: $selectedTab, hiddenBar: $hiddenBar)
                 .navigationBarTitleDisplayMode(.inline)
-                .toolbar(hiddenBar || UIDevice.current.model == "iPad" ? .hidden : .visible, for: .tabBar)
+                .toolbar(hiddenBar ? .hidden : .visible, for: .tabBar)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         if searchBarStatus {
