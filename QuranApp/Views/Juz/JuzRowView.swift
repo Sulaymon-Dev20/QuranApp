@@ -11,23 +11,21 @@ struct JuzRowView: View {
     let item:JuzModel
     @Binding var hiddenBar: Bool
     var body: some View {
-        HStack {
-            NavigationLink(destination: PDFViewUI(pageNumber: item.page, hiddenBar: $hiddenBar)
-                .onAppear {
-                    self.hiddenBar = true
-                }
-            ) {
-                HStack{
-                    Image(systemName: "app")
-                        .font(.system(size: 34.0))
-                        .overlay {
-                            Text("\(item.index)")
-                                .font(.system(size: 11.0))
-                        }
-                    Text("juz")
-                        .font(.title2)
-                    Spacer()
-                }
+        NavigationLink(destination: PDFViewUI(pageNumber: item.page, hiddenBar: $hiddenBar)
+            .onAppear {
+                self.hiddenBar = true
+            }
+        ) {
+            HStack{
+                Image(systemName: "app")
+                    .font(.system(size: 34.0))
+                    .overlay {
+                        Text("\(item.index)")
+                            .font(.system(size: 11.0))
+                    }
+                Text("juz")
+                    .font(.title2)
+                Spacer()
             }
         }
         .contextMenu{

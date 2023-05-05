@@ -22,8 +22,11 @@ struct SurahRowView: View {
                         .font(.system(size: 11.0))
                 }
             VStack{
-                Text(LocalizedStringKey(name.lowercased().replacingOccurrences(of: "-", with: "_")))
-                    .bold()
+                HStack{
+                    Text(LocalizedStringKey(name.lowercased().replacingOccurrences(of: "-", with: "_")))
+                        .bold()
+                    Spacer()
+                }
                 HStack{
                     Text(LocalizedStringKey(type == TypeEnum.madaniyah ? "madaniyah" : "makkiyah"))
                         .fontWeight(Font.Weight.ultraLight)
@@ -34,6 +37,7 @@ struct SurahRowView: View {
             }
             Text("\((pageNumber as NSString).intValue)")
                 .font(.system(size: 22.0))
+                .opacity(0.5)
                 .bold()
         }
     }

@@ -41,6 +41,7 @@
 		CE7C85532A03AB0B00192CC5 /* ListEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85522A03AB0B00192CC5 /* ListEmptyView.swift */; };
 		CE7C85552A03AB4E00192CC5 /* BookmarkEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85542A03AB4E00192CC5 /* BookmarkEmptyView.swift */; };
 		CE7C85572A03AFAB00192CC5 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85562A03AFAA00192CC5 /* LanguageViewModel.swift */; };
+		CE9F8A7D2A052AB200734387 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F8A7C2A052AB200734387 /* Test.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		CE7C85522A03AB0B00192CC5 /* ListEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmptyView.swift; sourceTree = "<group>"; };
 		CE7C85542A03AB4E00192CC5 /* BookmarkEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkEmptyView.swift; sourceTree = "<group>"; };
 		CE7C85562A03AFAA00192CC5 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
+		CE9F8A7C2A052AB200734387 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				CE7C85332A0394F800192CC5 /* Bookmark */,
 				CE7C85342A03959A00192CC5 /* TabMainView.swift */,
 				CE6F48632A03E77F0041D881 /* LaunchScreen.storyboard */,
+				CE9F8A7C2A052AB200734387 /* Test.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				CE7C85552A03AB4E00192CC5 /* BookmarkEmptyView.swift in Sources */,
 				CE7C854D2A03A7BF00192CC5 /* BookmarkView.swift in Sources */,
 				CE7C85512A03A88300192CC5 /* BookmarkListView.swift in Sources */,
+				CE9F8A7D2A052AB200734387 /* Test.swift in Sources */,
 				CE7C85262A03938900192CC5 /* BookmarkModel.swift in Sources */,
 				CE7C852E2A03945B00192CC5 /* JuzViewModel.swift in Sources */,
 			);

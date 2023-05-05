@@ -15,14 +15,18 @@ struct SurahListView: View {
         if !list.isEmpty {
             List {
                 ForEach(list, id: \.title){ item in
-                    NavigationLink(destination:
-                                    PDFViewUI(pageNumber: (item.pages as NSString).integerValue, hiddenBar: $hiddenBar)
-                        .onAppear {
-                            self.hiddenBar = true
+                    SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages)
+                        .overlay {
+                            NavigationLink(destination:
+                                            PDFViewUI(pageNumber: (item.pages as NSString).integerValue, hiddenBar: $hiddenBar)
+                                .onAppear {
+                                    self.hiddenBar = true
+                                }
+                            ) {
+                                EmptyView()
+                            }
+                            .opacity(0)
                         }
-                    ) {
-                        SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages)
-                    }
                 }
             }
         } else {
@@ -33,6 +37,6 @@ struct SurahListView: View {
 
 struct SurahListView_Previews: PreviewProvider {
     static var previews: some View {
-        SurahListView(list: [], hiddenBar: .constant(false))
+        SurahListView(list: [SurahModel(place: Place.mecca, type: TypeEnum.makkiyah, count: 22, title: "String", titleAr: "String", index: "12", pages: "12", juz: [])], hiddenBar: .constant(false))
     }
 }
