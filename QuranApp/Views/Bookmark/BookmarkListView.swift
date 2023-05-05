@@ -29,6 +29,15 @@ struct BookmarkListView: View {
                             }
                             .opacity(0)
                         }
+                        .swipeActions(edge: .trailing) {
+                            Button {
+                                bookmarksViewModel.saveOrDelete(item: BookmarkModel(title: item.title, juz: item.juz, pageNumber: item.pageNumber))
+                            } label: {
+                                Label("Choose", systemImage: "bookmark.slash")
+                            }
+                            .tint(.red)
+                        }
+                    
                 }
                 .onDelete(perform: bookmarksViewModel.deleteItem)
                 .onMove(perform: bookmarksViewModel.moveItem)

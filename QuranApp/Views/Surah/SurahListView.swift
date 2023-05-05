@@ -43,7 +43,6 @@ struct SurahListView: View {
                                     Label("Choose", systemImage: "bookmark")
                                 }
                                 .tint(.green)
-
                             }
                         }
                 }
