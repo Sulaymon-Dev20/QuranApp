@@ -21,7 +21,7 @@ struct JuzRowView: View {
                     .font(.system(size: 34.0))
                     .overlay {
                         Text("\(item.index)")
-                            .font(.system(size: 11.0))
+                            .font(.system(size: 21.0))
                     }
                 Text("juz")
                     .font(.title2)
@@ -45,9 +45,18 @@ struct JuzRowView: View {
 struct JuzRowView_Previews: PreviewProvider {
     static var previews: some View {
         List{
+            JuzRowView(item: JuzModel(index: 1, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "2",type: "Makkiyah")]), hiddenBar: .constant(false))
+            JuzRowView(item: JuzModel(index: 1, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "2",type: "Makkiyah")]), hiddenBar: .constant(false))
+            JuzRowView(item: JuzModel(index: 2, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "1",type: "Makkiyah")]), hiddenBar: .constant(false))
+            JuzRowView(item: JuzModel(index: 5, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "9",type: "Makkiyah")]), hiddenBar: .constant(false))
+            JuzRowView(item: JuzModel(index: 17, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "1",type: "Makkiyah")]), hiddenBar: .constant(false))
+            JuzRowView(item: JuzModel(index: 0, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "4",type: "Makkiyah")]), hiddenBar: .constant(false))
+            JuzRowView(item: JuzModel(index: 04, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "6",type: "Makkiyah")]), hiddenBar: .constant(false))
+            JuzRowView(item: JuzModel(index: 12, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "12",type: "Makkiyah")]), hiddenBar: .constant(false))
+            JuzRowView(item: JuzModel(index: 12, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "12",type: "Makkiyah")]), hiddenBar: .constant(false))
             JuzRowView(item: JuzModel(index: 12, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "12",type: "Makkiyah")]), hiddenBar: .constant(false))
         }
         .environmentObject(LanguageViewModel())
-        .environment(\.locale, Locale.init(identifier: "ar"))
+        .environment(\.locale, Locale.init(identifier: "ru"))
     }
 }

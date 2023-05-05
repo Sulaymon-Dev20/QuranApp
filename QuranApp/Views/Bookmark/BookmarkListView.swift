@@ -17,14 +17,18 @@ struct BookmarkListView: View {
         if !list.isEmpty {
             List {
                 ForEach(list) { item in
-                    NavigationLink(destination:
-                                    PDFViewUI(pageNumber: item.pageNumber, permessionBookmarkButton: true, hiddenBar: $hiddenBar)
-                        .onAppear {
-                            self.hiddenBar = true
+                    BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
+                        .overlay{
+                            NavigationLink(destination:
+                                            PDFViewUI(pageNumber: item.pageNumber, permessionBookmarkButton: true, hiddenBar: $hiddenBar)
+                                .onAppear {
+                                    self.hiddenBar = true
+                                }
+                            ) {
+                                Text(">>>")
+                            }
+                            .opacity(0)
                         }
-                    ) {
-                        BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
-                    }
                 }
                 .onDelete(perform: bookmarksViewModel.deleteItem)
                 .onMove(perform: bookmarksViewModel.moveItem)

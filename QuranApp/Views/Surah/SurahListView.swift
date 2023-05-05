@@ -23,7 +23,7 @@ struct SurahListView: View {
                                     self.hiddenBar = true
                                 }
                             ) {
-                                EmptyView()
+                                Text(">>>")
                             }
                             .opacity(0)
                         }
