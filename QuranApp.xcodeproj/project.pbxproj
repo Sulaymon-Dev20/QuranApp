@@ -41,7 +41,7 @@
 		CE7C85532A03AB0B00192CC5 /* ListEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85522A03AB0B00192CC5 /* ListEmptyView.swift */; };
 		CE7C85552A03AB4E00192CC5 /* BookmarkEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85542A03AB4E00192CC5 /* BookmarkEmptyView.swift */; };
 		CE7C85572A03AFAB00192CC5 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85562A03AFAA00192CC5 /* LanguageViewModel.swift */; };
-		CE9F8A7F2A05317300734387 /* JuzTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F8A7E2A05317300734387 /* JuzTestView.swift */; };
+		CE9F8A7F2A05317300734387 /* JuzCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9F8A7E2A05317300734387 /* JuzCalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +102,7 @@
 		CE7C85522A03AB0B00192CC5 /* ListEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmptyView.swift; sourceTree = "<group>"; };
 		CE7C85542A03AB4E00192CC5 /* BookmarkEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkEmptyView.swift; sourceTree = "<group>"; };
 		CE7C85562A03AFAA00192CC5 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
-		CE9F8A7E2A05317300734387 /* JuzTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuzTestView.swift; sourceTree = "<group>"; };
+		CE9F8A7E2A05317300734387 /* JuzCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuzCalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,8 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				CE7C854A2A03A5C300192CC5 /* JuzRowView.swift */,
+				CE9F8A7E2A05317300734387 /* JuzCalendarView.swift */,
 				CE7C85462A039B0C00192CC5 /* JuzView.swift */,
-				CE9F8A7E2A05317300734387 /* JuzTestView.swift */,
 			);
 			path = Juz;
 			sourceTree = "<group>";
@@ -433,7 +433,7 @@
 				CE7C854F2A03A7FA00192CC5 /* BookmarkRowView.swift in Sources */,
 				CE7C85392A0396CB00192CC5 /* FileReader.swift in Sources */,
 				CE7C85472A039B0C00192CC5 /* JuzView.swift in Sources */,
-				CE9F8A7F2A05317300734387 /* JuzTestView.swift in Sources */,
+				CE9F8A7F2A05317300734387 /* JuzCalendarView.swift in Sources */,
 				CE7C85242A03936300192CC5 /* JuzModel.swift in Sources */,
 				CE7C85532A03AB0B00192CC5 /* ListEmptyView.swift in Sources */,
 				CE7C85552A03AB4E00192CC5 /* BookmarkEmptyView.swift in Sources */,

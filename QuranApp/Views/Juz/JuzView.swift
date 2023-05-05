@@ -27,7 +27,7 @@ struct JuzView: View {
                                 }
                             }
                         } else{
-                            JuzTestView(item: datas.items, hiddenBar: $hiddenBar)
+                            JuzCalendarView(item: datas.items, hiddenBar: $hiddenBar)
                         }
                     }
                     .navigationBarTitleDisplayMode(.inline)

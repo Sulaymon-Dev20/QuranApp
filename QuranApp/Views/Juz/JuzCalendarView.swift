@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct JuzTestView: View {
+struct JuzCalendarView: View {
     let item:[JuzModel]
     @Binding var hiddenBar: Bool
     @State private var isLoading = false
@@ -23,25 +23,31 @@ struct JuzTestView: View {
                 ForEach(0..<(item.count / 5), id: \.self) { i in
                     HStack{
                         ForEach(0..<5) { i2 in
-                            VStack {
-                                Image(systemName: "app")
-                                    .font(.system(size: 50.0))
-                                    .overlay {
-                                        Text("\(item[(i * 5) + i2].index)")
-                                            .font(.system(size: 22.0))
-                                    }
-                                    .contextMenu{
-                                        ForEach(item[(i * 5) + i2].surahs, id: \.index) {surahs in
-                                            NavigationLink(destination: PDFViewUI(pageNumber: (surahs.pageNumber as NSString).integerValue, hiddenBar: $hiddenBar)
-                                                .onAppear {
-                                                    self.hiddenBar = true
+                            NavigationLink(destination: PDFViewUI(pageNumber: item[(i * 5) + i2].page, hiddenBar: $hiddenBar)
+                                .onAppear {
+                                    self.hiddenBar = true
+                                }
+                            ) {
+                                VStack {
+                                    Image(systemName: "app")
+                                        .font(.system(size: 50.0))
+                                        .overlay {
+                                            Text("\(item[(i * 5) + i2].index)")
+                                                .font(.system(size: 22.0))
+                                        }
+                                        .contextMenu{
+                                            ForEach(item[(i * 5) + i2].surahs, id: \.index) {surahs in
+                                                NavigationLink(destination: PDFViewUI(pageNumber: (surahs.pageNumber as NSString).integerValue, hiddenBar: $hiddenBar)
+                                                    .onAppear {
+                                                        self.hiddenBar = true
+                                                    }
+                                                ) {
+                                                    Label(LocalizedStringKey(surahs.title.lowercased().replacingOccurrences(of: "-", with: "_")), systemImage: surahs.type == "Makkiyah" ? "moon.fill" : "sun.max.fill")
                                                 }
-                                            ) {
-                                                Label(LocalizedStringKey(surahs.title.lowercased().replacingOccurrences(of: "-", with: "_")), systemImage: surahs.type == "Makkiyah" ? "moon.fill" : "sun.max.fill")
                                             }
                                         }
-                                    }
-                                    .padding(.bottom, 11)
+                                        .padding(.bottom, 11)
+                                }
                             }
                         }
                     }
@@ -51,10 +57,10 @@ struct JuzTestView: View {
     }
 }
 
-struct JuzTestView_Previews: PreviewProvider {
+struct JuzCalendarView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            JuzTestView(item: [
+            JuzCalendarView(item: [
                 JuzModel(index: 1, page: 1, surahs: []),
                 JuzModel(index: 2, page: 1, surahs: []),
                 JuzModel(index: 3, page: 1, surahs: []),
