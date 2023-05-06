@@ -10,45 +10,46 @@ import SwiftUI
 struct SurahView: View {
     @ObservedObject var datas = SurahViewModel()
     
-    @State private var searchBarStatus = false
-    @State private var searchFilter: String = ""
+    @State private var searchText: String = ""
+
+    @State var sort: Bool = false
+    @State var degree: Double = 0
+
     @Binding var selectedTab: Int
     @Binding var hiddenBar: Bool
     
     var body: some View {
         NavigationStack {
-            SurahListView(list: filterData(),hiddenBar: $hiddenBar)
+            SurahListView(list: sort ? filterData().reversed() : filterData(), hiddenBar: $hiddenBar)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar(hiddenBar ? .hidden : .visible, for: .tabBar)
+                .navigationTitle("surahs")
                 .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        if searchBarStatus {
-                            TextField("search_surah", text: $searchFilter)
-                        } else{
-                            Text("surahs")
-                        }
-                    }
                     ToolbarItem(placement: .navigationBarLeading) {
                         LanguageButtonView()
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                            if searchBarStatus {
-                                searchFilter = ""
+                            withAnimation {
+                                self.sort = !sort
+                                degree += 180
                             }
-                            searchBarStatus = !searchBarStatus
                         } label: {
-                            Image(systemName: searchBarStatus ? "trash.slash.fill" : "magnifyingglass")
+                            Image(systemName: "arrow.up")
+                                .rotationEffect(.degrees(degree))
+                                .animation(.linear(duration: 0.3), value: sort)
+                            
                         }
                     }
                 }
+                .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_surah"))
         }
     }
     
     func filterData() -> [SurahModel] {
-        if searchFilter.count > 0 {
+        if searchText.count > 0 {
             return datas.items.filter { item in
-                item.toString().lowercased().contains(searchFilter.lowercased())
+                item.toString().lowercased().contains(searchText.lowercased())
             }
         } else {
             return datas.items

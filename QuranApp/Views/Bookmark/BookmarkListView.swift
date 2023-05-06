@@ -37,7 +37,6 @@ struct BookmarkListView: View {
                             }
                             .tint(.red)
                         }
-                    
                 }
                 .onDelete(perform: bookmarksViewModel.deleteItem)
                 .onMove(perform: bookmarksViewModel.moveItem)

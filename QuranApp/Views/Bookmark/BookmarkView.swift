@@ -10,7 +10,6 @@ import SwiftUI
 struct BookmarkView: View {
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
 
-    @State private var searchBarStatus = false
     @State private var searchText: String = ""
 
     @State var sort: Bool = false
@@ -21,30 +20,29 @@ struct BookmarkView: View {
         
     var body: some View {
         NavigationStack {
-            BookmarkListView(list: filterData(), selectedTab: $selectedTab, hiddenBar: $hiddenBar)
+            BookmarkListView(list: sort ? filterData() : filterData().reversed(), selectedTab: $selectedTab, hiddenBar: $hiddenBar)
                 .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("bookmarks")
                 .toolbar(hiddenBar ? .hidden : .visible, for: .tabBar)
                 .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Text("bookmarks")
-                    }
                     ToolbarItem(placement: .navigationBarLeading) {
                         LanguageButtonView()
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        if !bookmarksViewModel.items.isEmpty{
-                            Button {
-                                if searchBarStatus {
-                                    searchText = ""
-                                }
-                                searchBarStatus = !searchBarStatus
-                            } label: {
-                                Image(systemName: searchBarStatus ? "trash.slash.fill" : "magnifyingglass")
+                        Button {
+                            withAnimation {
+                                self.sort = !sort
+                                degree += 180
                             }
+                        } label: {
+                            Image(systemName: "arrow.up")
+                                .rotationEffect(.degrees(degree))
+                                .animation(.linear(duration: 0.3), value: sort)
+                            
                         }
                     }
                 }
-//                .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_bookmark"))
+                .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_bookmark"))
         }
     }
     
