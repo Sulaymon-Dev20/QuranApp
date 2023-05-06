@@ -20,7 +20,7 @@ struct BookmarkListView: View {
                     BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
                         .overlay{
                             NavigationLink(destination:
-                                            PDFViewUI(pageNumber: item.pageNumber, permessionBookmarkButton: true, hiddenBar: $hiddenBar)
+                                            PDFViewUI(pageNumber: item.pageNumber, hiddenBar: $hiddenBar)
                                 .onAppear {
                                     self.hiddenBar = true
                                 }

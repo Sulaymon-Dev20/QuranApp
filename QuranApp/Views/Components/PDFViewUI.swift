@@ -10,7 +10,6 @@ import SwiftUI
 struct PDFViewUI: View {
     
     @State var pageNumber: Int
-    @State var permessionBookmarkButton: Bool = false
     @Binding var hiddenBar: Bool
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @ObservedObject var datas = SurahViewModel()
@@ -39,9 +38,6 @@ struct PDFViewUI: View {
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    if permessionBookmarkButton {
-                        self.hiddenBar = false
-                    }
                     bookmarksViewModel.saveOrDelete(item: getSurahByPage(page: pageNumber))
                 } label: {
                     Image(systemName: bookmarksViewModel.getPages().contains(pageNumber) ? "bookmark.slash.fill" : "bookmark.fill")
