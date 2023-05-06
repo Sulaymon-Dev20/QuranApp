@@ -57,7 +57,9 @@ struct BookmarkListView: View {
 
 struct BookmarkListView_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarkListView(list: [], selectedTab: .constant(1), hiddenBar: .constant(false))
-            .environmentObject(BookMarkViewModel())
+        NavigationStack {
+            BookmarkListView(list: [], selectedTab: .constant(1), hiddenBar: .constant(false))
+                .environmentObject(BookMarkViewModel())
+        }
     }
 }

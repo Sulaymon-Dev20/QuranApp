@@ -14,7 +14,6 @@ struct JuzView: View {
     @Binding var hiddenBar: Bool
     @State var sort: Bool = false
     @State var degree: Double = 0
-    let device:String = UIDevice.current.model
     
     var body: some View {
         NavigationStack {

@@ -25,24 +25,7 @@ struct SurahView: View {
                         if searchBarStatus {
                             TextField("search_surah", text: $searchFilter)
                         } else{
-                            if UIDevice.current.model == "iPad" {
-                                Menu {
-                                    Button {
-                                        selectedTab = 1
-                                    } label: {
-                                        Text("juz")
-                                    }
-                                    Button {
-                                        selectedTab = 2
-                                    } label: {
-                                        Text("bookmarks")
-                                    }
-                                } label: {
-                                    Text("surahs")
-                                }
-                            } else {
-                                Text("surahs")
-                            }
+                            Text("surahs")
                         }
                     }
                     ToolbarItem(placement: .navigationBarLeading) {

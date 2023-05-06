@@ -13,7 +13,7 @@ struct JuzCalendarView: View {
     @State private var isLoading = false
     var body: some View {
         VStack {
-            Text("Juz")
+            Text("juz")
                 .font(.title)
                 .bold()
                 .padding(.bottom)
