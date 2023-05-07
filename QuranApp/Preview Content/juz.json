@@ -39,7 +39,7 @@
         } ]
     }, {
         "index" : 3,
-        "page" : 42,
+        "page" : 40,
         "surahs" : [ {
             "pageNumber" : "2",
             "type" : "Madaniyah",
@@ -63,7 +63,7 @@
         } ]
     }, {
         "index" : 4,
-        "page" : 62,
+        "page" : 60,
         "surahs" : [ {
             "pageNumber" : "45",
             "type" : "Madaniyah",
@@ -87,7 +87,7 @@
         } ]
     }, {
         "index" : 5,
-        "page" : 82,
+        "page" : 80,
         "surahs" : [ {
             "pageNumber" : "69",
             "type" : "Madaniyah",
@@ -101,7 +101,7 @@
         } ]
     }, {
         "index" : 6,
-        "page" : 102,
+        "page" : 98,
         "surahs" : [ {
             "pageNumber" : "69",
             "type" : "Madaniyah",
@@ -125,7 +125,7 @@
         } ]
     }, {
         "index" : 7,
-        "page" : 121,
+        "page" : 119,
         "surahs" : [ {
             "pageNumber" : "95",
             "type" : "Madaniyah",
@@ -149,7 +149,7 @@
         } ]
     }, {
         "index" : 8,
-        "page" : 142,
+        "page" : 141,
         "surahs" : [ {
             "pageNumber" : "115",
             "type" : "Makkiyah",
@@ -197,7 +197,7 @@
         } ]
     }, {
         "index" : 10,
-        "page" : 182,
+        "page" : 181,
         "surahs" : [ {
             "pageNumber" : "160",
             "type" : "Madaniyah",
@@ -221,7 +221,7 @@
         } ]
     }, {
         "index" : 11,
-        "page" : 201,
+        "page" : 200,
         "surahs" : [ {
             "pageNumber" : "169",
             "type" : "Madaniyah",
@@ -255,7 +255,7 @@
         } ]
     }, {
         "index" : 12,
-        "page" : 222,
+        "page" : 221,
         "surahs" : [ {
             "pageNumber" : "199",
             "type" : "Makkiyah",
@@ -337,7 +337,7 @@
         } ]
     }, {
         "index" : 15,
-        "page" : 282,
+        "page" : 281,
         "surahs" : [ {
             "pageNumber" : "255",
             "type" : "Makkiyah",
@@ -361,7 +361,7 @@
         } ]
     }, {
         "index" : 16,
-        "page" : 302,
+        "page" : 300,
         "surahs" : [ {
             "pageNumber" : "266",
             "type" : "Makkiyah",
@@ -395,7 +395,7 @@
         } ]
     }, {
         "index" : 17,
-        "page" : 322,
+        "page" : 321,
         "surahs" : [ {
             "pageNumber" : "294",
             "type" : "Makkiyah",
@@ -419,7 +419,7 @@
         } ]
     }, {
         "index" : 18,
-        "page" : 342,
+        "page" : 340,
         "surahs" : [ {
             "pageNumber" : "311",
             "type" : "Makkiyah",

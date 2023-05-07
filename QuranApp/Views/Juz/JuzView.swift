@@ -25,7 +25,7 @@ struct JuzView: View {
                         }
                     }
                 } else {
-                    JuzCalendarView(item: datas.items, hiddenBar: $hiddenBar)
+                    JuzCalendarView(item: sort ? datas.items.reversed() : datas.items, hiddenBar: $hiddenBar)
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
@@ -36,25 +36,24 @@ struct JuzView: View {
                         datas.changeView(status: !datas.showStatus)
                     } label: {
                         Text("juz")
+                            .bold()
                             .foregroundColor(Color.primary)
                     }
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
                     LanguageButtonView()
                 }
-                if datas.showStatus {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            withAnimation {
-                                self.sort = !sort
-                                degree += 180
-                            }
-                        } label: {
-                            Image(systemName: "arrow.up")
-                                .rotationEffect(.degrees(degree))
-                                .animation(.linear(duration: 0.3), value: sort)
-                            
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        withAnimation {
+                            self.sort = !sort
+                            degree += 180
                         }
+                    } label: {
+                        Image(systemName: "arrow.up")
+                            .rotationEffect(.degrees(degree))
+                            .animation(.linear(duration: 0.3), value: sort)
+                        
                     }
                 }
             }
