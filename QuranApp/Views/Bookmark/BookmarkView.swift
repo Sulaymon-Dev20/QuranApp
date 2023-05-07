@@ -20,7 +20,7 @@ struct BookmarkView: View {
         
     var body: some View {
         NavigationStack {
-            BookmarkListView(list: sort ? filterData() : filterData().reversed(), selectedTab: $selectedTab, hiddenBar: $hiddenBar)
+            BookmarkListView(list: filterData(), selectedTab: $selectedTab, hiddenBar: $hiddenBar, sort: $sort, searchText: $searchText)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("bookmarks")
                 .toolbar(hiddenBar ? .hidden : .visible, for: .tabBar)
@@ -38,19 +38,19 @@ struct BookmarkView: View {
                             Image(systemName: "arrow.up")
                                 .rotationEffect(.degrees(degree))
                                 .animation(.linear(duration: 0.3), value: sort)
-                            
                         }
                     }
                 }
                 .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_bookmark"))
         }
+        .onDisappear {
+            searchText = ""
+        }
     }
     
     func filterData() -> [BookmarkModel] {
         if searchText.count > 0 {
-            return bookmarksViewModel.items.filter { item in
-                item.toString().lowercased().contains(searchText.lowercased())
-            }
+            return bookmarksViewModel.items.filter {$0.toString().lowercased().contains(searchText.lowercased())}
         } else {
             return bookmarksViewModel.items
         }

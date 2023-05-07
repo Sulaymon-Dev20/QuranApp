@@ -44,13 +44,14 @@ struct SurahView: View {
                 }
                 .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_surah"))
         }
+        .onDisappear {
+            searchText = ""
+        }
     }
     
     func filterData() -> [SurahModel] {
         if searchText.count > 0 {
-            return datas.items.filter { item in
-                item.toString().lowercased().contains(searchText.lowercased())
-            }
+            return datas.items.filter {$0.toString().lowercased().contains(searchText.lowercased())}
         } else {
             return datas.items
         }
@@ -62,6 +63,6 @@ struct SurahView_Previews: PreviewProvider {
         SurahView(selectedTab: .constant(0), hiddenBar: .constant(false))
             .environmentObject(BookMarkViewModel())
             .environmentObject(LanguageViewModel())
-//            .environment(\.locale, Locale.init(identifier: "uz"))
+            .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

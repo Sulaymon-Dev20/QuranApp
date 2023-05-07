@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct BookmarkListView: View {
+    @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
+
     let list: [BookmarkModel]
+
     @Binding var selectedTab: Int
     @Binding var hiddenBar: Bool
-    @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
-    
+    @Binding var sort: Bool
+    @Binding var searchText: String
+
     var body: some View {
         if !list.isEmpty {
             List {
-                ForEach(list) { item in
+                ForEach(sort ? list : list.reversed()) { item in
                     BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
                         .overlay{
                             NavigationLink(destination:
@@ -39,7 +43,13 @@ struct BookmarkListView: View {
                         }
                 }
                 .onDelete(perform: bookmarksViewModel.deleteItem)
-                .onMove(perform: bookmarksViewModel.moveItem)
+                .onMove { indexA, indexB in
+                    if searchText.count == 0 {
+                        var reversed = Array(sort ? list : list.reversed())
+                        reversed.move(fromOffsets: indexA, toOffset: indexB)
+                        bookmarksViewModel.items = sort ? reversed : reversed.reversed()
+                    }
+                }
             }
         } else {
             if bookmarksViewModel.items.isEmpty {
@@ -57,8 +67,8 @@ struct BookmarkListView: View {
 struct BookmarkListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            BookmarkListView(list: [], selectedTab: .constant(1), hiddenBar: .constant(false))
-                .environmentObject(BookMarkViewModel())
+            BookmarkListView(list: BookMarkViewModel().items, selectedTab: .constant(1), hiddenBar: .constant(false),sort: .constant(false),searchText: .constant(""))
         }
+        .environmentObject(BookMarkViewModel())
     }
 }
