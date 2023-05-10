@@ -17,8 +17,6 @@ struct JuzCalendarView: View {
                 .font(.title)
                 .bold()
                 .padding(.bottom)
-//            Text("Juzs dsajf asdf jas dfasfdsadf")
-//                .font(.caption)
             VStack{
                 ForEach(0..<(item.count / 5), id: \.self) { i in
                     HStack{
