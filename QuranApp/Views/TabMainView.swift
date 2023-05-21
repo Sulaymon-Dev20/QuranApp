@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TabMainView: View {
     
+    @EnvironmentObject var launchScreenViewModel: LaunchScreenViewModel
+    
     @State var selectedTab: Int = 0
     @State var hiddenBar: Bool = false
     
@@ -34,12 +36,20 @@ struct TabMainView: View {
             .accentColor(Color.primary)
             .toolbarRole(ToolbarRole.automatic)
         }
+        .onAppear{
+            DispatchQueue
+                .main
+                .asyncAfter(deadline: .now() + 5) {
+                    launchScreenViewModel.dismiss()
+                }
+        }
     }
 }
 
 struct TabMainView_Previews: PreviewProvider {
     static var previews: some View {
         TabMainView()
+            .environmentObject(LaunchScreenViewModel())
             .environmentObject(BookMarkViewModel())
             .environmentObject(LanguageViewModel())
     }
