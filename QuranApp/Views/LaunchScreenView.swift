@@ -18,7 +18,13 @@ struct LaunchScreenView: View {
     var body: some View {
         ZStack {
             background
-            logo
+            VStack{
+                logo
+                Text("launchScreenTitle")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding(.top, -40)
+            }
         }.onReceive(timer) { input in
             switch launchScreenViewModel.state {
             case .first:
