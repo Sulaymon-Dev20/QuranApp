@@ -35,10 +35,7 @@ struct SurahRowView: View {
                     Spacer()
                 }
             }
-            Text("\((pageNumber as NSString).intValue)")
-                .font(.system(size: 22.0))
-                .opacity(0.5)
-                .bold()
+            .badge(Int((pageNumber as NSString).intValue))
         }
     }
 }

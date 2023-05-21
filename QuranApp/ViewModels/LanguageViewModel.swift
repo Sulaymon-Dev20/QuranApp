@@ -18,7 +18,7 @@ class LanguageViewModel: ObservableObject {
     }
     
     func getLanguage() {
-        let myString = UserDefaults.standard.object(forKey: languageKey) as? String
+        let myString = UserDefaults.standard.string(forKey: languageKey)
         self.language = myString ?? Locale.preferredLanguages[0]
     }
         

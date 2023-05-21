@@ -51,18 +51,19 @@ struct SurahView: View {
     
     func filterData() -> [SurahModel] {
         if searchText.count > 0 {
-            return datas.items.filter {$0.toString().lowercased().contains(searchText.lowercased())}
+            return datas.items.filter {
+                return LocalizedStringKey($0.title.lowercased().replacingOccurrences(of: "-", with: "_")).stringValue().lowercased().contains(searchText.lowercased())
+            }
         } else {
             return datas.items
         }
     }
-}
-
-struct SurahView_Previews: PreviewProvider {
-    static var previews: some View {
-        SurahView(selectedTab: .constant(0), hiddenBar: .constant(false))
-            .environmentObject(BookMarkViewModel())
-            .environmentObject(LanguageViewModel())
-            .environment(\.locale, Locale.init(identifier: "ar"))
+    
+    struct SurahView_Previews: PreviewProvider {
+        static var previews: some View {
+            SurahView(selectedTab: .constant(0), hiddenBar: .constant(false))
+                .environmentObject(BookMarkViewModel())
+                .environmentObject(LanguageViewModel())
+        }
     }
 }
