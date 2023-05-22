@@ -55,7 +55,7 @@ private extension LaunchScreenView {
     var logo:some View {
         Image("logo")
             .scaleEffect(firstPhaseIsAnimating ? 0.6 : 1)
-            .scaleEffect(secondPhaseIsAnimating ? UIScreen.main.bounds.height / 4 : 0.6)
+            .scaleEffect(secondPhaseIsAnimating ? UIScreen.main.bounds.height / 4 : 1)
     }
     
     var title:some View {
@@ -63,6 +63,6 @@ private extension LaunchScreenView {
             .font(.largeTitle)
             .bold()
             .padding(.top, -40)
-            .scaleEffect(secondPhaseIsAnimating ? UIScreen.main.bounds.height / 4 : 0.6)
+            .scaleEffect(secondPhaseIsAnimating ? UIScreen.main.bounds.height / 4 : 1)
     }
 }
