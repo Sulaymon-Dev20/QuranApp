@@ -20,10 +20,7 @@ struct LaunchScreenView: View {
             background
             VStack{
                 logo
-                Text("launchScreenTitle")
-                    .font(.largeTitle)
-                    .bold()
-                    .padding(.top, -40)
+                title
             }
         }.onReceive(timer) { input in
             switch launchScreenViewModel.state {
@@ -33,6 +30,7 @@ struct LaunchScreenView: View {
                 }
             case .second:
                 withAnimation {
+                    firstPhaseIsAnimating = true
                     secondPhaseIsAnimating.toggle()
                 }
             default: break
@@ -48,15 +46,23 @@ struct LaunchScreenView_Previews: PreviewProvider {
     }
 }
 
-private extension LaunchScreenView{
+private extension LaunchScreenView {
     var background:some View {
         Color("LaunchScreenBackground")
             .edgesIgnoringSafeArea(.all)
     }
     
-    var logo:some View{
+    var logo:some View {
         Image("logo")
             .scaleEffect(firstPhaseIsAnimating ? 0.6 : 1)
-            .scaleEffect(secondPhaseIsAnimating ? UIScreen.main.bounds.height / 4 : 1)
+            .scaleEffect(secondPhaseIsAnimating ? UIScreen.main.bounds.height / 4 : 0.6)
+    }
+    
+    var title:some View {
+        Text("launchScreenTitle")
+            .font(.largeTitle)
+            .bold()
+            .padding(.top, -40)
+            .scaleEffect(secondPhaseIsAnimating ? UIScreen.main.bounds.height / 4 : 0.6)
     }
 }
