@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - SurahElement
-struct SurahModel: Codable {
+struct SurahModel: Codable, Hashable {
     let place: Place
     let type: TypeEnum
     let count: Int
@@ -21,13 +21,13 @@ struct SurahModel: Codable {
 }
 
 // MARK: - Juz
-struct Juz: Codable {
+struct Juz: Codable, Hashable {
     let index: String
     let verse: Verse
 }
 
 // MARK: - Verse
-struct Verse: Codable {
+struct Verse: Codable, Hashable {
     let start, end: String
 }
 

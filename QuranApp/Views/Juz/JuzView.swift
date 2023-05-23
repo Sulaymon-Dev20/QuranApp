@@ -18,7 +18,7 @@ struct JuzView: View {
     var body: some View {
         NavigationStack {
             ZStack{
-                if datas.showStatus {
+                if !datas.showStatus {
                     List {
                         ForEach(sort ? datas.items.reversed() : datas.items, id: \.index) {item in
                             JuzRowView(item: item, hiddenBar: $hiddenBar)

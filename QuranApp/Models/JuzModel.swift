@@ -8,14 +8,14 @@
 import Foundation
 
 // MARK: - JuzElement
-struct JuzModel: Codable {
+struct JuzModel: Codable, Hashable {
     let index: Int
     let page: Int
     let surahs: [Surah]
 }
 
 // MARK: - Surah
-struct Surah: Codable {
+struct Surah: Codable, Hashable {
     let titleAr, title: String
     let index: Int
     let verse: VerseNew
@@ -24,6 +24,6 @@ struct Surah: Codable {
 }
 
 // MARK: - Verse
-struct VerseNew: Codable {
+struct VerseNew: Codable, Hashable {
     let start, end: Int
 }

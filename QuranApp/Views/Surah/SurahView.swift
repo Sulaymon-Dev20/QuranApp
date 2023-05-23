@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct SurahView: View {
-    @ObservedObject var datas = SurahViewModel()
     
-    @State private var searchText: String = ""
-
+    @EnvironmentObject var datas: SurahViewModel
+    @EnvironmentObject var routeManager: NavigationRouter
+    
+    @State var searchText: String = ""
     @State var sort: Bool = false
     @State var degree: Double = 0
-
+    
     @Binding var selectedTab: Int
     @Binding var hiddenBar: Bool
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $routeManager.path) {
             SurahListView(list: sort ? filterData().reversed() : filterData(), hiddenBar: $hiddenBar)
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar(hiddenBar ? .hidden : .visible, for: .tabBar)
@@ -38,11 +39,22 @@ struct SurahView: View {
                             Image(systemName: "arrow.up")
                                 .rotationEffect(.degrees(degree))
                                 .animation(.linear(duration: 0.3), value: sort)
-                            
                         }
                     }
                 }
                 .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_surah"))
+                .navigationDestination(for: Route.self) { route in
+                    switch route {
+                    case .surah(let item):
+                        switch item{
+                        default:
+                            PDFViewUI(pageNumber: ((item as SurahModel).pages as NSString).integerValue, hiddenBar: $hiddenBar)
+                                .onAppear {
+                                    self.hiddenBar = true
+                                }
+                        }
+                    }
+                }
         }
         .onDisappear {
             searchText = ""
@@ -62,8 +74,11 @@ struct SurahView: View {
     struct SurahView_Previews: PreviewProvider {
         static var previews: some View {
             SurahView(selectedTab: .constant(0), hiddenBar: .constant(false))
+                .environmentObject(SurahViewModel())
                 .environmentObject(BookMarkViewModel())
                 .environmentObject(LanguageViewModel())
+                .environmentObject(NavigationRouter())
         }
     }
 }
+

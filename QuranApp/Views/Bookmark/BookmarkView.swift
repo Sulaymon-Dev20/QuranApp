@@ -9,15 +9,15 @@ import SwiftUI
 
 struct BookmarkView: View {
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
-
+    
     @State private var searchText: String = ""
-
+    
     @State var sort: Bool = false
     @State var degree: Double = 0
-
+    
     @Binding var selectedTab: Int
     @Binding var hiddenBar: Bool
-        
+    
     var body: some View {
         NavigationStack {
             BookmarkListView(list: filterData(), selectedTab: $selectedTab, hiddenBar: $hiddenBar, sort: $sort, searchText: $searchText)

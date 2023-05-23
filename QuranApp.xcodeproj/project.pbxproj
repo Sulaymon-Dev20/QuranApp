@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE434ED82A1D098B003D83EE /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE434ED72A1D098B003D83EE /* NavigationRouter.swift */; };
+		CE7C32BE2A1C328500B2F8E3 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C32BD2A1C328500B2F8E3 /* SheetView.swift */; };
+		CE7C32C02A1C36DC00B2F8E3 /* NoficationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C32BF2A1C36DB00B2F8E3 /* NoficationsViewModel.swift */; };
+		CE7C32C22A1C3A1500B2F8E3 /* NotificatSurahViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C32C12A1C3A1500B2F8E3 /* NotificatSurahViewModel.swift */; };
+		CE7C32C42A1C3A5100B2F8E3 /* NotificatSurah.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C32C32A1C3A5100B2F8E3 /* NotificatSurah.swift */; };
 		CE7C84ED2A03924200192CC5 /* QuranAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C84EC2A03924200192CC5 /* QuranAppApp.swift */; };
 		CE7C84EF2A03924200192CC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C84EE2A03924200192CC5 /* ContentView.swift */; };
 		CE7C84F12A03924300192CC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE7C84F02A03924300192CC5 /* Assets.xcassets */; };
@@ -45,6 +50,7 @@
 		CEC1A6822A1ADA4100A10212 /* LaunchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A6812A1ADA4100A10212 /* LaunchScreenViewModel.swift */; };
 		CEC1A6872A1AE0BB00A10212 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A6862A1AE0BA00A10212 /* String.swift */; };
 		CEC1A6892A1AE0D700A10212 /* LocalizedStringKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A6882A1AE0D700A10212 /* LocalizedStringKey.swift */; };
+		CEF7754A2A1D53FF0048F8D2 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF775492A1D53FF0048F8D2 /* Route.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE434ED72A1D098B003D83EE /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		CE7C32BD2A1C328500B2F8E3 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		CE7C32BF2A1C36DB00B2F8E3 /* NoficationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoficationsViewModel.swift; sourceTree = "<group>"; };
+		CE7C32C12A1C3A1500B2F8E3 /* NotificatSurahViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificatSurahViewModel.swift; sourceTree = "<group>"; };
+		CE7C32C32A1C3A5100B2F8E3 /* NotificatSurah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificatSurah.swift; sourceTree = "<group>"; };
 		CE7C84E92A03924200192CC5 /* QuranApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7C84EC2A03924200192CC5 /* QuranAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranAppApp.swift; sourceTree = "<group>"; };
 		CE7C84EE2A03924200192CC5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -110,6 +121,7 @@
 		CEC1A6812A1ADA4100A10212 /* LaunchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewModel.swift; sourceTree = "<group>"; };
 		CEC1A6862A1AE0BA00A10212 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		CEC1A6882A1AE0D700A10212 /* LocalizedStringKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringKey.swift; sourceTree = "<group>"; };
+		CEF775492A1D53FF0048F8D2 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +222,7 @@
 				CE7C85332A0394F800192CC5 /* Bookmark */,
 				CE7C85342A03959A00192CC5 /* TabMainView.swift */,
 				CEC1A67F2A1AD85300A10212 /* LaunchScreenView.swift */,
+				CEF775492A1D53FF0048F8D2 /* Route.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,7 +236,10 @@
 				CE7C852D2A03945B00192CC5 /* JuzViewModel.swift */,
 				CE7C852F2A03947C00192CC5 /* BookmarkViewModel.swift */,
 				CE7C85562A03AFAA00192CC5 /* LanguageViewModel.swift */,
+				CE7C32C12A1C3A1500B2F8E3 /* NotificatSurahViewModel.swift */,
 				CEC1A6812A1ADA4100A10212 /* LaunchScreenViewModel.swift */,
+				CE7C32BF2A1C36DB00B2F8E3 /* NoficationsViewModel.swift */,
+				CE434ED72A1D098B003D83EE /* NavigationRouter.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -234,6 +250,7 @@
 				CE7C85212A03934200192CC5 /* SurahModel.swift */,
 				CE7C85232A03936300192CC5 /* JuzModel.swift */,
 				CE7C85252A03938900192CC5 /* BookmarkModel.swift */,
+				CE7C32C32A1C3A5100B2F8E3 /* NotificatSurah.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -275,6 +292,7 @@
 				CE7C853E2A03978300192CC5 /* PDFViewUI.swift */,
 				CE7C85442A0399A000192CC5 /* LanguageButtonView.swift */,
 				CE7C85522A03AB0B00192CC5 /* ListEmptyView.swift */,
+				CE7C32BD2A1C328500B2F8E3 /* SheetView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -436,10 +454,14 @@
 			files = (
 				CE7C853B2A0396E600192CC5 /* PDFViewer.swift in Sources */,
 				CEC1A6822A1ADA4100A10212 /* LaunchScreenViewModel.swift in Sources */,
+				CE7C32C02A1C36DC00B2F8E3 /* NoficationsViewModel.swift in Sources */,
+				CE7C32BE2A1C328500B2F8E3 /* SheetView.swift in Sources */,
 				CE7C853F2A03978300192CC5 /* PDFViewUI.swift in Sources */,
 				CE7C84EF2A03924200192CC5 /* ContentView.swift in Sources */,
 				CE7C85222A03934200192CC5 /* SurahModel.swift in Sources */,
 				CE7C85282A0393B500192CC5 /* SurahViewModel.swift in Sources */,
+				CEF7754A2A1D53FF0048F8D2 /* Route.swift in Sources */,
+				CE7C32C22A1C3A1500B2F8E3 /* NotificatSurahViewModel.swift in Sources */,
 				CE7C85452A0399A000192CC5 /* LanguageButtonView.swift in Sources */,
 				CE7C85492A03A35D00192CC5 /* SurahListView.swift in Sources */,
 				CE7C85412A0398CD00192CC5 /* SurahRowView.swift in Sources */,
@@ -456,12 +478,14 @@
 				CE9F8A7F2A05317300734387 /* JuzCalendarView.swift in Sources */,
 				CE7C85242A03936300192CC5 /* JuzModel.swift in Sources */,
 				CE7C85532A03AB0B00192CC5 /* ListEmptyView.swift in Sources */,
+				CE434ED82A1D098B003D83EE /* NavigationRouter.swift in Sources */,
 				CE7C85552A03AB4E00192CC5 /* BookmarkEmptyView.swift in Sources */,
 				CE7C854D2A03A7BF00192CC5 /* BookmarkView.swift in Sources */,
 				CE7C85512A03A88300192CC5 /* BookmarkListView.swift in Sources */,
 				CEC1A6892A1AE0D700A10212 /* LocalizedStringKey.swift in Sources */,
 				CE7C85262A03938900192CC5 /* BookmarkModel.swift in Sources */,
 				CE7C852E2A03945B00192CC5 /* JuzViewModel.swift in Sources */,
+				CE7C32C42A1C3A5100B2F8E3 /* NotificatSurah.swift in Sources */,
 				CEC1A6802A1AD85300A10212 /* LaunchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,6 +666,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuranApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -672,6 +697,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuranApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;

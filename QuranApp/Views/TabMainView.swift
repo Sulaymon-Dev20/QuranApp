@@ -10,8 +10,8 @@ import SwiftUI
 struct TabMainView: View {
     
     @EnvironmentObject var launchScreenViewModel: LaunchScreenViewModel
-    
-    @State var selectedTab: Int = 0
+
+    @Binding var selectedTab: Int
     @State var hiddenBar: Bool = false
     
     var body: some View {
@@ -48,9 +48,13 @@ struct TabMainView: View {
 
 struct TabMainView_Previews: PreviewProvider {
     static var previews: some View {
-        TabMainView()
+        TabMainView(selectedTab: .constant(0))
+            .environmentObject(SurahViewModel())
             .environmentObject(LaunchScreenViewModel())
             .environmentObject(BookMarkViewModel())
+            .environmentObject(NoficationsViewModel())
             .environmentObject(LanguageViewModel())
+            .environmentObject(NavigationRouter())
+        
     }
 }
