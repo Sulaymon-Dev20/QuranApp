@@ -6,46 +6,69 @@
 //
 
 import SwiftUI
+import Adhan
 
 struct SheetView: View {
-
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
     @StateObject var noficationsViewModel = NoficationsViewModel()
-
-    @State var date:Date = Date()
-    @State var selection = "Off"
-    @State var onlyToday: Bool = true
+    @StateObject var prayerTimeViewModel = PrayerTimeViewModel()
+    
+    @State var date: Date = Date()
     @State var everyDay: Bool = false
-
+    @State var location: Bool = false
+    @State var showAlert: Bool = false
+    
     let surah: SurahModel
     let calendar = Calendar.current
-
+    
     var body: some View {
+        let data = prayerTimeViewModel.getPrayTime(time: Date(), madhab: .hanafi)
+        
+        let pref = Binding<Date>(
+            get: {
+                date
+            },
+            set: {
+                if location {
+                    date = $0
+                } else {
+                    showAlert.toggle()
+                }
+            }
+        )
+        
         VStack{
             Text("Natification Settings")
                 .bold()
                 .font(.title)
+            
             Text("\(calendar.component(.hour, from: date)): \(calendar.component(.minute, from: date))")
                 .font(.largeTitle)
                 .padding(.bottom,40)
-            DatePicker(surah.title, selection: $date,displayedComponents: [.hourAndMinute])
-            Picker("Vaqtini tanlang", selection: $selection, content: {
-                Text("\(calendar.component(.hour, from: date)): \(calendar.component(.minute, from: date))")
-                    .tag("Off")
-                Text("Bomdod")
-                    .tag("bomdod")
-                Text("Peshin")
-                    .tag("peshin")
-                Text("Asr")
-                    .tag("asr")
-                Text("Shom")
-                    .tag("shom")
-                Text("Hufton")
-                    .tag("hufton")
+            
+            DatePicker(surah.title, selection: $date, displayedComponents: [.hourAndMinute])
+            
+            Picker("Vaqtini tanlang", selection: pref, content: {
+                ForEach(0..<data.count, id: \.self) { index in
+                    Text(data[index].name)
+                        .tag(data[index].time)
+                }
             })
+            .alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text("Notication allow"),
+                    message: Text("open and allow notification please"),
+                    primaryButton: .destructive(Text("Cancel")),
+                    secondaryButton: .default(
+                        Text("Allow"),
+                        action: {
+                            print("asdf")
+                        }
+                    )
+                )
+            }
             .padding(.bottom,20)
             .pickerStyle(SegmentedPickerStyle())
-            Toggle("Faqat bir kun", isOn: $onlyToday)
             Toggle("Har kuni", isOn: $everyDay)
             Spacer()
             HStack{

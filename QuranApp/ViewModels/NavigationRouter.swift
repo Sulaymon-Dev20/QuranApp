@@ -9,7 +9,6 @@ import Foundation
 
 class NavigationRouter: ObservableObject {
     
-//    @Published var path = NavigationPath()
     @Published var path = [Route]()
 
     func gotoHomePage() {
@@ -17,9 +16,9 @@ class NavigationRouter: ObservableObject {
     }
 
     func push(to item: Route) {
-//        if !path.contains(item) {
+        if !path.contains(item) {
             path.append(item)
-//        }
+        }
     }
 
     func tapOnSecondPage() {
