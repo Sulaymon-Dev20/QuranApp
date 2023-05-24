@@ -43,8 +43,8 @@ class BookMarkViewModel: ObservableObject {
     }
     
     func saveOrDelete(item: BookmarkModel) {
-        if items.contains(where: { $0.pageNumber == item.pageNumber}) {
-            items = items.filter {$0.pageNumber != item.pageNumber}
+        if items.contains(where: { $0.id == item.id}) {
+            items.removeAll { $0.id == item.id }
         } else {
             items.append(item)
         }

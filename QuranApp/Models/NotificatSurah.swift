@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct NotificatSurah: Codable, Identifiable {
-    var id: String
+struct NotificatSurah: Codable {
+    let id: String
     let time: Date
     let title, juz: String
     let pageNumber: Int

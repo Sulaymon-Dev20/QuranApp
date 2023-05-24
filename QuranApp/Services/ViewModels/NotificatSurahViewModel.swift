@@ -29,6 +29,10 @@ class NotificatSurahViewModel: ObservableObject {
         self.items = saveItems
     }
     
+    func getIds() -> [String]{
+        return items.map{ $0.id }
+    }
+
     func deleteItem(indexSet: IndexSet) {
         items.remove(atOffsets: indexSet)
         saveStorage()
@@ -44,8 +48,8 @@ class NotificatSurahViewModel: ObservableObject {
     }
     
     func saveOrDelete(item: NotificatSurah) {
-        if items.contains(where: { $0.time == item.time}) {
-            items = items.filter {$0.time != item.time}
+        if items.contains(where: { $0.id == item.id}) {
+            items = items.filter {$0.id != item.id}
         } else {
             items.append(item)
         }

@@ -11,11 +11,13 @@ struct SurahListView: View {
     
     let list: [SurahModel]
     
-    @StateObject var noficationsViewModel = NoficationsManager()
+    @StateObject var noficationsManager = NoficationsManager()
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
-
+    @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
+    
     @State var nativationStatus: Bool = false
     @State var nativationAlert: Bool = false
+    @State var index: SurahModel = SurahModel(place: Place.medina, type: TypeEnum.makkiyah, count: 3, title: "String", titleAr: "", index: "001", pages: "001", juz: [])
     
     var body: some View {
         if !list.isEmpty {
@@ -43,9 +45,6 @@ struct SurahListView: View {
                                 )
                             )
                         }
-                        .sheet(isPresented: $nativationStatus) {
-                            SheetView(surah: item)
-                        }
                         .swipeActions(edge: .trailing) {
                             let status = bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue)
                             Button {
@@ -56,24 +55,32 @@ struct SurahListView: View {
                             .tint(status ? .red : .green)
                         }
                         .swipeActions(edge: .leading) {
+                            let isItemExist = notificatSurahViewModel.getIds().contains(item.index)
                             Button {
+                                self.index = item
+                                print(notificatSurahViewModel.getIds())
+                                print(item.index)
+                                print(isItemExist)
                                 Task {
-                                    await noficationsViewModel.request()
+                                    await noficationsManager.request()
                                 }
-                                if noficationsViewModel.hasPermission {
+                                if noficationsManager.hasPermission {
                                     nativationStatus.toggle()
                                 } else {
                                     nativationAlert.toggle()
                                 }
                             } label: {
-                                Label("Choose", systemImage: noficationsViewModel.hasPermission ? nativationStatus ? "clock.badge.xmark" : "clock.badge.checkmark" : "clock.badge.xmark")
+                                Label("Choose", systemImage: noficationsManager.hasPermission ? isItemExist ? "clock.badge.xmark" : "clock.badge.checkmark" : "clock.badge.xmark")
                             }
-                            .tint(noficationsViewModel.hasPermission ? nativationStatus ?  .red : .green : .none)
+                            .tint(noficationsManager.hasPermission ? isItemExist ? .red : .green : .none)
                         }
                 }
             }
+            .sheet(isPresented: $nativationStatus) {
+                SheetView(surah: index)
+            }
         } else {
-//            ListEmptyView()
+            ListEmptyView()
         }
     }
 }
@@ -82,5 +89,6 @@ struct SurahListView_Previews: PreviewProvider {
     static var previews: some View {
         SurahListView(list: [SurahModel(place: Place.mecca, type: TypeEnum.makkiyah, count: 22, title: "al_fatiha", titleAr: "String", index: "12", pages: "12", juz: [])])
             .environmentObject(BookMarkViewModel())
+            .environmentObject(NotificatSurahViewModel())
     }
 }

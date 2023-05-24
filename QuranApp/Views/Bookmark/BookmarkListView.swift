@@ -20,7 +20,7 @@ struct BookmarkListView: View {
     var body: some View {
         List {
             Section("Bookmark") {
-                if list.isEmpty {
+                if !list.isEmpty {
                     ForEach(sort ? list : list.reversed()) { item in
                         BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
                             .overlay{
@@ -61,15 +61,14 @@ struct BookmarkListView: View {
             }
             Section("Notifications") {
                 if !notificatSurahViewModel.items.isEmpty {
-                    ForEach(notificatSurahViewModel.items) { item in
-                        Text(item.title)
+                    ForEach(notificatSurahViewModel.items, id: \.id) { item in
+                        Toggle(isOn: .constant(false)) {
+                            Text(item.title)
+                        }
                     }
                     .onDelete(perform: notificatSurahViewModel.deleteItem)
                 } else {
                     BookmarkEmptyView()
-                        .onTapGesture {
-                            routerManager.pushTab(to: 0)
-                        }
                         .frame(maxWidth: .infinity)
                 }
             }
@@ -80,7 +79,7 @@ struct BookmarkListView: View {
 struct BookmarkListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            BookmarkListView(list: BookMarkViewModel().items, sort: .constant(false), searchText: .constant(""))
+            BookmarkListView(list: [], sort: .constant(false), searchText: .constant(""))
         }
         .environmentObject(BookMarkViewModel())
         .environmentObject(RouterManager())

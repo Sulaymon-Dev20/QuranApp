@@ -98,6 +98,8 @@ struct SheetView: View {
                 }
                 Spacer()
                 Button {
+                    print(surah.index)
+                    print("--------")
                     let item = NotificatSurah(id: surah.index, time: self.date, title: surah.title, juz: surah.juz[0].index, pageNumber: (surah.pages as NSString).integerValue)
                     notificatSurahViewModel.saveOrDelete(item: item)
                     noficationsManager.pushNotication(
@@ -108,6 +110,7 @@ struct SheetView: View {
                         repeats: everyDay,
                         date: date
                     )
+                    dismiss()
                 } label: {
                     Text("Save")
                         .bold()
