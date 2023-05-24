@@ -14,7 +14,7 @@ enum Route: Hashable {
         hasher.combine(self.hashValue)
     }
     
-    static func == (lhs:Route,rhs:Route) -> Bool {
+    static func == (lhs:Route, rhs:Route) -> Bool {
         switch (lhs, rhs){
         case (.surah(let lhsItem),.surah(let rhsItem)):
             return lhsItem.hashValue == rhsItem.hashValue

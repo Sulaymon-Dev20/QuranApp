@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedTab: Int = 0
-    
     var body: some View {
-        TabMainView(selectedTab: $selectedTab)
+        TabMainView()
     }
 }
 
@@ -23,6 +21,6 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(LanguageViewModel())
             .environmentObject(BookMarkViewModel())
             .environmentObject(NotificatSurahViewModel())
-            .environmentObject(NavigationRouter())
+            .environmentObject(RouterManager())
     }
 }

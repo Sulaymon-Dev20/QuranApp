@@ -7,9 +7,11 @@
 
 import Foundation
 
-class NavigationRouter: ObservableObject {
+class RouterManager: ObservableObject {
     
     @Published var path = [Route]()
+    @Published var tabValue: Int = 0
+    @Published var tabBarHideStatus: Bool = false
 
     func gotoHomePage() {
         path.removeLast(path.count)
@@ -23,5 +25,13 @@ class NavigationRouter: ObservableObject {
 
     func tapOnSecondPage() {
         path.removeLast()
+    }
+    
+    func pushTab(to item: Int) {
+        tabValue = item
+    }
+    
+    func tabBarHide(status: Bool) {
+        tabBarHideStatus = status
     }
 }

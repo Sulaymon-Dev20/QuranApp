@@ -9,21 +9,19 @@ import SwiftUI
 
 struct BookmarkView: View {
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
-    
-    @State private var searchText: String = ""
+    @EnvironmentObject var routerManager: RouterManager
+
+    @State var searchText: String = ""
     
     @State var sort: Bool = false
     @State var degree: Double = 0
     
-    @Binding var selectedTab: Int
-    @Binding var hiddenBar: Bool
-    
     var body: some View {
         NavigationStack {
-            BookmarkListView(list: filterData(), selectedTab: $selectedTab, hiddenBar: $hiddenBar, sort: $sort, searchText: $searchText)
+            BookmarkListView(list: filterData(), sort: $sort, searchText: $searchText)
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("bookmarks")
-                .toolbar(hiddenBar ? .hidden : .visible, for: .tabBar)
+                .toolbar(routerManager.tabBarHideStatus ? .hidden : .visible, for: .tabBar)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         LanguageButtonView()
@@ -59,9 +57,10 @@ struct BookmarkView: View {
 
 struct BookmarkView_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarkView(selectedTab: .constant(1), hiddenBar: .constant(false))
+        BookmarkView()
             .environmentObject(BookMarkViewModel())
             .environmentObject(LanguageViewModel())
+            .environmentObject(RouterManager())
         //            .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

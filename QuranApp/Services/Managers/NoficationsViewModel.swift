@@ -9,7 +9,7 @@ import SwiftUI
 import UserNotifications
 
 @MainActor
-class NoficationsViewModel: ObservableObject {
+class NoficationsManager: ObservableObject {
     
     @Published private(set) var hasPermission:Bool = false
     

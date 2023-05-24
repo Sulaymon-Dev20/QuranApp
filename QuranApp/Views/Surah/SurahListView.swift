@@ -11,14 +11,11 @@ struct SurahListView: View {
     
     let list: [SurahModel]
     
-    @StateObject var noficationsViewModel = NoficationsViewModel()
-    @EnvironmentObject var navigationRouter: NavigationRouter
+    @StateObject var noficationsViewModel = NoficationsManager()
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
 
     @State var nativationStatus: Bool = false
     @State var nativationAlert: Bool = false
-
-    @Binding var hiddenBar: Bool
     
     var body: some View {
         if !list.isEmpty {
@@ -83,8 +80,7 @@ struct SurahListView: View {
 
 struct SurahListView_Previews: PreviewProvider {
     static var previews: some View {
-        SurahListView(list: [SurahModel(place: Place.mecca, type: TypeEnum.makkiyah, count: 22, title: "al_fatiha", titleAr: "String", index: "12", pages: "12", juz: [])], hiddenBar: .constant(false))
+        SurahListView(list: [SurahModel(place: Place.mecca, type: TypeEnum.makkiyah, count: 22, title: "al_fatiha", titleAr: "String", index: "12", pages: "12", juz: [])])
             .environmentObject(BookMarkViewModel())
-            .environmentObject(NavigationRouter())
     }
 }

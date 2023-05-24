@@ -10,8 +10,8 @@ import SwiftUI
 struct PDFViewUI: View {
     
     @State var pageNumber: Int
-    @Binding var hiddenBar: Bool
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
+    @EnvironmentObject var routerManager: RouterManager
     @ObservedObject var datas = SurahViewModel()
     
     @Environment(\.dismiss) private var dismiss
@@ -27,7 +27,7 @@ struct PDFViewUI: View {
         .toolbar{
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
-                    self.hiddenBar = false
+                    routerManager.tabBarHide(status: false)
                     dismiss()
                 } label: {
                     HStack {
@@ -59,8 +59,9 @@ struct PDFViewUI: View {
 struct PDFViewUI_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            PDFViewUI(pageNumber: 100, hiddenBar: .constant(true))
+            PDFViewUI(pageNumber: 100)
         }
         .environmentObject(BookMarkViewModel())
+        .environmentObject(RouterManager())
     }
 }

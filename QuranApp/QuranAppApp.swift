@@ -16,8 +16,9 @@ struct QuranAppApp: App {
     @StateObject var surahViewModel: SurahViewModel = SurahViewModel()
     @StateObject var bookmarksViewModel: BookMarkViewModel = BookMarkViewModel()
     @StateObject var notificatSurahViewModel: NotificatSurahViewModel = NotificatSurahViewModel()
+    @StateObject var juzViewModel: JuzViewModel = JuzViewModel()
     @StateObject var language: LanguageViewModel = LanguageViewModel()
-    @StateObject var navigationRouter: NavigationRouter = NavigationRouter()
+    @StateObject var routerManager: RouterManager = RouterManager()
     
     var body: some Scene {
         WindowGroup {
@@ -30,10 +31,11 @@ struct QuranAppApp: App {
             .onOpenURL{ url in
                 Task{
 //                    self.selectedTab = getPage(url: url)
+                    routerManager.pushTab(to: getPage(url: url))
                     let queryParams = url.queryParameters
                     if let indexQueryVal = queryParams?["index"] as? String {
                         if let item = surahViewModel.items.first(where: {$0.index == indexQueryVal}) {
-                            navigationRouter.push(to: Route.surah(item: item))
+                            routerManager.push(to: Route.surah(item: item))
                         }
                     }
                 }
@@ -46,7 +48,8 @@ struct QuranAppApp: App {
             .environmentObject(language)
             .environmentObject(bookmarksViewModel)
             .environmentObject(notificatSurahViewModel)
-            .environmentObject(navigationRouter)
+            .environmentObject(routerManager)
+            .environmentObject(juzViewModel)
             .environment(\.locale, Locale.init(identifier: language.language))
         }
     }

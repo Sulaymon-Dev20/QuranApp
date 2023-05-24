@@ -8,7 +8,7 @@
 import Foundation
 import Adhan
 
-class PrayerTimeViewModel: ObservableObject {
+class PrayerTimeManager: ObservableObject {
 
     func getPrayTime(time: Date, madhab: Madhab) -> [PrayTimeModel] {
         let cal = Calendar(identifier: Calendar.Identifier.gregorian)

@@ -8,38 +8,25 @@
 import SwiftUI
 
 struct JuzView: View {
-    @ObservedObject var datas = JuzViewModel()
-    
-    @Binding var selectedTab: Int
-    @Binding var hiddenBar: Bool
+    @EnvironmentObject var routerManager: RouterManager
+    @EnvironmentObject var datas: JuzViewModel
+
     @State var sort: Bool = false
     @State var degree: Double = 0
     
     var body: some View {
         NavigationStack {
             ZStack{
-                if !datas.showStatus {
-                    List {
-                        ForEach(sort ? datas.items.reversed() : datas.items, id: \.index) {item in
-                            JuzRowView(item: item, hiddenBar: $hiddenBar)
-                        }
+                List {
+                    ForEach(sort ? datas.items.reversed() : datas.items, id: \.index) {item in
+                        JuzRowView(item: item)
                     }
-                } else {
-                    JuzCalendarView(item: sort ? datas.items.reversed() : datas.items, hiddenBar: $hiddenBar)
                 }
             }
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar(hiddenBar ? .hidden : .visible, for: .tabBar)
+            .navigationTitle("juz")
+            .toolbar(routerManager.tabBarHideStatus ? .hidden : .visible, for: .tabBar)
             .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Button {
-                        datas.changeView(status: !datas.showStatus)
-                    } label: {
-                        Text("juz")
-                            .bold()
-                            .foregroundColor(Color.primary)
-                    }
-                }
                 ToolbarItem(placement: .navigationBarLeading) {
                     LanguageButtonView()
                 }
@@ -63,10 +50,11 @@ struct JuzView: View {
 
 struct JuzView_Previews: PreviewProvider {
     static var previews: some View {
-        JuzView(selectedTab: .constant(1), hiddenBar: .constant(false))
+        JuzView()
             .environmentObject(JuzViewModel())
             .environmentObject(BookMarkViewModel())
             .environmentObject(LanguageViewModel())
+            .environmentObject(RouterManager())
         //            .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

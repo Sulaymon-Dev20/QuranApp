@@ -8,23 +8,19 @@
 import SwiftUI
 
 struct SurahView: View {
-    
     @EnvironmentObject var datas: SurahViewModel
-    @EnvironmentObject var routeManager: NavigationRouter
+    @EnvironmentObject var routeManager: RouterManager
     
     @State var searchText: String = ""
     @State var sort: Bool = false
     @State var degree: Double = 0
-    
-    @Binding var selectedTab: Int
-    @Binding var hiddenBar: Bool
-    
+        
     var body: some View {
         NavigationStack(path: $routeManager.path) {
-            SurahListView(list: sort ? filterData().reversed() : filterData(), hiddenBar: $hiddenBar)
+            SurahListView(list: sort ? filterData().reversed() : filterData())
                 .navigationBarTitleDisplayMode(.inline)
-                .toolbar(hiddenBar ? .hidden : .visible, for: .tabBar)
                 .navigationTitle("surahs")
+                .toolbar(routeManager.tabBarHideStatus ? .hidden : .visible, for: .tabBar)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         LanguageButtonView()
@@ -48,9 +44,9 @@ struct SurahView: View {
                     case .surah(let item):
                         switch item{
                         default:
-                            PDFViewUI(pageNumber: ((item as SurahModel).pages as NSString).integerValue, hiddenBar: $hiddenBar)
+                            PDFViewUI(pageNumber: ((item as SurahModel).pages as NSString).integerValue)
                                 .onAppear {
-                                    self.hiddenBar = true
+                                    routeManager.tabBarHide(status: true)
                                 }
                         }
                     }
@@ -73,11 +69,11 @@ struct SurahView: View {
     
     struct SurahView_Previews: PreviewProvider {
         static var previews: some View {
-            SurahView(selectedTab: .constant(0), hiddenBar: .constant(false))
+            SurahView()
                 .environmentObject(SurahViewModel())
                 .environmentObject(BookMarkViewModel())
                 .environmentObject(LanguageViewModel())
-                .environmentObject(NavigationRouter())
+                .environmentObject(RouterManager())
         }
     }
 }

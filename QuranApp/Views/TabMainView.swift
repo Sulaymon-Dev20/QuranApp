@@ -10,24 +10,24 @@ import SwiftUI
 struct TabMainView: View {
     
     @EnvironmentObject var launchScreenViewModel: LaunchScreenViewModel
+    @EnvironmentObject var routerManager: RouterManager
 
-    @Binding var selectedTab: Int
-    @State var hiddenBar: Bool = false
+    @State var selectedTab: Int = 0
     
     var body: some View {
         ZStack {
-            TabView(selection: $selectedTab) {
-                SurahView(selectedTab: $selectedTab, hiddenBar: $hiddenBar)
+            TabView(selection: $routerManager.tabValue) {
+                SurahView()
                     .tabItem {
                         Label("surahs", systemImage: "book.circle")
                     }
                     .tag(0)
-                JuzView(selectedTab: $selectedTab, hiddenBar: $hiddenBar)
+                JuzView()
                     .tabItem {
                         Label("juz", systemImage: "mountain.2.circle.fill")
                     }
                     .tag(1)
-                BookmarkView(selectedTab: $selectedTab, hiddenBar: $hiddenBar)
+                BookmarkView()
                     .tabItem {
                         Label("bookmarks", systemImage: "bookmark.circle")
                     }
@@ -48,13 +48,13 @@ struct TabMainView: View {
 
 struct TabMainView_Previews: PreviewProvider {
     static var previews: some View {
-        TabMainView(selectedTab: .constant(0))
+        TabMainView()
             .environmentObject(SurahViewModel())
             .environmentObject(LaunchScreenViewModel())
             .environmentObject(BookMarkViewModel())
-            .environmentObject(NoficationsViewModel())
+            .environmentObject(NoficationsManager())
             .environmentObject(LanguageViewModel())
-            .environmentObject(NavigationRouter())
-        
+            .environmentObject(RouterManager())
+            .environmentObject(JuzViewModel())
     }
 }

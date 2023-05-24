@@ -9,11 +9,10 @@ import SwiftUI
 
 struct BookmarkListView: View {
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
+    @EnvironmentObject var routerManager: RouterManager
 
     let list: [BookmarkModel]
 
-    @Binding var selectedTab: Int
-    @Binding var hiddenBar: Bool
     @Binding var sort: Bool
     @Binding var searchText: String
 
@@ -24,9 +23,9 @@ struct BookmarkListView: View {
                     BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
                         .overlay{
                             NavigationLink(destination:
-                                            PDFViewUI(pageNumber: item.pageNumber, hiddenBar: $hiddenBar)
+                                            PDFViewUI(pageNumber: item.pageNumber)
                                 .onAppear {
-                                    self.hiddenBar = true
+                                    routerManager.tabBarHide(status: true)
                                 }
                             ) {
                                 Text(">>>")
@@ -55,7 +54,7 @@ struct BookmarkListView: View {
             if bookmarksViewModel.items.isEmpty {
                 BookmarkEmptyView()
                     .onTapGesture {
-                        selectedTab = 0
+                        routerManager.pushTab(to: 0)
                     }
             } else {
                 ListEmptyView()
@@ -67,8 +66,9 @@ struct BookmarkListView: View {
 struct BookmarkListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            BookmarkListView(list: BookMarkViewModel().items, selectedTab: .constant(1), hiddenBar: .constant(false),sort: .constant(false),searchText: .constant(""))
+            BookmarkListView(list: BookMarkViewModel().items, sort: .constant(false),searchText: .constant(""))
         }
         .environmentObject(BookMarkViewModel())
+        .environmentObject(RouterManager())
     }
 }

@@ -12,8 +12,8 @@ struct SheetView: View {
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
 //    @StateObject var locationViewModel = LocationViewModel()
     
-    @StateObject var noficationsViewModel = NoficationsViewModel()
-    @StateObject var prayerTimeViewModel = PrayerTimeViewModel()
+    @StateObject var noficationsViewModel = NoficationsManager()
+    @StateObject var prayerTimeViewModel = PrayerTimeManager()
     
     @State var date: Date = Date()
     @State var everyDay: Bool = false
@@ -107,7 +107,7 @@ struct SheetView: View {
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
         SheetView(surah: SurahModel(place: Place.mecca, type: TypeEnum.madaniyah, count: 12, title: "asdf", titleAr: "String", index: "1", pages: "1", juz: []))
-            .environmentObject(NoficationsViewModel())
+//            .environmentObject(NoficationsManager())
 //            .environmentObject(LocationViewModel())
     }
 }
