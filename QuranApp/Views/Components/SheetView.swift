@@ -6,20 +6,22 @@
 //
 
 import SwiftUI
-//import _CoreLocationUI_SwiftUI
+import Adhan
 
 struct SheetView: View {
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
+    @EnvironmentObject var noficationsManager: NoficationsManager
+
+    @Environment(\.dismiss) var dismiss
     //    @StateObject var locationViewModel = LocationViewModel()
     
-    @StateObject var noficationsManager = NoficationsManager()
     @StateObject var prayerTimeViewModel = PrayerTimeManager()
     
     @State var date: Date = Date()
     @State var everyDay: Bool = false
     @State var location: Bool = true
     @State var showAlert: Bool = false
-    @State var mashab: Int = 2
+    @State var mashab: Madhab = .hanafi
     
     let surah: SurahModel
     let calendar = Calendar.current
@@ -41,7 +43,7 @@ struct SheetView: View {
         )
         
         VStack{
-            Text("Natification Settings")
+            Text(surah.title)
                 .bold()
                 .font(.title)
             
@@ -49,23 +51,16 @@ struct SheetView: View {
                 .font(.largeTitle)
                 .padding(.bottom,40)
             
-            DatePicker(surah.title, selection: $date, displayedComponents: [.hourAndMinute])
-            HStack{
+            DatePicker("Natification time", selection: $date, displayedComponents: [.hourAndMinute])
+            HStack {
+                Text("select mathhab to time ")
+                Spacer()
                 Picker("Vaqtini tanlang", selection: $mashab, content: {
-                    Text("shafi")
-                        .tag(1)
                     Text("hanafi")
-                        .tag(2)
+                        .tag(Madhab.hanafi)
+                    Text("shafi")
+                        .tag(Madhab.shafi)
                 })
-                
-                Picker("Vaqtini tanlang", selection: pref, content: {
-                    ForEach(0..<data.count, id: \.self) { index in
-                        Text(data[index].name)
-                            .foregroundColor(Color.white)
-                            .tag(data[index].time)
-                    }
-                })
-                
             }
             Picker("Vaqtini tanlang", selection: pref, content: {
                 ForEach(0..<data.count, id: \.self) { index in
@@ -92,7 +87,7 @@ struct SheetView: View {
             Spacer()
             HStack{
                 Button {
-                    
+                    dismiss()
                 } label: {
                     Text("cancel")
                         .bold()
@@ -103,7 +98,7 @@ struct SheetView: View {
                 }
                 Spacer()
                 Button {
-                    let item = NotificatSurah(time: self.date, title: surah.title, juz: surah.juz[0].index, pageNumber: (surah.pages as NSString).integerValue)
+                    let item = NotificatSurah(id: surah.index, time: self.date, title: surah.title, juz: surah.juz[0].index, pageNumber: (surah.pages as NSString).integerValue)
                     notificatSurahViewModel.saveOrDelete(item: item)
                     noficationsManager.pushNotication(
                         id: surah.index,
@@ -114,7 +109,7 @@ struct SheetView: View {
                         date: date
                     )
                 } label: {
-                    Text("Add")
+                    Text("Save")
                         .bold()
                         .padding()
                         .background(Color.blue)
@@ -130,6 +125,6 @@ struct SheetView: View {
 
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
-        SheetView(surah: SurahModel(place: Place.mecca, type: TypeEnum.madaniyah, count: 12, title: "asdf", titleAr: "String", index: "1", pages: "1", juz: []))
+        SheetView(surah: SurahModel(place: Place.mecca, type: TypeEnum.madaniyah, count: 12, title: "Surah Yasin", titleAr: "String", index: "1", pages: "1", juz: []))
     }
 }

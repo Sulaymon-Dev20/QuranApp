@@ -10,12 +10,12 @@ import Adhan
 
 class PrayerTimeManager: ObservableObject {
 
-    func getPrayTime(time: Date, madhab: Int) -> [PrayTimeModel] {
+    func getPrayTime(time: Date, madhab: Madhab) -> [PrayTimeModel] {
         let cal = Calendar(identifier: Calendar.Identifier.gregorian)
         let date = cal.dateComponents([.year, .month, .day], from: time)
         let coordinates = Coordinates(latitude: 41.311081, longitude: 69.240562)
         var params = CalculationMethod.moonsightingCommittee.params
-        params.madhab = madhab == 1 ? .shafi : .hanafi
+        params.madhab = madhab
         var res:[PrayTimeModel] = []
         if let prayers = PrayerTimes(coordinates: coordinates, date: date, calculationParameters: params) {
             let formatter = DateFormatter()

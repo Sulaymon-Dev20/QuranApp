@@ -44,7 +44,7 @@ struct SurahListView: View {
                             )
                         }
                         .sheet(isPresented: $nativationStatus) {
-                            SheetView(surah:item)
+                            SheetView(surah: item)
                         }
                         .swipeActions(edge: .trailing) {
                             let status = bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue)
@@ -73,7 +73,7 @@ struct SurahListView: View {
                 }
             }
         } else {
-            ListEmptyView()
+//            ListEmptyView()
         }
     }
 }

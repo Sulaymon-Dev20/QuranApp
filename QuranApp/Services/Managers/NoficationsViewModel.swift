@@ -44,11 +44,10 @@ class NoficationsManager: ObservableObject {
         content.title = title
         content.subtitle = subtitle
         content.sound = UNNotificationSound.default
-//        content.badge = 0
         content.userInfo["link"] = "holyquran://\(url)"
 
         let calendar = Calendar.current
-        var dateComponents = DateComponents(hour: calendar.component(.hour, from: date),minute: calendar.component(.month, from: date))
+        let dateComponents = DateComponents(hour: calendar.component(.hour, from: date),minute: calendar.component(.month, from: date))
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: repeats)
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)

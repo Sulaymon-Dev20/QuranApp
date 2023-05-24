@@ -1,8 +1,8 @@
 //
-//  ListEmpty.swift
+//  ListEmptyView.swift
 //  QuranApp
 //
-//  Created by Sulaymon on 04/05/23.
+//  Created by Sulaymon on 25/05/23.
 //
 
 import SwiftUI
@@ -22,6 +22,5 @@ struct ListEmptyView: View {
 struct ListEmptyView_Previews: PreviewProvider {
     static var previews: some View {
         ListEmptyView()
-            .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }
