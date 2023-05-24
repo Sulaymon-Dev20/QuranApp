@@ -30,8 +30,34 @@ class RouterManager: ObservableObject {
     func pushTab(to item: Int) {
         tabValue = item
     }
-    
+
     func tabBarHide(status: Bool) {
         tabBarHideStatus = status
+    }
+    
+    func getPage(url: URL) -> Int {
+        let host = url.host()
+        switch host {
+        case "surahs":
+            return 0
+        case "juz":
+            return 1
+        case "bookmark":
+            return 2
+        default:
+            return 0
+        }
+    }
+}
+
+extension RouterManager {
+    func pushDeepLink(to url: URL,list items: [SurahModel]) {
+        pushTab(to: getPage(url: url))
+        let queryParams = url.queryParameters
+        if let indexQueryVal = queryParams?["index"] as? String {
+            if let item = items.first(where: {$0.index == indexQueryVal}) {
+                push(to: Route.surah(item: item))
+            }
+        }
     }
 }

@@ -39,54 +39,26 @@ class NoficationsManager: ObservableObject {
         }
     }
     
-    //    class func setUpLocalNotification(hour: Int, minute: Int) {
-    //        // have to use NSCalendar for the components
-    //        let calendar = NSCalendar(identifier: .gregorian)!;
-    //        var dateFire = Date()
-    //        // if today's date is passed, use tomorrow
-    //        var fireComponents = calendar.components( [NSCalendar.Unit.day, NSCalendar.Unit.month, NSCalendar.Unit.year, NSCalendar.Unit.hour, NSCalendar.Unit.minute], from:dateFire)
-    //        if (fireComponents.hour! > hour || (fireComponents.hour == hour && fireComponents.minute! >= minute)) {
-    //            dateFire = dateFire.addingTimeInterval(86400)  // Use tomorrow's date
-    //            fireComponents = calendar.components( [NSCalendar.Unit.day, NSCalendar.Unit.month, NSCalendar.Unit.year, NSCalendar.Unit.hour, NSCalendar.Unit.minute], from:dateFire);
-    //        }
-    //        fireComponents.hour = hour
-    //        fireComponents.minute = minute
-    //        dateFire = calendar.date(from: fireComponents)!
-    //        let localNotification = UILocalNotification()
-    //        localNotification.fireDate = dateFire
-    //        localNotification.alertBody = "Record Today Numerily. Be completely honest: how is your day so far?"
-    //        localNotification.repeatInterval = NSCalendar.Unit.day
-    //        localNotification.soundName = UILocalNotificationDefaultSoundName;
-    //        UIApplication.shared.scheduleLocalNotification(localNotification);
-    //    }
-    
-    func pushNotication() {
+    func pushNotication(id: String, title: String, subtitle: String, url: String, repeats: Bool = true, date: Date) {
         let content = UNMutableNotificationContent()
-        content.title = "Feed the cat"
-        content.subtitle = "It looks hungry"
+        content.title = title
+        content.subtitle = subtitle
         content.sound = UNNotificationSound.default
-        content.badge = 199
-        content.userInfo["link"] = "holyquran://juz"
-        content.categoryIdentifier = "juz"        
-        //                    var dateComponents = DateComponents()
-        //                    dateComponents.calendar = Calendar.current
-        //
-        //                    dateComponents.weekday = 3  // Tuesday
-        //                    dateComponents.hour = 14    // 14:00 hours
-        //                    dateComponents.minute = 12
-        //
-        //                    // Create the trigger as a repeating event.
-        //                    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        //
-        //                     show this notification five seconds from now
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        
-        // choose a random identifier
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        //        UNNotificationRequest(identifier: "Notication ok doki", content: content, trigger: trigger)
-        
-        // add our notification request
+//        content.badge = 0
+        content.userInfo["link"] = "holyquran://\(url)"
+
+        let calendar = Calendar.current
+        var dateComponents = DateComponents(hour: calendar.component(.hour, from: date),minute: calendar.component(.month, from: date))
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: repeats)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
     }
     
+    func removeNotication(list idList:[String] = []) {
+        if !idList.isEmpty {
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: idList)
+        } else {
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        }
+    }
 }

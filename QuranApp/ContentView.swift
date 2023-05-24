@@ -22,5 +22,6 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(BookMarkViewModel())
             .environmentObject(NotificatSurahViewModel())
             .environmentObject(RouterManager())
+            .environmentObject(JuzViewModel())
     }
 }
