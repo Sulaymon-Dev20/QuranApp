@@ -10,7 +10,7 @@ import SwiftUI
 struct BookmarkView: View {
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
-
+    
     @State var searchText: String = ""
     
     @State var sort: Bool = false
@@ -40,6 +40,12 @@ struct BookmarkView: View {
                     }
                 }
                 .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_bookmark"))
+                .navigationDestination(for: Int.self) { pageNumber in
+                    PDFViewUI(pageNumber: pageNumber)
+                        .onAppear {
+                            routerManager.tabBarHide(status: true)
+                        }
+                }
         }
         .onDisappear {
             searchText = ""
@@ -62,6 +68,6 @@ struct BookmarkView_Previews: PreviewProvider {
             .environmentObject(LanguageViewModel())
             .environmentObject(RouterManager())
             .environmentObject(NotificatSurahViewModel())
-//            .environment(\.locale, Locale.init(identifier: "ar"))
+        //            .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

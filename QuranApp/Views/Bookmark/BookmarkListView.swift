@@ -23,13 +23,8 @@ struct BookmarkListView: View {
                 if !list.isEmpty {
                     ForEach(sort ? list : list.reversed()) { item in
                         BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
-                            .overlay{
-                                NavigationLink(destination:
-                                                PDFViewUI(pageNumber: item.pageNumber)
-                                    .onAppear {
-                                        routerManager.tabBarHide(status: true)
-                                    }
-                                ) {
+                            .overlay {
+                                NavigationLink(value: item.pageNumber) {
                                     Text(">>>")
                                 }
                                 .opacity(0)

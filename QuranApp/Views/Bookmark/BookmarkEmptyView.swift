@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BookmarkEmptyView: View {
     var body: some View {
-        VStack{
+        VStack {
             Image(systemName: "book.circle")
                 .font(.system(size: 60))
                 .padding(1)

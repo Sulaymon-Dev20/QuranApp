@@ -299,9 +299,9 @@
 		CE7C85332A0394F800192CC5 /* Bookmark */ = {
 			isa = PBXGroup;
 			children = (
+				CE7C85542A03AB4E00192CC5 /* BookmarkEmptyView.swift */,
 				CE7C854E2A03A7FA00192CC5 /* BookmarkRowView.swift */,
 				CE7C85502A03A88300192CC5 /* BookmarkListView.swift */,
-				CE7C85542A03AB4E00192CC5 /* BookmarkEmptyView.swift */,
 				CE7C854C2A03A7BF00192CC5 /* BookmarkView.swift */,
 			);
 			path = Bookmark;

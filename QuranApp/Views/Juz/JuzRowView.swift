@@ -8,16 +8,10 @@
 import SwiftUI
 
 struct JuzRowView: View {
-    @EnvironmentObject var routerManager: RouterManager
-
     let item: JuzModel
-
+    
     var body: some View {
-        NavigationLink(destination: PDFViewUI(pageNumber: item.page)
-            .onAppear {
-                routerManager.tabBarHide(status: true)
-            }
-        ) {
+        NavigationLink(value: item.index) {
             HStack{
                 Image(systemName: "app")
                     .font(.system(size: 34.0))
@@ -30,13 +24,9 @@ struct JuzRowView: View {
                 Spacer()
             }
         }
-        .contextMenu{
-            ForEach(item.surahs, id: \.index) {surahs in
-                NavigationLink(destination: PDFViewUI(pageNumber: surahs.pageNumber.intValue)
-                    .onAppear {
-                        routerManager.tabBarHide(status: true)
-                    }
-                ) {
+        .contextMenu {
+            ForEach(item.surahs, id: \.index) { surahs in
+                NavigationLink(value: surahs.pageNumber.intValue) {
                     Label(surahs.title.localizedForm, systemImage: surahs.type == "Makkiyah" ? "moon.fill" : "sun.max.fill")
                 }
             }
@@ -58,7 +48,6 @@ struct JuzRowView_Previews: PreviewProvider {
             JuzRowView(item: JuzModel(index: 12, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "12",type: "Makkiyah")]))
             JuzRowView(item: JuzModel(index: 12, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "12",type: "Makkiyah")]))
         }
-        .environmentObject(LanguageViewModel())
         .environment(\.locale, Locale.init(identifier: "ru"))
     }
 }

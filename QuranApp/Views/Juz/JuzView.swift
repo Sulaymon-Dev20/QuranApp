@@ -10,7 +10,7 @@ import SwiftUI
 struct JuzView: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var datas: JuzViewModel
-
+    
     @State var sort: Bool = false
     @State var degree: Double = 0
     
@@ -43,6 +43,12 @@ struct JuzView: View {
                         
                     }
                 }
+            }
+            .navigationDestination(for: Int.self) { pageNumber in
+                PDFViewUI(pageNumber: pageNumber)
+                    .onAppear {
+                        routerManager.tabBarHide(status: true)
+                    }
             }
         }
     }

@@ -23,7 +23,7 @@ struct SurahRowView: View {
                 }
             VStack{
                 HStack{
-                    Text(LocalizedStringKey(name.lowercased().replacingOccurrences(of: "-", with: "_")))
+                    Text(LocalizedStringKey(name.localizedForm))
                         .bold()
                     Spacer()
                 }
@@ -35,7 +35,7 @@ struct SurahRowView: View {
                     Spacer()
                 }
             }
-            .badge(Int((pageNumber as NSString).intValue))
+            .badge(Int(pageNumber.intValue))
         }
     }
 }
