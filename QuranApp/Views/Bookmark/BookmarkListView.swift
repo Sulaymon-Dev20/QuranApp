@@ -10,7 +10,6 @@ import SwiftUI
 struct BookmarkListView: View {
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
-    @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
     
     let list: [BookmarkModel]
     
@@ -18,62 +17,42 @@ struct BookmarkListView: View {
     @Binding var searchText: String
     
     var body: some View {
-        List {
-            Section("Bookmark") {
-                if !list.isEmpty {
-                    ForEach(sort ? list : list.reversed()) { item in
-                        BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
-                            .overlay {
-                                NavigationLink(value: item.pageNumber) {
-                                    Text(">>>")
-                                }
-                                .opacity(0)
-                            }
-                            .swipeActions(edge: .trailing) {
-                                Button {
-                                    bookmarksViewModel.saveOrDelete(item: BookmarkModel(title: item.title, juz: item.juz, pageNumber: item.pageNumber))
-                                } label: {
-                                    Label("Choose", systemImage: "bookmark.slash")
-                                }
-                                .tint(.red)
-                            }
-                    }
-                    .onDelete(perform: bookmarksViewModel.deleteItem)
-                    .onMove { indexA, indexB in
-                        if searchText.count == 0 {
-                            var reversed = Array(sort ? list : list.reversed())
-                            reversed.move(fromOffsets: indexA, toOffset: indexB)
-                            bookmarksViewModel.items = sort ? reversed : reversed.reversed()
+        if !list.isEmpty {
+            ForEach(sort ? list : list.reversed()) { item in
+                BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
+                    .overlay {
+                        NavigationLink(value: item.pageNumber) {
+                            Text(">>>")
                         }
+                        .opacity(0)
                     }
-                } else {
-                    BookmarkEmptyView()
-                        .onTapGesture {
-                            routerManager.pushTab(to: 0)
+                    .swipeActions(edge: .trailing) {
+                        Button {
+                            bookmarksViewModel.saveOrDelete(item: BookmarkModel(title: item.title, juz: item.juz, pageNumber: item.pageNumber))
+                        } label: {
+                            Label("Choose", systemImage: "bookmark.slash")
                         }
-                        .frame(maxWidth: .infinity)
+                        .tint(.red)
+                    }
+            }
+            .onDelete(perform: bookmarksViewModel.deleteItem)
+            .onMove { indexA, indexB in
+                if searchText.count == 0 {
+                    var reversed = Array(sort ? list : list.reversed())
+                    reversed.move(fromOffsets: indexA, toOffset: indexB)
+                    bookmarksViewModel.items = sort ? reversed : reversed.reversed()
                 }
             }
-            Section("Notifications") {
-                if !notificatSurahViewModel.items.isEmpty {
-                    ForEach($notificatSurahViewModel.items, id: \.id) { $item in
-                        Toggle(isOn: $item.isStatus) {
-                            Text(item.title)
-                            Text("remain time \(item.time.clockString)")
-                        }
-                        .onChange(of: item.isStatus) { value in
-                            print(value)
-                        }
-                    }
-                    .onDelete(perform: notificatSurahViewModel.deleteItem)
-                } else {
-                    BookmarkEmptyView()
-                        .frame(maxWidth: .infinity)
+        } else {
+            BookmarkEmptyView()
+                .onTapGesture {
+                    routerManager.pushTab(to: 0)
                 }
-            }
+                .frame(maxWidth: .infinity)
         }
     }
 }
+
 
 struct BookmarkListView_Previews: PreviewProvider {
     static var previews: some View {
@@ -83,5 +62,7 @@ struct BookmarkListView_Previews: PreviewProvider {
         .environmentObject(BookMarkViewModel())
         .environmentObject(RouterManager())
         .environmentObject(NotificatSurahViewModel())
+        .environmentObject(NoficationsManager())
+        .environmentObject(PrayerTimeManager())
     }
 }

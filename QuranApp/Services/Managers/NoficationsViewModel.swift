@@ -39,17 +39,17 @@ class NoficationsManager: ObservableObject {
         }
     }
     
-    func pushNotication(id: String, title: String, subtitle: String, url: String, repeats: Bool = true, date: Date) {
+    func pushNotication(item: NotificatSurah) {
         let content = UNMutableNotificationContent()
-        content.title = title
-        content.subtitle = subtitle
+        content.title = item.title
+        content.subtitle = item.subTitle
         content.sound = UNNotificationSound.default
-        content.userInfo["link"] = "holyquran://\(url)"
+        content.userInfo["link"] = "holyquran://\(item.url)"
 
         let calendar = Calendar.current
-        let dateComponents = DateComponents(hour: calendar.component(.hour, from: date),minute: calendar.component(.month, from: date))
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: repeats)
-        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+        let dateComponents = DateComponents(timeZone: TimeZone(identifier: TimeZone.current.identifier), hour: calendar.component(.hour, from: item.time), minute: calendar.component(.month, from: item.time),second: 2)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: item.isEveryDay)
+        let request = UNNotificationRequest(identifier: item.id, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
     }
     

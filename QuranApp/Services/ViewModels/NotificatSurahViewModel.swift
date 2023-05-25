@@ -43,8 +43,8 @@ class NotificatSurahViewModel: ObservableObject {
         saveStorage()
     }
     
-    func getPages() -> [Int]{
-        return items.map { $0.pageNumber }
+    func getPages() -> [String]{
+        return items.map { $0.id }
     }
     
     func saveOrDelete(item: NotificatSurah) {
@@ -55,7 +55,13 @@ class NotificatSurahViewModel: ObservableObject {
         }
         saveStorage()
     }
-    
+
+    func changeStatus(id: String,active status: Bool) {
+        var item = items.first { $0.id == id }
+        item?.active = status
+        saveStorage()
+    }
+
     func saveStorage(){
         if let encodedData = try? JSONEncoder().encode(items) {
             UserDefaults.standard.set(encodedData, forKey: storageKey)

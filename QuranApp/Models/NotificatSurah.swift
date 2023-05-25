@@ -8,13 +8,8 @@
 import Foundation
 
 struct NotificatSurah: Codable {
-    let id: String
+    let id, title, subTitle, url: String
     let time: Date
-    let title, juz: String
-    let pageNumber: Int
-    var isStatus: Bool = false
-    
-    func toString() -> String {
-        return title+"|"+juz+"|\(pageNumber)"+"\(time)";
-    }
+    var isEveryDay: Bool = false
+    var active: Bool = true
 }

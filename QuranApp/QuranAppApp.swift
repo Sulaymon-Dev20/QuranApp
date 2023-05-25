@@ -20,7 +20,9 @@ struct QuranAppApp: App {
     @StateObject var noficationsManager = NoficationsManager()
     @StateObject var language: LanguageViewModel = LanguageViewModel()
     @StateObject var routerManager: RouterManager = RouterManager()
-    
+    @StateObject var prayerTimeManager: PrayerTimeManager = PrayerTimeManager()
+    @StateObject var locationManager: LocationManager = LocationManager()
+
     var body: some Scene {
         WindowGroup {
             ZStack{
@@ -42,7 +44,9 @@ struct QuranAppApp: App {
             .environmentObject(notificatSurahViewModel)
             .environmentObject(routerManager)
             .environmentObject(juzViewModel)
+            .environmentObject(locationManager)
             .environmentObject(noficationsManager)
+            .environmentObject(prayerTimeManager)
             .environment(\.locale, Locale.init(identifier: language.language))
         }
     }

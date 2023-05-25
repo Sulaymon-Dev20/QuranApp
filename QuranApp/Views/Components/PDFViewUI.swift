@@ -24,7 +24,7 @@ struct PDFViewUI: View {
             }
         }
         .navigationBarBackButtonHidden(true)
-        .toolbar{
+        .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
                     routerManager.tabBarHide(status: false)
@@ -48,7 +48,7 @@ struct PDFViewUI: View {
     
     func getSurahByPage(page: Int) -> BookmarkModel {
         for item in datas.items.reversed() {
-            if (item.pages as NSString).integerValue <= page {
+            if item.pages.intValue <= page {
                 return BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: page)
             }
         }

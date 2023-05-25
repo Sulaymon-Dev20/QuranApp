@@ -18,34 +18,42 @@ struct BookmarkView: View {
     
     var body: some View {
         NavigationStack {
-            BookmarkListView(list: filterData(), sort: $sort, searchText: $searchText)
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle("bookmarks")
-                .toolbar(routerManager.tabBarHideStatus ? .hidden : .visible, for: .tabBar)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        LanguageButtonView()
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            withAnimation {
-                                self.sort = !sort
-                                degree += 180
-                            }
-                        } label: {
-                            Image(systemName: "arrow.up")
-                                .rotationEffect(.degrees(degree))
-                                .animation(.linear(duration: 0.3), value: sort)
+            List {
+                Section("Bookmark") {
+                    BookmarkListView(list: filterData(), sort: $sort, searchText: $searchText)
+                }
+                PrayTimeRowView()
+                Section("Notifications") {
+                    NotificationView()
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("bookmarks")
+            .toolbar(routerManager.tabBarHideStatus ? .hidden : .visible, for: .tabBar)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    LanguageButtonView()
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        withAnimation {
+                            self.sort = !sort
+                            degree += 180
                         }
+                    } label: {
+                        Image(systemName: "arrow.up")
+                            .rotationEffect(.degrees(degree))
+                            .animation(.linear(duration: 0.3), value: sort)
                     }
                 }
-                .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_bookmark"))
-                .navigationDestination(for: Int.self) { pageNumber in
-                    PDFViewUI(pageNumber: pageNumber)
-                        .onAppear {
-                            routerManager.tabBarHide(status: true)
-                        }
-                }
+            }
+            .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_bookmark"))
+            .navigationDestination(for: Int.self) { pageNumber in
+                PDFViewUI(pageNumber: pageNumber)
+                    .onAppear {
+                        routerManager.tabBarHide(status: true)
+                    }
+            }
         }
         .onDisappear {
             searchText = ""
@@ -64,10 +72,16 @@ struct BookmarkView: View {
 struct BookmarkView_Previews: PreviewProvider {
     static var previews: some View {
         BookmarkView()
+            .previewDevice("iPhone 14 Pro Max")
             .environmentObject(BookMarkViewModel())
             .environmentObject(LanguageViewModel())
             .environmentObject(RouterManager())
             .environmentObject(NotificatSurahViewModel())
+            .environmentObject(PrayerTimeManager())
+            .environmentObject(NoficationsManager())
+            .environmentObject(NotificatSurahViewModel())
+            .environmentObject(LocationManager())
         //            .environment(\.locale, Locale.init(identifier: "ar"))
+//            .preview(for: .iPhone)
     }
 }

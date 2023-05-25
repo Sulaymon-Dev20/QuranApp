@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var launchScreenViewModel: LaunchScreenViewModel
+
     var body: some View {
         TabMainView()
+//        Test()
+            .onAppear {
+                DispatchQueue
+                    .main
+                    .asyncAfter(deadline: .now() + 5) {
+                        launchScreenViewModel.dismiss()
+                    }
+            }
     }
 }
 
@@ -23,5 +33,8 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(NotificatSurahViewModel())
             .environmentObject(RouterManager())
             .environmentObject(JuzViewModel())
+            .environmentObject(NoficationsManager())
+            .environmentObject(PrayerTimeManager())
+            .environmentObject(LocationManager())
     }
 }
