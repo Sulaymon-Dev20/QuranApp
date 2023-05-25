@@ -19,13 +19,9 @@ struct BookmarkView: View {
     var body: some View {
         NavigationStack {
             List {
-                Section("Bookmark") {
-                    BookmarkListView(list: filterData(), sort: $sort, searchText: $searchText)
-                }
+                BookmarkListView(list: filterData(), sort: $sort, searchText: $searchText)
                 PrayTimeRowView()
-                Section("Notifications") {
-                    NotificationView()
-                }
+                NotificationView()
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("bookmarks")

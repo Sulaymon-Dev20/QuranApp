@@ -12,42 +12,58 @@ struct NotificationView: View {
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
     
     var body: some View {
-        ZStack {
-            VStack {
-                if !notificatSurahViewModel.items.isEmpty {
-                    ForEach($notificatSurahViewModel.items, id: \.id) { $item in
-                        Toggle(isOn: $item.active) {
-                            Text(LocalizedStringKey(item.title.localizedForm))
-                            Text("remain time \(item.time.clockString)")
-                        }
-                        .onChange(of: item.active) { value in
-                            notificatSurahViewModel.changeStatus(id: item.id, active: value)
-                            if value {
-                                noficationsManager.pushNotication(item: item)
-                            } else {
-                                noficationsManager.removeNotication(list: [item.id])
+        let show = noficationsManager.hasPermission
+        Section("Notifications") {
+            ZStack {
+                VStack {
+                    if !notificatSurahViewModel.items.isEmpty {
+                        ForEach($notificatSurahViewModel.items, id: \.id) { $item in
+                            HStack {
+                                Image(systemName: "checkmark.circle.fill")
+                                Toggle(isOn: $item.active) {
+                                    Text(LocalizedStringKey(item.title.localizedForm))
+                                    Text("remain time \(item.time.clockString)")
+                                }
+                                .onChange(of: item.active) { value in
+                                    notificatSurahViewModel.changeStatus(id: item.id, active: value)
+                                    if value {
+                                        noficationsManager.pushNotication(item: item)
+                                    } else {
+                                        noficationsManager.removeNotication(list: [item.id])
+                                    }
+                                }
+                            }
+                            .contextMenu {
+                                Label("delete", systemImage: "trash.circle")
+                                Label("share", systemImage: "square.and.arrow.up.circle")
+                            } preview: {
+                                Text("you can delete and do sth")
+                                    .padding()
                             }
                         }
+                        .onDelete(perform: notificatSurahViewModel.deleteItem)
+                    } else {
+                        BookmarkEmptyView()
                     }
-                    .onDelete(perform: notificatSurahViewModel.deleteItem)
-                } else {
-                    BookmarkEmptyView()
                 }
+                .blur(radius: show ? 0 : 8)
+                PermissionDenied(img: "clock.badge.exclamationmark.fill", text: "Notification Permission Denited")
+                    .opacity(show ? 0 : 1)
             }
-            .blur(radius: noficationsManager.hasPermission ? 0 : 8)
-            PermissionDenied(img: "clock.badge.exclamationmark.fill", text: "Notification Permission Denited")
-                .opacity(noficationsManager.hasPermission ? 0 : 1)
+//            .onTapGesture(count:2, perform: {
+//
+//            })
+            .frame(maxWidth: .infinity)
         }
-        .frame(maxWidth: .infinity)
     }
 }
 
 struct NotificationView_Previews: PreviewProvider {
     static var previews: some View {
-        List {
+        NavigationStack {
             NotificationView()
-                .environmentObject(NoficationsManager())
-                .environmentObject(NotificatSurahViewModel())
         }
+        .environmentObject(NoficationsManager())
+        .environmentObject(NotificatSurahViewModel())
     }
 }

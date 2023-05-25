@@ -17,38 +17,40 @@ struct BookmarkListView: View {
     @Binding var searchText: String
     
     var body: some View {
-        if !list.isEmpty {
-            ForEach(sort ? list : list.reversed()) { item in
-                BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
-                    .overlay {
-                        NavigationLink(value: item.pageNumber) {
-                            Text(">>>")
+        Section("Bookmark") {
+            if !list.isEmpty {
+                ForEach(sort ? list : list.reversed()) { item in
+                    BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
+                        .overlay {
+                            NavigationLink(value: item.pageNumber) {
+                                Text(">>>")
+                            }
+                            .opacity(0)
                         }
-                        .opacity(0)
-                    }
-                    .swipeActions(edge: .trailing) {
-                        Button {
-                            bookmarksViewModel.saveOrDelete(item: BookmarkModel(title: item.title, juz: item.juz, pageNumber: item.pageNumber))
-                        } label: {
-                            Label("Choose", systemImage: "bookmark.slash")
+                        .swipeActions(edge: .trailing) {
+                            Button {
+                                bookmarksViewModel.saveOrDelete(item: BookmarkModel(title: item.title, juz: item.juz, pageNumber: item.pageNumber))
+                            } label: {
+                                Label("Choose", systemImage: "bookmark.slash")
+                            }
+                            .tint(.red)
                         }
-                        .tint(.red)
+                }
+                .onDelete(perform: bookmarksViewModel.deleteItem)
+                .onMove { indexA, indexB in
+                    if searchText.count == 0 {
+                        var reversed = Array(sort ? list : list.reversed())
+                        reversed.move(fromOffsets: indexA, toOffset: indexB)
+                        bookmarksViewModel.items = sort ? reversed : reversed.reversed()
                     }
-            }
-            .onDelete(perform: bookmarksViewModel.deleteItem)
-            .onMove { indexA, indexB in
-                if searchText.count == 0 {
-                    var reversed = Array(sort ? list : list.reversed())
-                    reversed.move(fromOffsets: indexA, toOffset: indexB)
-                    bookmarksViewModel.items = sort ? reversed : reversed.reversed()
                 }
+            } else {
+                BookmarkEmptyView()
+                    .onTapGesture {
+                        routerManager.pushTab(to: 0)
+                    }
+                    .frame(maxWidth: .infinity)
             }
-        } else {
-            BookmarkEmptyView()
-                .onTapGesture {
-                    routerManager.pushTab(to: 0)
-                }
-                .frame(maxWidth: .infinity)
         }
     }
 }

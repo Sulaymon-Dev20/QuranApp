@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Adhan
 
 struct SheetView: View {
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
@@ -20,13 +19,12 @@ struct SheetView: View {
     @State var everyDay: Bool = false
     @State var location: Bool = true
     @State var showAlert: Bool = false
-    @State var mashab: Madhab = .hanafi
     
     let surah: SurahModel
     let calendar = Calendar.current
     
     var body: some View {
-        let data = prayerTimeViewModel.getPrayTime(time: Date(), madhab: mashab,latitude: locationManager.location?.latitude ?? 0.0, longitude: locationManager.location?.longitude ?? 0.0)
+        let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: locationManager.location?.latitude ?? 0.0, longitude: locationManager.location?.longitude ?? 0.0)
         let pref = Binding<Date>(
             get: {
                 date
@@ -55,12 +53,15 @@ struct SheetView: View {
                     HStack {
                         Text("select mathhab to time ")
                         Spacer()
-                        Picker("Vaqtini tanlang", selection: $mashab, content: {
+                        Picker("Vaqtini tanlang", selection: $prayerTimeViewModel.isHanafi, content: {
                             Text("hanafi")
-                                .tag(Madhab.hanafi)
+                                .tag(true)
                             Text("shafi")
-                                .tag(Madhab.shafi)
+                                .tag(false)
                         })
+                        .onChange(of: prayerTimeViewModel.isHanafi) { newValue in
+                            prayerTimeViewModel.changeMashab(to: newValue)
+                        }
                     }
                     Picker("Vaqtini tanlang", selection: pref, content: {
                         ForEach(0..<data.count, id: \.self) { index in

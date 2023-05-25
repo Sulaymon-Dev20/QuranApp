@@ -6,19 +6,17 @@
 //
 
 import SwiftUI
-import Adhan
 
 struct PrayTimeRowView: View {
     @EnvironmentObject var prayerTimeViewModel: PrayerTimeManager
     @EnvironmentObject var locationManager: LocationManager
     
     @State var showAlert: Bool = false
-    @State var mashab: Madhab = .hanafi
 
     var body: some View {
         let show = locationManager.checkLocationPermission()
         Section {
-            let data = prayerTimeViewModel.getPrayTime(time: Date(), madhab: mashab,latitude: locationManager.location?.latitude ?? 0.0, longitude: locationManager.location?.longitude ?? 0.0)
+            let data = prayerTimeViewModel.getPrayTime(time: Date(),latitude: locationManager.location?.latitude ?? 0.0, longitude: locationManager.location?.longitude ?? 0.0)
             ZStack {
                 VStack {
                     ForEach(data, id: \.name) { item in
@@ -49,12 +47,15 @@ struct PrayTimeRowView: View {
             HStack {
                 Text("select mathhab to time ")
                 Spacer()
-                Picker("Vaqtini tanlang", selection: $mashab, content: {
+                Picker("Vaqtini tanlang", selection: $prayerTimeViewModel.isHanafi, content: {
                     Text("hanafi")
-                        .tag(Madhab.hanafi)
+                        .tag(true)
                     Text("shafi")
-                        .tag(Madhab.shafi)
+                        .tag(false)
                 })
+                .onChange(of: prayerTimeViewModel.isHanafi) { newValue in
+                    prayerTimeViewModel.changeMashab(to: newValue)
+                }
                 .opacity(show ? 1 : 0)
             }
         } footer: {

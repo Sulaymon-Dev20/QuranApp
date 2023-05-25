@@ -9,13 +9,19 @@ import Foundation
 import Adhan
 
 class PrayerTimeManager: ObservableObject {
+    let mashabValue: String = "mashab"
+    @Published var isHanafi: Bool = true
 
-    func getPrayTime(time: Date, madhab: Madhab,latitude lat: Double = 0 ,longitude long: Double = 0) -> [PrayTimeModel] {
+    init() {
+        getValue()
+    }
+
+    func getPrayTime(time: Date, latitude lat: Double = 0 ,longitude long: Double = 0) -> [PrayTimeModel] {
         let cal = Calendar(identifier: Calendar.Identifier.gregorian)
         let date = cal.dateComponents([.year, .month, .day], from: time)
         let coordinates = Coordinates(latitude: lat, longitude: long)
         var params = CalculationMethod.moonsightingCommittee.params
-        params.madhab = madhab
+        params.madhab = isHanafi ? Madhab.hanafi : Madhab.shafi
         var res:[PrayTimeModel] = []
         if let prayers = PrayerTimes(coordinates: coordinates, date: date, calculationParameters: params) {
             let formatter = DateFormatter()
@@ -30,5 +36,24 @@ class PrayerTimeManager: ObservableObject {
             res.append(PrayTimeModel(name: "isha", time: prayers.isha))
         }
         return res
+    }
+    
+    func saveStorage() {
+        UserDefaults.standard.set(isHanafi, forKey: mashabValue)
+    }
+
+    func getValue() {
+        let value = UserDefaults.standard.bool(forKey: mashabValue)
+        self.isHanafi = value
+    }
+    
+    func changeMashab(to mashab: Madhab){
+        self.isHanafi = mashab == Madhab.hanafi
+        saveStorage()
+    }
+
+    func changeMashab(to isHanafi: Bool){
+        self.isHanafi = isHanafi
+        saveStorage()
     }
 }

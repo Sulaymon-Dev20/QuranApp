@@ -14,6 +14,7 @@ class BookMarkViewModel: ObservableObject {
             saveStorage()
         }
     }
+    
     let bookmarkKey:String = "book_mark_list"
     
     init() {
