@@ -14,11 +14,12 @@ struct SurahListView: View {
     @StateObject var noficationsManager = NoficationsManager()
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
-    
+    @EnvironmentObject var myAppDelegate: MyAppDelegate
+
     @State var nativationStatus: Bool = false
     @State var nativationAlert: Bool = false
     @State var index: SurahModel = SurahModel(place: Place.medina, type: TypeEnum.makkiyah, count: 3, title: "String", titleAr: "", index: "001", pages: "001", juz: [])
-    
+        
     var body: some View {
         if !list.isEmpty {
             List {
@@ -29,21 +30,6 @@ struct SurahListView: View {
                                 Text(">>>")
                             }
                             .opacity(0)
-                        }
-                        .alert(isPresented: $nativationAlert) {
-                            Alert(
-                                title: Text("Notication allow"),
-                                message: Text("open and allow notification please"),
-                                primaryButton: .destructive(Text("Cancel")),
-                                secondaryButton: .default(
-                                    Text("Allow"),
-                                    action: {
-                                        if let appSettings = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(appSettings) {
-                                            UIApplication.shared.open(appSettings)
-                                        }
-                                    }
-                                )
-                            )
                         }
                         .swipeActions(edge: .trailing) {
                             let status = bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue)
@@ -58,9 +44,6 @@ struct SurahListView: View {
                             let isItemExist = notificatSurahViewModel.getIds().contains(item.index)
                             Button {
                                 self.index = item
-                                print(notificatSurahViewModel.getIds())
-                                print(item.index)
-                                print(isItemExist)
                                 Task {
                                     await noficationsManager.request()
                                 }
@@ -79,6 +62,21 @@ struct SurahListView: View {
             .sheet(isPresented: $nativationStatus) {
                 SheetView(surah: index)
             }
+            .alert(isPresented: $nativationAlert) {
+                Alert(
+                    title: Text("Notication allow"),
+                    message: Text("open and allow notification please"),
+                    primaryButton: .destructive(Text("Cancel")),
+                    secondaryButton: .default(
+                        Text("Allow"),
+                        action: {
+                            if let appSettings = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(appSettings) {
+                                UIApplication.shared.open(appSettings)
+                            }
+                        }
+                    )
+                )
+            }
         } else {
             ListEmptyView()
         }
@@ -90,5 +88,6 @@ struct SurahListView_Previews: PreviewProvider {
         SurahListView(list: [SurahModel(place: Place.mecca, type: TypeEnum.makkiyah, count: 22, title: "al_fatiha", titleAr: "String", index: "12", pages: "12", juz: [])])
             .environmentObject(BookMarkViewModel())
             .environmentObject(NotificatSurahViewModel())
+            .environmentObject(MyAppDelegate())
     }
 }

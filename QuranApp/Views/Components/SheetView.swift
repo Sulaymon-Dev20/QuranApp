@@ -47,7 +47,7 @@ struct SheetView: View {
                 .bold()
                 .font(.title)
             
-            Text("\(calendar.component(.hour, from: date)): \(calendar.component(.minute, from: date))")
+            Text(date.clockString)
                 .font(.largeTitle)
                 .padding(.bottom,40)
             
@@ -70,19 +70,6 @@ struct SheetView: View {
             })
             .padding(.bottom,20)
             .pickerStyle(SegmentedPickerStyle())
-            .alert(isPresented: $showAlert) {
-                Alert(
-                    title: Text("Notication allow"),
-                    message: Text("open and allow notification please"),
-                    primaryButton: .destructive(Text("Cancel")),
-                    secondaryButton: .default(
-                        Text("Allow"),
-                        action: {
-                            print("asdf")
-                        }
-                    )
-                )
-            }
             Toggle("Har kuni", isOn: $everyDay)
             Spacer()
             HStack{
@@ -98,9 +85,7 @@ struct SheetView: View {
                 }
                 Spacer()
                 Button {
-                    print(surah.index)
-                    print("--------")
-                    let item = NotificatSurah(id: surah.index, time: self.date, title: surah.title, juz: surah.juz[0].index, pageNumber: (surah.pages as NSString).integerValue)
+                    let item = NotificatSurah(id: surah.index, time: self.date, title: surah.title, juz: surah.juz[0].index, pageNumber: (surah.pages as NSString).integerValue, isStatus: true)
                     notificatSurahViewModel.saveOrDelete(item: item)
                     noficationsManager.pushNotication(
                         id: surah.index,
@@ -123,6 +108,19 @@ struct SheetView: View {
         }
         .padding()
         .presentationDetents([.medium, .large])
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Notication allow"),
+                message: Text("open and allow notification please"),
+                primaryButton: .destructive(Text("Cancel")),
+                secondaryButton: .default(
+                    Text("Allow"),
+                    action: {
+                        print("asdf")
+                    }
+                )
+            )
+        }
     }
 }
 

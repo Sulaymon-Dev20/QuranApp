@@ -61,9 +61,13 @@ struct BookmarkListView: View {
             }
             Section("Notifications") {
                 if !notificatSurahViewModel.items.isEmpty {
-                    ForEach(notificatSurahViewModel.items, id: \.id) { item in
-                        Toggle(isOn: .constant(false)) {
+                    ForEach($notificatSurahViewModel.items, id: \.id) { $item in
+                        Toggle(isOn: $item.isStatus) {
                             Text(item.title)
+                            Text("remain time \(item.time.clockString)")
+                        }
+                        .onChange(of: item.isStatus) { value in
+                            print(value)
                         }
                     }
                     .onDelete(perform: notificatSurahViewModel.deleteItem)

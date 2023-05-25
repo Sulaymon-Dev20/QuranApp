@@ -44,7 +44,7 @@ struct SurahView: View {
                     case .surah(let item):
                         switch item{
                         default:
-                            PDFViewUI(pageNumber: ((item as SurahModel).pages as NSString).integerValue)
+                            PDFViewUI(pageNumber: (item as SurahModel).pages.intValue)
                                 .onAppear {
                                     routeManager.tabBarHide(status: true)
                                 }
@@ -60,7 +60,7 @@ struct SurahView: View {
     func filterData() -> [SurahModel] {
         if searchText.count > 0 {
             return datas.items.filter {
-                return LocalizedStringKey($0.title.lowercased().replacingOccurrences(of: "-", with: "_")).stringValue().lowercased().contains(searchText.lowercased())
+                return LocalizedStringKey($0.title.localizedForm).stringValue().lowercased().contains(searchText.lowercased())
             }
         } else {
             return datas.items
@@ -72,6 +72,7 @@ struct SurahView: View {
             SurahView()
                 .environmentObject(SurahViewModel())
                 .environmentObject(BookMarkViewModel())
+                .environmentObject(NotificatSurahViewModel())
                 .environmentObject(LanguageViewModel())
                 .environmentObject(RouterManager())
         }

@@ -15,4 +15,12 @@ extension String {
         let localizedString = NSLocalizedString(key, bundle: bundle, comment: "")
         return localizedString
     }
+    
+    public var localizedForm: String {
+        return self.lowercased().replacingOccurrences(of: "-", with: "_")
+    }
+    
+    public var intValue: Int {
+        return (self as NSString).integerValue
+    }
 }

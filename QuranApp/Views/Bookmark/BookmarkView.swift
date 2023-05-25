@@ -61,6 +61,7 @@ struct BookmarkView_Previews: PreviewProvider {
             .environmentObject(BookMarkViewModel())
             .environmentObject(LanguageViewModel())
             .environmentObject(RouterManager())
-        //            .environment(\.locale, Locale.init(identifier: "ar"))
+            .environmentObject(NotificatSurahViewModel())
+//            .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

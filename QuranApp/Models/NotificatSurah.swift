@@ -12,6 +12,7 @@ struct NotificatSurah: Codable {
     let time: Date
     let title, juz: String
     let pageNumber: Int
+    var isStatus: Bool = false
     
     func toString() -> String {
         return title+"|"+juz+"|\(pageNumber)"+"\(time)";

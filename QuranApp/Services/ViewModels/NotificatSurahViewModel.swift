@@ -49,7 +49,7 @@ class NotificatSurahViewModel: ObservableObject {
     
     func saveOrDelete(item: NotificatSurah) {
         if items.contains(where: { $0.id == item.id}) {
-            items = items.filter {$0.id != item.id}
+            items.removeAll {$0.id != item.id}
         } else {
             items.append(item)
         }

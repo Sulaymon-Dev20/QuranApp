@@ -32,12 +32,12 @@ struct JuzRowView: View {
         }
         .contextMenu{
             ForEach(item.surahs, id: \.index) {surahs in
-                NavigationLink(destination: PDFViewUI(pageNumber: (surahs.pageNumber as NSString).integerValue)
+                NavigationLink(destination: PDFViewUI(pageNumber: surahs.pageNumber.intValue)
                     .onAppear {
                         routerManager.tabBarHide(status: true)
                     }
                 ) {
-                    Label(LocalizedStringKey(surahs.title.lowercased().replacingOccurrences(of: "-", with: "_")), systemImage: surahs.type == "Makkiyah" ? "moon.fill" : "sun.max.fill")
+                    Label(surahs.title.localizedForm, systemImage: surahs.type == "Makkiyah" ? "moon.fill" : "sun.max.fill")
                 }
             }
         }

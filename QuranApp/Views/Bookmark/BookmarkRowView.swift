@@ -17,7 +17,7 @@ struct BookmarkRowView: View {
                 .font(.system(size: 34.0))
             VStack{
                 HStack{
-                    Text(LocalizedStringKey(title.lowercased().replacingOccurrences(of: "-", with: "_")))
+                    Text(LocalizedStringKey(title.localizedForm))
                         .bold()
                     Spacer()
                 }
@@ -25,7 +25,7 @@ struct BookmarkRowView: View {
                     Text("Page")
                     Text("\(pageNumber),")
                     Text("Juz ")
-                    Text("\((juz as NSString).integerValue),")
+                    Text("\(juz.intValue)")
                     Spacer()
                 }
             }

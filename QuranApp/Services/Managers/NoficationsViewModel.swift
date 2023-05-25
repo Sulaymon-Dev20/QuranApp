@@ -14,7 +14,7 @@ class NoficationsManager: ObservableObject {
     @Published private(set) var hasPermission:Bool = false
     
     init() {
-        Task{
+        Task {
             await getAuthStatus()
         }
     }

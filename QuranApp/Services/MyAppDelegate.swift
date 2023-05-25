@@ -31,4 +31,33 @@ class MyAppDelegate: NSObject, UIApplicationDelegate, ObservableObject, UNUserNo
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
         return [.sound, .badge, .banner, .list]
     }
+    
+    var notificationAuthStatus: Bool {
+        var status = true
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .authorized, .provisional, .ephemeral:
+                status = false
+            default:
+                status = true
+            }
+        }
+        return status
+    }
+        
+    func registerForNotification() -> Bool {
+        var status = true
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+            status = false
+            if success {
+                print("All set!")
+            } else if let error = error {
+                print(error.localizedDescription)
+            } else{
+                print("Surash kerak")
+            }
+        }
+        print(status)
+        return status;
+    }
 }
