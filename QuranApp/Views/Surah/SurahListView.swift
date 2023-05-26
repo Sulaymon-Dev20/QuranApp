@@ -17,72 +17,60 @@ struct SurahListView: View {
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
     
     @State var nativationStatus: Bool = false
-    @State var nativationAlert: Bool = false
+    @State var showAlert: Bool = false
     @State var index: SurahModel?
     
     var body: some View {
         if !list.isEmpty {
-            List {
-                ForEach(list, id: \.title){ item in
-                    SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages)
-                        .overlay {
-                            NavigationLink(value: Route.surah(item: item)) {
-                                Text(">>>")
-                            }
-                            .opacity(0)
-                        }
-                        .swipeActions(edge: .trailing) {
-                            let status = bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue)
-                            Button {
-                                bookmarksViewModel.saveOrDelete(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: (item.pages as NSString).integerValue))
-                            } label: {
-                                Label("Choose", systemImage: status ? "bookmark.slash" : "bookmark")
-                            }
-                            .tint(status ? .red : .green)
-                        }
-                        .swipeActions(edge: .leading) {
-                            let isItemExist = notificatSurahViewModel.getIds().contains(item.index)
-                            let statusNotification = noficationsManager.hasPermission
-                            Button {
-                                Task {
-                                    await noficationsManager.request()
+            ZStack{
+                List {
+                    ForEach(list, id: \.title){ item in
+                        SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages)
+                            .overlay {
+                                NavigationLink(value: Route.surah(item: item)) {
+                                    Text(">>>")
                                 }
-                                if statusNotification {
-                                    nativationStatus.toggle()
-                                } else {
-                                    nativationAlert.toggle()
+                                .opacity(0)
+                            }
+                            .swipeActions(edge: .trailing) {
+                                let status = bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue)
+                                Button {
+                                    bookmarksViewModel.saveOrDelete(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: (item.pages as NSString).integerValue))
+                                } label: {
+                                    Label("Choose", systemImage: status ? "bookmark.slash" : "bookmark")
                                 }
-                            } label: {
-                                Label("Choose", systemImage: statusNotification ? isItemExist ? "clock.badge.xmark" : "clock.badge.checkmark" : "clock.badge.xmark")
+                                .tint(status ? .red : .green)
                             }
-                            .tint(statusNotification ? isItemExist ? .red : .green : .none)
-                            .task {
-                                self.index = item
-                                noficationsManager.checkNotificationPermission()
+                            .swipeActions(edge: .leading) {
+                                let isItemExist = notificatSurahViewModel.getIds().contains(item.index)
+                                let statusNotification = noficationsManager.hasPermission
+                                Button {
+                                    Task {
+                                        await noficationsManager.request()
+                                    }
+                                    if statusNotification {
+                                        nativationStatus.toggle()
+                                    } else {
+                                        showAlert.toggle()
+                                    }
+                                } label: {
+                                    Label("Choose", systemImage: statusNotification ? isItemExist ? "clock.badge.xmark" : "clock.badge.checkmark" : "clock.badge.xmark")
+                                }
+                                .tint(statusNotification ? isItemExist ? .red : .green : .none)
+                                .task {
+                                    self.index = item
+                                    noficationsManager.checkNotificationPermission()
+                                }
                             }
-                        }
+                    }
                 }
+                AlertPermissions(showAlert: $showAlert, title: "Location allow", message: "open and allow notification please")
             }
             .task {
                 noficationsManager.checkNotificationPermission()
             }
             .sheet(isPresented: $nativationStatus) {
                 SheetView(surah: index!)
-            }
-            .alert(isPresented: $nativationAlert) {
-                Alert(
-                    title: Text("Notication allow"),
-                    message: Text("open and allow notification please"),
-                    primaryButton: .destructive(Text("Cancel")),
-                    secondaryButton: .default(
-                        Text("Allow"),
-                        action: {
-                            if let appSettings = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(appSettings) {
-                                UIApplication.shared.open(appSettings)
-                            }
-                        }
-                    )
-                )
             }
         } else {
             ListEmptyView()

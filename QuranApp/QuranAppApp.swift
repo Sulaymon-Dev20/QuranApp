@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreSpotlight
 
 @main
 struct QuranAppApp: App {
@@ -32,12 +33,14 @@ struct QuranAppApp: App {
                     LaunchScreenView()
                 }
             }
+            .forceRotation(orientation: .portrait)
             .onOpenURL {
                 routerManager.pushDeepLink(to: $0, list: surahViewModel.items)
             }
             .onAppear {
                 appDelegate.app = self
             }
+            .onContinueUserActivity(CSSearchableItemActionType, perform: loadItem)
             .environmentObject(surahViewModel)
             .environmentObject(launchScreenViewModel)
             .environmentObject(language)
@@ -50,6 +53,14 @@ struct QuranAppApp: App {
             .environmentObject(prayerTimeManager)
             .environmentObject(reviewsManager)
             .environment(\.locale, Locale.init(identifier: language.language))
+        }
+    }
+    
+    func loadItem(_ userActivity: NSUserActivity) {
+        print("nima gapla")
+        if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
+//            viewModel.selectItem(with: uniqueIdentifier)
+            print(uniqueIdentifier)
         }
     }
 }

@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+
+//let aType = "uz.suyo.QuranApp"
+
 class MyAppDelegate: NSObject, UIApplicationDelegate, ObservableObject, UNUserNotificationCenterDelegate {
     var app: QuranAppApp?
     @objc
@@ -44,7 +47,7 @@ class MyAppDelegate: NSObject, UIApplicationDelegate, ObservableObject, UNUserNo
         }
         return status
     }
-        
+    
     func registerForNotification() -> Bool {
         var status = true
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
@@ -59,5 +62,19 @@ class MyAppDelegate: NSObject, UIApplicationDelegate, ObservableObject, UNUserNo
         }
         print(status)
         return status;
+    }
+    
+    static var orientationLock = UIInterfaceOrientationMask.portrait {
+        didSet {
+            UIApplication.shared.connectedScenes.forEach { scene in
+                if let windowScene = scene as? UIWindowScene {
+                    windowScene.requestGeometryUpdate(.iOS(interfaceOrientations: orientationLock))
+                }
+            }
+        }
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return MyAppDelegate.orientationLock
     }
 }

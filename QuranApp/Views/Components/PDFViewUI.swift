@@ -13,15 +13,14 @@ struct PDFViewUI: View {
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var datas: SurahViewModel
-
+    
     @Environment(\.dismiss) private var dismiss
-
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                PDFViewer(pageNumber: $pageNumber)
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-            }
+            PDFViewer(pageNumber: $pageNumber)
+                .frame(width: geometry.size.width, height: geometry.size.height)
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {

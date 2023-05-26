@@ -12,7 +12,6 @@ struct ContentView: View {
 
     var body: some View {
         TabMainView()
-//        Test()
             .onAppear {
                 DispatchQueue
                     .main
@@ -36,5 +35,6 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(NoficationsManager())
             .environmentObject(PrayerTimeManager())
             .environmentObject(LocationManager())
+            .environmentObject(ReviewsRequestManager())
     }
 }

@@ -26,13 +26,11 @@ struct PDFViewer: ViewRepresentable {
         uiView.displayMode = .singlePage
         uiView.displayDirection = .horizontal
         uiView.usePageViewController(true)
-        uiView.maxScaleFactor = uiView.scaleFactorForSizeToFit
-        uiView.minScaleFactor = uiView.scaleFactorForSizeToFit
+//        uiView.minScaleFactor = uiView.scaleFactorForSizeToFit
+//        uiView.maxScaleFactor = uiView.scaleFactorForSizeToFit
         uiView.autoScales = true
         uiView.displaysRTL = true
         uiView.delegate = context.coordinator
-        
-        uiView.displayDirection = .horizontal
         let pdfScrollView = uiView.subviews.first?.subviews.first as? UIScrollView
         pdfScrollView?.showsHorizontalScrollIndicator = false
         if let page = uiView.document?.page(at: pageNumber - 1) {
@@ -60,9 +58,7 @@ struct PDFViewer: ViewRepresentable {
         }
         
         @objc func pageChangeHandler(_ notification: Notification) {
-            if let thePage = parent.uiView.currentPage,
-               let ndx = parent.uiView.document?.index(for: thePage),
-               prevPage != ndx {
+            if let thePage = parent.uiView.currentPage, let ndx = parent.uiView.document?.index(for: thePage), prevPage != ndx {
                 parent.pageNumber = ndx + 1
                 prevPage = ndx
             }
