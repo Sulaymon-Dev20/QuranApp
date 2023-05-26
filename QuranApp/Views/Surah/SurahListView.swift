@@ -12,30 +12,13 @@ struct SurahListView: View {
     
     let list: [SurahModel]
     
-    @StateObject var noficationsManager = NoficationsManager()
+    @EnvironmentObject var noficationsManager: NoficationsManager
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
-    @EnvironmentObject var myAppDelegate: MyAppDelegate
-
+    
     @State var nativationStatus: Bool = false
     @State var nativationAlert: Bool = false
-    @State var index: SurahModel = SurahModel(place: Place.medina, type: TypeEnum.makkiyah, count: 3, title: "String", titleAr: "", index: "001", pages: "001", juz: [])
-        
-    func indexData() {
-        var searchableItems = [CSSearchableItem]()
-        
-//        appData.forEach {
-            // Set attributes
-            let attributeSet = CSSearchableItemAttributeSet(contentType: .content)
-            attributeSet.displayName = "item.description"
-            attributeSet.title = "niamdir"
-            
-            // Create searchable item
-            let searchableItem = CSSearchableItem(uniqueIdentifier: nil, domainIdentifier: "holyquran://juz", attributeSet: attributeSet)
-            searchableItems.append(searchableItem)
-//        }
-        CSSearchableIndex.default().indexSearchableItems(searchableItems)
-    }
+    @State var index: SurahModel?
     
     var body: some View {
         if !list.isEmpty {
@@ -59,25 +42,32 @@ struct SurahListView: View {
                         }
                         .swipeActions(edge: .leading) {
                             let isItemExist = notificatSurahViewModel.getIds().contains(item.index)
+                            let statusNotification = noficationsManager.hasPermission
                             Button {
-                                self.index = item
                                 Task {
                                     await noficationsManager.request()
                                 }
-                                if noficationsManager.hasPermission {
+                                if statusNotification {
                                     nativationStatus.toggle()
                                 } else {
                                     nativationAlert.toggle()
                                 }
                             } label: {
-                                Label("Choose", systemImage: noficationsManager.hasPermission ? isItemExist ? "clock.badge.xmark" : "clock.badge.checkmark" : "clock.badge.xmark")
+                                Label("Choose", systemImage: statusNotification ? isItemExist ? "clock.badge.xmark" : "clock.badge.checkmark" : "clock.badge.xmark")
                             }
-                            .tint(noficationsManager.hasPermission ? isItemExist ? .red : .green : .none)
+                            .tint(statusNotification ? isItemExist ? .red : .green : .none)
+                            .task {
+                                self.index = item
+                                noficationsManager.checkNotificationPermission()
+                            }
                         }
                 }
             }
+            .task {
+                noficationsManager.checkNotificationPermission()
+            }
             .sheet(isPresented: $nativationStatus) {
-                SheetView(surah: index)
+                SheetView(surah: index!)
             }
             .alert(isPresented: $nativationAlert) {
                 Alert(
@@ -105,6 +95,6 @@ struct SurahListView_Previews: PreviewProvider {
         SurahListView(list: [SurahModel(place: Place.mecca, type: TypeEnum.makkiyah, count: 22, title: "al_fatiha", titleAr: "String", index: "12", pages: "12", juz: [])])
             .environmentObject(BookMarkViewModel())
             .environmentObject(NotificatSurahViewModel())
-            .environmentObject(MyAppDelegate())
+            .environmentObject(NoficationsManager())
     }
 }

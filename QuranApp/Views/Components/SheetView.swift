@@ -17,7 +17,6 @@ struct SheetView: View {
     
     @State var date: Date = Date()
     @State var everyDay: Bool = false
-    @State var location: Bool = true
     @State var showAlert: Bool = false
     
     let surah: SurahModel
@@ -25,21 +24,8 @@ struct SheetView: View {
     
     var body: some View {
         let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: locationManager.location?.latitude ?? 0.0, longitude: locationManager.location?.longitude ?? 0.0)
-        let pref = Binding<Date>(
-            get: {
-                date
-            },
-            set: {
-                if location {
-                    date = $0
-                } else {
-                    showAlert.toggle()
-                }
-            }
-        )
-        
         VStack{
-            Text(surah.title)
+            Text(LocalizedStringKey(surah.title.localizedForm))
                 .bold()
                 .font(.title)
             
@@ -63,7 +49,7 @@ struct SheetView: View {
                             prayerTimeViewModel.changeMashab(to: newValue)
                         }
                     }
-                    Picker("Vaqtini tanlang", selection: pref, content: {
+                    Picker("Vaqtini tanlang", selection: $date, content: {
                         ForEach(0..<data.count, id: \.self) { index in
                             Text(data[index].name)
                                 .tag(data[index].time)

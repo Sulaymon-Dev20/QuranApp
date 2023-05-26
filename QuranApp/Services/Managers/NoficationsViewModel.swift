@@ -11,12 +11,11 @@ import UserNotifications
 @MainActor
 class NoficationsManager: ObservableObject {
     
+    @State private var isNotificationAllowed = false
     @Published private(set) var hasPermission:Bool = false
     
     init() {
-        Task {
-            await getAuthStatus()
-        }
+        checkNotificationPermission()
     }
     
     func request() async {
@@ -36,6 +35,14 @@ class NoficationsManager: ObservableObject {
             hasPermission = true
         default:
             hasPermission = false
+        }
+    }
+    
+    func checkNotificationPermission() {
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            DispatchQueue.main.async {
+                self.hasPermission = settings.authorizationStatus == .authorized
+            }
         }
     }
     

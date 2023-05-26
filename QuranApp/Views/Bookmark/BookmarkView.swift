@@ -10,6 +10,7 @@ import SwiftUI
 struct BookmarkView: View {
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
+    @EnvironmentObject var noficationsManager: NoficationsManager
     
     @State var searchText: String = ""
     
@@ -50,6 +51,9 @@ struct BookmarkView: View {
                         routerManager.tabBarHide(status: true)
                     }
             }
+        }
+        .task {
+            noficationsManager.checkNotificationPermission()
         }
         .onDisappear {
             searchText = ""
