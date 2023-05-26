@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		CE1B698B2A1FE7EA006FE3D1 /* AlertPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B698A2A1FE7EA006FE3D1 /* AlertPermissions.swift */; };
-		CE1B698D2A200909006FE3D1 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B698C2A200909006FE3D1 /* Test.swift */; };
 		CE434ED82A1D098B003D83EE /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE434ED72A1D098B003D83EE /* NavigationRouter.swift */; };
 		CE44A8F92A1E6660002EE89C /* MyAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44A8F82A1E6660002EE89C /* MyAppDelegate.swift */; };
 		CE44A8FB2A1E6B4A002EE89C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44A8FA2A1E6B4A002EE89C /* URL.swift */; };
+		CE5468672A20BCEB00273458 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5468662A20BCEB00273458 /* Test.swift */; };
+		CE5468692A20BDFA00273458 /* ReviewsRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */; };
 		CE7935DD2A1D74E300B89647 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = CE7935DC2A1D74E300B89647 /* Adhan */; };
 		CE7935E12A1D83C900B89647 /* PrayerTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7935E02A1D83C900B89647 /* PrayerTimeViewModel.swift */; };
 		CE7935E32A1D85F400B89647 /* PrayTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7935E22A1D85F400B89647 /* PrayTimeModel.swift */; };
@@ -84,10 +85,11 @@
 
 /* Begin PBXFileReference section */
 		CE1B698A2A1FE7EA006FE3D1 /* AlertPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPermissions.swift; sourceTree = "<group>"; };
-		CE1B698C2A200909006FE3D1 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		CE434ED72A1D098B003D83EE /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		CE44A8F82A1E6660002EE89C /* MyAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppDelegate.swift; sourceTree = "<group>"; };
 		CE44A8FA2A1E6B4A002EE89C /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		CE5468662A20BCEB00273458 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsRequestManager.swift; sourceTree = "<group>"; };
 		CE7935E02A1D83C900B89647 /* PrayerTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimeViewModel.swift; sourceTree = "<group>"; };
 		CE7935E22A1D85F400B89647 /* PrayTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayTimeModel.swift; sourceTree = "<group>"; };
 		CE7C32BD2A1C328500B2F8E3 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				CE7C32BF2A1C36DB00B2F8E3 /* NoficationsViewModel.swift */,
 				CE434ED72A1D098B003D83EE /* NavigationRouter.swift */,
 				CE7C853A2A0396E600192CC5 /* PDFViewer.swift */,
+				CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -313,7 +316,6 @@
 				CE7C854E2A03A7FA00192CC5 /* BookmarkRowView.swift */,
 				CE7C85502A03A88300192CC5 /* BookmarkListView.swift */,
 				CE7C854C2A03A7BF00192CC5 /* BookmarkView.swift */,
-				CE1B698C2A200909006FE3D1 /* Test.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -329,6 +331,7 @@
 				CEF640BB2A1F929E00FE7D17 /* PrayTimeRowView.swift */,
 				CEF640BD2A1F978100FE7D17 /* NotificationView.swift */,
 				CE1B698A2A1FE7EA006FE3D1 /* AlertPermissions.swift */,
+				CE5468662A20BCEB00273458 /* Test.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -516,7 +519,6 @@
 				CE7C85452A0399A000192CC5 /* LanguageButtonView.swift in Sources */,
 				CEF640B62A1F71F700FE7D17 /* Date.swift in Sources */,
 				CE7C85492A03A35D00192CC5 /* SurahListView.swift in Sources */,
-				CE1B698D2A200909006FE3D1 /* Test.swift in Sources */,
 				CE7C85412A0398CD00192CC5 /* SurahRowView.swift in Sources */,
 				CE44A8F92A1E6660002EE89C /* MyAppDelegate.swift in Sources */,
 				CE7C85432A03994200192CC5 /* SurahView.swift in Sources */,
@@ -532,6 +534,7 @@
 				CEF71CDD2A1E450700979C5A /* LocationViewModel.swift in Sources */,
 				CE7C854F2A03A7FA00192CC5 /* BookmarkRowView.swift in Sources */,
 				CE7C85392A0396CB00192CC5 /* Bundle.swift in Sources */,
+				CE5468672A20BCEB00273458 /* Test.swift in Sources */,
 				CE7C85472A039B0C00192CC5 /* JuzView.swift in Sources */,
 				CE7C85242A03936300192CC5 /* JuzModel.swift in Sources */,
 				CEF640BA2A1F8C7400FE7D17 /* PermissionDenied.swift in Sources */,
@@ -545,6 +548,7 @@
 				CE7C85262A03938900192CC5 /* BookmarkModel.swift in Sources */,
 				CE7C852E2A03945B00192CC5 /* JuzViewModel.swift in Sources */,
 				CE7935E12A1D83C900B89647 /* PrayerTimeViewModel.swift in Sources */,
+				CE5468692A20BDFA00273458 /* ReviewsRequestManager.swift in Sources */,
 				CE7C32C42A1C3A5100B2F8E3 /* NotificatSurah.swift in Sources */,
 				CEC1A6802A1AD85300A10212 /* LaunchScreenView.swift in Sources */,
 			);

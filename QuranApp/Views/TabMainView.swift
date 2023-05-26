@@ -9,8 +9,6 @@ import SwiftUI
 
 struct TabMainView: View {
     @EnvironmentObject var routerManager: RouterManager
-
-    @State var selectedTab: Int = 0
     
     var body: some View {
         ZStack {
@@ -43,9 +41,13 @@ struct TabMainView_Previews: PreviewProvider {
             .environmentObject(SurahViewModel())
             .environmentObject(LaunchScreenViewModel())
             .environmentObject(BookMarkViewModel())
+            .environmentObject(LocationManager())
             .environmentObject(NoficationsManager())
             .environmentObject(LanguageViewModel())
             .environmentObject(RouterManager())
             .environmentObject(JuzViewModel())
+            .environmentObject(NotificatSurahViewModel())
+            .environmentObject(PrayerTimeManager())
+            .environmentObject(ReviewsRequestManager())
     }
 }

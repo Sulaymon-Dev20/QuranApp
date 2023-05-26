@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreSpotlight
 
 struct SurahListView: View {
     
@@ -20,6 +21,22 @@ struct SurahListView: View {
     @State var nativationAlert: Bool = false
     @State var index: SurahModel = SurahModel(place: Place.medina, type: TypeEnum.makkiyah, count: 3, title: "String", titleAr: "", index: "001", pages: "001", juz: [])
         
+    func indexData() {
+        var searchableItems = [CSSearchableItem]()
+        
+//        appData.forEach {
+            // Set attributes
+            let attributeSet = CSSearchableItemAttributeSet(contentType: .content)
+            attributeSet.displayName = "item.description"
+            attributeSet.title = "niamdir"
+            
+            // Create searchable item
+            let searchableItem = CSSearchableItem(uniqueIdentifier: nil, domainIdentifier: "holyquran://juz", attributeSet: attributeSet)
+            searchableItems.append(searchableItem)
+//        }
+        CSSearchableIndex.default().indexSearchableItems(searchableItems)
+    }
+    
     var body: some View {
         if !list.isEmpty {
             List {

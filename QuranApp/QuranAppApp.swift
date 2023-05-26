@@ -22,6 +22,7 @@ struct QuranAppApp: App {
     @StateObject var routerManager: RouterManager = RouterManager()
     @StateObject var prayerTimeManager: PrayerTimeManager = PrayerTimeManager()
     @StateObject var locationManager: LocationManager = LocationManager()
+    @StateObject var reviewsManager: ReviewsRequestManager = ReviewsRequestManager()
 
     var body: some Scene {
         WindowGroup {
@@ -47,6 +48,7 @@ struct QuranAppApp: App {
             .environmentObject(locationManager)
             .environmentObject(noficationsManager)
             .environmentObject(prayerTimeManager)
+            .environmentObject(reviewsManager)
             .environment(\.locale, Locale.init(identifier: language.language))
         }
     }

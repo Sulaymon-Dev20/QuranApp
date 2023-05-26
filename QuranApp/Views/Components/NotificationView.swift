@@ -37,7 +37,7 @@ struct NotificationView: View {
                                 Label("delete", systemImage: "trash.circle")
                                 Label("share", systemImage: "square.and.arrow.up.circle")
                             } preview: {
-                                Text("you can delete and do sth")
+                                Text(item.title)
                                     .padding()
                             }
                         }
@@ -50,9 +50,6 @@ struct NotificationView: View {
                 PermissionDenied(img: "clock.badge.exclamationmark.fill", text: "Notification Permission Denited")
                     .opacity(show ? 0 : 1)
             }
-//            .onTapGesture(count:2, perform: {
-//
-//            })
             .frame(maxWidth: .infinity)
         }
     }

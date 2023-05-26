@@ -12,10 +12,10 @@ struct PDFViewUI: View {
     @State var pageNumber: Int
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
-    @ObservedObject var datas = SurahViewModel()
-    
+    @EnvironmentObject var datas: SurahViewModel
+
     @Environment(\.dismiss) private var dismiss
-    
+
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -63,5 +63,6 @@ struct PDFViewUI_Previews: PreviewProvider {
         }
         .environmentObject(BookMarkViewModel())
         .environmentObject(RouterManager())
+        .environmentObject(SurahViewModel())
     }
 }

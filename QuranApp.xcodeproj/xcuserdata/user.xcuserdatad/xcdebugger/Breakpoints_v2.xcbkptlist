@@ -3,4 +3,54 @@
    uuid = "11F7A6AF-318A-40B1-AC73-F2DDD7F1D289"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B13438E2-06C4-4D1F-AE03-A7C84E571038"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuranApp/Services/Managers/ReviewsRequestManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "increase()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "B13438E2-06C4-4D1F-AE03-A7C84E571038 - e9496d0ca762b5a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuranApp.ReviewsRequestManager.increase() -&gt; ()"
+                  moduleName = "QuranApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/IOS%20project/QuranApp/QuranApp/Services/Managers/ReviewsRequestManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "B13438E2-06C4-4D1F-AE03-A7C84E571038 - e9496d0ca762b5e7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuranApp.ReviewsRequestManager.increase() -&gt; ()"
+                  moduleName = "QuranApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/IOS%20project/QuranApp/QuranApp/Services/Managers/ReviewsRequestManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "196">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

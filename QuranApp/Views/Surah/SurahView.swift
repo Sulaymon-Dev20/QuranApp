@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct SurahView: View {
     @EnvironmentObject var datas: SurahViewModel
     @EnvironmentObject var routeManager: RouterManager
-    
+    @EnvironmentObject var reviewsManager: ReviewsRequestManager
+    @Environment(\.requestReview) var requestReview: RequestReviewAction
+
     @State var searchText: String = ""
     @State var sort: Bool = false
     @State var degree: Double = 0
@@ -52,6 +55,11 @@ struct SurahView: View {
                     }
                 }
         }
+        .onAppear {
+            if reviewsManager.canAskReview(increaseNum: true) {
+                requestReview()
+            }
+        }
         .onDisappear {
             searchText = ""
         }
@@ -75,6 +83,7 @@ struct SurahView: View {
                 .environmentObject(NotificatSurahViewModel())
                 .environmentObject(LanguageViewModel())
                 .environmentObject(RouterManager())
+                .environmentObject(ReviewsRequestManager())
         }
     }
 }
