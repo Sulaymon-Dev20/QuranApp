@@ -10,7 +10,8 @@ import SwiftUI
 struct NotificationView: View {
     @EnvironmentObject var noficationsManager: NoficationsManager
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
-    
+    @EnvironmentObject var routerManager: RouterManager
+
     @State var showAlert:Bool = false
 
     var body: some View {
@@ -33,7 +34,12 @@ struct NotificationView: View {
                     }
                     .onMove(perform: notificatSurahViewModel.moveItem)
                 } else {
-                    ListEmptyView(icon: "String", text: "")
+                    Button(action: {
+                        routerManager.pushTab(to: 0)
+                    }, label: {
+                        ListEmptyView(icon: "note", text: "notification doesn`t exist yet")
+                            .frame(maxWidth: .infinity)
+                    })
                 }
             } else {
                 Button {
@@ -76,5 +82,6 @@ struct NotificationView_Previews: PreviewProvider {
         }
         .environmentObject(NoficationsManager())
         .environmentObject(NotificatSurahViewModel())
+        .environmentObject(RouterManager())
     }
 }
