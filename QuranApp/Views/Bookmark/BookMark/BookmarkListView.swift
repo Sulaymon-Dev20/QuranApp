@@ -27,14 +27,14 @@ struct BookmarkListView: View {
                             }
                             .opacity(0)
                         }
-                        .swipeActions(edge: .trailing) {
+                        .swipeActions(edge: .trailing,allowsFullSwipe: false, content: {
                             Button {
                                 bookmarksViewModel.saveOrDelete(item: BookmarkModel(title: item.title, juz: item.juz, pageNumber: item.pageNumber))
                             } label: {
                                 Label("Choose", systemImage: "bookmark.slash")
                             }
                             .tint(.red)
-                        }
+                        })
                 }
                 .onDelete(perform: bookmarksViewModel.deleteItem)
                 .onMove { indexA, indexB in
@@ -45,7 +45,7 @@ struct BookmarkListView: View {
                     }
                 }
             } else {
-                BookmarkEmptyView()
+                ListEmptyView(icon: "book.circle", text: "bookmark_does_not_have_yet")
                     .onTapGesture {
                         routerManager.pushTab(to: 0)
                     }

@@ -23,7 +23,6 @@ class ReviewsRequestManager: ObservableObject {
             increase()
         }
         let currentCount = UserDefaults.standard.integer(forKey: storageKey)
-        print(currentCount)
         return currentCount == limit - 1
     }
     

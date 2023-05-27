@@ -24,6 +24,8 @@ struct SheetView: View {
     
     var body: some View {
         let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: locationManager.location?.latitude ?? 0.0, longitude: locationManager.location?.longitude ?? 0.0)
+        let show = locationManager.checkLocationPermission()
+        let loading = locationManager.loading
         VStack{
             Text(LocalizedStringKey(surah.title.localizedForm))
                 .bold()
@@ -66,15 +68,19 @@ struct SheetView: View {
                         }
                     }
                 }
-                .blur(radius: locationManager.checkLocationPermission() ? 0 : 8)
+                .blur(radius: show && !loading ? 0 : 8)
                 Button {
                     locationManager.getLocation()
-                    showAlert = true
+                    if !show {
+                        showAlert = true
+                    }
                 } label: {
                     PermissionDenied(img: "paperplane.circle.fill", text: "Location Denited")
                         .frame(maxWidth: .infinity)
                 }
-                .opacity(locationManager.checkLocationPermission() ? 0 : 1)
+                .opacity(show ? 0 : 1)
+                ProgressView()
+                    .opacity(loading ? 1 : 0)
             }
             AlertPermissions(showAlert: $showAlert, title: "Location allow", message: "open and allow notification please")
             Toggle("Har kuni", isOn: $everyDay)

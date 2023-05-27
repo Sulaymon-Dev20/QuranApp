@@ -37,7 +37,12 @@ class NotificatSurahViewModel: ObservableObject {
         items.remove(atOffsets: indexSet)
         saveStorage()
     }
-    
+
+    func deleteItem(id: String) {
+        items.removeAll { $0.id == id }
+        saveStorage()
+    }
+
     func moveItem(from: IndexSet,to: Int) {
         items.move(fromOffsets: from, toOffset: to)
         saveStorage()
@@ -56,9 +61,15 @@ class NotificatSurahViewModel: ObservableObject {
         saveStorage()
     }
 
-    func changeStatus(id: String,active status: Bool) {
+    func changeActive(id: String,active status: Bool) {
         var item = items.first { $0.id == id }
         item?.active = status
+        saveStorage()
+    }
+
+    func changeStatus(id: String,active status: Bool) {
+        var item = items.first { $0.id == id }
+        item?.isEveryDay = status
         saveStorage()
     }
 

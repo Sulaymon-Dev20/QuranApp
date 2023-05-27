@@ -12,9 +12,10 @@ struct PrayTimeRowView: View {
     @EnvironmentObject var locationManager: LocationManager
     
     @State var showAlert: Bool = false
-
+    
     var body: some View {
         let show = locationManager.checkLocationPermission()
+        let loading = locationManager.loading
         Section {
             let data = prayerTimeViewModel.getPrayTime(time: Date(),latitude: locationManager.location?.latitude ?? 0.0, longitude: locationManager.location?.longitude ?? 0.0)
             ZStack {
@@ -27,10 +28,11 @@ struct PrayTimeRowView: View {
                             Spacer()
                             Text(item.time.clockString)
                                 .bold()
+                                .frame(width: 60, alignment: .center)
                         }.padding(.vertical, 5)
                     }
                 }
-                .blur(radius: show ? 0 : 8)
+                .blur(radius: show && !loading ? 0 : 8)
                 Button {
                     if !show {
                         showAlert = true
@@ -41,6 +43,8 @@ struct PrayTimeRowView: View {
                         .frame(maxWidth: .infinity)
                 }
                 .opacity(show ? 0 : 1)
+                ProgressView()
+                    .opacity(loading ? 1 : 0)
                 AlertPermissions(showAlert: $showAlert, title: "Location allow", message: "open and allow notification please")
             }
         } header: {

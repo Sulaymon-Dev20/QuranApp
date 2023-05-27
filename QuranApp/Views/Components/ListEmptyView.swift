@@ -2,18 +2,23 @@
 //  ListEmptyView.swift
 //  QuranApp
 //
-//  Created by Sulaymon on 25/05/23.
+//  Created by Sulaymon on 27/05/23.
 //
 
 import SwiftUI
 
 struct ListEmptyView: View {
+    let icon:String
+    let text:LocalizedStringKey
+    
     var body: some View {
         VStack {
-            Image(systemName: "folder.fill.badge.questionmark")
-                .font(.largeTitle)
-                .padding(20)
-            Text("cannot_find")
+            Image(systemName: icon)
+                .font(.system(size: 60))
+                .padding(1)
+            Text(text)
+                .frame(width: 160)
+                .multilineTextAlignment(.center)
                 .bold()
         }
     }
@@ -21,6 +26,6 @@ struct ListEmptyView: View {
 
 struct ListEmptyView_Previews: PreviewProvider {
     static var previews: some View {
-        ListEmptyView()
+        ListEmptyView(icon: "book.circle", text: "bookmark_does_not_have_yet")
     }
 }

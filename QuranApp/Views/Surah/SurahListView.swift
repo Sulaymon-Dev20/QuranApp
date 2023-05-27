@@ -25,6 +25,7 @@ struct SurahListView: View {
             ZStack{
                 List {
                     ForEach(list, id: \.title){ item in
+                        let status = bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue)
                         SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages)
                             .overlay {
                                 NavigationLink(value: Route.surah(item: item)) {
@@ -32,8 +33,7 @@ struct SurahListView: View {
                                 }
                                 .opacity(0)
                             }
-                            .swipeActions(edge: .trailing) {
-                                let status = bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue)
+                            .swipeActions(edge: .trailing, allowsFullSwipe: !status) {
                                 Button {
                                     bookmarksViewModel.saveOrDelete(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: (item.pages as NSString).integerValue))
                                 } label: {
@@ -73,7 +73,7 @@ struct SurahListView: View {
                 SheetView(surah: index!)
             }
         } else {
-            ListEmptyView()
+            ItemNotFoundView()
         }
     }
 }

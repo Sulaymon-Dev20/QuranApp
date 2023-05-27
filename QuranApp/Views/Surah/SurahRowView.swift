@@ -22,12 +22,12 @@ struct SurahRowView: View {
                         .font(.system(size: 11.0))
                 }
             VStack{
-                HStack{
+                HStack {
                     Text(LocalizedStringKey(name.localizedForm))
                         .bold()
                     Spacer()
                 }
-                HStack{
+                HStack {
                     Text(LocalizedStringKey(type == TypeEnum.madaniyah ? "madaniyah" : "makkiyah"))
                         .fontWeight(Font.Weight.ultraLight)
                     Text("\(verses)")

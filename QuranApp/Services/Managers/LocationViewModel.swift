@@ -15,6 +15,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     let kLongitudeKey = "longitude"
 
     @Published var authorizationStatus: Bool = false
+    @Published var loading: Bool = false
     @Published var location: CLLocationCoordinate2D?
     @Published var items:[JuzModel] = []
     
@@ -38,6 +39,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func request() {
         self.manager.requestWhenInUseAuthorization()
         self.manager.startUpdatingLocation()
+        self.loading = true
     }
     
     func getLocation() {
@@ -56,6 +58,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         defaults.set(location.coordinate.latitude, forKey: kLatitudeKey)
         defaults.set(location.coordinate.longitude, forKey: kLongitudeKey)
         self.manager.stopUpdatingLocation()
+        self.loading = false
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {

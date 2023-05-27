@@ -19,27 +19,6 @@ struct SurahView: View {
     @State var searchText: String = ""
     @State var sort: Bool = false
     @State var degree: Double = 0
-    
-    func additem() {
-        let attributeSet = CSSearchableItemAttributeSet(contentType: .content)
-        attributeSet.title = "surah Yasin"
-        attributeSet.contentDescription = "surah Yasin"
-        attributeSet.relatedUniqueIdentifier = "starWar"
-        attributeSet.identifier = "starWar"
-
-        attributeSet.addedDate = Date()
-
-        let searchableItem = CSSearchableItem(uniqueIdentifier: "starWar", domainIdentifier: "surah", attributeSet: attributeSet)
-
-        CSSearchableIndex.default()
-            .indexSearchableItems([searchableItem]) { error in
-                    if let error = error {
-                        print("Error indexing: \(error)")
-                    } else {
-                        print("Indexed.")
-                    }
-            }
-    }
         
     var body: some View {
         NavigationStack(path: $routeManager.path) {
@@ -82,7 +61,6 @@ struct SurahView: View {
             if reviewsManager.canAskReview(increaseNum: true) {
                 requestReview()
             }
-            additem()
         }
         .onDisappear {
             searchText = ""
