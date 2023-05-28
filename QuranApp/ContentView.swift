@@ -9,16 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var launchScreenViewModel: LaunchScreenViewModel
-
+    @EnvironmentObject var reviewsManager: ReviewsRequestManager
+    
     var body: some View {
-        TabMainView()
-            .onAppear {
-                DispatchQueue
-                    .main
-                    .asyncAfter(deadline: .now() + 5) {
-                        launchScreenViewModel.dismiss()
-                    }
+        ZStack {
+            if reviewsManager.count != 0 {
+                TabMainView()
+            } else {
+                OnBoardingScreen()
             }
+        }
+        .onAppear {
+            DispatchQueue
+                .main
+                .asyncAfter(deadline: .now() + 5) {
+                    launchScreenViewModel.dismiss()
+                }
+        }
     }
 }
 
@@ -35,6 +42,7 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(NoficationsManager())
             .environmentObject(PrayerTimeManager())
             .environmentObject(LocationManager())
+            .environmentObject(ReviewsRequestManager())
             .environmentObject(ReviewsRequestManager())
     }
 }
