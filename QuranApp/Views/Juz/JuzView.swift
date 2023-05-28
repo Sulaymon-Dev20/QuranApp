@@ -16,12 +16,13 @@ struct JuzView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack{
+            ZStack {
                 List {
                     ForEach(sort ? datas.items.reversed() : datas.items, id: \.index) {item in
                         JuzRowView(item: item)
                     }
                 }
+                .animation(.linear(duration: 3.0), value: sort)
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("juz")
@@ -39,8 +40,7 @@ struct JuzView: View {
                     } label: {
                         Image(systemName: "arrow.up")
                             .rotationEffect(.degrees(degree))
-                            .animation(.linear(duration: 0.3), value: sort)
-                        
+                            .animation(.linear(duration: 3.0), value: sort)
                     }
                 }
             }

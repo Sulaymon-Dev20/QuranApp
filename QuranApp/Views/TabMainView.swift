@@ -9,7 +9,8 @@ import SwiftUI
 
 struct TabMainView: View {
     @EnvironmentObject var routerManager: RouterManager
-    
+    @EnvironmentObject var badgeAppManager: BadgeAppManager
+ 
     var body: some View {
         ZStack {
             TabView(selection: $routerManager.tabValue) {
@@ -24,6 +25,7 @@ struct TabMainView: View {
                     }
                     .tag(1)
                 BookmarkView()
+                    .badge(badgeAppManager.count)
                     .tabItem {
                         Label("bookmarks", systemImage: "bookmark.circle")
                     }
@@ -49,5 +51,6 @@ struct TabMainView_Previews: PreviewProvider {
             .environmentObject(NotificatSurahViewModel())
             .environmentObject(PrayerTimeManager())
             .environmentObject(ReviewsRequestManager())
+            .environmentObject(BadgeAppManager())
     }
 }

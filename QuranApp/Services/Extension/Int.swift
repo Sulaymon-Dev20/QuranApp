@@ -17,4 +17,8 @@ extension Int {
         }
         return length;
     }
+    
+    var toString: String {
+        return "\(self)"
+    }
 }

@@ -12,7 +12,8 @@ struct SheetView: View {
     @EnvironmentObject var noficationsManager: NoficationsManager
     @EnvironmentObject var prayerTimeViewModel: PrayerTimeManager
     @EnvironmentObject var locationManager: LocationManager
-    
+    @EnvironmentObject var badgeAppManager: BadgeAppManager
+
     @Environment(\.dismiss) var dismiss
     
     @State var date: Date = Date()
@@ -98,9 +99,19 @@ struct SheetView: View {
                 }
                 Spacer()
                 Button {
-                    let item = NotificatSurah(id: surah.index, title: surah.title, subTitle: "", url: "surahs?index=\(surah.index)", time: self.date, isEveryDay: everyDay, active: true)
+                    date.changeDay(day: date.intValue > Date().intValue ? date.day : date.day + 1)
+                    let item = NotificatSurah(
+                        id: UUID().uuidString,
+//                        id: surah.index,
+                        title: LocalizedStringKey(surah.title.localizedForm).stringValue(),
+                        subTitle: "Do not forget that the Qur'an is a witness in the judgment day",
+                        url: "surahs?index=\(surah.index)",
+                        page: surah.pages,
+                        time: self.date,
+                        isEveryDay: everyDay,
+                        active: true)
                     notificatSurahViewModel.saveOrDelete(item: item)
-                    noficationsManager.pushNotication(item: item)
+                    noficationsManager.pushNotication(item: item, badgeCount: badgeAppManager.count)
                     dismiss()
                 } label: {
                     Text("Save")
@@ -122,5 +133,6 @@ struct SheetView_Previews: PreviewProvider {
         SheetView(surah: SurahModel(place: Place.mecca, type: TypeEnum.madaniyah, count: 12, title: "Surah Yasin", titleAr: "String", index: "1", pages: "1", juz: []))
             .environmentObject(PrayerTimeManager())
             .environmentObject(LocationManager())
+            .environmentObject(BadgeAppManager())
     }
 }

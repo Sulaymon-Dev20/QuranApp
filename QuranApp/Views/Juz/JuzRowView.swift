@@ -27,7 +27,7 @@ struct JuzRowView: View {
         .contextMenu {
             ForEach(item.surahs, id: \.index) { surahs in
                 NavigationLink(value: surahs.pageNumber.intValue) {
-                    Label(surahs.title.localizedForm, systemImage: surahs.type == "Makkiyah" ? "moon.fill" : "sun.max.fill")
+                    Label(LocalizedStringKey(surahs.title.localizedForm), systemImage: surahs.type == "Makkiyah" ? "moon.fill" : "sun.max.fill")
                 }
             }
         }

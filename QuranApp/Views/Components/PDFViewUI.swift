@@ -18,31 +18,28 @@ struct PDFViewUI: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var body: some View {
-        GeometryReader { geometry in
-            PDFViewer(pageNumber: $pageNumber)
-                .frame(width: geometry.size.width, height: geometry.size.height)
-        }
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    routerManager.tabBarHide(status: false)
-                    dismiss()
-                } label: {
-                    HStack {
-                        Image(systemName: "chevron.backward")
-                        Text("back")
+        PDFViewer(pageNumber: $pageNumber)
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        routerManager.tabBarHide(status: false)
+                        dismiss()
+                    } label: {
+                        HStack {
+                            Image(systemName: "chevron.backward")
+                            Text("back")
+                        }
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        bookmarksViewModel.saveOrDelete(item: getSurahByPage(page: pageNumber))
+                    } label: {
+                        Image(systemName: bookmarksViewModel.getPages().contains(pageNumber) ? "bookmark.slash.fill" : "bookmark.fill")
                     }
                 }
             }
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    bookmarksViewModel.saveOrDelete(item: getSurahByPage(page: pageNumber))
-                } label: {
-                    Image(systemName: bookmarksViewModel.getPages().contains(pageNumber) ? "bookmark.slash.fill" : "bookmark.fill")
-                }
-            }
-        }
     }
     
     func getSurahByPage(page: Int) -> BookmarkModel {

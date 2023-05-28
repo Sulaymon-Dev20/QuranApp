@@ -11,6 +11,7 @@ struct BookmarkView: View {
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var noficationsManager: NoficationsManager
+    @EnvironmentObject var badgeAppManager: BadgeAppManager
     
     @State var searchText: String = ""
     
@@ -19,10 +20,25 @@ struct BookmarkView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                BookmarkListView(list: filterData(), sort: $sort, searchText: $searchText)
-                NotificationView()
-                PrayTimeRowView()
+            ScrollViewReader { proxy in
+                VStack {
+                    List {
+                        BookmarkListView(list: filterData(), sort: $sort, searchText: $searchText)
+                            .id(1)
+                        NotificationView()
+                            .id(2)
+                        PrayTimeRowView()
+                            .id(3)
+                    }
+                }
+                .task {
+                    if badgeAppManager.count != 0 {
+                        withAnimation(Animation.default.speed(0.5)) {
+                            proxy.scrollTo(3)
+                            badgeAppManager.minusBadge(number: badgeAppManager.count)
+                        }
+                    }
+                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("bookmarks")
@@ -81,7 +97,8 @@ struct BookmarkView_Previews: PreviewProvider {
             .environmentObject(NoficationsManager())
             .environmentObject(NotificatSurahViewModel())
             .environmentObject(LocationManager())
+            .environmentObject(BadgeAppManager())
         //            .environment(\.locale, Locale.init(identifier: "ar"))
-//            .preview(for: .iPhone)
+        //            .preview(for: .iPhone)
     }
 }

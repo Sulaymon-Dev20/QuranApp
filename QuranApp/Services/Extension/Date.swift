@@ -27,4 +27,14 @@ extension Date {
     public var minute: Int {
         return Calendar.current.component(.minute, from: self)
     }
+    
+    public var intValue: Int {
+        return Int(self.timeIntervalSince1970)
+    }
+    
+    mutating func changeDay(day: Int) {
+        var component = Calendar.current.dateComponents(in: TimeZone.current, from: self)
+        component.day = day
+        self = Calendar.current.date(from: component)!
+    }
 }

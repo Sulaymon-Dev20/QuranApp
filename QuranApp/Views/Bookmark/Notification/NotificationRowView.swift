@@ -33,19 +33,18 @@ struct NotificationRowView: View {
                 Text(LocalizedStringKey(item.title.localizedForm))
                     .bold()
                 Text(item.subTitle)
+                    .lineLimit(1)
                     .font(.caption)
             }
             Spacer()
-            HStack(alignment: .lastTextBaseline) {
-                Toggle(isOn: $item.active) {
-                    Text("\(item.time.clockString)")
-                        .bold()
-                        .strikethrough(!item.active)
-                        .frame(width: 60, alignment: .center)
-                }
-                .onChange(of: item.active) { newValue in
-                    action(newValue, true)
-                }
+            Toggle(isOn: $item.active) {
+                Text("\(item.time.clockString)")
+                    .bold()
+                    .strikethrough(!item.active)
+                    .frame(width: 60, alignment: .center)
+            }
+            .onChange(of: item.active) { newValue in
+                action(newValue, true)
             }
             .frame(width: 120, alignment: .leading)
         }
@@ -55,17 +54,17 @@ struct NotificationRowView: View {
 struct NotificationRowView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir", url: "url", time: Date(), isEveryDay: true, active: true))) { item, status in
+            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir", url: "url", page: "12", time: Date(), isEveryDay: true, active: true))) { item, status in
                 
             }
-            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir", url: "url", time: Date(), isEveryDay: false, active: true))) {
+            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir", url: "url", page: "12", time: Date(), isEveryDay: false, active: true))) {
                 print($0)
                 print($1)
             }
-            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir", url: "url", time: Date(), isEveryDay: true, active: false))) { item, status in
+            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir", url: "url", page: "12", time: Date(), isEveryDay: true, active: false))) { item, status in
                 
             }
-            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir", url: "url", time: Date(), isEveryDay: false, active: false))) { item, status in
+            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir", url: "url", page: "12", time: Date(), isEveryDay: false, active: false))) { item, status in
                 
             }
         }

@@ -8,8 +8,8 @@
 import Foundation
 
 struct NotificatSurah: Codable {
-    let id, title, subTitle, url: String
-    let time: Date
+    var id, title, subTitle, url, page: String
+    var time: Date
     var isEveryDay: Bool = false
     var active: Bool = true
 }

@@ -32,17 +32,17 @@ class NotificatSurahViewModel: ObservableObject {
     func getIds() -> [String]{
         return items.map{ $0.id }
     }
-
+    
     func deleteItem(indexSet: IndexSet) {
         items.remove(atOffsets: indexSet)
         saveStorage()
     }
-
+    
     func deleteItem(id: String) {
         items.removeAll { $0.id == id }
         saveStorage()
     }
-
+    
     func moveItem(from: IndexSet,to: Int) {
         items.move(fromOffsets: from, toOffset: to)
         saveStorage()
@@ -53,26 +53,35 @@ class NotificatSurahViewModel: ObservableObject {
     }
     
     func saveOrDelete(item: NotificatSurah) {
-        if items.contains(where: { $0.id == item.id}) {
-            items.removeAll {$0.id != item.id}
-        } else {
-            items.append(item)
-        }
+//        items.removeAll {$0.id != item.id}
+        items.append(item)
         saveStorage()
     }
-
-    func changeActive(id: String,active status: Bool) {
+    
+    func changeActive(id: String, time: Date, active status: Bool) {
         var item = items.first { $0.id == id }
+        item?.time = time
         item?.active = status
         saveStorage()
     }
-
+    
+    func checkStatus() {
+        items = items.map { (item) -> NotificatSurah in
+            var _item = item
+            if !item.isEveryDay && item.time.intValue < Date().intValue {
+                _item.active = false
+            }
+            return _item;
+        }
+        saveStorage()
+    }
+    
     func changeStatus(id: String,active status: Bool) {
         var item = items.first { $0.id == id }
         item?.isEveryDay = status
         saveStorage()
     }
-
+    
     func saveStorage(){
         if let encodedData = try? JSONEncoder().encode(items) {
             UserDefaults.standard.set(encodedData, forKey: storageKey)

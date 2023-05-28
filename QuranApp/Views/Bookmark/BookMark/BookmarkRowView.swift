@@ -22,10 +22,8 @@ struct BookmarkRowView: View {
                     Spacer()
                 }
                 HStack{
-                    Text("Page")
-                    Text("\(pageNumber),")
-                    Text("Juz ")
-                    Text("\(juz.intValue)")
+                    Text("page \(pageNumber.toString)")
+                    Text("Juz \(juz.intValue)")
                     Spacer()
                 }
             }

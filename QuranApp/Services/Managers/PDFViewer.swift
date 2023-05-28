@@ -17,8 +17,7 @@ public typealias ViewRepresentable = UIViewRepresentable
 #endif
 
 struct PDFViewer: ViewRepresentable {
-    typealias UIViewType = PDFView
-    let uiView = PDFKit.PDFView()
+    let uiView = PDFKit.PDFView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     @Binding var pageNumber: Int
     
     func makeUIView(context: Context) -> PDFKit.PDFView {

@@ -61,6 +61,11 @@ struct SurahListView: View {
                                     self.index = item
                                     noficationsManager.checkNotificationPermission()
                                 }
+                                let title = LocalizedStringKey(item.title).stringValue()
+                                ShareLink(item: title, subject: Text(item.title), message: Text("holyquran://surahs?index=\(item.index)"), preview: SharePreview(title, icon: "link.circle.fill")) {
+                                    Label("ShareLink", systemImage:  "link.circle.fill")
+                                }
+                                .tint(.blue)
                             }
                     }
                 }
