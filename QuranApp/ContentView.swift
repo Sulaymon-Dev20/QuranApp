@@ -43,6 +43,6 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(PrayerTimeManager())
             .environmentObject(LocationManager())
             .environmentObject(ReviewsRequestManager())
-            .environmentObject(ReviewsRequestManager())
+            .environmentObject(BadgeAppManager())
     }
 }

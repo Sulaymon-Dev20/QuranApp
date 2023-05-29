@@ -22,8 +22,11 @@ struct PDFViewUI: View {
     var body: some View {
         PDFViewer(pageNumber: $pageNumber)
             .edgesIgnoringSafeArea(.all)
+            .onTapGesture(count: 2) {
+//                that need to scoom out
+            }
             .onTapGesture {
-                    showTogBar.toggle()
+                showTogBar.toggle()
             }
             .navigationBarBackButtonHidden(true)
             .toolbar(showTogBar ? .hidden : .visible, for: .navigationBar)

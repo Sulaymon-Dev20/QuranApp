@@ -14,6 +14,7 @@ struct SurahView: View {
     @EnvironmentObject var datas: SurahViewModel
     @EnvironmentObject var routeManager: RouterManager
     @EnvironmentObject var reviewsManager: ReviewsRequestManager
+    @EnvironmentObject var spotlightManager: SpotlightManager
     @Environment(\.requestReview) var requestReview: RequestReviewAction
 
     @State var searchText: String = ""
@@ -23,12 +24,14 @@ struct SurahView: View {
     var body: some View {
         NavigationStack(path: $routeManager.path) {
             SurahListView(list: sort ? filterData().reversed() : filterData())
+                .addSpotlight(3, shape: .rounded, roundedRadius: 10, text: "Lanuage Button \n you can chouse for lanugage")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("surahs")
                 .toolbar(routeManager.tabBarHideStatus ? .hidden : .visible, for: .tabBar)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         LanguageButtonView()
+                            .addSpotlight(0, shape: .rounded, roundedRadius: 10, text: "Lanuage Button \n you can chouse for lanugage")
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
@@ -41,6 +44,7 @@ struct SurahView: View {
                                 .rotationEffect(.degrees(degree))
                                 .animation(.linear(duration: 0.3), value: sort)
                         }
+                        .addSpotlight(1, shape: .rounded, roundedRadius: 10, text: "For Sortitem Items for asc and deck")
                     }
                 }
                 .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_surah"))
@@ -86,6 +90,8 @@ struct SurahView: View {
                 .environmentObject(LanguageViewModel())
                 .environmentObject(RouterManager())
                 .environmentObject(ReviewsRequestManager())
+                .environmentObject(NoficationsManager())
+                .environmentObject(SpotlightManager())
         }
     }
 }

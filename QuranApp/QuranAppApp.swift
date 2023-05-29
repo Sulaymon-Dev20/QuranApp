@@ -25,7 +25,8 @@ struct QuranAppApp: App {
     @StateObject var locationManager: LocationManager = LocationManager()
     @StateObject var reviewsManager: ReviewsRequestManager = ReviewsRequestManager()
     @StateObject var badgeAppManager: BadgeAppManager = BadgeAppManager()
-    
+    @StateObject var spotlightManager: SpotlightManager = SpotlightManager()
+
     var body: some Scene {
         WindowGroup {
             ZStack {
@@ -54,6 +55,7 @@ struct QuranAppApp: App {
             .environmentObject(prayerTimeManager)
             .environmentObject(reviewsManager)
             .environmentObject(badgeAppManager)
+            .environmentObject(spotlightManager)
             .environment(\.locale, Locale.init(identifier: language.language))
         }
     }

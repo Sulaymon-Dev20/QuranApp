@@ -121,9 +121,11 @@ struct OnBoardingScreen: View {
 
 struct OnBoardingScreen_Previews: PreviewProvider {
     static var previews: some View {
-        OnBoardingScreen()
-            .environmentObject(ReviewsRequestManager())
-            .environmentObject(LanguageViewModel())
+        NavigationView {
+            OnBoardingScreen()
+        }
+        .environmentObject(ReviewsRequestManager())
+        .environmentObject(LanguageViewModel())
     }
 }
 

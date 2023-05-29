@@ -27,6 +27,7 @@ struct SurahListView: View {
                     ForEach(list, id: \.title){ item in
                         let status = bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue)
                         SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages)
+                            .addSpotlight(4, shape: .rounded, roundedRadius: 10, text: "item item")
                             .overlay {
                                 NavigationLink(value: Route.surah(item: item)) {
                                     Text(">>>")

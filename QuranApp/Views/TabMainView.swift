@@ -10,7 +10,8 @@ import SwiftUI
 struct TabMainView: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var badgeAppManager: BadgeAppManager
- 
+    @EnvironmentObject var spotlightManager: SpotlightManager
+    
     var body: some View {
         ZStack {
             TabView(selection: $routerManager.tabValue) {
@@ -34,6 +35,10 @@ struct TabMainView: View {
             .accentColor(Color.primary)
             .toolbarRole(ToolbarRole.automatic)
         }
+        .addSpotlightOverlay(show: $spotlightManager.showSpotLight, currentSpot: $spotlightManager.currentSpot)
+        .onAppear {
+            spotlightManager.showSpotLight = true
+        }
     }
 }
 
@@ -52,5 +57,6 @@ struct TabMainView_Previews: PreviewProvider {
             .environmentObject(PrayerTimeManager())
             .environmentObject(ReviewsRequestManager())
             .environmentObject(BadgeAppManager())
+            .environmentObject(SpotlightManager())
     }
 }
