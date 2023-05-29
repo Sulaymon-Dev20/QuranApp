@@ -46,7 +46,7 @@ extension View {
         Rectangle()
             .fill(.ultraThinMaterial)
             .environment(\.colorScheme, .dark)
-            .opacity(show.wrappedValue ? 1 : 0)
+            .opacity(show.wrappedValue ? 0.9 : 0)
             .mask {
                 Rectangle()
                     .overlay(alignment: .topLeading) {

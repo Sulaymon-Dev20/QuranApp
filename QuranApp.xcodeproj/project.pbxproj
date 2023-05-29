@@ -60,7 +60,6 @@
 		CE7C854F2A03A7FA00192CC5 /* BookmarkRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C854E2A03A7FA00192CC5 /* BookmarkRowView.swift */; };
 		CE7C85512A03A88300192CC5 /* BookmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85502A03A88300192CC5 /* BookmarkListView.swift */; };
 		CE7C85572A03AFAB00192CC5 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85562A03AFAA00192CC5 /* LanguageViewModel.swift */; };
-		CE966C492A24E77000CABA72 /* CustomAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE966C482A24E77000CABA72 /* CustomAlertView.swift */; };
 		CEC1A6802A1AD85300A10212 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A67F2A1AD85300A10212 /* LaunchScreenView.swift */; };
 		CEC1A6822A1ADA4100A10212 /* LaunchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A6812A1ADA4100A10212 /* LaunchScreenViewModel.swift */; };
 		CEC1A6872A1AE0BB00A10212 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A6862A1AE0BA00A10212 /* String.swift */; };
@@ -153,7 +152,6 @@
 		CE7C854E2A03A7FA00192CC5 /* BookmarkRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkRowView.swift; sourceTree = "<group>"; };
 		CE7C85502A03A88300192CC5 /* BookmarkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListView.swift; sourceTree = "<group>"; };
 		CE7C85562A03AFAA00192CC5 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
-		CE966C482A24E77000CABA72 /* CustomAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertView.swift; sourceTree = "<group>"; };
 		CEC1A67C2A1AD66300A10212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CEC1A67F2A1AD85300A10212 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		CEC1A6812A1ADA4100A10212 /* LaunchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewModel.swift; sourceTree = "<group>"; };
@@ -379,7 +377,6 @@
 				CE1B698A2A1FE7EA006FE3D1 /* AlertPermissions.swift */,
 				CED05B7C2A219D6100A0C4B5 /* ItemNotFoundView.swift */,
 				CED05B7E2A219DA500A0C4B5 /* ListEmptyView.swift */,
-				CE966C482A24E77000CABA72 /* CustomAlertView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -599,7 +596,6 @@
 				CEF640BC2A1F929E00FE7D17 /* PrayTimeRowView.swift in Sources */,
 				CE7C85452A0399A000192CC5 /* LanguageButtonView.swift in Sources */,
 				CEF640B62A1F71F700FE7D17 /* Date.swift in Sources */,
-				CE966C492A24E77000CABA72 /* CustomAlertView.swift in Sources */,
 				CE7C85492A03A35D00192CC5 /* SurahListView.swift in Sources */,
 				CE7C85412A0398CD00192CC5 /* SurahRowView.swift in Sources */,
 				CE44A8F92A1E6660002EE89C /* MyAppDelegate.swift in Sources */,

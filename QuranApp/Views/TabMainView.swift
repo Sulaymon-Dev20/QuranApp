@@ -13,28 +13,26 @@ struct TabMainView: View {
     @EnvironmentObject var spotlightManager: SpotlightManager
     
     var body: some View {
-        ZStack {
-            TabView(selection: $routerManager.tabValue) {
-                SurahView()
-                    .tabItem {
-                        Label("surahs", systemImage: "book.circle")
-                    }
-                    .tag(0)
-                JuzView()
-                    .tabItem {
-                        Label("juz", systemImage: "mountain.2.circle.fill")
-                    }
-                    .tag(1)
-                BookmarkView()
-                    .badge(badgeAppManager.count)
-                    .tabItem {
-                        Label("bookmarks", systemImage: "bookmark.circle")
-                    }
-                    .tag(2)
-            }
-            .accentColor(Color.primary)
-            .toolbarRole(ToolbarRole.automatic)
+        TabView(selection: $routerManager.tabValue) {
+            SurahView()
+                .tabItem {
+                    Label("surahs", systemImage: "book.circle")
+                }
+                .tag(0)
+            JuzView()
+                .tabItem {
+                    Label("juz", systemImage: "mountain.2.circle.fill")
+                }
+                .tag(1)
+            BookmarkView()
+                .badge(badgeAppManager.count)
+                .tabItem {
+                    Label("bookmarks", systemImage: "bookmark.circle")
+                }
+                .tag(2)
         }
+        .accentColor(Color.primary)
+        .toolbarRole(ToolbarRole.automatic)
         .addSpotlightOverlay(show: $spotlightManager.showSpotLight, currentSpot: $spotlightManager.currentSpot)
         .onAppear {
             spotlightManager.showSpotLight = true

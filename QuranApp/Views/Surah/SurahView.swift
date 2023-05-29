@@ -24,7 +24,6 @@ struct SurahView: View {
     var body: some View {
         NavigationStack(path: $routeManager.path) {
             SurahListView(list: sort ? filterData().reversed() : filterData())
-                .addSpotlight(3, shape: .rounded, roundedRadius: 10, text: "Lanuage Button \n you can chouse for lanugage")
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("surahs")
                 .toolbar(routeManager.tabBarHideStatus ? .hidden : .visible, for: .tabBar)
