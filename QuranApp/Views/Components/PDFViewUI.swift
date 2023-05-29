@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PDFViewUI: View {
     
-    @State var pageNumber: Int
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var datas: SurahViewModel
@@ -17,9 +16,19 @@ struct PDFViewUI: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
+    @State var pageNumber: Int
+    @State var showTogBar: Bool = false
+    
     var body: some View {
         PDFViewer(pageNumber: $pageNumber)
+            .edgesIgnoringSafeArea(.all)
+            .onTapGesture {
+                    showTogBar.toggle()
+            }
             .navigationBarBackButtonHidden(true)
+            .toolbar(showTogBar ? .hidden : .visible, for: .navigationBar)
+            .animation(Animation.easeInOut(duration: 0.9).delay(0.6), value: showTogBar)
+            .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {

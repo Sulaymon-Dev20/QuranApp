@@ -27,11 +27,12 @@ struct SheetView: View {
         let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: locationManager.location?.latitude ?? 0.0, longitude: locationManager.location?.longitude ?? 0.0)
         let show = locationManager.checkLocationPermission()
         let loading = locationManager.loading
-        VStack{
+        VStack {
             Text(LocalizedStringKey(surah.title.localizedForm))
                 .bold()
                 .font(.title)
-            
+                .padding(.top, 40)
+
             Text(date.clockString)
                 .font(.largeTitle)
                 .padding(.bottom,40)
