@@ -44,5 +44,6 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(LocationManager())
             .environmentObject(ReviewsRequestManager())
             .environmentObject(BadgeAppManager())
+            .environmentObject(SpotlightManager())
     }
 }

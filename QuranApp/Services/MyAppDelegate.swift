@@ -7,9 +7,7 @@
 
 import SwiftUI
 
-
 //let aType = "uz.suyo.QuranApp"
-
 class MyAppDelegate: NSObject, UIApplicationDelegate, ObservableObject, UNUserNotificationCenterDelegate {
     var app: QuranAppApp?
     @objc
@@ -24,7 +22,6 @@ class MyAppDelegate: NSObject, UIApplicationDelegate, ObservableObject, UNUserNo
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
-        print(response.notification.request.content)
         let routerManager = app?.routerManager
         if let deepLink = response.notification.request.content.userInfo["link"] as? String, let url = URL(string: deepLink) {
             routerManager?.pushDeepLink(to: url, list: app?.surahViewModel.items ?? [])
@@ -53,14 +50,11 @@ class MyAppDelegate: NSObject, UIApplicationDelegate, ObservableObject, UNUserNo
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
             status = false
             if success {
-                print("All set!")
             } else if let error = error {
                 print(error.localizedDescription)
             } else{
-                print("Surash kerak")
             }
         }
-        print(status)
         return status;
     }
     

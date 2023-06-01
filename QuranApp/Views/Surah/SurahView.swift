@@ -16,11 +16,10 @@ struct SurahView: View {
     @EnvironmentObject var reviewsManager: ReviewsRequestManager
     @EnvironmentObject var spotlightManager: SpotlightManager
     @Environment(\.requestReview) var requestReview: RequestReviewAction
-
+    
     @State var searchText: String = ""
     @State var sort: Bool = false
-    @State var degree: Double = 0
-        
+    
     var body: some View {
         NavigationStack(path: $routeManager.path) {
             SurahListView(list: sort ? filterData().reversed() : filterData())
@@ -33,17 +32,8 @@ struct SurahView: View {
                             .addSpotlight(0, shape: .rounded, roundedRadius: 10, text: "Lanuage Button \n you can chouse for lanugage")
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            withAnimation {
-                                self.sort = !sort
-                                degree += 180
-                            }
-                        } label: {
-                            Image(systemName: "arrow.up")
-                                .rotationEffect(.degrees(degree))
-                                .animation(.linear(duration: 0.3), value: sort)
-                        }
-                        .addSpotlight(1, shape: .rounded, roundedRadius: 10, text: "For Sortitem Items for asc and deck")
+                        SortButtonView(sort: $sort)
+                            .addSpotlight(1, shape: .rounded, roundedRadius: 10, text: "For Sortitem Items for asc and deck")
                     }
                 }
                 .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_surah"))
@@ -53,9 +43,6 @@ struct SurahView: View {
                         switch item{
                         default:
                             PDFViewUI(pageNumber: (item as SurahModel).pages.intValue)
-                                .onAppear {
-                                    routeManager.tabBarHide(status: true)
-                                }
                         }
                     }
                 }

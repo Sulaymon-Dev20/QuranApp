@@ -27,7 +27,9 @@ struct NotificationView: View {
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                             Button {
                                 notificatSurahViewModel.deleteItem(id: item.id)
-//                                noficationsManager.removeNotication(list: [item.id])//bug
+                                if item.active {
+                                    noficationsManager.removeNotication(list: [item.id])
+                                }
                             } label: {
                                 Label("Delete", systemImage: "trash.slash.fill")
                             }
@@ -60,7 +62,7 @@ struct NotificationView: View {
                     }
                 }
                 .task {
-                    await noficationsManager.request()
+                    noficationsManager.request()
                 }
             }
         } header: {
@@ -76,13 +78,13 @@ struct NotificationView: View {
         if activeToggle {
             notificatSurahViewModel.changeActive(id: item.id, time: item.time, active: status)
             if status {
-                noficationsManager.pushNotication(item: item, badgeCount: badgeAppManager.count)
+                noficationsManager.pushNotication(item: item)
             } else {
                 noficationsManager.removeNotication(list: [item.id])
             }
         } else {
             notificatSurahViewModel.changeStatus(id: item.id, active: status)
-            noficationsManager.pushNotication(item: item, badgeCount: badgeAppManager.count)
+            noficationsManager.pushNotication(item: item)
         }
     }
 }

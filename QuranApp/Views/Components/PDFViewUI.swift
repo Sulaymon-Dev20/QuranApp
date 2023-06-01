@@ -20,10 +20,11 @@ struct PDFViewUI: View {
     @State var showTogBar: Bool = false
     
     var body: some View {
+        let item = getSurahByPage(page: pageNumber)!
         PDFViewer(pageNumber: $pageNumber)
             .edgesIgnoringSafeArea(.all)
             .onTapGesture(count: 2) {
-//                that need to scoom out
+                // that need to scoom out
             }
             .onTapGesture {
                 showTogBar.toggle()
@@ -32,6 +33,7 @@ struct PDFViewUI: View {
             .toolbar(showTogBar ? .hidden : .visible, for: .navigationBar)
             .animation(Animation.easeInOut(duration: 0.9).delay(0.6), value: showTogBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            .navigationTitle(LocalizedStringKey(item.title.localizedForm).stringValue())
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -45,22 +47,21 @@ struct PDFViewUI: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        bookmarksViewModel.saveOrDelete(item: getSurahByPage(page: pageNumber))
-                    } label: {
-                        Image(systemName: bookmarksViewModel.getPages().contains(pageNumber) ? "bookmark.slash.fill" : "bookmark.fill")
-                    }
+                    BookmarkSwipe(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: pageNumber), status: bookmarksViewModel.getPages().contains(pageNumber))
                 }
+            }
+            .onAppear {
+                routerManager.tabBarHide(status: true)
             }
     }
     
-    func getSurahByPage(page: Int) -> BookmarkModel {
+    func getSurahByPage(page: Int) -> SurahModel? {
         for item in datas.items.reversed() {
             if item.pages.intValue <= page {
-                return BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: page)
+                return item
             }
         }
-        return BookmarkModel(title: "??", juz: "??", pageNumber: 1)
+        return nil
     }
 }
 

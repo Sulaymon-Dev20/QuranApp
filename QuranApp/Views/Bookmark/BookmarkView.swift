@@ -16,7 +16,6 @@ struct BookmarkView: View {
     @State var searchText: String = ""
     
     @State var sort: Bool = false
-    @State var degree: Double = 0
     
     var body: some View {
         NavigationStack {
@@ -48,24 +47,12 @@ struct BookmarkView: View {
                     LanguageButtonView()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        withAnimation {
-                            self.sort = !sort
-                            degree += 180
-                        }
-                    } label: {
-                        Image(systemName: "arrow.up")
-                            .rotationEffect(.degrees(degree))
-                            .animation(.linear(duration: 0.3), value: sort)
-                    }
+                    SortButtonView(sort: $sort)
                 }
             }
             .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_bookmark"))
             .navigationDestination(for: Int.self) { pageNumber in
                 PDFViewUI(pageNumber: pageNumber)
-                    .onAppear {
-                        routerManager.tabBarHide(status: true)
-                    }
             }
         }
         .task {
@@ -78,7 +65,7 @@ struct BookmarkView: View {
     
     func filterData() -> [BookmarkModel] {
         if searchText.count > 0 {
-            return bookmarksViewModel.items.filter {$0.toString().lowercased().contains(searchText.lowercased())}
+            return bookmarksViewModel.items.filter {LocalizedStringKey($0.title.localizedForm).stringValue().lowercased().contains(searchText.lowercased())}
         } else {
             return bookmarksViewModel.items
         }

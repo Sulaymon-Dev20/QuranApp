@@ -9,11 +9,15 @@ import SwiftUI
 
 extension View {
     @ViewBuilder
-    func addSpotlight(_ id: Int, shape: SpotlightShape = .rectangle, roundedRadius: CGFloat = 0, text: String = "") -> some View {
-        self
-            .anchorPreference(key: BoundsKey.self, value: .bounds, transform: {
-                [id:BoundsKeyProperties(shape: shape, anchor: $0,text: text,radius: roundedRadius)]
-            })
+    func addSpotlight(_ id: Int, shape: SpotlightShape = .rectangle, roundedRadius: CGFloat = 0, text: String = "", active:Bool = true) -> some View {
+        if active {
+            self
+                .anchorPreference(key: BoundsKey.self, value: .bounds, transform: {
+                    [id:BoundsKeyProperties(shape: shape, anchor: $0,text: text,radius: roundedRadius)]
+                })
+        } else {
+            self
+        }
     }
     
     @ViewBuilder

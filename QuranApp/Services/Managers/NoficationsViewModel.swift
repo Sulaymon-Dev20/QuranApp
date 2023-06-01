@@ -8,20 +8,17 @@
 import SwiftUI
 import UserNotifications
 
-@MainActor
 class NoficationsManager: ObservableObject {
     
-    @Published private(set) var hasPermission:Bool = false
+    @Published var hasPermission:Bool = false
     
     init() {
         checkNotificationPermission()
     }
     
-    func request() async {
-        do {
-            self.hasPermission = try await UNUserNotificationCenter.current().requestAuthorization(options:[.alert, .badge, .sound])
-        } catch {
-            print(error)
+    func request() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+//            self.hasPermission = success
         }
     }
     
@@ -45,7 +42,7 @@ class NoficationsManager: ObservableObject {
         }
     }
     
-    func pushNotication(item: NotificatSurah, badgeCount:Int) {
+    func pushNotication(item: NotificatSurah) {
         let content = UNMutableNotificationContent()
         content.title = item.title
         content.subtitle = item.subTitle

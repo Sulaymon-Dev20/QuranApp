@@ -12,16 +12,14 @@ struct SheetView: View {
     @EnvironmentObject var noficationsManager: NoficationsManager
     @EnvironmentObject var prayerTimeViewModel: PrayerTimeManager
     @EnvironmentObject var locationManager: LocationManager
-    @EnvironmentObject var badgeAppManager: BadgeAppManager
 
     @Environment(\.dismiss) var dismiss
     
     @State var date: Date = Date()
-    @State var everyDay: Bool = false
+    @State var everyDay: Bool = true
     @State var showAlert: Bool = false
     
     let surah: SurahModel
-    let calendar = Calendar.current
     
     var body: some View {
         let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: locationManager.location?.latitude ?? 0.0, longitude: locationManager.location?.longitude ?? 0.0)
@@ -103,7 +101,6 @@ struct SheetView: View {
                     date.changeDay(day: date.intValue > Date().intValue ? date.day : date.day + 1)
                     let item = NotificatSurah(
                         id: UUID().uuidString,
-//                        id: surah.index,
                         title: LocalizedStringKey(surah.title.localizedForm).stringValue(),
                         subTitle: "Do not forget that the Qur'an is a witness in the judgment day",
                         url: "surahs?index=\(surah.index)",
@@ -112,7 +109,7 @@ struct SheetView: View {
                         isEveryDay: everyDay,
                         active: true)
                     notificatSurahViewModel.saveOrDelete(item: item)
-                    noficationsManager.pushNotication(item: item, badgeCount: badgeAppManager.count)
+                    noficationsManager.pushNotication(item: item)
                     dismiss()
                 } label: {
                     Text("Save")

@@ -27,13 +27,9 @@ struct BookmarkListView: View {
                             }
                             .opacity(0)
                         }
-                        .swipeActions(edge: .trailing,allowsFullSwipe: false, content: {
-                            Button {
-                                bookmarksViewModel.saveOrDelete(item: BookmarkModel(title: item.title, juz: item.juz, pageNumber: item.pageNumber))
-                            } label: {
-                                Label("Choose", systemImage: "bookmark.slash")
-                            }
-                            .tint(.red)
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false, content: {
+                            BookmarkSwipe(item: item, status: true)
+                                .tint(.red)
                         })
                 }
                 .onDelete(perform: bookmarksViewModel.deleteItem)
