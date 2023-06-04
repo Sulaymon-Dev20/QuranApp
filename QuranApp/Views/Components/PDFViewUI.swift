@@ -18,7 +18,7 @@ struct PDFViewUI: View {
     
     @State var pageNumber: Int
     @State var showTogBar: Bool = false
-    @State var navigationValue: any Hashable = 1
+//    @State var navigationValue: any Hashable = 1
     
     var body: some View {
         let item = getSurahByPage(page: pageNumber)!

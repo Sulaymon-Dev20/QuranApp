@@ -23,19 +23,19 @@ class RouterManager: ObservableObject {
             path.append(item)
         }
     }
-    
+//    there will be write greate solution ASAP
     func navigationDestination(_ route:any Hashable) -> some View {
         switch route {
         case Route.menu(let item):
             switch item{
-            case let number as Int:
-                print(number)
-                return PDFViewUI(pageNumber: number, navigationValue: Route.menu(item: number))
+            case let pageNumber as Int:
+                return PDFViewUI(pageNumber: pageNumber)
             case let surahModel as SurahModel:
-                print(surahModel)
-                return PDFViewUI(pageNumber: surahModel.pages.intValue, navigationValue: Route.menu(item: surahModel))
+                return PDFViewUI(pageNumber: surahModel.pages.intValue)
+            case let bookmarkModel as BookmarkModel:
+                return PDFViewUI(pageNumber: bookmarkModel.pageNumber)
             default:
-                return PDFViewUI(pageNumber: (item as! SurahModel).pages.intValue, navigationValue: Route.menu(item: item))
+                return PDFViewUI(pageNumber: (item as! SurahModel).pages.intValue)
             }
         default:
             return PDFViewUI(pageNumber: 1)

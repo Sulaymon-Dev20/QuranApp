@@ -36,7 +36,7 @@ struct NotificationView: View {
                             .tint(.red)
                         }
                         .overlay {
-                            NavigationLink(value: item.page.intValue) {
+                            NavigationLink(value: Route.menu(item: item.page.intValue)) {
                                 Text(">>>")
                             }
                             .opacity(0)

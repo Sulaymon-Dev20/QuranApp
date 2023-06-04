@@ -11,7 +11,7 @@ struct JuzRowView: View {
     let item: JuzModel
     
     var body: some View {
-        NavigationLink(value: item.index) {
+        NavigationLink(value: Route.menu(item: item.index)) {
             HStack{
                 Image(systemName: "app")
                     .font(.system(size: 34.0))
@@ -26,7 +26,7 @@ struct JuzRowView: View {
         }
         .contextMenu {
             ForEach(item.surahs, id: \.index) { surahs in
-                NavigationLink(value: surahs.pageNumber.intValue) {
+                NavigationLink(value: Route.menu(item: surahs.pageNumber.intValue)) {
                     Label(LocalizedStringKey(surahs.title.localizedForm), systemImage: surahs.type == "Makkiyah" ? "moon.fill" : "sun.max.fill")
                 }
             }

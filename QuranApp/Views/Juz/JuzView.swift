@@ -34,8 +34,8 @@ struct JuzView: View {
                     SortButtonView(sort: $sort)
                 }
             }
-            .navigationDestination(for: Int.self) { pageNumber in
-                PDFViewUI(pageNumber: pageNumber)
+            .navigationDestination(for: Route.self) {
+                routerManager.navigationDestination($0)
             }
         }
     }

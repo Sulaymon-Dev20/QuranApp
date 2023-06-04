@@ -22,7 +22,7 @@ struct BookmarkListView: View {
                 ForEach(sort ? list : list.reversed()) { item in
                     BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
                         .overlay {
-                            NavigationLink(value: item.pageNumber) {
+                            NavigationLink(value: Route.menu(item: item)) {
                                 Text(">>>")
                             }
                             .opacity(0)

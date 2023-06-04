@@ -51,8 +51,8 @@ struct BookmarkView: View {
                 }
             }
             .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_bookmark"))
-            .navigationDestination(for: Int.self) { pageNumber in
-                PDFViewUI(pageNumber: pageNumber)
+            .navigationDestination(for: Route.self) {
+                routerManager.navigationDestination($0)
             }
         }
         .task {
