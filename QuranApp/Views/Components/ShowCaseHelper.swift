@@ -9,12 +9,16 @@ import SwiftUI
 
 extension View {
     @ViewBuilder
-    func showCase(order:Int, title:String, cornerRadius: CGFloat, style: RoundedCornerStyle = .continuous, scale: CGFloat = 1) -> some View {
-        self
-            .anchorPreference(key: HighlightAnchorKey.self, value: .bounds) { anchor in
-                let highlight = Highlight(anchar: anchor, title: title, cornerRadius: cornerRadius, style: style, scale: scale)
-                return [order: highlight]
-            }
+    func showCase(order:Int, title:String, cornerRadius: CGFloat, style: RoundedCornerStyle = .continuous, scale: CGFloat = 1, allowToShow:Bool = true) -> some View {
+        if allowToShow {
+            self
+                .anchorPreference(key: HighlightAnchorKey.self, value: .bounds) { anchor in
+                    let highlight = Highlight(anchar: anchor, title: title, cornerRadius: cornerRadius, style: style, scale: scale)
+                    return [order: highlight]
+                }
+        } else {
+            self
+        }
     }
 }
 
@@ -99,21 +103,6 @@ struct ShowCaseRoot: ViewModifier {
                 .scaleEffect(highlight.scale)
                 .offset(x: highlightRect.minX - 10, y: highlightRect.minY - 10)
         }
-    }
-}
-
-extension View {
-    
-    @ViewBuilder
-    func reverseMask<Content: View>(alignment: Alignment = .topLeading, @ViewBuilder content: @escaping () -> Content) -> some View {
-        self
-            .mask {
-                Rectangle()
-                    .overlay(alignment: .topLeading) {
-                        content()
-                            .blendMode(.destinationOut)
-                    }
-            }
     }
 }
 

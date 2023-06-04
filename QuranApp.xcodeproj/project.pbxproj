@@ -20,7 +20,6 @@
 		CE0887AF2A23FB8A00FDE8B0 /* Clock.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0887AE2A23FB8A00FDE8B0 /* Clock.json */; };
 		CE0887B12A24071000FDE8B0 /* Language.json in Resources */ = {isa = PBXBuildFile; fileRef = CE0887B02A24071000FDE8B0 /* Language.json */; };
 		CE1B698B2A1FE7EA006FE3D1 /* AlertPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1B698A2A1FE7EA006FE3D1 /* AlertPermissions.swift */; };
-		CE22AD692A253FC500A68B2A /* Spotlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22AD682A253FC500A68B2A /* Spotlight.swift */; };
 		CE22AD6B2A254AF200A68B2A /* SpotlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22AD6A2A254AF200A68B2A /* SpotlightManager.swift */; };
 		CE35B35E2A215B7000499114 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE35B35D2A215B7000499114 /* View.swift */; };
 		CE434ED82A1D098B003D83EE /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE434ED72A1D098B003D83EE /* NavigationRouter.swift */; };
@@ -145,7 +144,6 @@
 		CE0887AE2A23FB8A00FDE8B0 /* Clock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Clock.json; sourceTree = "<group>"; };
 		CE0887B02A24071000FDE8B0 /* Language.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Language.json; sourceTree = "<group>"; };
 		CE1B698A2A1FE7EA006FE3D1 /* AlertPermissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPermissions.swift; sourceTree = "<group>"; };
-		CE22AD682A253FC500A68B2A /* Spotlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotlight.swift; sourceTree = "<group>"; };
 		CE22AD6A2A254AF200A68B2A /* SpotlightManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightManager.swift; sourceTree = "<group>"; };
 		CE35B35D2A215B7000499114 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		CE434ED72A1D098B003D83EE /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
@@ -279,14 +277,6 @@
 			path = AnimationJsons;
 			sourceTree = "<group>";
 		};
-		CE22AD672A252EC500A68B2A /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				CE22AD682A253FC500A68B2A /* Spotlight.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		CE44A8FC2A1E6C15002EE89C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,7 +376,6 @@
 		CE7C851E2A0392FC00192CC5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE22AD672A252EC500A68B2A /* Helpers */,
 				CE7C85362A03968100192CC5 /* Components */,
 				CE7C85312A0394CC00192CC5 /* Surah */,
 				CE7C85322A0394F000192CC5 /* Juz */,
@@ -772,7 +761,6 @@
 				CE0887A32A23E88C00FDE8B0 /* OnBoardingModel.swift in Sources */,
 				CEC1A6892A1AE0D700A10212 /* LocalizedStringKey.swift in Sources */,
 				CE7C85262A03938900192CC5 /* BookmarkModel.swift in Sources */,
-				CE22AD692A253FC500A68B2A /* Spotlight.swift in Sources */,
 				CE011AD52A290BDC00D56334 /* ShareSwipe.swift in Sources */,
 				CE7C852E2A03945B00192CC5 /* JuzViewModel.swift in Sources */,
 				CE7935E12A1D83C900B89647 /* PrayerTimeViewModel.swift in Sources */,
