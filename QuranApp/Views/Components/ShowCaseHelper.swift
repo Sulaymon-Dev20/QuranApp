@@ -44,6 +44,7 @@ struct ShowCaseRoot: ViewModifier {
     @ViewBuilder
     func HighlightView(_ highlight: Highlight) -> some View {
         GeometryReader { proxy in
+            let screenSize: CGSize = proxy.size
             let highlightRect = proxy[highlight.anchar]
             let safeAria = proxy.safeAreaInsets
             
@@ -56,6 +57,27 @@ struct ShowCaseRoot: ViewModifier {
                         .clipShape(RoundedRectangle(cornerRadius: highlight.cornerRadius, style: highlight.style))
                         .scaleEffect(highlight.scale)
                         .offset(x: highlightRect.minX - 2.5, y: highlightRect.minY + safeAria.top - 2.5)
+                }
+                .overlay(alignment: .topLeading) {
+                    Text(highlight.title)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .opacity(0)
+                        .overlay {
+                            GeometryReader { proxy2 in
+                                let textSize = proxy2.size
+                                Text(highlight.title)
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                    .offset(x: (highlightRect.minX + textSize.width) > (screenSize.width - 15) ?
+                                            -((highlightRect.minX + textSize.width) - (screenSize.width - 15)) : 0)
+                                    .offset(y: (highlightRect.maxY + textSize.height) > (screenSize.height - 50) ?
+                                            -(textSize.height - (highlightRect.maxY - highlightRect.minY) + 40) : 70)
+                            }
+                            .offset(x: highlightRect.minX, y: highlightRect.maxY)
+                        }
                 }
                 .ignoresSafeArea()
                 .onTapGesture {
@@ -74,12 +96,6 @@ struct ShowCaseRoot: ViewModifier {
                 .foregroundColor(.clear)
                 .frame(width: highlightRect.width + 20, height: highlightRect.height + 20)
                 .clipShape(RoundedRectangle(cornerRadius: highlight.cornerRadius, style: highlight.style))
-                .background {
-                    Text(highlight.title)
-                        .padding(.horizontal,10)
-                        .presentationCompactAdaptation(.popover)
-                        .interactiveDismissDisabled()
-                }
                 .scaleEffect(highlight.scale)
                 .offset(x: highlightRect.minX - 10, y: highlightRect.minY - 10)
         }
@@ -109,8 +125,21 @@ fileprivate struct HighlightAnchorKey: PreferenceKey {
     }
 }
 
-//struct ShowCaseHelper_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ShowCaseHelper()
-//    }
-//}
+struct ShowCaseHelper_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .environmentObject(SurahViewModel())
+            .environmentObject(LaunchScreenViewModel())
+            .environmentObject(LanguageViewModel())
+            .environmentObject(BookMarkViewModel())
+            .environmentObject(NotificatSurahViewModel())
+            .environmentObject(RouterManager())
+            .environmentObject(JuzViewModel())
+            .environmentObject(NoficationsManager())
+            .environmentObject(PrayerTimeManager())
+            .environmentObject(LocationManager())
+            .environmentObject(ReviewsRequestManager())
+            .environmentObject(BadgeAppManager())
+            .environmentObject(SpotlightManager())
+    }
+}
