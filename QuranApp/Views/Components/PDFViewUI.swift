@@ -18,6 +18,7 @@ struct PDFViewUI: View {
     
     @State var pageNumber: Int
     @State var showTogBar: Bool = false
+    @State var navigationValue: any Hashable = 1
     
     var body: some View {
         let item = getSurahByPage(page: pageNumber)!
@@ -34,6 +35,17 @@ struct PDFViewUI: View {
             .animation(Animation.easeInOut(duration: 0.9).delay(0.6), value: showTogBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationTitle(LocalizedStringKey(item.title.localizedForm).stringValue())
+//            .toolbarTitleMenu(content: {
+//                Menu(content: {
+//                    ForEach(datas.items, id: \.self) { surah in
+//                        NavigationLink(value: navigationValue) {
+//                            Label(LocalizedStringKey(surah.title.localizedForm), systemImage: surah.type == .madaniyah ? "moon.fill" : "sun.max.fill")
+//                        }
+//                    }
+//                }, label: {
+//                    Text("button")
+//                })
+//            })
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {

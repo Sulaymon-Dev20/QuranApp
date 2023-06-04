@@ -11,6 +11,7 @@
 		CE011AD52A290BDC00D56334 /* ShareSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE011AD42A290BDC00D56334 /* ShareSwipe.swift */; };
 		CE011AD72A2923F200D56334 /* BookmarkSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE011AD62A2923F200D56334 /* BookmarkSwipe.swift */; };
 		CE011AD92A2928B700D56334 /* SortButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE011AD82A2928B700D56334 /* SortButtonView.swift */; };
+		CE011AFC2A29EF9200D56334 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = CE011AFB2A29EF9200D56334 /* Subsonic */; };
 		CE0887A12A23E6CF00FDE8B0 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CE0887A02A23E6CF00FDE8B0 /* Lottie */; };
 		CE0887A32A23E88C00FDE8B0 /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0887A22A23E88C00FDE8B0 /* OnBoardingModel.swift */; };
 		CE0887A52A23E93600FDE8B0 /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0887A42A23E93600FDE8B0 /* OnBoardingScreen.swift */; };
@@ -26,6 +27,17 @@
 		CE44A8F92A1E6660002EE89C /* MyAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44A8F82A1E6660002EE89C /* MyAppDelegate.swift */; };
 		CE44A8FB2A1E6B4A002EE89C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44A8FA2A1E6B4A002EE89C /* URL.swift */; };
 		CE5468692A20BDFA00273458 /* ReviewsRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */; };
+		CE62E0632A2B5EFF008F03F1 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE011AE02A298CBD00D56334 /* WidgetKit.framework */; };
+		CE62E0642A2B5EFF008F03F1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE011AE22A298CBD00D56334 /* SwiftUI.framework */; };
+		CE62E0672A2B5EFF008F03F1 /* PreyTimeWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62E0662A2B5EFF008F03F1 /* PreyTimeWidgetBundle.swift */; };
+		CE62E0692A2B5EFF008F03F1 /* PreyTimeWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62E0682A2B5EFF008F03F1 /* PreyTimeWidgetLiveActivity.swift */; };
+		CE62E06B2A2B5EFF008F03F1 /* PreyTimeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE62E06A2A2B5EFF008F03F1 /* PreyTimeWidget.swift */; };
+		CE62E06E2A2B5F01008F03F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE62E06D2A2B5F01008F03F1 /* Assets.xcassets */; };
+		CE62E0702A2B5F01008F03F1 /* PreyTimeWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CE62E06C2A2B5EFF008F03F1 /* PreyTimeWidget.intentdefinition */; };
+		CE62E0712A2B5F01008F03F1 /* PreyTimeWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CE62E06C2A2B5EFF008F03F1 /* PreyTimeWidget.intentdefinition */; };
+		CE62E0742A2B5F01008F03F1 /* PreyTimeWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = CE62E0622A2B5EFF008F03F1 /* PreyTimeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE6F307E2A2BD4F5009534B6 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F307D2A2BD4F5009534B6 /* Highlight.swift */; };
+		CE6F30802A2BD5BD009534B6 /* ShowCaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F307F2A2BD5BD009534B6 /* ShowCaseHelper.swift */; };
 		CE7935DD2A1D74E300B89647 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = CE7935DC2A1D74E300B89647 /* Adhan */; };
 		CE7935E12A1D83C900B89647 /* PrayerTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7935E02A1D83C900B89647 /* PrayerTimeViewModel.swift */; };
 		CE7935E32A1D85F400B89647 /* PrayTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7935E22A1D85F400B89647 /* PrayTimeModel.swift */; };
@@ -82,6 +94,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CE62E0722A2B5F01008F03F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE7C84E12A03924200192CC5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE62E0612A2B5EFF008F03F1;
+			remoteInfo = PreyTimeWidgetExtension;
+		};
 		CE7C84FA2A03924300192CC5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CE7C84E12A03924200192CC5 /* Project object */;
@@ -98,11 +117,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CE011AF72A298CBF00D56334 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CE62E0742A2B5F01008F03F1 /* PreyTimeWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CE011AD22A290B5100D56334 /* NotificationSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSwipe.swift; sourceTree = "<group>"; };
 		CE011AD42A290BDC00D56334 /* ShareSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSwipe.swift; sourceTree = "<group>"; };
 		CE011AD62A2923F200D56334 /* BookmarkSwipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkSwipe.swift; sourceTree = "<group>"; };
 		CE011AD82A2928B700D56334 /* SortButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortButtonView.swift; sourceTree = "<group>"; };
+		CE011AE02A298CBD00D56334 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		CE011AE22A298CBD00D56334 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CE0887A22A23E88C00FDE8B0 /* OnBoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModel.swift; sourceTree = "<group>"; };
 		CE0887A42A23E93600FDE8B0 /* OnBoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreen.swift; sourceTree = "<group>"; };
 		CE0887A62A23F15400FDE8B0 /* Notification.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Notification.json; sourceTree = "<group>"; };
@@ -117,6 +152,15 @@
 		CE44A8F82A1E6660002EE89C /* MyAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppDelegate.swift; sourceTree = "<group>"; };
 		CE44A8FA2A1E6B4A002EE89C /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsRequestManager.swift; sourceTree = "<group>"; };
+		CE62E0622A2B5EFF008F03F1 /* PreyTimeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PreyTimeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE62E0662A2B5EFF008F03F1 /* PreyTimeWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreyTimeWidgetBundle.swift; sourceTree = "<group>"; };
+		CE62E0682A2B5EFF008F03F1 /* PreyTimeWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreyTimeWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		CE62E06A2A2B5EFF008F03F1 /* PreyTimeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreyTimeWidget.swift; sourceTree = "<group>"; };
+		CE62E06C2A2B5EFF008F03F1 /* PreyTimeWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = PreyTimeWidget.intentdefinition; sourceTree = "<group>"; };
+		CE62E06D2A2B5F01008F03F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE62E06F2A2B5F01008F03F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE6F307D2A2BD4F5009534B6 /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
+		CE6F307F2A2BD5BD009534B6 /* ShowCaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCaseHelper.swift; sourceTree = "<group>"; };
 		CE7935E02A1D83C900B89647 /* PrayerTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimeViewModel.swift; sourceTree = "<group>"; };
 		CE7935E22A1D85F400B89647 /* PrayTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayTimeModel.swift; sourceTree = "<group>"; };
 		CE7C32BD2A1C328500B2F8E3 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
@@ -179,10 +223,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CE62E05F2A2B5EFF008F03F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE62E0642A2B5EFF008F03F1 /* SwiftUI.framework in Frameworks */,
+				CE62E0632A2B5EFF008F03F1 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE7C84E62A03924200192CC5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE011AFC2A29EF9200D56334 /* Subsonic in Frameworks */,
 				CE7935DD2A1D74E300B89647 /* Adhan in Frameworks */,
 				CE0887A12A23E6CF00FDE8B0 /* Lottie in Frameworks */,
 			);
@@ -205,6 +259,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE011ADF2A298CBD00D56334 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE011AE02A298CBD00D56334 /* WidgetKit.framework */,
+				CE011AE22A298CBD00D56334 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CE08879C2A23E35000FDE8B0 /* AnimationJsons */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,12 +302,27 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		CE62E0652A2B5EFF008F03F1 /* PreyTimeWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CE62E0662A2B5EFF008F03F1 /* PreyTimeWidgetBundle.swift */,
+				CE62E0682A2B5EFF008F03F1 /* PreyTimeWidgetLiveActivity.swift */,
+				CE62E06A2A2B5EFF008F03F1 /* PreyTimeWidget.swift */,
+				CE62E06C2A2B5EFF008F03F1 /* PreyTimeWidget.intentdefinition */,
+				CE62E06D2A2B5F01008F03F1 /* Assets.xcassets */,
+				CE62E06F2A2B5F01008F03F1 /* Info.plist */,
+			);
+			path = PreyTimeWidget;
+			sourceTree = "<group>";
+		};
 		CE7C84E02A03924200192CC5 = {
 			isa = PBXGroup;
 			children = (
 				CE7C84EB2A03924200192CC5 /* QuranApp */,
 				CE7C84FC2A03924300192CC5 /* QuranAppTests */,
 				CE7C85062A03924400192CC5 /* QuranAppUITests */,
+				CE62E0652A2B5EFF008F03F1 /* PreyTimeWidget */,
+				CE011ADF2A298CBD00D56334 /* Frameworks */,
 				CE7C84EA2A03924200192CC5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -255,6 +333,7 @@
 				CE7C84E92A03924200192CC5 /* QuranApp.app */,
 				CE7C84F92A03924300192CC5 /* QuranAppTests.xctest */,
 				CE7C85032A03924400192CC5 /* QuranAppUITests.xctest */,
+				CE62E0622A2B5EFF008F03F1 /* PreyTimeWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -341,6 +420,7 @@
 				CE0887A22A23E88C00FDE8B0 /* OnBoardingModel.swift */,
 				CE7C32C32A1C3A5100B2F8E3 /* NotificatSurah.swift */,
 				CEF775492A1D53FF0048F8D2 /* Route.swift */,
+				CE6F307D2A2BD4F5009534B6 /* Highlight.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -389,6 +469,7 @@
 				CE011AD42A290BDC00D56334 /* ShareSwipe.swift */,
 				CE011AD62A2923F200D56334 /* BookmarkSwipe.swift */,
 				CE011AD82A2928B700D56334 /* SortButtonView.swift */,
+				CE6F307F2A2BD5BD009534B6 /* ShowCaseHelper.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -448,6 +529,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CE62E0612A2B5EFF008F03F1 /* PreyTimeWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE62E0752A2B5F01008F03F1 /* Build configuration list for PBXNativeTarget "PreyTimeWidgetExtension" */;
+			buildPhases = (
+				CE62E05E2A2B5EFF008F03F1 /* Sources */,
+				CE62E05F2A2B5EFF008F03F1 /* Frameworks */,
+				CE62E0602A2B5EFF008F03F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PreyTimeWidgetExtension;
+			productName = PreyTimeWidgetExtension;
+			productReference = CE62E0622A2B5EFF008F03F1 /* PreyTimeWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		CE7C84E82A03924200192CC5 /* QuranApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE7C850D2A03924400192CC5 /* Build configuration list for PBXNativeTarget "QuranApp" */;
@@ -455,15 +553,18 @@
 				CE7C84E52A03924200192CC5 /* Sources */,
 				CE7C84E62A03924200192CC5 /* Frameworks */,
 				CE7C84E72A03924200192CC5 /* Resources */,
+				CE011AF72A298CBF00D56334 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CE62E0732A2B5F01008F03F1 /* PBXTargetDependency */,
 			);
 			name = QuranApp;
 			packageProductDependencies = (
 				CE7935DC2A1D74E300B89647 /* Adhan */,
 				CE0887A02A23E6CF00FDE8B0 /* Lottie */,
+				CE011AFB2A29EF9200D56334 /* Subsonic */,
 			);
 			productName = QuranApp;
 			productReference = CE7C84E92A03924200192CC5 /* QuranApp.app */;
@@ -515,6 +616,9 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					CE62E0612A2B5EFF008F03F1 = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					CE7C84E82A03924200192CC5 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -543,6 +647,7 @@
 			packageReferences = (
 				CE7935DB2A1D74E300B89647 /* XCRemoteSwiftPackageReference "adhan-swift" */,
 				CE08879F2A23E6CF00FDE8B0 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				CE011AFA2A29EF9200D56334 /* XCRemoteSwiftPackageReference "Subsonic" */,
 			);
 			productRefGroup = CE7C84EA2A03924200192CC5 /* Products */;
 			projectDirPath = "";
@@ -551,11 +656,20 @@
 				CE7C84E82A03924200192CC5 /* QuranApp */,
 				CE7C84F82A03924300192CC5 /* QuranAppTests */,
 				CE7C85022A03924400192CC5 /* QuranAppUITests */,
+				CE62E0612A2B5EFF008F03F1 /* PreyTimeWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		CE62E0602A2B5EFF008F03F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE62E06E2A2B5F01008F03F1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE7C84E72A03924200192CC5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -590,6 +704,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CE62E05E2A2B5EFF008F03F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE62E0692A2B5EFF008F03F1 /* PreyTimeWidgetLiveActivity.swift in Sources */,
+				CE62E06B2A2B5EFF008F03F1 /* PreyTimeWidget.swift in Sources */,
+				CE62E0672A2B5EFF008F03F1 /* PreyTimeWidgetBundle.swift in Sources */,
+				CE62E0702A2B5F01008F03F1 /* PreyTimeWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE7C84E52A03924200192CC5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -606,8 +731,10 @@
 				CEF7754A2A1D53FF0048F8D2 /* Route.swift in Sources */,
 				CE7C32C22A1C3A1500B2F8E3 /* NotificatSurahViewModel.swift in Sources */,
 				CE011AD32A290B5100D56334 /* NotificationSwipe.swift in Sources */,
+				CE6F30802A2BD5BD009534B6 /* ShowCaseHelper.swift in Sources */,
 				CEF640BC2A1F929E00FE7D17 /* PrayTimeRowView.swift in Sources */,
 				CE7C85452A0399A000192CC5 /* LanguageButtonView.swift in Sources */,
+				CE6F307E2A2BD4F5009534B6 /* Highlight.swift in Sources */,
 				CE011AD92A2928B700D56334 /* SortButtonView.swift in Sources */,
 				CEF640B62A1F71F700FE7D17 /* Date.swift in Sources */,
 				CE7C85492A03A35D00192CC5 /* SurahListView.swift in Sources */,
@@ -634,6 +761,7 @@
 				CEE51C792A21E1BC00B1EE7A /* BadgeAppManager.swift in Sources */,
 				CE7C85472A039B0C00192CC5 /* JuzView.swift in Sources */,
 				CE35B35E2A215B7000499114 /* View.swift in Sources */,
+				CE62E0712A2B5F01008F03F1 /* PreyTimeWidget.intentdefinition in Sources */,
 				CE7C85242A03936300192CC5 /* JuzModel.swift in Sources */,
 				CEF640BA2A1F8C7400FE7D17 /* PermissionDenied.swift in Sources */,
 				CE434ED82A1D098B003D83EE /* NavigationRouter.swift in Sources */,
@@ -674,6 +802,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CE62E0732A2B5F01008F03F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE62E0612A2B5EFF008F03F1 /* PreyTimeWidgetExtension */;
+			targetProxy = CE62E0722A2B5F01008F03F1 /* PBXContainerItemProxy */;
+		};
 		CE7C84FB2A03924300192CC5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CE7C84E82A03924200192CC5 /* QuranApp */;
@@ -701,6 +834,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CE62E0762A2B5F01008F03F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B83DJBU38V;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PreyTimeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PreyTimeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uz.suyo.QuranApp.PreyTimeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CE62E0772A2B5F01008F03F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B83DJBU38V;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PreyTimeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PreyTimeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = uz.suyo.QuranApp.PreyTimeWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		CE7C850B2A03924400192CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -822,6 +1011,7 @@
 		CE7C850E2A03924400192CC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -838,7 +1028,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -846,6 +1036,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.suyo.QuranApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -855,6 +1048,7 @@
 		CE7C850F2A03924400192CC5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -871,7 +1065,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -879,6 +1073,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.suyo.QuranApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -897,6 +1094,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.suyo.QuranAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -916,6 +1116,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.suyo.QuranAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -933,6 +1136,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.suyo.QuranAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -950,6 +1156,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = uz.suyo.QuranAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -960,6 +1169,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CE62E0752A2B5F01008F03F1 /* Build configuration list for PBXNativeTarget "PreyTimeWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE62E0762A2B5F01008F03F1 /* Debug */,
+				CE62E0772A2B5F01008F03F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CE7C84E42A03924200192CC5 /* Build configuration list for PBXProject "QuranApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -999,6 +1217,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE011AFA2A29EF9200D56334 /* XCRemoteSwiftPackageReference "Subsonic" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/Subsonic";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
 		CE08879F2A23E6CF00FDE8B0 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://GitHub.com/airbnb/lottie-ios";
@@ -1018,6 +1244,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE011AFB2A29EF9200D56334 /* Subsonic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE011AFA2A29EF9200D56334 /* XCRemoteSwiftPackageReference "Subsonic" */;
+			productName = Subsonic;
+		};
 		CE0887A02A23E6CF00FDE8B0 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE08879F2A23E6CF00FDE8B0 /* XCRemoteSwiftPackageReference "lottie-ios" */;

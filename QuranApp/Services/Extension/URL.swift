@@ -16,4 +16,17 @@ extension URL {
             result[item.name] = item.value?.replacingOccurrences(of: "+", with: " ")
         }
     }
+    
+    func isWorking() -> Bool {
+        var result = false
+        let semaphore = DispatchSemaphore(value: 0)
+        URLSession.shared.dataTask(with: self) { _, response, _ in
+            if let httpResponse = response as? HTTPURLResponse {
+                result = (200...299).contains(httpResponse.statusCode)
+            }
+            semaphore.signal()
+        }.resume()
+        semaphore.wait()
+        return result
+    }
 }

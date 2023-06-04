@@ -8,6 +8,7 @@
 import SwiftUI
 
 extension View {
+    
     @ViewBuilder
     func addSpotlight(_ id: Int, shape: SpotlightShape = .rectangle, roundedRadius: CGFloat = 0, text: String = "", active:Bool = true) -> some View {
         if active {

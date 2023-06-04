@@ -16,7 +16,8 @@ struct TabMainView: View {
         TabView(selection: $routerManager.tabValue) {
             SurahView()
                 .tabItem {
-                    Label("surahs", systemImage: "book.circle")
+                    Image(systemName: "book.circle")
+                    Text("surahs")
                 }
                 .tag(0)
             JuzView()
@@ -31,9 +32,31 @@ struct TabMainView: View {
                 }
                 .tag(2)
         }
-        .accentColor(Color.primary)
-        .toolbarRole(ToolbarRole.automatic)
-        .addSpotlightOverlay(show: $spotlightManager.showSpotLight, currentSpot: $spotlightManager.currentSpot)
+        .overlay(alignment: .bottom, content: {
+            HStack(spacing: 0, content: {
+                Circle()
+                    .foregroundColor(.clear)
+                    .frame(width: 45, height: 45)
+                    .showCase(order: 3, title: "String dasfd", cornerRadius: 10, style: .continuous)
+                    .frame(maxWidth: .infinity)
+
+                Circle()
+                    .foregroundColor(.clear)
+                    .frame(width: 45, height: 45)
+                    .showCase(order: 4, title: "String fdsf", cornerRadius: 10, style: .continuous)
+                    .frame(maxWidth: .infinity)
+
+                Circle()
+                    .foregroundColor(.clear)
+                    .frame(width: 45, height: 45)
+                    .showCase(order: 5, title: " fff String", cornerRadius: 10, style: .continuous)
+                    .frame(maxWidth: .infinity)
+            })
+            .allowsTightening(false)
+        })
+        .modifier(ShowCaseRoot(showHighlights: true, onFinished: {
+            print("finished OnBoarding")
+        }))
         .onAppear {
             spotlightManager.showSpotLight = true
         }

@@ -17,6 +17,15 @@
         "branch" : "master",
         "revision" : "df55b4c72c64b0d688d1d24633fae9f1257fe82e"
       }
+    },
+    {
+      "identity" : "subsonic",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/twostraws/Subsonic",
+      "state" : {
+        "revision" : "156c5742279df5d2315e29534a2410f418c8a772",
+        "version" : "0.2.0"
+      }
     }
   ],
   "version" : 2

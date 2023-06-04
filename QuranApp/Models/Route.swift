@@ -8,7 +8,7 @@
 import Foundation
 
 enum Route: Hashable {
-    case surah(item: SurahModel)
+    case menu(item: any Hashable)
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(self.hashValue)
@@ -16,7 +16,7 @@ enum Route: Hashable {
     
     static func == (lhs:Route, rhs:Route) -> Bool {
         switch (lhs, rhs){
-        case (.surah(let lhsItem),.surah(let rhsItem)):
+        case (.menu(let lhsItem),.menu(let rhsItem)):
             return lhsItem.hashValue == rhsItem.hashValue
         }
     }

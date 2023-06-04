@@ -28,7 +28,7 @@ struct SurahListView: View {
                         SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages)
                             .addSpotlight(2, shape: .rounded, roundedRadius: 10, text: "Item Item", active: index == 0)
                             .overlay {
-                                NavigationLink(value: Route.surah(item: item)) {
+                                NavigationLink(value: Route.menu(item: item)) {
                                     Text(">>>")
                                 }
                                 .opacity(0)

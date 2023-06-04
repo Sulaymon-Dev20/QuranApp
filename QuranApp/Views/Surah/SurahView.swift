@@ -29,22 +29,16 @@ struct SurahView: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         LanguageButtonView()
-                            .addSpotlight(0, shape: .rounded, roundedRadius: 10, text: "Lanuage Button \n you can chouse for lanugage")
+                            .showCase(order: 1, title: "languageChangeButton", cornerRadius: 10)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         SortButtonView(sort: $sort)
-                            .addSpotlight(1, shape: .rounded, roundedRadius: 10, text: "For Sortitem Items for asc and deck")
+                            .showCase(order: 2, title: "languageChangeButton", cornerRadius: 10)
                     }
                 }
                 .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_surah"))
-                .navigationDestination(for: Route.self) { route in
-                    switch route {
-                    case .surah(let item):
-                        switch item{
-                        default:
-                            PDFViewUI(pageNumber: (item as SurahModel).pages.intValue)
-                        }
-                    }
+                .navigationDestination(for: Route.self) {
+                    routeManager.navigationDestination($0)
                 }
         }
         .onAppear {
