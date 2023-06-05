@@ -15,7 +15,7 @@ class RouterManager: ObservableObject {
     @Published var tabBarHideStatus: Bool = false
     
     func gotoHomePage() {
-        path.removeLast(path.count)
+        path.removeAll()
     }
     
     func push(to item: Route) {

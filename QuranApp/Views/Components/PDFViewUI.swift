@@ -13,7 +13,7 @@ struct PDFViewUI: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var datas: SurahViewModel
     
-    @Environment(\.dismiss) private var dismiss
+    @Environment(\.dismiss) var dismiss
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     @State var pageNumber: Int
@@ -35,21 +35,11 @@ struct PDFViewUI: View {
             .animation(Animation.easeInOut(duration: 0.9).delay(0.6), value: showTogBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationTitle(LocalizedStringKey(item.title.localizedForm).stringValue())
-//            .toolbarTitleMenu(content: {
-//                Menu(content: {
-//                    ForEach(datas.items, id: \.self) { surah in
-//                        NavigationLink(value: navigationValue) {
-//                            Label(LocalizedStringKey(surah.title.localizedForm), systemImage: surah.type == .madaniyah ? "moon.fill" : "sun.max.fill")
-//                        }
-//                    }
-//                }, label: {
-//                    Text("button")
-//                })
-//            })
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         routerManager.tabBarHide(status: false)
+                        routerManager.gotoHomePage()
                         dismiss()
                     } label: {
                         HStack {
@@ -60,6 +50,15 @@ struct PDFViewUI: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     BookmarkSwipe(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: pageNumber), status: bookmarksViewModel.getPages().contains(pageNumber))
+                }
+                ToolbarTitleMenu {
+                    ForEach(datas.items, id: \.index) { item in
+                        Button {
+                            routerManager.push(to: Route.menu(item: item.pages.intValue))
+                        } label: {
+                            Label(LocalizedStringKey(item.title.localizedForm), systemImage: item.type == .madaniyah ? "moon.fill" : "sun.max.fill")
+                        }
+                    }
                 }
             }
             .onAppear {
