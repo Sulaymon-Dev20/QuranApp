@@ -34,7 +34,7 @@ struct BookmarkView: View {
                     if badgeAppManager.count != 0 {
                         withAnimation(Animation.default.speed(0.5)) {
                             proxy.scrollTo(3)
-                            badgeAppManager.minusBadge(number: badgeAppManager.count)
+                            badgeAppManager.setBadge(number: 0)
                         }
                     }
                 }

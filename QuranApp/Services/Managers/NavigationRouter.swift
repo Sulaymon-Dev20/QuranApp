@@ -70,9 +70,12 @@ class RouterManager: ObservableObject {
 }
 
 extension RouterManager {
-    func pushDeepLink(to url: URL,list items: [SurahModel]) {
+    func pushDeepLink(to url: URL, list items: [SurahModel]) {
         pushTab(to: getPage(url: url))
         let queryParams = url.queryParameters
+        if queryParams?["notification"] as? Bool ?? false {
+            UIApplication.shared.applicationIconBadgeNumber -= 1
+        }
         if let indexQueryVal = queryParams?["index"] as? String {
             if let item = items.first(where: {$0.index == indexQueryVal}) {
                 push(to: Route.menu(item: item))

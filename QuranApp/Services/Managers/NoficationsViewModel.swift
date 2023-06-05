@@ -49,6 +49,7 @@ class NoficationsManager: ObservableObject {
         content.sound = UNNotificationSound.default
         content.badge = NSNumber(integerLiteral: UIApplication.shared.applicationIconBadgeNumber + 1)
         content.userInfo["link"] = "holyquran://\(item.url)"
+        content.userInfo["notification"] = true
         var dateComponents = DateComponents(hour: item.time.hour, minute: item.time.minute, second: 2)
         if !item.isEveryDay {
             dateComponents.day = item.time.day
