@@ -18,7 +18,7 @@ struct BookmarkView: View {
     @State var sort: Bool = false
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $routerManager.path) {
             ScrollViewReader { proxy in
                 VStack {
                     List {

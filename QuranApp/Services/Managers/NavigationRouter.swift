@@ -19,7 +19,8 @@ class RouterManager: ObservableObject {
     }
     
     func push(to item: Route) {
-        if !path.contains(item) {
+        let last = path.last
+        if last == nil || last != item {
             path.append(item)
         }
     }
@@ -73,13 +74,11 @@ extension RouterManager {
     func pushDeepLink(to url: URL, list items: [SurahModel]) {
         pushTab(to: getPage(url: url))
         let queryParams = url.queryParameters
+        if let indexQueryVal = queryParams?["index"] as? String {
+            push(to: Route.menu(item: indexQueryVal.intValue))
+        }
         if queryParams?["notification"] as? Bool ?? false {
             UIApplication.shared.applicationIconBadgeNumber -= 1
-        }
-        if let indexQueryVal = queryParams?["index"] as? String {
-            if let item = items.first(where: {$0.index == indexQueryVal}) {
-                push(to: Route.menu(item: item))
-            }
         }
     }
 }

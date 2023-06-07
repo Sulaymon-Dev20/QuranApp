@@ -18,12 +18,11 @@ struct PDFViewUI: View {
     
     @State var pageNumber: Int
     @State var showTogBar: Bool = false
-//    @State var navigationValue: any Hashable = 1
     
     var body: some View {
         let item = getSurahByPage(page: pageNumber)!
         PDFViewer(pageNumber: $pageNumber)
-            .edgesIgnoringSafeArea(.bottom)
+            .edgesIgnoringSafeArea(.all)
             .onTapGesture(count: 2) {
                 // that need to scoom out
             }

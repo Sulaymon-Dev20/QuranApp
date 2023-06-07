@@ -32,6 +32,7 @@ struct TabMainView: View {
                 }
                 .tag(2)
         }
+        .tint(Color.primary)
         .overlay(alignment: .bottom, content: {
             HStack(spacing: 0, content: {
                 Circle()

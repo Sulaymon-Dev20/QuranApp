@@ -10,13 +10,7 @@ import PDFKit
 
 let document2 = PDFDocument(url: Bundle.main.url(forResource: "data", withExtension: "pdf")!)!
 
-#if os(macOS)
-public typealias ViewRepresentable = NSViewRepresentable
-#elseif os(iOS)
-public typealias ViewRepresentable = UIViewRepresentable
-#endif
-
-struct PDFViewer: ViewRepresentable {
+struct PDFViewer: UIViewRepresentable {
     let uiView = PDFKit.PDFView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     @Binding var pageNumber: Int
     
@@ -45,22 +39,22 @@ struct PDFViewer: ViewRepresentable {
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
     }
+}
+
+class Coordinator: NSObject, PDFViewDelegate {
+    var parent: PDFViewer
+    var prevPage = -1
     
-    class Coordinator: NSObject, PDFViewDelegate {
-        var parent: PDFViewer
-        var prevPage = -1
-        
-        init(_ parent: PDFViewer) {
-            self.parent = parent
-            super.init()
-            NotificationCenter.default.addObserver(self, selector: #selector(pageChangeHandler(_:)), name: .PDFViewPageChanged, object: nil)
-        }
-        
-        @objc func pageChangeHandler(_ notification: Notification) {
-            if let thePage = parent.uiView.currentPage, let ndx = parent.uiView.document?.index(for: thePage), prevPage != ndx {
-                parent.pageNumber = ndx + 1
-                prevPage = ndx
-            }
+    init(_ parent: PDFViewer) {
+        self.parent = parent
+        super.init()
+        NotificationCenter.default.addObserver(self, selector: #selector(pageChangeHandler(_:)), name: .PDFViewPageChanged, object: nil)
+    }
+    
+    @objc func pageChangeHandler(_ notification: Notification) {
+        if let thePage = parent.uiView.currentPage, let ndx = parent.uiView.document?.index(for: thePage), prevPage != ndx {
+            self.parent.pageNumber = ndx + 1
+            prevPage = ndx
         }
     }
 }

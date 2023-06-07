@@ -11,7 +11,6 @@
 		CE011AD52A290BDC00D56334 /* ShareSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE011AD42A290BDC00D56334 /* ShareSwipe.swift */; };
 		CE011AD72A2923F200D56334 /* BookmarkSwipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE011AD62A2923F200D56334 /* BookmarkSwipe.swift */; };
 		CE011AD92A2928B700D56334 /* SortButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE011AD82A2928B700D56334 /* SortButtonView.swift */; };
-		CE011AFC2A29EF9200D56334 /* Subsonic in Frameworks */ = {isa = PBXBuildFile; productRef = CE011AFB2A29EF9200D56334 /* Subsonic */; };
 		CE0887A12A23E6CF00FDE8B0 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CE0887A02A23E6CF00FDE8B0 /* Lottie */; };
 		CE0887A32A23E88C00FDE8B0 /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0887A22A23E88C00FDE8B0 /* OnBoardingModel.swift */; };
 		CE0887A52A23E93600FDE8B0 /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0887A42A23E93600FDE8B0 /* OnBoardingScreen.swift */; };
@@ -199,7 +198,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE011AFC2A29EF9200D56334 /* Subsonic in Frameworks */,
 				CE7935DD2A1D74E300B89647 /* Adhan in Frameworks */,
 				CE0887A12A23E6CF00FDE8B0 /* Lottie in Frameworks */,
 			);
@@ -475,7 +473,6 @@
 			packageProductDependencies = (
 				CE7935DC2A1D74E300B89647 /* Adhan */,
 				CE0887A02A23E6CF00FDE8B0 /* Lottie */,
-				CE011AFB2A29EF9200D56334 /* Subsonic */,
 			);
 			productName = QuranApp;
 			productReference = CE7C84E92A03924200192CC5 /* QuranApp.app */;
@@ -1060,11 +1057,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CE011AFB2A29EF9200D56334 /* Subsonic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE011AFA2A29EF9200D56334 /* XCRemoteSwiftPackageReference "Subsonic" */;
-			productName = Subsonic;
-		};
 		CE0887A02A23E6CF00FDE8B0 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CE08879F2A23E6CF00FDE8B0 /* XCRemoteSwiftPackageReference "lottie-ios" */;

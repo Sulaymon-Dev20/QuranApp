@@ -7,65 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3F90545C-205A-4515-AC28-B70A4DE8F4B2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuranApp/Views/Components/PDFViewUI.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DA013551-225A-4335-84F7-FF966E03D072"
+            uuid = "60096B9F-EB8F-478F-B367-8F623F90DCAA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QuranApp/Services/Managers/NavigationRouter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "navigationDestination(_:)"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "pushDeepLink(to:list:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DA013551-225A-4335-84F7-FF966E03D072 - 2f21c4a3dbee53e0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuranApp.RouterManager.navigationDestination(Swift.Hashable) -&gt; some"
-                  moduleName = "QuranApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/IOS%20project/QuranApp/QuranApp/Services/Managers/NavigationRouter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "240">
-               </Location>
-               <Location
-                  uuid = "DA013551-225A-4335-84F7-FF966E03D072 - 2f21c4a3dbee53e0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuranApp.RouterManager.navigationDestination(Swift.Hashable) -&gt; some"
-                  moduleName = "QuranApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/IOS%20project/QuranApp/QuranApp/Services/Managers/NavigationRouter.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "256">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
