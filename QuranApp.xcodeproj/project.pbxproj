@@ -430,8 +430,8 @@
 		CED05B752A2184F700A0C4B5 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				CEF640BD2A1F978100FE7D17 /* NotificationView.swift */,
 				CED05B762A21852000A0C4B5 /* NotificationRowView.swift */,
+				CEF640BD2A1F978100FE7D17 /* NotificationView.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";

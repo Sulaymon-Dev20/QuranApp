@@ -13,29 +13,43 @@ struct SurahRowView: View {
     let type: TypeEnum
     let verses: Int
     let pageNumber: String
+    let status: Bool
     var body: some View {
-        HStack {
-            Image(systemName: "square.dashed")
-                .font(.system(size: 34.0))
-                .overlay {
-                    Text("\(number)")
-                        .font(.system(size: 11.0))
+        ZStack {
+            HStack {
+                Image(systemName: "square.dashed")
+                    .font(.system(size: 34.0))
+                    .overlay {
+                        Text("\(number)")
+                            .font(.system(size: 11.0))
+                    }
+                VStack{
+                    HStack {
+                        Text(LocalizedStringKey(name.localizedForm))
+                            .bold()
+                        Spacer()
+                    }
+                    HStack {
+                        Text(LocalizedStringKey(type == TypeEnum.madaniyah ? "madaniyah" : "makkiyah"))
+                            .fontWeight(Font.Weight.ultraLight)
+                        Text("\(verses)")
+                            .fontWeight(Font.Weight.ultraLight)
+                        Spacer()
+                    }
                 }
-            VStack{
+                .badge(Int(pageNumber.intValue))
+            }
+            if status {
                 HStack {
-                    Text(LocalizedStringKey(name.localizedForm))
-                        .bold()
                     Spacer()
-                }
-                HStack {
-                    Text(LocalizedStringKey(type == TypeEnum.madaniyah ? "madaniyah" : "makkiyah"))
-                        .fontWeight(Font.Weight.ultraLight)
-                    Text("\(verses)")
-                        .fontWeight(Font.Weight.ultraLight)
-                    Spacer()
+                    VStack {
+                        Image(systemName: "bookmark.fill")
+                            .padding(.top, -5)
+                            .frame(width: 100, alignment: .center)
+                        Spacer()
+                    }
                 }
             }
-            .badge(Int(pageNumber.intValue))
         }
     }
 }
@@ -43,7 +57,8 @@ struct SurahRowView: View {
 struct SurahRowView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            SurahRowView(number: 1, name: "Al-Fatiha", type: TypeEnum.madaniyah, verses: 7, pageNumber: "1")
+            SurahRowView(number: 1, name: "Al-Fatiha", type: TypeEnum.madaniyah, verses: 7, pageNumber: "1", status: false)
+            SurahRowView(number: 1, name: "Al-Fatiha", type: TypeEnum.madaniyah, verses: 7, pageNumber: "1", status: true)
         }
         .environment(\.locale, Locale.init(identifier: "ar"))
     }

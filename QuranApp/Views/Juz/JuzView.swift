@@ -14,7 +14,7 @@ struct JuzView: View {
     @State var sort: Bool = false
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $routerManager.path) {
             ZStack {
                 List {
                     ForEach(sort ? datas.items.reversed() : datas.items, id: \.index) {item in
