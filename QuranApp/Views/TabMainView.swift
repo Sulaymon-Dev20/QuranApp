@@ -31,7 +31,7 @@ struct TabMainView: View {
                 }
                 .tag(2)
         }
-        .tint(Color.primary)
+//        .tint(Color.primary)
     }
 }
 

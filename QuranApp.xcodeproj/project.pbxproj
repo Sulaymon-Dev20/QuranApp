@@ -368,9 +368,9 @@
 		CE7C85332A0394F800192CC5 /* Bookmark */ = {
 			isa = PBXGroup;
 			children = (
-				CED05B792A21989900A0C4B5 /* PrayTime */,
 				CED05B782A21983C00A0C4B5 /* BookMark */,
 				CED05B752A2184F700A0C4B5 /* Notification */,
+				CED05B792A21989900A0C4B5 /* PrayTime */,
 				CE7C854C2A03A7BF00192CC5 /* BookmarkView.swift */,
 			);
 			path = Bookmark;

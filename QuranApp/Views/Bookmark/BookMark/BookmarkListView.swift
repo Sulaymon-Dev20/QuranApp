@@ -48,11 +48,12 @@ struct BookmarkListView: View {
                     }
                 }
             } else {
-                ListEmptyView(icon: "book.circle", text: "bookmark_does_not_have_yet")
-                    .onTapGesture {
-                        routerManager.pushTab(to: 0)
-                    }
-                    .frame(maxWidth: .infinity)
+                Button {
+                    routerManager.pushTab(to: 0)
+                } label: {
+                    ListEmptyView(icon: "book.circle", text: "bookmark_does_not_have_yet")
+                        .frame(maxWidth: .infinity)
+                }
             }
         }
     }
