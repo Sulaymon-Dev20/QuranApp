@@ -16,8 +16,9 @@ struct PrayTimeRowView: View {
     var body: some View {
         let show = locationManager.checkLocationPermission()
         let loading = locationManager.loading
+        let location = locationManager.location
         Section {
-            let data = prayerTimeViewModel.getPrayTime(time: Date(),latitude: locationManager.location?.latitude ?? 0.0, longitude: locationManager.location?.longitude ?? 0.0)
+            let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
             ZStack {
                 VStack {
                     ForEach(data, id: \.name) { item in

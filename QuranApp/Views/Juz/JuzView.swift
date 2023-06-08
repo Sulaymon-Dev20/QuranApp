@@ -17,7 +17,7 @@ struct JuzView: View {
         NavigationStack(path: self.$routerManager.path) {
             ZStack {
                 List {
-                    ForEach(sort ? datas.items.reversed() : datas.items, id: \.index) {item in
+                    ForEach(sort ? datas.items.reversed() : datas.items, id: \.index) { item in
                         JuzRowView(item: item)
                     }
                 }

@@ -22,7 +22,8 @@ struct SheetView: View {
     let surah: SurahModel
     
     var body: some View {
-        let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: locationManager.location?.latitude ?? 0.0, longitude: locationManager.location?.longitude ?? 0.0)
+        let location = locationManager.location
+        let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
         let show = locationManager.checkLocationPermission()
         let loading = locationManager.loading
         VStack {

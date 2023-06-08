@@ -11,17 +11,16 @@ import CoreLocation
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
 
-    let kLatitudeKey = "latitude"
-    let kLongitudeKey = "longitude"
+    let storageKey:String = "location"
 
     @Published var authorizationStatus: Bool = false
     @Published var loading: Bool = false
-    @Published var location: CLLocationCoordinate2D?
-    @Published var items:[JuzModel] = []
+    @Published var location: LocationModel = LocationModel(lang: 0, lat: 0)
     
     override init() {
         super.init()
         self.manager.delegate = self
+        getLocation()
     }
 
     public func requestAuthorisation(always: Bool = false) {
@@ -43,20 +42,23 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func getLocation() {
-        let defaults = UserDefaults.standard
-        if let latitude = defaults.value(forKey: kLatitudeKey) as? Double, let longitude = defaults.value(forKey: kLongitudeKey) as? Double {
-            self.location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        if let data = UserDefaults.standard.data(forKey: storageKey), let savedLocation = try? JSONDecoder().decode(LocationModel.self, from: data) {
+            self.location = savedLocation
         } else {
             request()
         }
     }
     
+    func saveLocation() {
+        if let encodedData = try? JSONEncoder().encode(location) {
+            UserDefaults.standard.set(encodedData, forKey: storageKey)
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        self.location = locations.first?.coordinate
-        guard let location = locations.last else { return }
-        let defaults = UserDefaults.standard
-        defaults.set(location.coordinate.latitude, forKey: kLatitudeKey)
-        defaults.set(location.coordinate.longitude, forKey: kLongitudeKey)
+        let data = locations.first?.coordinate
+        self.location = LocationModel(lang: Double(data?.longitude ?? 0), lat: Double(data?.latitude ?? 0))
+        guard locations.last != nil else { return }
         self.manager.stopUpdatingLocation()
         self.loading = false
     }
