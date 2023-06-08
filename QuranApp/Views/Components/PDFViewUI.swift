@@ -16,12 +16,11 @@ struct PDFViewUI: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
-    @State var pageNumber: Int
     @State var showTogBar: Bool = false
     
     var body: some View {
-        let item = getSurahByPage(page: pageNumber)!
-        PDFViewer(pageNumber: $pageNumber)
+        let item = getSurahByPage(page: routerManager.currentPDFPage)!
+        PDFViewer(pageNumber: $routerManager.currentPDFPage)
             .edgesIgnoringSafeArea(.all)
             .onTapGesture(count: 2) {
                 // that need to scoom out
@@ -48,12 +47,12 @@ struct PDFViewUI: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    BookmarkSwipe(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: pageNumber), status: bookmarksViewModel.getPages().contains(pageNumber))
+                    BookmarkSwipe(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: routerManager.currentPDFPage), status: bookmarksViewModel.getPages().contains(routerManager.currentPDFPage))
                 }
                 ToolbarTitleMenu {
                     ForEach(datas.items, id: \.index) { item in
                         Button {
-                            pageNumber = item.pages.intValue
+                            routerManager.currentPDFPage = item.pages.intValue
                         } label: {
                             Label(LocalizedStringKey(item.title.localizedForm), systemImage: item.type == .madaniyah ? "moon.fill" : "sun.max.fill")
                         }
@@ -78,7 +77,7 @@ struct PDFViewUI: View {
 struct PDFViewUI_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            PDFViewUI(pageNumber: 1)
+            PDFViewUI()
         }
         .environmentObject(BookMarkViewModel())
         .environmentObject(RouterManager())

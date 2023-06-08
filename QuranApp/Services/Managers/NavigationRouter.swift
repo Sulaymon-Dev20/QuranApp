@@ -13,32 +13,35 @@ class RouterManager: ObservableObject {
     @Published var path = [Route]()
     @Published var tabValue: Int = 0
     @Published var tabBarHideStatus: Bool = false
+    @Published var currentPDFPage: Int = 2
+    
+    let view = PDFViewUI()
     
     func gotoHomePage() {
         path.removeAll()
     }
     
     func push(to item: Route) {
-        let last = path.last
-        if last == nil || last != item {
-            path.append(item)
-        }
+        path.append(item)
     }
-//    there will be write greate solution ASAP
+
     func navigationDestination(_ route: Route) -> some View {
-        switch route {
-        case Route.menu(let item):
-            switch item{
-            case let pageNumber as Int:
-                return PDFViewUI(pageNumber: pageNumber)
-            case let surahModel as SurahModel:
-                return PDFViewUI(pageNumber: surahModel.pages.intValue)
-            case let bookmarkModel as BookmarkModel:
-                return PDFViewUI(pageNumber: bookmarkModel.pageNumber)
-            default:
-                return PDFViewUI(pageNumber: (item as! SurahModel).pages.intValue)
+        return view
+            .onAppear {
+                switch route {
+                case Route.menu(let item):
+                    switch item{
+                    case let pageNumber as Int:
+                        self.currentPDFPage = pageNumber
+                    case let surahModel as SurahModel:
+                        self.currentPDFPage = surahModel.pages.intValue
+                    case let bookmarkModel as BookmarkModel:
+                        self.currentPDFPage = bookmarkModel.pageNumber
+                    default:
+                        self.currentPDFPage = 1
+                    }
+                }
             }
-        }
     }
     
     func tapOnSecondPage() {
@@ -73,7 +76,11 @@ extension RouterManager {
         pushTab(to: getPage(url: url))
         let queryParams = url.queryParameters
         if let indexQueryVal = queryParams?["index"] as? String {
-            push(to: Route.menu(item: indexQueryVal.intValue))
+            if path.isEmpty {
+                push(to: Route.menu(item: indexQueryVal.intValue))
+            } else {
+                currentPDFPage = indexQueryVal.intValue
+            }
         }
         if queryParams?["notification"] as? Bool ?? false {
             UIApplication.shared.applicationIconBadgeNumber -= 1
