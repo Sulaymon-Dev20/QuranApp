@@ -17,10 +17,6 @@ class RouterManager: ObservableObject {
     
     let view = PDFViewUI()
     
-    func gotoHomePage() {
-        path.removeAll()
-    }
-    
     func push(to item: Route) {
         path.append(item)
     }
@@ -43,11 +39,7 @@ class RouterManager: ObservableObject {
                 }
             }
     }
-    
-    func tapOnSecondPage() {
-        path.removeLast()
-    }
-    
+        
     func pushTab(to item: Int) {
         tabValue = item
     }
