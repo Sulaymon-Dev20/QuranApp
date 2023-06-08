@@ -13,4 +13,5 @@ struct OnBoardingModel: Identifiable, Equatable {
     var title: String
     var subTitle: String
     var lottieView: LottieAnimationView = .init()
+    var loop: Bool = false
 }

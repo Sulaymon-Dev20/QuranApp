@@ -12,13 +12,15 @@ struct OnBoardingScreen: View {
     @State var onboardingItems: [OnBoardingModel] = [
         .init(title: "Xorijiy Tillar",
               subTitle: "Iltimos o`zingizga qulay bo`lishi uchun tilni tanlang",
-              lottieView: .init(name:"Language", bundle: .main)),
+              lottieView: .init(name:"Language", bundle: .main),
+              loop: true),
         .init(title: "Eslatma tizimi",
               subTitle: "ushbu ilovada siz aynan bir surani kunning istalgan qismni belgilab eslatma qoldirishingiz mumkin",
               lottieView: .init(name:"Notification", bundle: .main)),
         .init(title: "Nomoz vaqtlari",
               subTitle: "ilovada qulaylik uchun nomoz vaqtlar ham mabjud va siz aynan bir surani nomoz vaqtiga qarab esmani bergilashingiz mumkin",
-              lottieView: .init(name:"Clock", bundle: .main)),
+              lottieView: .init(name:"Clock", bundle: .main),
+              loop: true),
         .init(title: "Qurani karim",
               subTitle: "ushbu ilovaning asosiy maqsadi ham qurani karim bo`lib offline ishlari uchun qo`ldan kelgancha harakat qilingan !",
               lottieView: .init(name:"Book", bundle: .main))
@@ -74,21 +76,22 @@ struct OnBoardingScreen: View {
                             if currentIndex == 0 {
                                 LanguageButtonView(miniView: false)
                             }
-                            Text(finalPage ? "Start" : "Mext")
+                            Text(finalPage ? "Start" : "Next")
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
                                 .padding(.vertical, 12)
                                 .frame(maxWidth: .infinity)
                                 .background {
                                     Capsule()
-                                        .fill(Color.red)
+                                        .fill(finalPage ? Color.blue : Color.red)
                                 }
-                                .padding(.horizontal, 100)
+                                .padding(.horizontal, finalPage ? 40 : 100)
+                                .animation(Animation.easeInOut.delay(0.4), value: finalPage)
                                 .onTapGesture {
                                     if currentIndex < onboardingItems.count - 1 {
                                         currentIndex += 1
                                         onboardingItems[currentIndex].lottieView.currentProgress = 0
-                                        onboardingItems[currentIndex].lottieView.play(toProgress: 1, loopMode: .loop)
+                                        onboardingItems[currentIndex].lottieView.play(toProgress: 1, loopMode: item.loop ? .loop : .playOnce)
                                     } else {
                                         reviewsManager.increase()
                                     }
