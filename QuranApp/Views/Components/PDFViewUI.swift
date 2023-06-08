@@ -54,8 +54,6 @@ struct PDFViewUI: View {
                     ForEach(datas.items, id: \.index) { item in
                         Button {
                             pageNumber = item.pages.intValue
-//                            routerManager.updatePDFPage(to: item.pages.intValue)
-//                            routerManager.push(to: Route.menu(item: item.pages.intValue))
                         } label: {
                             Label(LocalizedStringKey(item.title.localizedForm), systemImage: item.type == .madaniyah ? "moon.fill" : "sun.max.fill")
                         }

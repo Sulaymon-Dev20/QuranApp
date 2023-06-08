@@ -44,7 +44,7 @@ struct SurahListView: View {
                                         noficationsManager.checkNotificationPermission()
                                         noficationsManager.request()
                                     }
-                                ShareSwipe(title: LocalizedStringKey(item.title).stringValue(), index: item.index)
+                                ShareSwipe(title: LocalizedStringKey(item.title).stringValue(), index: item.pages)
                             }
                     }
                 }
