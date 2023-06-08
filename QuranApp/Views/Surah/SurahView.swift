@@ -14,7 +14,6 @@ struct SurahView: View {
     @EnvironmentObject var datas: SurahViewModel
     @EnvironmentObject var routeManager: RouterManager
     @EnvironmentObject var reviewsManager: ReviewsRequestManager
-    @EnvironmentObject var spotlightManager: SpotlightManager
     @Environment(\.requestReview) var requestReview: RequestReviewAction
     
     @State var searchText: String = ""
@@ -69,7 +68,6 @@ struct SurahView: View {
                 .environmentObject(RouterManager())
                 .environmentObject(ReviewsRequestManager())
                 .environmentObject(NoficationsManager())
-                .environmentObject(SpotlightManager())
         }
     }
 }

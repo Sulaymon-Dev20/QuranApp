@@ -10,7 +10,6 @@ import SwiftUI
 struct TabMainView: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var badgeAppManager: BadgeAppManager
-    @EnvironmentObject var spotlightManager: SpotlightManager
     
     var body: some View {
         TabView(selection: $routerManager.tabValue) {
@@ -33,9 +32,6 @@ struct TabMainView: View {
                 .tag(2)
         }
         .tint(Color.primary)
-        .onAppear {
-            spotlightManager.showSpotLight = true
-        }
     }
 }
 
@@ -54,6 +50,5 @@ struct TabMainView_Previews: PreviewProvider {
             .environmentObject(PrayerTimeManager())
             .environmentObject(ReviewsRequestManager())
             .environmentObject(BadgeAppManager())
-            .environmentObject(SpotlightManager())
     }
 }
