@@ -11,6 +11,16 @@ struct ShareSwipe: View {
     let title:String
     let index:String
 
+    init(title: String, index: String) {
+        self.title = title
+        self.index = index
+    }
+    
+    init(title: String, index: Int) {
+        self.title = title
+        self.index = index.toString
+    }
+    
     var body: some View {
         ShareLink(item: title, subject: Text(title), message: Text("holyquran://surahs?index=\(index)"), preview: SharePreview(title, icon: "link.circle.fill")) {
             Label("ShareLink", systemImage:  "link.circle.fill")

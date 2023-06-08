@@ -10,12 +10,16 @@ import SwiftUI
 struct BookmarkListView: View {
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
-    
+    @EnvironmentObject var noficationsManager: NoficationsManager
+
     let list: [BookmarkModel]
     
     @Binding var sort: Bool
     @Binding var searchText: String
-    
+
+    @State var nativationStatus: Bool = false
+    @State var showAlert: Bool = false
+
     var body: some View {
         Section("Bookmark") {
             if !list.isEmpty {
@@ -31,6 +35,9 @@ struct BookmarkListView: View {
                             BookmarkSwipe(item: item, status: true)
                                 .tint(.red)
                         })
+                        .swipeActions(edge: .leading) {
+                            ShareSwipe(title: LocalizedStringKey(item.title).stringValue(), index: item.pageNumber)
+                        }
                 }
                 .onDelete(perform: bookmarksViewModel.deleteItem)
                 .onMove { indexA, indexB in
