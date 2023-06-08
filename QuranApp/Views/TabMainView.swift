@@ -33,31 +33,6 @@ struct TabMainView: View {
                 .tag(2)
         }
         .tint(Color.primary)
-        .overlay(alignment: .bottom, content: {
-            HStack(spacing: 0, content: {
-                Circle()
-                    .foregroundColor(.clear)
-                    .frame(width: 45, height: 45)
-                    .showCase(order: 3, title: "String dasfd String dasfd", cornerRadius: 10, style: .continuous)
-                    .frame(maxWidth: .infinity)
-
-                Circle()
-                    .foregroundColor(.clear)
-                    .frame(width: 45, height: 45)
-                    .showCase(order: 4, title: "String String dasfd fdsf", cornerRadius: 10, style: .continuous)
-                    .frame(maxWidth: .infinity)
-
-                Circle()
-                    .foregroundColor(.clear)
-                    .frame(width: 45, height: 45)
-                    .showCase(order: 5, title: " fff String String dasfd", cornerRadius: 10, style: .continuous)
-                    .frame(maxWidth: .infinity)
-            })
-            .allowsTightening(false)
-        })
-        .modifier(ShowCaseRoot(showHighlights: true, onFinished: {
-            print("finished OnBoarding")
-        }))
         .onAppear {
             spotlightManager.showSpotLight = true
         }

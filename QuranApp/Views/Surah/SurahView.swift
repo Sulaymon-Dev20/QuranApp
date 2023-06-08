@@ -29,11 +29,9 @@ struct SurahView: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         LanguageButtonView()
-                            .showCase(order: 1, title: "languageChangeButton", cornerRadius: 10)
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         SortButtonView(sort: $sort)
-                            .showCase(order: 2, title: "languageChangeButton", cornerRadius: 10)
                     }
                 }
                 .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_surah"))

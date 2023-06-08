@@ -26,7 +26,6 @@ struct SurahListView: View {
                     ForEach(Array(list.enumerated()), id: \.offset) { index, item in
                         let status = bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue)
                         SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages,status: status)
-                            .showCase(order: 6, title: "surahs", cornerRadius: 10,allowToShow: index == 0)
                             .overlay {
                                 NavigationLink(value: Route.menu(item: item)) {
                                     Text(">>>")
