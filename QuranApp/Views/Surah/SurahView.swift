@@ -21,7 +21,7 @@ struct SurahView: View {
     @State var sort: Bool = false
     
     var body: some View {
-        NavigationStack(path: $routeManager.path) {
+        NavigationStack(path: self.$routeManager.path) {
             SurahListView(list: sort ? filterData().reversed() : filterData())
                 .navigationBarTitleDisplayMode(.inline)
                 .navigationTitle("surahs")

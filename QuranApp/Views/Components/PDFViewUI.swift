@@ -37,7 +37,6 @@ struct PDFViewUI: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
                         routerManager.tabBarHide(status: false)
-                        routerManager.gotoHomePage()
                         dismiss()
                     } label: {
                         HStack {
@@ -50,12 +49,13 @@ struct PDFViewUI: View {
                     BookmarkSwipe(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: routerManager.currentPDFPage), status: bookmarksViewModel.getPages().contains(routerManager.currentPDFPage))
                 }
                 ToolbarTitleMenu {
-                    ForEach(datas.items, id: \.index) { item in
+                    ForEach(datas.items, id: \.index) { surah in
                         Button {
-                            routerManager.currentPDFPage = item.pages.intValue
+                            routerManager.currentPDFPage = surah.pages.intValue
                         } label: {
-                            Label(LocalizedStringKey(item.title.localizedForm), systemImage: item.type == .madaniyah ? "moon.fill" : "sun.max.fill")
+                            Label(LocalizedStringKey(surah.title.localizedForm), systemImage: surah.type == .madaniyah ? "moon.fill" : "sun.max.fill")
                         }
+                        .disabled(surah.index == item.index)
                     }
                 }
             }
@@ -78,6 +78,7 @@ struct PDFViewUI_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             PDFViewUI()
+                .navigationBarTitleDisplayMode(.inline)
         }
         .environmentObject(BookMarkViewModel())
         .environmentObject(RouterManager())

@@ -14,11 +14,10 @@ struct BookmarkView: View {
     @EnvironmentObject var badgeAppManager: BadgeAppManager
     
     @State var searchText: String = ""
-    
     @State var sort: Bool = false
     
     var body: some View {
-        NavigationStack(path: $routerManager.path) {
+        NavigationStack(path: self.$routerManager.path) {
             ScrollViewReader { proxy in
                 VStack {
                     List {
