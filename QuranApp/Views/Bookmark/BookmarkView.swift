@@ -12,7 +12,8 @@ struct BookmarkView: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var noficationsManager: NoficationsManager
     @EnvironmentObject var badgeAppManager: BadgeAppManager
-    
+    @EnvironmentObject var colorSchemeManager: ColorSchemeManager
+
     @State var searchText: String = ""
     @State var sort: Bool = false
     
@@ -27,6 +28,8 @@ struct BookmarkView: View {
                             .id(2)
                         PrayTimeRowView()
                             .id(3)
+                        ColorSchemeView()
+                            .id(4)
                     }
                 }
                 .task {
@@ -84,7 +87,6 @@ struct BookmarkView_Previews: PreviewProvider {
             .environmentObject(NotificatSurahViewModel())
             .environmentObject(LocationManager())
             .environmentObject(BadgeAppManager())
-        //            .environment(\.locale, Locale.init(identifier: "ar"))
-        //            .preview(for: .iPhone)
+            .environmentObject(ColorSchemeManager())
     }
 }

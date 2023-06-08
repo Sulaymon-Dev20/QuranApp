@@ -31,7 +31,6 @@ struct TabMainView: View {
                 }
                 .tag(2)
         }
-//        .tint(Color.primary)
     }
 }
 
@@ -50,5 +49,6 @@ struct TabMainView_Previews: PreviewProvider {
             .environmentObject(PrayerTimeManager())
             .environmentObject(ReviewsRequestManager())
             .environmentObject(BadgeAppManager())
+            .environmentObject(ColorSchemeManager())
     }
 }

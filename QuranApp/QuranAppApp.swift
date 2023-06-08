@@ -25,6 +25,7 @@ struct QuranAppApp: App {
     @StateObject var locationManager: LocationManager = LocationManager()
     @StateObject var reviewsManager: ReviewsRequestManager = ReviewsRequestManager()
     @StateObject var badgeAppManager: BadgeAppManager = BadgeAppManager()
+    @StateObject var colorSchemeManager: ColorSchemeManager = ColorSchemeManager()
 
     var body: some Scene {
         WindowGroup {
@@ -41,6 +42,7 @@ struct QuranAppApp: App {
             .onAppear {
                 appDelegate.app = self
             }
+            .preferredColorScheme(colorSchemeManager.getStatus())
             .onContinueUserActivity(CSSearchableItemActionType, perform: loadItem)
             .environmentObject(surahViewModel)
             .environmentObject(launchScreenViewModel)
@@ -54,6 +56,7 @@ struct QuranAppApp: App {
             .environmentObject(prayerTimeManager)
             .environmentObject(reviewsManager)
             .environmentObject(badgeAppManager)
+            .environmentObject(colorSchemeManager)
             .environment(\.locale, Locale.init(identifier: language.language))
         }
     }

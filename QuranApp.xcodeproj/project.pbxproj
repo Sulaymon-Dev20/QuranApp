@@ -23,6 +23,8 @@
 		CE434ED82A1D098B003D83EE /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE434ED72A1D098B003D83EE /* NavigationRouter.swift */; };
 		CE44A8F92A1E6660002EE89C /* MyAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44A8F82A1E6660002EE89C /* MyAppDelegate.swift */; };
 		CE44A8FB2A1E6B4A002EE89C /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44A8FA2A1E6B4A002EE89C /* URL.swift */; };
+		CE4CD5C52A328147006C1189 /* ColorSchemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4CD5C42A328147006C1189 /* ColorSchemeView.swift */; };
+		CE4CD5C72A32866E006C1189 /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4CD5C62A32866E006C1189 /* ColorSchemeManager.swift */; };
 		CE5468692A20BDFA00273458 /* ReviewsRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */; };
 		CE6C3F8B2A326F0400CCA217 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C3F8A2A326F0400CCA217 /* LocationModel.swift */; };
 		CE6F307E2A2BD4F5009534B6 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F307D2A2BD4F5009534B6 /* Highlight.swift */; };
@@ -127,6 +129,8 @@
 		CE434ED72A1D098B003D83EE /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		CE44A8F82A1E6660002EE89C /* MyAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppDelegate.swift; sourceTree = "<group>"; };
 		CE44A8FA2A1E6B4A002EE89C /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		CE4CD5C42A328147006C1189 /* ColorSchemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeView.swift; sourceTree = "<group>"; };
+		CE4CD5C62A32866E006C1189 /* ColorSchemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
 		CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsRequestManager.swift; sourceTree = "<group>"; };
 		CE6C3F8A2A326F0400CCA217 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		CE6F307D2A2BD4F5009534B6 /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
@@ -238,8 +242,17 @@
 				CE434ED72A1D098B003D83EE /* NavigationRouter.swift */,
 				CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */,
 				CEFCA21D2A2CF007002B5F40 /* BadgeAppManager.swift */,
+				CE4CD5C62A32866E006C1189 /* ColorSchemeManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		CE4CD5C32A328125006C1189 /* ColorScheme */ = {
+			isa = PBXGroup;
+			children = (
+				CE4CD5C42A328147006C1189 /* ColorSchemeView.swift */,
+			);
+			path = ColorScheme;
 			sourceTree = "<group>";
 		};
 		CE7C84E02A03924200192CC5 = {
@@ -374,6 +387,7 @@
 				CED05B782A21983C00A0C4B5 /* BookMark */,
 				CED05B752A2184F700A0C4B5 /* Notification */,
 				CED05B792A21989900A0C4B5 /* PrayTime */,
+				CE4CD5C32A328125006C1189 /* ColorScheme */,
 				CE7C854C2A03A7BF00192CC5 /* BookmarkView.swift */,
 			);
 			path = Bookmark;
@@ -642,6 +656,7 @@
 				CE7C85472A039B0C00192CC5 /* JuzView.swift in Sources */,
 				CE35B35E2A215B7000499114 /* View.swift in Sources */,
 				CE7C85242A03936300192CC5 /* JuzModel.swift in Sources */,
+				CE4CD5C52A328147006C1189 /* ColorSchemeView.swift in Sources */,
 				CEF640BA2A1F8C7400FE7D17 /* PermissionDenied.swift in Sources */,
 				CE434ED82A1D098B003D83EE /* NavigationRouter.swift in Sources */,
 				CEF640B82A1F736D00FE7D17 /* Int.swift in Sources */,
@@ -652,6 +667,7 @@
 				CEC1A6892A1AE0D700A10212 /* LocalizedStringKey.swift in Sources */,
 				CE7C85262A03938900192CC5 /* BookmarkModel.swift in Sources */,
 				CE011AD52A290BDC00D56334 /* ShareSwipe.swift in Sources */,
+				CE4CD5C72A32866E006C1189 /* ColorSchemeManager.swift in Sources */,
 				CE7C852E2A03945B00192CC5 /* JuzViewModel.swift in Sources */,
 				CE7935E12A1D83C900B89647 /* PrayerTimeManager.swift in Sources */,
 				CE5468692A20BDFA00273458 /* ReviewsRequestManager.swift in Sources */,
