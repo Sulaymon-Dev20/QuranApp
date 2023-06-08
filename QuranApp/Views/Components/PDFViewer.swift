@@ -11,6 +11,7 @@ import PDFKit
 let document2 = PDFDocument(url: Bundle.main.url(forResource: "data", withExtension: "pdf")!)!
 
 struct PDFViewer: UIViewRepresentable {
+    
     let uiView = PDFKit.PDFView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     @Binding var pageNumber: Int
     
@@ -34,6 +35,9 @@ struct PDFViewer: UIViewRepresentable {
     
     func updateUIView(_ uiView: PDFKit.PDFView, context: Context) {
         uiView.document = document2
+        if let page = uiView.document?.page(at: pageNumber - 1) {
+            uiView.go(to: page)
+        }
     }
     
     func makeCoordinator() -> Coordinator {

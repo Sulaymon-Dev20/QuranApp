@@ -25,7 +25,7 @@ class RouterManager: ObservableObject {
         }
     }
 //    there will be write greate solution ASAP
-    func navigationDestination(_ route:any Hashable) -> some View {
+    func navigationDestination(_ route: Route) -> some View {
         switch route {
         case Route.menu(let item):
             switch item{
@@ -38,8 +38,6 @@ class RouterManager: ObservableObject {
             default:
                 return PDFViewUI(pageNumber: (item as! SurahModel).pages.intValue)
             }
-        default:
-            return PDFViewUI(pageNumber: 1)
         }
     }
     

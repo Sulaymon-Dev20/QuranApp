@@ -14,8 +14,8 @@
             filePath = "QuranApp/Services/Managers/NavigationRouter.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "pushDeepLink(to:list:)"
             landmarkType = "7">
          </BreakpointContent>

@@ -53,7 +53,9 @@ struct PDFViewUI: View {
                 ToolbarTitleMenu {
                     ForEach(datas.items, id: \.index) { item in
                         Button {
-                            routerManager.push(to: Route.menu(item: item.pages.intValue))
+                            pageNumber = item.pages.intValue
+//                            routerManager.updatePDFPage(to: item.pages.intValue)
+//                            routerManager.push(to: Route.menu(item: item.pages.intValue))
                         } label: {
                             Label(LocalizedStringKey(item.title.localizedForm), systemImage: item.type == .madaniyah ? "moon.fill" : "sun.max.fill")
                         }
@@ -78,7 +80,7 @@ struct PDFViewUI: View {
 struct PDFViewUI_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            PDFViewUI(pageNumber: 100)
+            PDFViewUI(pageNumber: 1)
         }
         .environmentObject(BookMarkViewModel())
         .environmentObject(RouterManager())

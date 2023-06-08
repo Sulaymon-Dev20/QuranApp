@@ -14,6 +14,7 @@ struct SurahRowView: View {
     let verses: Int
     let pageNumber: String
     let status: Bool
+    
     var body: some View {
         ZStack {
             HStack {
