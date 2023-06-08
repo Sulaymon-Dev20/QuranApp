@@ -58,6 +58,9 @@ struct SheetView: View {
                                 .tag(data[index].time)
                         }
                     })
+                    .onAppear {
+                        date = data[0].time
+                    }
                     .padding(.bottom,20)
                     .pickerStyle(SegmentedPickerStyle())
                     Button {
