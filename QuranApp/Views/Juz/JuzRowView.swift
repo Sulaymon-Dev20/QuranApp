@@ -12,7 +12,7 @@ struct JuzRowView: View {
     @EnvironmentObject var language: LanguageViewModel
 
     var body: some View {
-        var text = LocalizedStringKey("juz").stringValue(locale: language.language)
+        let text = LocalizedStringKey("juz").stringValue(locale: language.language)
         Menu {
             NavigationLink(value: Route.menu(item: item.index)) {
                 Label("\(item.index) \(text)", systemImage: "timelapse")
