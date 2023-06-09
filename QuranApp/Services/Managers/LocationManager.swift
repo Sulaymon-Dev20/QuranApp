@@ -20,7 +20,6 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     override init() {
         super.init()
         self.manager.delegate = self
-        getLocation()
     }
 
     public func requestAuthorisation(always: Bool = false) {
@@ -41,12 +40,13 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         self.loading = true
     }
     
-    func getLocation() {
+    func getLocation() -> LocationModel {
         if let data = UserDefaults.standard.data(forKey: storageKey), let savedLocation = try? JSONDecoder().decode(LocationModel.self, from: data) {
             self.location = savedLocation
         } else {
             request()
         }
+        return location
     }
     
     func saveLocation() {

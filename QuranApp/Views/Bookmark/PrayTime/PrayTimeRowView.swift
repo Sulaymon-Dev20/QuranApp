@@ -16,7 +16,7 @@ struct PrayTimeRowView: View {
     var body: some View {
         let show = locationManager.checkLocationPermission()
         let loading = locationManager.loading
-        let location = locationManager.location
+        let location = locationManager.getLocation()
         Section {
             let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
             ZStack {
@@ -38,7 +38,7 @@ struct PrayTimeRowView: View {
                     if !show {
                         showAlert = true
                     }
-                    locationManager.getLocation()
+                    _ = locationManager.getLocation()
                 } label: {
                     PermissionDenied(img: "paperplane.circle.fill", text: "Location Denited")
                         .frame(maxWidth: .infinity)
