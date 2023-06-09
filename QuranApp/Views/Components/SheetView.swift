@@ -22,7 +22,7 @@ struct SheetView: View {
     let surah: SurahModel
     
     var body: some View {
-        let location = locationManager.getLocation()
+        let location = locationManager.location
         let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
         let show = locationManager.checkLocationPermission()
         let loading = locationManager.loading
@@ -74,7 +74,7 @@ struct SheetView: View {
                 }
                 .blur(radius: show && !loading ? 0 : 8)
                 Button {
-                    _ = locationManager.getLocation()
+                    locationManager.getLocation()
                     if !show {
                         showAlert = true
                     }
@@ -124,6 +124,9 @@ struct SheetView: View {
                         .cornerRadius(20)
                 }
             }
+        }
+        .onAppear {
+            locationManager.getLocation()
         }
         .padding()
         .presentationDetents([.medium, .large])

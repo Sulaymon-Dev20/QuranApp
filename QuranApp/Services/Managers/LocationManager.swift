@@ -40,13 +40,12 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         self.loading = true
     }
     
-    func getLocation() -> LocationModel {
+    func getLocation() {
         if let data = UserDefaults.standard.data(forKey: storageKey), let savedLocation = try? JSONDecoder().decode(LocationModel.self, from: data) {
             self.location = savedLocation
         } else {
             request()
         }
-        return location
     }
     
     func saveLocation() {
