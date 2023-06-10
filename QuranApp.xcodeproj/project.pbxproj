@@ -563,7 +563,6 @@
 			packageReferences = (
 				CE7935DB2A1D74E300B89647 /* XCRemoteSwiftPackageReference "adhan-swift" */,
 				CE08879F2A23E6CF00FDE8B0 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				CE011AFA2A29EF9200D56334 /* XCRemoteSwiftPackageReference "Subsonic" */,
 			);
 			productRefGroup = CE7C84EA2A03924200192CC5 /* Products */;
 			projectDirPath = "";
@@ -1042,14 +1041,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CE011AFA2A29EF9200D56334 /* XCRemoteSwiftPackageReference "Subsonic" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/twostraws/Subsonic";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.2.0;
-			};
-		};
 		CE08879F2A23E6CF00FDE8B0 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://GitHub.com/airbnb/lottie-ios";
