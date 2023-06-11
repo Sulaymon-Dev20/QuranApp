@@ -14,7 +14,7 @@ struct JuzRowView: View {
     var body: some View {
         let text = LocalizedStringKey("juz").stringValue(locale: language.language)
         Menu {
-            NavigationLink(value: Route.menu(item: item.index)) {
+            NavigationLink(value: Route.menu(item: item.page)) {
                 Label("\(item.index) \(text)", systemImage: "timelapse")
             }
             ForEach(item.surahs, id: \.index) { surahs in

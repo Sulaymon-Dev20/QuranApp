@@ -13,7 +13,7 @@ class ReviewsRequestManager: ObservableObject {
     @Published var count:Int = 0
 
     let storageKey = "reviewsRequestManager"
-    let limit = 100
+    let limit = 30
 
     init() {
         getCurrentValue()

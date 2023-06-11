@@ -1,1472 +1,1667 @@
 [
-    {
-        "index" : 1,
-        "page" : 1,
-        "surahs" : [ {
-            "pageNumber" : "1",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 7
-            },
-            "title" : "Al-Fatiha",
-            "titleAr" : "الفاتحة",
-            "index" : 1
-        }, {
-            "pageNumber" : "2",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 141
-            },
-            "title" : "Al-Baqara",
-            "titleAr" : "البقرة",
-            "index" : 2
-        } ]
-    }, {
-        "index" : 2,
-        "page" : 22,
-        "surahs" : [ {
-            "pageNumber" : "2",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 142,
-                "end" : 252
-            },
-            "title" : "Al-Baqara",
-            "titleAr" : "البقرة",
-            "index" : 2
-        } ]
-    }, {
-        "index" : 3,
-        "page" : 40,
-        "surahs" : [ {
-            "pageNumber" : "2",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 253,
-                "end" : 286
-            },
-            "title" : "Al-Baqara",
-            "titleAr" : "البقرة",
-            "index" : 2
-        }, {
-            "pageNumber" : "45",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 92
-            },
-            "title" : "Al-Imran",
-            "titleAr" : "آل عمران",
-            "index" : 3
-        } ]
-    }, {
-        "index" : 4,
-        "page" : 60,
-        "surahs" : [ {
-            "pageNumber" : "45",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 93,
-                "end" : 200
-            },
-            "title" : "Al-Imran",
-            "titleAr" : "آل عمران",
-            "index" : 3
-        }, {
-            "pageNumber" : "69",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 23
-            },
-            "title" : "An-Nisaa'",
-            "titleAr" : "النساء",
-            "index" : 4
-        } ]
-    }, {
-        "index" : 5,
-        "page" : 80,
-        "surahs" : [ {
-            "pageNumber" : "69",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 24,
-                "end" : 147
-            },
-            "title" : "An-Nisaa'",
-            "titleAr" : "النساء",
-            "index" : 4
-        } ]
-    }, {
-        "index" : 6,
-        "page" : 98,
-        "surahs" : [ {
-            "pageNumber" : "69",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 148,
-                "end" : 176
-            },
-            "title" : "An-Nisaa'",
-            "titleAr" : "النساء",
-            "index" : 4
-        }, {
-            "pageNumber" : "95",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 81
-            },
-            "title" : "Al-Ma'ida",
-            "titleAr" : "المائدة",
-            "index" : 5
-        } ]
-    }, {
-        "index" : 7,
-        "page" : 119,
-        "surahs" : [ {
-            "pageNumber" : "95",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 82,
-                "end" : 120
-            },
-            "title" : "Al-Ma'ida",
-            "titleAr" : "المائدة",
-            "index" : 5
-        }, {
-            "pageNumber" : "115",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 110
-            },
-            "title" : "Al-An'am",
-            "titleAr" : "الأنعام",
-            "index" : 6
-        } ]
-    }, {
-        "index" : 8,
-        "page" : 141,
-        "surahs" : [ {
-            "pageNumber" : "115",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 111,
-                "end" : 165
-            },
-            "title" : "Al-An'am",
-            "titleAr" : "الأنعام",
-            "index" : 6
-        }, {
-            "pageNumber" : "136",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 87
-            },
-            "title" : "Al-A'raf",
-            "titleAr" : "الأعراف",
-            "index" : 7
-        } ]
-    }, {
-        "index" : 9,
-        "page" : 162,
-        "surahs" : [ {
-            "pageNumber" : "136",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 88,
-                "end" : 206
-            },
-            "title" : "Al-A'raf",
-            "titleAr" : "الأعراف",
-            "index" : 7
-        }, {
-            "pageNumber" : "160",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 40
-            },
-            "title" : "Al-Anfal",
-            "titleAr" : "الأنفال",
-            "index" : 8
-        } ]
-    }, {
-        "index" : 10,
-        "page" : 181,
-        "surahs" : [ {
-            "pageNumber" : "160",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 41,
-                "end" : 75
-            },
-            "title" : "Al-Anfal",
-            "titleAr" : "الأنفال",
-            "index" : 8
-        }, {
-            "pageNumber" : "169",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 92
-            },
-            "title" : "Al-Tawba",
-            "titleAr" : "التوبة",
-            "index" : 9
-        } ]
-    }, {
-        "index" : 11,
-        "page" : 200,
-        "surahs" : [ {
-            "pageNumber" : "169",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 93,
-                "end" : 129
-            },
-            "title" : "Al-Tawba",
-            "titleAr" : "التوبة",
-            "index" : 9
-        }, {
-            "pageNumber" : "187",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 109
-            },
-            "title" : "Yunus",
-            "titleAr" : "يونس",
-            "index" : 10
-        }, {
-            "pageNumber" : "199",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 5
-            },
-            "title" : "Hud",
-            "titleAr" : "هود",
-            "index" : 11
-        } ]
-    }, {
-        "index" : 12,
-        "page" : 221,
-        "surahs" : [ {
-            "pageNumber" : "199",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 6,
-                "end" : 123
-            },
-            "title" : "Hud",
-            "titleAr" : "هود",
-            "index" : 11
-        }, {
-            "pageNumber" : "212",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 52
-            },
-            "title" : "Yusuf",
-            "titleAr" : "يوسف",
-            "index" : 12
-        } ]
-    }, {
-        "index" : 13,
-        "page" : 242,
-        "surahs" : [ {
-            "pageNumber" : "212",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 53,
-                "end" : 111
-            },
-            "title" : "Yusuf",
-            "titleAr" : "يوسف",
-            "index" : 12
-        }, {
-            "pageNumber" : "225",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 43
-            },
-            "title" : "Ar-Ra'd",
-            "titleAr" : "الرعد",
-            "index" : 13
-        }, {
-            "pageNumber" : "231",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 52
-            },
-            "title" : "Ibrahim",
-            "titleAr" : "إبراهيم",
-            "index" : 14
-        } ]
-    }, {
-        "index" : 14,
-        "page" : 262,
-        "surahs" : [ {
-            "pageNumber" : "237",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 99
-            },
-            "title" : "Al-Hijr",
-            "titleAr" : "الحجر",
-            "index" : 15
-        }, {
-            "pageNumber" : "242",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 128
-            },
-            "title" : "An-Nahl",
-            "titleAr" : "النحل",
-            "index" : 16
-        } ]
-    }, {
-        "index" : 15,
-        "page" : 281,
-        "surahs" : [ {
-            "pageNumber" : "255",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 111
-            },
-            "title" : "Al-Israa",
-            "titleAr" : "الإسراء",
-            "index" : 17
-        }, {
-            "pageNumber" : "266",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 74
-            },
-            "title" : "Al-Kahf",
-            "titleAr" : "الكهف",
-            "index" : 18
-        } ]
-    }, {
-        "index" : 16,
-        "page" : 300,
-        "surahs" : [ {
-            "pageNumber" : "266",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 75,
-                "end" : 110
-            },
-            "title" : "Al-Kahf",
-            "titleAr" : "الكهف",
-            "index" : 18
-        }, {
-            "pageNumber" : "277",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 98
-            },
-            "title" : "Maryam",
-            "titleAr" : "مريم",
-            "index" : 19
-        }, {
-            "pageNumber" : "284",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 135
-            },
-            "title" : "Ta-Ha",
-            "titleAr" : "طه",
-            "index" : 20
-        } ]
-    }, {
-        "index" : 17,
-        "page" : 321,
-        "surahs" : [ {
-            "pageNumber" : "294",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 112
-            },
-            "title" : "Al-Anbiya",
-            "titleAr" : "الأنبياء",
-            "index" : 21
-        }, {
-            "pageNumber" : "302",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 78
-            },
-            "title" : "Al-Hajj",
-            "titleAr" : "الحج",
-            "index" : 22
-        } ]
-    }, {
-        "index" : 18,
-        "page" : 340,
-        "surahs" : [ {
-            "pageNumber" : "311",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 118
-            },
-            "title" : "Al-Muminun",
-            "titleAr" : "المؤمنون",
-            "index" : 23
-        }, {
-            "pageNumber" : "319",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 64
-            },
-            "title" : "An-Nur",
-            "titleAr" : "النور",
-            "index" : 24
-        }, {
-            "pageNumber" : "329",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 20
-            },
-            "title" : "Al-Furqan",
-            "titleAr" : "الفرقان",
-            "index" : 25
-        } ]
-    }, {
-        "index" : 19,
-        "page" : 362,
-        "surahs" : [ {
-            "pageNumber" : "329",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 21,
-                "end" : 77
-            },
-            "title" : "Al-Furqan",
-            "titleAr" : "الفرقان",
-            "index" : 25
-        }, {
-            "pageNumber" : "335",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 227
-            },
-            "title" : "Ash-Shuara",
-            "titleAr" : "الشعراء",
-            "index" : 26
-        }, {
-            "pageNumber" : "345",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 55
-            },
-            "title" : "An-Naml",
-            "titleAr" : "النمل",
-            "index" : 27
-        } ]
-    }, {
-        "index" : 20,
-        "page" : 382,
-        "surahs" : [ {
-            "pageNumber" : "345",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 56,
-                "end" : 93
-            },
-            "title" : "An-Naml",
-            "titleAr" : "النمل",
-            "index" : 27
-        }, {
-            "pageNumber" : "354",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 88
-            },
-            "title" : "Al-Qasas",
-            "titleAr" : "القصص",
-            "index" : 28
-        }, {
-            "pageNumber" : "364",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 45
-            },
-            "title" : "Al-Ankabut",
-            "titleAr" : "العنكبوت",
-            "index" : 29
-        } ]
-    }, {
-        "index" : 21,
-        "page" : 402,
-        "surahs" : [ {
-            "pageNumber" : "364",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 46,
-                "end" : 69
-            },
-            "title" : "Al-Ankabut",
-            "titleAr" : "العنكبوت",
-            "index" : 29
-        }, {
-            "pageNumber" : "371",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 60
-            },
-            "title" : "Ar-Rum",
-            "titleAr" : "الروم",
-            "index" : 30
-        }, {
-            "pageNumber" : "377",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 34
-            },
-            "title" : "Luqman",
-            "titleAr" : "لقمان",
-            "index" : 31
-        }, {
-            "pageNumber" : "381",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 30
-            },
-            "title" : "As-Sajdah",
-            "titleAr" : "السجدة",
-            "index" : 32
-        }, {
-            "pageNumber" : "383",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 30
-            },
-            "title" : "Al-Ahzab",
-            "titleAr" : "الأحزاب",
-            "index" : 33
-        } ]
-    }, {
-        "index" : 22,
-        "page" : 422,
-        "surahs" : [ {
-            "pageNumber" : "383",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 31,
-                "end" : 73
-            },
-            "title" : "Al-Ahzab",
-            "titleAr" : "الأحزاب",
-            "index" : 33
-        }, {
-            "pageNumber" : "393",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 54
-            },
-            "title" : "Saba",
-            "titleAr" : "سبأ",
-            "index" : 34
-        }, {
-            "pageNumber" : "399",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 45
-            },
-            "title" : "Fatir",
-            "titleAr" : "فاطر",
-            "index" : 35
-        }, {
-            "pageNumber" : "404",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 27
-            },
-            "title" : "Yasin",
-            "titleAr" : "يس",
-            "index" : 36
-        } ]
-    }, {
-        "index" : 23,
-        "page" : 442,
-        "surahs" : [ {
-            "pageNumber" : "404",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 28,
-                "end" : 83
-            },
-            "title" : "Yasin",
-            "titleAr" : "يس",
-            "index" : 36
-        }, {
-            "pageNumber" : "410",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 182
-            },
-            "title" : "As-Saffat",
-            "titleAr" : "الصافات",
-            "index" : 37
-        }, {
-            "pageNumber" : "417",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 88
-            },
-            "title" : "Sad",
-            "titleAr" : "ص",
-            "index" : 38
-        }, {
-            "pageNumber" : "422",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 31
-            },
-            "title" : "Az-Zumar",
-            "titleAr" : "الزمر",
-            "index" : 39
-        } ]
-    }, {
-        "index" : 24,
-        "page" : 462,
-        "surahs" : [ {
-            "pageNumber" : "422",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 32,
-                "end" : 75
-            },
-            "title" : "Az-Zumar",
-            "titleAr" : "الزمر",
-            "index" : 39
-        }, {
-            "pageNumber" : "431",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 85
-            },
-            "title" : "Ghafir",
-            "titleAr" : "غافر",
-            "index" : 40
-        }, {
-            "pageNumber" : "439",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 46
-            },
-            "title" : "Fussilat",
-            "titleAr" : "فصلت",
-            "index" : 41
-        } ]
-    }, {
-        "index" : 25,
-        "page" : 482,
-        "surahs" : [ {
-            "pageNumber" : "439",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 47,
-                "end" : 54
-            },
-            "title" : "Fussilat",
-            "titleAr" : "فصلت",
-            "index" : 41
-        }, {
-            "pageNumber" : "445",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 53
-            },
-            "title" : "Ash-Shura",
-            "titleAr" : "الشورى",
-            "index" : 42
-        }, {
-            "pageNumber" : "451",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 89
-            },
-            "title" : "Az-Zukhruf",
-            "titleAr" : "الزخرف",
-            "index" : 43
-        }, {
-            "pageNumber" : "457",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 59
-            },
-            "title" : "Ad-Dukhan",
-            "titleAr" : "الدخان",
-            "index" : 44
-        }, {
-            "pageNumber" : "460",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 37
-            },
-            "title" : "Al-Jathiya",
-            "titleAr" : "الجاثية",
-            "index" : 45
-        } ]
-    }, {
-        "index" : 26,
-        "page" : 502,
-        "surahs" : [ {
-            "pageNumber" : "464",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 35
-            },
-            "title" : "Al-Ahqaf",
-            "titleAr" : "الأحقاف",
-            "index" : 46
-        }, {
-            "pageNumber" : "468",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 38
-            },
-            "title" : "Muhammad",
-            "titleAr" : "محمد",
-            "index" : 47
-        }, {
-            "pageNumber" : "472",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 29
-            },
-            "title" : "Al-Fath",
-            "titleAr" : "الفتح",
-            "index" : 48
-        }, {
-            "pageNumber" : "477",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 18
-            },
-            "title" : "Al-Hujurat",
-            "titleAr" : "الحجرات",
-            "index" : 49
-        }, {
-            "pageNumber" : "479",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 45
-            },
-            "title" : "Qaf",
-            "titleAr" : "ق",
-            "index" : 50
-        }, {
-            "pageNumber" : "482",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 30
-            },
-            "title" : "Az-Zariyat",
-            "titleAr" : "الذاريات",
-            "index" : 51
-        } ]
-    }, {
-        "index" : 27,
-        "page" : 522,
-        "surahs" : [ {
-            "pageNumber" : "482",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 31,
-                "end" : 60
-            },
-            "title" : "Az-Zariyat",
-            "titleAr" : "الذاريات",
-            "index" : 51
-        }, {
-            "pageNumber" : "485",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 49
-            },
-            "title" : "At-Tur",
-            "titleAr" : "الطور",
-            "index" : 52
-        }, {
-            "pageNumber" : "487",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 62
-            },
-            "title" : "An-Najm",
-            "titleAr" : "النجم",
-            "index" : 53
-        }, {
-            "pageNumber" : "490",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 55
-            },
-            "title" : "Al-Qamar",
-            "titleAr" : "القمر",
-            "index" : 54
-        }, {
-            "pageNumber" : "493",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 78
-            },
-            "title" : "Ar-Rahman",
-            "titleAr" : "الرحمن",
-            "index" : 55
-        }, {
-            "pageNumber" : "496",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 96
-            },
-            "title" : "Al-Waqia",
-            "titleAr" : "الواقعة",
-            "index" : 56
-        }, {
-            "pageNumber" : "499",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 29
-            },
-            "title" : "Al-Hadid",
-            "titleAr" : "الحديد",
-            "index" : 57
-        } ]
-    }, {
-        "index" : 28,
-        "page" : 542,
-        "surahs" : [ {
-            "pageNumber" : "504",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 22
-            },
-            "title" : "Al-Mujadilah",
-            "titleAr" : "المجادلة",
-            "index" : 58
-        }, {
-            "pageNumber" : "507",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 24
-            },
-            "title" : "Al-Hashr",
-            "titleAr" : "الحشر",
-            "index" : 59
-        }, {
-            "pageNumber" : "510",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 13
-            },
-            "title" : "Al-Mumtahinah",
-            "titleAr" : "الممتحنة",
-            "index" : 60
-        }, {
-            "pageNumber" : "513",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 14
-            },
-            "title" : "As-Saff",
-            "titleAr" : "الصف",
-            "index" : 61
-        }, {
-            "pageNumber" : "515",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 11
-            },
-            "title" : "Al-Jumu'ah",
-            "titleAr" : "الجمعة",
-            "index" : 62
-        }, {
-            "pageNumber" : "516",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 11
-            },
-            "title" : "Al-Munafiqun",
-            "titleAr" : "المنافقون",
-            "index" : 63
-        }, {
-            "pageNumber" : "518",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 18
-            },
-            "title" : "At-Taghabun",
-            "titleAr" : "التغابن",
-            "index" : 64
-        }, {
-            "pageNumber" : "520",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 12
-            },
-            "title" : "At-Talaq",
-            "titleAr" : "الطلاق",
-            "index" : 65
-        }, {
-            "pageNumber" : "522",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 12
-            },
-            "title" : "At-Tahrim",
-            "titleAr" : "التحريم",
-            "index" : 66
-        } ]
-    }, {
-        "index" : 29,
-        "page" : 562,
-        "surahs" : [ {
-            "pageNumber" : "524",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 30
-            },
-            "title" : "Al-Mulk",
-            "titleAr" : "الملك",
-            "index" : 67
-        }, {
-            "pageNumber" : "526",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 52
-            },
-            "title" : "Al-Qalam",
-            "titleAr" : "القلم",
-            "index" : 68
-        }, {
-            "pageNumber" : "529",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 52
-            },
-            "title" : "Al-Haqqah",
-            "titleAr" : "الحاقة",
-            "index" : 69
-        }, {
-            "pageNumber" : "531",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 44
-            },
-            "title" : "Al-Ma'arij",
-            "titleAr" : "المعارج",
-            "index" : 70
-        }, {
-            "pageNumber" : "533",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 28
-            },
-            "title" : "Nuh",
-            "titleAr" : "نوح",
-            "index" : 71
-        }, {
-            "pageNumber" : "534",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 28
-            },
-            "title" : "Al-Jinn",
-            "titleAr" : "الجن",
-            "index" : 72
-        }, {
-            "pageNumber" : "537",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 20
-            },
-            "title" : "Al-Muzzammil",
-            "titleAr" : "المزمل",
-            "index" : 73
-        }, {
-            "pageNumber" : "538",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 56
-            },
-            "title" : "Al-Muddaththir",
-            "titleAr" : "المدثر",
-            "index" : 74
-        }, {
-            "pageNumber" : "540",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 40
-            },
-            "title" : "Al-Qiyamah",
-            "titleAr" : "القيامة",
-            "index" : 75
-        }, {
-            "pageNumber" : "542",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 31
-            },
-            "title" : "Al-Insan",
-            "titleAr" : "الإنسان",
-            "index" : 76
-        }, {
-            "pageNumber" : "544",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 50
-            },
-            "title" : "Al-Mursalat",
-            "titleAr" : "المرسلات",
-            "index" : 77
-        } ]
-    }, {
-        "index" : 30,
-        "page" : 582,
-        "surahs" : [ {
-            "pageNumber" : "545",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 40
-            },
-            "title" : "An-Naba",
-            "titleAr" : "النبأ",
-            "index" : 78
-        }, {
-            "pageNumber" : "547",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 46
-            },
-            "title" : "An-Naziat",
-            "titleAr" : "النازعات",
-            "index" : 79
-        }, {
-            "pageNumber" : "548",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 42
-            },
-            "title" : "Abasa",
-            "titleAr" : "عبس",
-            "index" : 80
-        }, {
-            "pageNumber" : "550",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 29
-            },
-            "title" : "At-Takwir",
-            "titleAr" : "التكوير",
-            "index" : 81
-        }, {
-            "pageNumber" : "551",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 19
-            },
-            "title" : "Al-Infitar",
-            "titleAr" : "الإنفطار",
-            "index" : 82
-        }, {
-            "pageNumber" : "552",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 36
-            },
-            "title" : "Al-Mutaffifin",
-            "titleAr" : "المطففين",
-            "index" : 83
-        }, {
-            "pageNumber" : "553",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 25
-            },
-            "title" : "Al-Inshiqaq",
-            "titleAr" : "الإنشقاق",
-            "index" : 84
-        }, {
-            "pageNumber" : "554",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 22
-            },
-            "title" : "Al-Buruj",
-            "titleAr" : "البروج",
-            "index" : 85
-        }, {
-            "pageNumber" : "555",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 17
-            },
-            "title" : "At-Tariq",
-            "titleAr" : "الطارق",
-            "index" : 86
-        }, {
-            "pageNumber" : "556",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 19
-            },
-            "title" : "Al-Ala",
-            "titleAr" : "الأعلى",
-            "index" : 87
-        }, {
-            "pageNumber" : "556",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 26
-            },
-            "title" : "Al-Ghashiyah",
-            "titleAr" : "الغاشية",
-            "index" : 88
-        }, {
-            "pageNumber" : "557",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 30
-            },
-            "title" : "Al-Fajr",
-            "titleAr" : "الفجر",
-            "index" : 89
-        }, {
-            "pageNumber" : "559",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 20
-            },
-            "title" : "Al-Balad",
-            "titleAr" : "البلد",
-            "index" : 90
-        }, {
-            "pageNumber" : "559",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 15
-            },
-            "title" : "Ash-Shams",
-            "titleAr" : "الشمس",
-            "index" : 91
-        }, {
-            "pageNumber" : "560",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 21
-            },
-            "title" : "Al-Lail",
-            "titleAr" : "الليل",
-            "index" : 92
-        }, {
-            "pageNumber" : "561",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 11
-            },
-            "title" : "Ad-Duha",
-            "titleAr" : "الضحى",
-            "index" : 93
-        }, {
-            "pageNumber" : "561",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 8
-            },
-            "title" : "Ash-Sharh",
-            "titleAr" : "الشرح",
-            "index" : 94
-        }, {
-            "pageNumber" : "562",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 8
-            },
-            "title" : "At-Tin",
-            "titleAr" : "التين",
-            "index" : 95
-        }, {
-            "pageNumber" : "562",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 19
-            },
-            "title" : "Al-Alaq",
-            "titleAr" : "العلق",
-            "index" : 96
-        }, {
-            "pageNumber" : "563",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 5
-            },
-            "title" : "Al-Qadr",
-            "titleAr" : "القدر",
-            "index" : 97
-        }, {
-            "pageNumber" : "563",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 8
-            },
-            "title" : "Al-Bayinah",
-            "titleAr" : "البينة",
-            "index" : 98
-        }, {
-            "pageNumber" : "564",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 8
-            },
-            "title" : "Az-Zalzalah",
-            "titleAr" : "الزلزلة",
-            "index" : 99
-        }, {
-            "pageNumber" : "564",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 11
-            },
-            "title" : "Al-Adiyat",
-            "titleAr" : "العاديات",
-            "index" : 100
-        }, {
-            "pageNumber" : "565",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 11
-            },
-            "title" : "Al-Qariah",
-            "titleAr" : "القارعة",
-            "index" : 101
-        }, {
-            "pageNumber" : "565",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 8
-            },
-            "title" : "Al-Takathur",
-            "titleAr" : "التكاثر",
-            "index" : 102
-        }, {
-            "pageNumber" : "566",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 3
-            },
-            "title" : "Al-Asr",
-            "titleAr" : "العصر",
-            "index" : 103
-        }, {
-            "pageNumber" : "566",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 9
-            },
-            "title" : "Al-Humazah",
-            "titleAr" : "الهمزة",
-            "index" : 104
-        }, {
-            "pageNumber" : "566",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 5
-            },
-            "title" : "Al-Fil",
-            "titleAr" : "الفيل",
-            "index" : 105
-        }, {
-            "pageNumber" : "567",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 4
-            },
-            "title" : "Quraish",
-            "titleAr" : "قريش",
-            "index" : 106
-        }, {
-            "pageNumber" : "567",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 7
-            },
-            "title" : "Al-Ma'un",
-            "titleAr" : "الماعون",
-            "index" : 107
-        }, {
-            "pageNumber" : "567",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 3
-            },
-            "title" : "Al-Kauthar",
-            "titleAr" : "الكوثر",
-            "index" : 108
-        }, {
-            "pageNumber" : "568",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 6
-            },
-            "title" : "Al-Kafirun",
-            "titleAr" : "الكافرون",
-            "index" : 109
-        }, {
-            "pageNumber" : "568",
-            "type" : "Madaniyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 3
-            },
-            "title" : "An-Nasr",
-            "titleAr" : "النصر",
-            "index" : 110
-        }, {
-            "pageNumber" : "568",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 5
-            },
-            "title" : "Al-Masad",
-            "titleAr" : "المسد",
-            "index" : 111
-        }, {
-            "pageNumber" : "569",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 4
-            },
-            "title" : "Al-Ikhlas",
-            "titleAr" : "الإخلاص",
-            "index" : 112
-        }, {
-            "pageNumber" : "569",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 5
-            },
-            "title" : "Al-Falaq",
-            "titleAr" : "الفلق",
-            "index" : 113
-        }, {
-            "pageNumber" : "569",
-            "type" : "Makkiyah",
-            "verse" : {
-                "start" : 1,
-                "end" : 6
-            },
-            "title" : "An-Nas",
-            "titleAr" : "الناس",
-            "index" : 114
-        } ]
-    } ]
+  {
+    "index": 1,
+    "page": 1,
+    "surahs": [
+      {
+        "pageNumber": "1",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 7
+        },
+        "title": "Al-Fatiha",
+        "titleAr": "الفاتحة",
+        "index": 1
+      },
+      {
+        "pageNumber": "2",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 141
+        },
+        "title": "Al-Baqara",
+        "titleAr": "البقرة",
+        "index": 2
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "page": 20,
+    "surahs": [
+      {
+        "pageNumber": "2",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 142,
+          "end": 252
+        },
+        "title": "Al-Baqara",
+        "titleAr": "البقرة",
+        "index": 2
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "page": 38,
+    "surahs": [
+      {
+        "pageNumber": "2",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 253,
+          "end": 286
+        },
+        "title": "Al-Baqara",
+        "titleAr": "البقرة",
+        "index": 2
+      },
+      {
+        "pageNumber": "45",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 92
+        },
+        "title": "Al-Imran",
+        "titleAr": "آل عمران",
+        "index": 3
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "page": 56,
+    "surahs": [
+      {
+        "pageNumber": "45",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 93,
+          "end": 200
+        },
+        "title": "Al-Imran",
+        "titleAr": "آل عمران",
+        "index": 3
+      },
+      {
+        "pageNumber": "69",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 23
+        },
+        "title": "An-Nisaa'",
+        "titleAr": "النساء",
+        "index": 4
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "page": 80,
+    "surahs": [
+      {
+        "pageNumber": "69",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 24,
+          "end": 147
+        },
+        "title": "An-Nisaa'",
+        "titleAr": "النساء",
+        "index": 4
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "page": 98,
+    "surahs": [
+      {
+        "pageNumber": "69",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 148,
+          "end": 176
+        },
+        "title": "An-Nisaa'",
+        "titleAr": "النساء",
+        "index": 4
+      },
+      {
+        "pageNumber": "95",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 81
+        },
+        "title": "Al-Ma'ida",
+        "titleAr": "المائدة",
+        "index": 5
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "page": 119,
+    "surahs": [
+      {
+        "pageNumber": "95",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 82,
+          "end": 120
+        },
+        "title": "Al-Ma'ida",
+        "titleAr": "المائدة",
+        "index": 5
+      },
+      {
+        "pageNumber": "115",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 110
+        },
+        "title": "Al-An'am",
+        "titleAr": "الأنعام",
+        "index": 6
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "page": 141,
+    "surahs": [
+      {
+        "pageNumber": "115",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 111,
+          "end": 165
+        },
+        "title": "Al-An'am",
+        "titleAr": "الأنعام",
+        "index": 6
+      },
+      {
+        "pageNumber": "136",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 87
+        },
+        "title": "Al-A'raf",
+        "titleAr": "الأعراف",
+        "index": 7
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "page": 162,
+    "surahs": [
+      {
+        "pageNumber": "136",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 88,
+          "end": 206
+        },
+        "title": "Al-A'raf",
+        "titleAr": "الأعراف",
+        "index": 7
+      },
+      {
+        "pageNumber": "160",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 40
+        },
+        "title": "Al-Anfal",
+        "titleAr": "الأنفال",
+        "index": 8
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "page": 181,
+    "surahs": [
+      {
+        "pageNumber": "160",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 41,
+          "end": 75
+        },
+        "title": "Al-Anfal",
+        "titleAr": "الأنفال",
+        "index": 8
+      },
+      {
+        "pageNumber": "169",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 92
+        },
+        "title": "Al-Tawba",
+        "titleAr": "التوبة",
+        "index": 9
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "page": 200,
+    "surahs": [
+      {
+        "pageNumber": "169",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 93,
+          "end": 129
+        },
+        "title": "Al-Tawba",
+        "titleAr": "التوبة",
+        "index": 9
+      },
+      {
+        "pageNumber": "187",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 109
+        },
+        "title": "Yunus",
+        "titleAr": "يونس",
+        "index": 10
+      },
+      {
+        "pageNumber": "199",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 5
+        },
+        "title": "Hud",
+        "titleAr": "هود",
+        "index": 11
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "page": 221,
+    "surahs": [
+      {
+        "pageNumber": "199",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 6,
+          "end": 123
+        },
+        "title": "Hud",
+        "titleAr": "هود",
+        "index": 11
+      },
+      {
+        "pageNumber": "212",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 52
+        },
+        "title": "Yusuf",
+        "titleAr": "يوسف",
+        "index": 12
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "page": 242,
+    "surahs": [
+      {
+        "pageNumber": "212",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 53,
+          "end": 111
+        },
+        "title": "Yusuf",
+        "titleAr": "يوسف",
+        "index": 12
+      },
+      {
+        "pageNumber": "225",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 43
+        },
+        "title": "Ar-Ra'd",
+        "titleAr": "الرعد",
+        "index": 13
+      },
+      {
+        "pageNumber": "231",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 52
+        },
+        "title": "Ibrahim",
+        "titleAr": "إبراهيم",
+        "index": 14
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "page": 262,
+    "surahs": [
+      {
+        "pageNumber": "237",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 99
+        },
+        "title": "Al-Hijr",
+        "titleAr": "الحجر",
+        "index": 15
+      },
+      {
+        "pageNumber": "242",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 128
+        },
+        "title": "An-Nahl",
+        "titleAr": "النحل",
+        "index": 16
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "page": 281,
+    "surahs": [
+      {
+        "pageNumber": "255",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 111
+        },
+        "title": "Al-Israa",
+        "titleAr": "الإسراء",
+        "index": 17
+      },
+      {
+        "pageNumber": "266",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 74
+        },
+        "title": "Al-Kahf",
+        "titleAr": "الكهف",
+        "index": 18
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "page": 300,
+    "surahs": [
+      {
+        "pageNumber": "266",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 75,
+          "end": 110
+        },
+        "title": "Al-Kahf",
+        "titleAr": "الكهف",
+        "index": 18
+      },
+      {
+        "pageNumber": "277",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 98
+        },
+        "title": "Maryam",
+        "titleAr": "مريم",
+        "index": 19
+      },
+      {
+        "pageNumber": "284",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 135
+        },
+        "title": "Ta-Ha",
+        "titleAr": "طه",
+        "index": 20
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "page": 321,
+    "surahs": [
+      {
+        "pageNumber": "294",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 112
+        },
+        "title": "Al-Anbiya",
+        "titleAr": "الأنبياء",
+        "index": 21
+      },
+      {
+        "pageNumber": "302",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 78
+        },
+        "title": "Al-Hajj",
+        "titleAr": "الحج",
+        "index": 22
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "page": 340,
+    "surahs": [
+      {
+        "pageNumber": "311",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 118
+        },
+        "title": "Al-Muminun",
+        "titleAr": "المؤمنون",
+        "index": 23
+      },
+      {
+        "pageNumber": "319",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 64
+        },
+        "title": "An-Nur",
+        "titleAr": "النور",
+        "index": 24
+      },
+      {
+        "pageNumber": "329",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 20
+        },
+        "title": "Al-Furqan",
+        "titleAr": "الفرقان",
+        "index": 25
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "page": 362,
+    "surahs": [
+      {
+        "pageNumber": "329",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 21,
+          "end": 77
+        },
+        "title": "Al-Furqan",
+        "titleAr": "الفرقان",
+        "index": 25
+      },
+      {
+        "pageNumber": "335",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 227
+        },
+        "title": "Ash-Shuara",
+        "titleAr": "الشعراء",
+        "index": 26
+      },
+      {
+        "pageNumber": "345",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 55
+        },
+        "title": "An-Naml",
+        "titleAr": "النمل",
+        "index": 27
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "page": 382,
+    "surahs": [
+      {
+        "pageNumber": "345",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 56,
+          "end": 93
+        },
+        "title": "An-Naml",
+        "titleAr": "النمل",
+        "index": 27
+      },
+      {
+        "pageNumber": "354",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 88
+        },
+        "title": "Al-Qasas",
+        "titleAr": "القصص",
+        "index": 28
+      },
+      {
+        "pageNumber": "364",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 45
+        },
+        "title": "Al-Ankabut",
+        "titleAr": "العنكبوت",
+        "index": 29
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "page": 402,
+    "surahs": [
+      {
+        "pageNumber": "364",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 46,
+          "end": 69
+        },
+        "title": "Al-Ankabut",
+        "titleAr": "العنكبوت",
+        "index": 29
+      },
+      {
+        "pageNumber": "371",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 60
+        },
+        "title": "Ar-Rum",
+        "titleAr": "الروم",
+        "index": 30
+      },
+      {
+        "pageNumber": "377",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 34
+        },
+        "title": "Luqman",
+        "titleAr": "لقمان",
+        "index": 31
+      },
+      {
+        "pageNumber": "381",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 30
+        },
+        "title": "As-Sajdah",
+        "titleAr": "السجدة",
+        "index": 32
+      },
+      {
+        "pageNumber": "383",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 30
+        },
+        "title": "Al-Ahzab",
+        "titleAr": "الأحزاب",
+        "index": 33
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "page": 422,
+    "surahs": [
+      {
+        "pageNumber": "383",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 31,
+          "end": 73
+        },
+        "title": "Al-Ahzab",
+        "titleAr": "الأحزاب",
+        "index": 33
+      },
+      {
+        "pageNumber": "393",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 54
+        },
+        "title": "Saba",
+        "titleAr": "سبأ",
+        "index": 34
+      },
+      {
+        "pageNumber": "399",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 45
+        },
+        "title": "Fatir",
+        "titleAr": "فاطر",
+        "index": 35
+      },
+      {
+        "pageNumber": "404",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 27
+        },
+        "title": "Yasin",
+        "titleAr": "يس",
+        "index": 36
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "page": 442,
+    "surahs": [
+      {
+        "pageNumber": "404",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 28,
+          "end": 83
+        },
+        "title": "Yasin",
+        "titleAr": "يس",
+        "index": 36
+      },
+      {
+        "pageNumber": "410",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 182
+        },
+        "title": "As-Saffat",
+        "titleAr": "الصافات",
+        "index": 37
+      },
+      {
+        "pageNumber": "417",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 88
+        },
+        "title": "Sad",
+        "titleAr": "ص",
+        "index": 38
+      },
+      {
+        "pageNumber": "422",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 31
+        },
+        "title": "Az-Zumar",
+        "titleAr": "الزمر",
+        "index": 39
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "page": 462,
+    "surahs": [
+      {
+        "pageNumber": "422",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 32,
+          "end": 75
+        },
+        "title": "Az-Zumar",
+        "titleAr": "الزمر",
+        "index": 39
+      },
+      {
+        "pageNumber": "431",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 85
+        },
+        "title": "Ghafir",
+        "titleAr": "غافر",
+        "index": 40
+      },
+      {
+        "pageNumber": "439",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 46
+        },
+        "title": "Fussilat",
+        "titleAr": "فصلت",
+        "index": 41
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "page": 482,
+    "surahs": [
+      {
+        "pageNumber": "439",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 47,
+          "end": 54
+        },
+        "title": "Fussilat",
+        "titleAr": "فصلت",
+        "index": 41
+      },
+      {
+        "pageNumber": "445",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 53
+        },
+        "title": "Ash-Shura",
+        "titleAr": "الشورى",
+        "index": 42
+      },
+      {
+        "pageNumber": "451",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 89
+        },
+        "title": "Az-Zukhruf",
+        "titleAr": "الزخرف",
+        "index": 43
+      },
+      {
+        "pageNumber": "457",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 59
+        },
+        "title": "Ad-Dukhan",
+        "titleAr": "الدخان",
+        "index": 44
+      },
+      {
+        "pageNumber": "460",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 37
+        },
+        "title": "Al-Jathiya",
+        "titleAr": "الجاثية",
+        "index": 45
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "page": 502,
+    "surahs": [
+      {
+        "pageNumber": "464",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 35
+        },
+        "title": "Al-Ahqaf",
+        "titleAr": "الأحقاف",
+        "index": 46
+      },
+      {
+        "pageNumber": "468",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 38
+        },
+        "title": "Muhammad",
+        "titleAr": "محمد",
+        "index": 47
+      },
+      {
+        "pageNumber": "472",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 29
+        },
+        "title": "Al-Fath",
+        "titleAr": "الفتح",
+        "index": 48
+      },
+      {
+        "pageNumber": "477",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 18
+        },
+        "title": "Al-Hujurat",
+        "titleAr": "الحجرات",
+        "index": 49
+      },
+      {
+        "pageNumber": "479",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 45
+        },
+        "title": "Qaf",
+        "titleAr": "ق",
+        "index": 50
+      },
+      {
+        "pageNumber": "482",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 30
+        },
+        "title": "Az-Zariyat",
+        "titleAr": "الذاريات",
+        "index": 51
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "page": 522,
+    "surahs": [
+      {
+        "pageNumber": "482",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 31,
+          "end": 60
+        },
+        "title": "Az-Zariyat",
+        "titleAr": "الذاريات",
+        "index": 51
+      },
+      {
+        "pageNumber": "485",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 49
+        },
+        "title": "At-Tur",
+        "titleAr": "الطور",
+        "index": 52
+      },
+      {
+        "pageNumber": "487",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 62
+        },
+        "title": "An-Najm",
+        "titleAr": "النجم",
+        "index": 53
+      },
+      {
+        "pageNumber": "490",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 55
+        },
+        "title": "Al-Qamar",
+        "titleAr": "القمر",
+        "index": 54
+      },
+      {
+        "pageNumber": "493",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 78
+        },
+        "title": "Ar-Rahman",
+        "titleAr": "الرحمن",
+        "index": 55
+      },
+      {
+        "pageNumber": "496",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 96
+        },
+        "title": "Al-Waqia",
+        "titleAr": "الواقعة",
+        "index": 56
+      },
+      {
+        "pageNumber": "499",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 29
+        },
+        "title": "Al-Hadid",
+        "titleAr": "الحديد",
+        "index": 57
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "page": 542,
+    "surahs": [
+      {
+        "pageNumber": "504",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 22
+        },
+        "title": "Al-Mujadilah",
+        "titleAr": "المجادلة",
+        "index": 58
+      },
+      {
+        "pageNumber": "507",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 24
+        },
+        "title": "Al-Hashr",
+        "titleAr": "الحشر",
+        "index": 59
+      },
+      {
+        "pageNumber": "510",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 13
+        },
+        "title": "Al-Mumtahinah",
+        "titleAr": "الممتحنة",
+        "index": 60
+      },
+      {
+        "pageNumber": "513",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 14
+        },
+        "title": "As-Saff",
+        "titleAr": "الصف",
+        "index": 61
+      },
+      {
+        "pageNumber": "515",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 11
+        },
+        "title": "Al-Jumu'ah",
+        "titleAr": "الجمعة",
+        "index": 62
+      },
+      {
+        "pageNumber": "516",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 11
+        },
+        "title": "Al-Munafiqun",
+        "titleAr": "المنافقون",
+        "index": 63
+      },
+      {
+        "pageNumber": "518",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 18
+        },
+        "title": "At-Taghabun",
+        "titleAr": "التغابن",
+        "index": 64
+      },
+      {
+        "pageNumber": "520",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 12
+        },
+        "title": "At-Talaq",
+        "titleAr": "الطلاق",
+        "index": 65
+      },
+      {
+        "pageNumber": "522",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 12
+        },
+        "title": "At-Tahrim",
+        "titleAr": "التحريم",
+        "index": 66
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "page": 562,
+    "surahs": [
+      {
+        "pageNumber": "524",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 30
+        },
+        "title": "Al-Mulk",
+        "titleAr": "الملك",
+        "index": 67
+      },
+      {
+        "pageNumber": "526",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 52
+        },
+        "title": "Al-Qalam",
+        "titleAr": "القلم",
+        "index": 68
+      },
+      {
+        "pageNumber": "529",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 52
+        },
+        "title": "Al-Haqqah",
+        "titleAr": "الحاقة",
+        "index": 69
+      },
+      {
+        "pageNumber": "531",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 44
+        },
+        "title": "Al-Ma'arij",
+        "titleAr": "المعارج",
+        "index": 70
+      },
+      {
+        "pageNumber": "533",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 28
+        },
+        "title": "Nuh",
+        "titleAr": "نوح",
+        "index": 71
+      },
+      {
+        "pageNumber": "534",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 28
+        },
+        "title": "Al-Jinn",
+        "titleAr": "الجن",
+        "index": 72
+      },
+      {
+        "pageNumber": "537",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 20
+        },
+        "title": "Al-Muzzammil",
+        "titleAr": "المزمل",
+        "index": 73
+      },
+      {
+        "pageNumber": "538",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 56
+        },
+        "title": "Al-Muddaththir",
+        "titleAr": "المدثر",
+        "index": 74
+      },
+      {
+        "pageNumber": "540",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 40
+        },
+        "title": "Al-Qiyamah",
+        "titleAr": "القيامة",
+        "index": 75
+      },
+      {
+        "pageNumber": "542",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 31
+        },
+        "title": "Al-Insan",
+        "titleAr": "الإنسان",
+        "index": 76
+      },
+      {
+        "pageNumber": "544",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 50
+        },
+        "title": "Al-Mursalat",
+        "titleAr": "المرسلات",
+        "index": 77
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "page": 582,
+    "surahs": [
+      {
+        "pageNumber": "545",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 40
+        },
+        "title": "An-Naba",
+        "titleAr": "النبأ",
+        "index": 78
+      },
+      {
+        "pageNumber": "547",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 46
+        },
+        "title": "An-Naziat",
+        "titleAr": "النازعات",
+        "index": 79
+      },
+      {
+        "pageNumber": "548",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 42
+        },
+        "title": "Abasa",
+        "titleAr": "عبس",
+        "index": 80
+      },
+      {
+        "pageNumber": "550",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 29
+        },
+        "title": "At-Takwir",
+        "titleAr": "التكوير",
+        "index": 81
+      },
+      {
+        "pageNumber": "551",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 19
+        },
+        "title": "Al-Infitar",
+        "titleAr": "الإنفطار",
+        "index": 82
+      },
+      {
+        "pageNumber": "552",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 36
+        },
+        "title": "Al-Mutaffifin",
+        "titleAr": "المطففين",
+        "index": 83
+      },
+      {
+        "pageNumber": "553",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 25
+        },
+        "title": "Al-Inshiqaq",
+        "titleAr": "الإنشقاق",
+        "index": 84
+      },
+      {
+        "pageNumber": "554",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 22
+        },
+        "title": "Al-Buruj",
+        "titleAr": "البروج",
+        "index": 85
+      },
+      {
+        "pageNumber": "555",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 17
+        },
+        "title": "At-Tariq",
+        "titleAr": "الطارق",
+        "index": 86
+      },
+      {
+        "pageNumber": "556",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 19
+        },
+        "title": "Al-Ala",
+        "titleAr": "الأعلى",
+        "index": 87
+      },
+      {
+        "pageNumber": "556",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 26
+        },
+        "title": "Al-Ghashiyah",
+        "titleAr": "الغاشية",
+        "index": 88
+      },
+      {
+        "pageNumber": "557",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 30
+        },
+        "title": "Al-Fajr",
+        "titleAr": "الفجر",
+        "index": 89
+      },
+      {
+        "pageNumber": "559",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 20
+        },
+        "title": "Al-Balad",
+        "titleAr": "البلد",
+        "index": 90
+      },
+      {
+        "pageNumber": "559",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 15
+        },
+        "title": "Ash-Shams",
+        "titleAr": "الشمس",
+        "index": 91
+      },
+      {
+        "pageNumber": "560",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 21
+        },
+        "title": "Al-Lail",
+        "titleAr": "الليل",
+        "index": 92
+      },
+      {
+        "pageNumber": "561",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 11
+        },
+        "title": "Ad-Duha",
+        "titleAr": "الضحى",
+        "index": 93
+      },
+      {
+        "pageNumber": "561",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 8
+        },
+        "title": "Ash-Sharh",
+        "titleAr": "الشرح",
+        "index": 94
+      },
+      {
+        "pageNumber": "562",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 8
+        },
+        "title": "At-Tin",
+        "titleAr": "التين",
+        "index": 95
+      },
+      {
+        "pageNumber": "562",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 19
+        },
+        "title": "Al-Alaq",
+        "titleAr": "العلق",
+        "index": 96
+      },
+      {
+        "pageNumber": "563",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 5
+        },
+        "title": "Al-Qadr",
+        "titleAr": "القدر",
+        "index": 97
+      },
+      {
+        "pageNumber": "563",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 8
+        },
+        "title": "Al-Bayinah",
+        "titleAr": "البينة",
+        "index": 98
+      },
+      {
+        "pageNumber": "564",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 8
+        },
+        "title": "Az-Zalzalah",
+        "titleAr": "الزلزلة",
+        "index": 99
+      },
+      {
+        "pageNumber": "564",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 11
+        },
+        "title": "Al-Adiyat",
+        "titleAr": "العاديات",
+        "index": 100
+      },
+      {
+        "pageNumber": "565",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 11
+        },
+        "title": "Al-Qariah",
+        "titleAr": "القارعة",
+        "index": 101
+      },
+      {
+        "pageNumber": "565",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 8
+        },
+        "title": "Al-Takathur",
+        "titleAr": "التكاثر",
+        "index": 102
+      },
+      {
+        "pageNumber": "566",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 3
+        },
+        "title": "Al-Asr",
+        "titleAr": "العصر",
+        "index": 103
+      },
+      {
+        "pageNumber": "566",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 9
+        },
+        "title": "Al-Humazah",
+        "titleAr": "الهمزة",
+        "index": 104
+      },
+      {
+        "pageNumber": "566",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 5
+        },
+        "title": "Al-Fil",
+        "titleAr": "الفيل",
+        "index": 105
+      },
+      {
+        "pageNumber": "567",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 4
+        },
+        "title": "Quraish",
+        "titleAr": "قريش",
+        "index": 106
+      },
+      {
+        "pageNumber": "567",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 7
+        },
+        "title": "Al-Ma'un",
+        "titleAr": "الماعون",
+        "index": 107
+      },
+      {
+        "pageNumber": "567",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 3
+        },
+        "title": "Al-Kauthar",
+        "titleAr": "الكوثر",
+        "index": 108
+      },
+      {
+        "pageNumber": "568",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 6
+        },
+        "title": "Al-Kafirun",
+        "titleAr": "الكافرون",
+        "index": 109
+      },
+      {
+        "pageNumber": "568",
+        "type": "Madaniyah",
+        "verse": {
+          "start": 1,
+          "end": 3
+        },
+        "title": "An-Nasr",
+        "titleAr": "النصر",
+        "index": 110
+      },
+      {
+        "pageNumber": "568",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 5
+        },
+        "title": "Al-Masad",
+        "titleAr": "المسد",
+        "index": 111
+      },
+      {
+        "pageNumber": "569",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 4
+        },
+        "title": "Al-Ikhlas",
+        "titleAr": "الإخلاص",
+        "index": 112
+      },
+      {
+        "pageNumber": "569",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 5
+        },
+        "title": "Al-Falaq",
+        "titleAr": "الفلق",
+        "index": 113
+      },
+      {
+        "pageNumber": "569",
+        "type": "Makkiyah",
+        "verse": {
+          "start": 1,
+          "end": 6
+        },
+        "title": "An-Nas",
+        "titleAr": "الناس",
+        "index": 114
+      }
+    ]
+  }
+]

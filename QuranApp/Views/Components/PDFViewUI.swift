@@ -12,7 +12,8 @@ struct PDFViewUI: View {
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var datas: SurahViewModel
-    
+    @EnvironmentObject var juzViewModel: JuzViewModel
+
     @Environment(\.dismiss) var dismiss
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
@@ -32,7 +33,6 @@ struct PDFViewUI: View {
             .toolbar(showTogBar ? .hidden : .visible, for: .navigationBar)
             .animation(Animation.easeInOut(duration: 0.9).delay(0.6), value: showTogBar)
             .toolbarBackground(.visible, for: .navigationBar)
-            .navigationTitle(LocalizedStringKey(item.title.localizedForm).stringValue())
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -43,6 +43,13 @@ struct PDFViewUI: View {
                             Image(systemName: "chevron.backward")
                             Text("back")
                         }
+                    }
+                }
+                ToolbarItem(placement: .principal) {
+                    VStack {
+                        Text(LocalizedStringKey(item.title.localizedForm).stringValue()).bold()
+                        Text("Page \(routerManager.currentPDFPage), Juz \(getJuz(routerManager.currentPDFPage))")
+                            .font(.caption2)
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -72,6 +79,15 @@ struct PDFViewUI: View {
         }
         return nil
     }
+    
+    func getJuz(_ page: Int) -> Int {
+        for item in juzViewModel.items.reversed() {
+            if item.page <= page {
+                return item.index
+            }
+        }
+        return -1
+    }
 }
 
 struct PDFViewUI_Previews: PreviewProvider {
@@ -83,5 +99,6 @@ struct PDFViewUI_Previews: PreviewProvider {
         .environmentObject(BookMarkViewModel())
         .environmentObject(RouterManager())
         .environmentObject(SurahViewModel())
+        .environmentObject(JuzViewModel())
     }
 }
