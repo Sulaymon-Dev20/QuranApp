@@ -21,7 +21,7 @@ struct BookmarkListView: View {
     @State var showAlert: Bool = false
 
     var body: some View {
-        Section("Bookmark") {
+        Section(LocalizedStringKey("bookmarks")) {
             if !list.isEmpty {
                 ForEach(sort ? list : list.reversed()) { item in
                     BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
@@ -70,5 +70,7 @@ struct BookmarkListView_Previews: PreviewProvider {
         .environmentObject(NotificatSurahViewModel())
         .environmentObject(NoficationsManager())
         .environmentObject(PrayerTimeManager())
+        .environmentObject(LanguageViewModel())
+        .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

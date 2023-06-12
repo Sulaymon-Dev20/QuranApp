@@ -32,7 +32,7 @@ struct NotificationRowView: View {
             VStack(alignment: .leading) {
                 Text(LocalizedStringKey(item.title.localizedForm))
                     .bold()
-                Text(item.subTitle)
+                Text(LocalizedStringKey(item.subTitle))
                     .lineLimit(1)
                     .font(.caption)
             }

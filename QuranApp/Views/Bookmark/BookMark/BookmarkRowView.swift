@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BookmarkRowView: View {
+    @EnvironmentObject var language: LanguageViewModel
+
     let title, juz: String
     let pageNumber: Int
     
@@ -22,8 +24,7 @@ struct BookmarkRowView: View {
                     Spacer()
                 }
                 HStack{
-                    Text("page \(pageNumber.toString)")
-                    Text("Juz \(juz.intValue)")
+                    Text("\("page".locVal(language.language,capitalized: true)) \(pageNumber.toString), \("juz".locVal(language.language,capitalized: true)) \(juz.intValue)")
                     Spacer()
                 }
             }
@@ -40,6 +41,7 @@ struct BookmarkRowView_Previews: PreviewProvider {
             BookmarkRowView(title: "Al-Imran", juz: "3", pageNumber: 50)
             BookmarkRowView(title: "Al-Imran", juz: "3", pageNumber: 50)
         }
+        .environmentObject(LanguageViewModel())
         .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

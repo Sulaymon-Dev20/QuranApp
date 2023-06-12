@@ -24,4 +24,13 @@ class SurahViewModel: ObservableObject {
         let surahs = try? JSONDecoder().decode([SurahModel].self, from: data!)
         self.items = surahs!
     }
+    
+    func getSurahByPage(_ page: Int) -> SurahModel? {
+        for item in items.reversed() {
+            if item.pages.intValue <= page {
+                return item
+            }
+        }
+        return nil
+    }
 }

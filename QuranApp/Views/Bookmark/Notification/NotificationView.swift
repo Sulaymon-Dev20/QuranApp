@@ -26,10 +26,10 @@ struct NotificationView: View {
                         }
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                             Button {
-                                notificatSurahViewModel.deleteItem(id: item.id)
                                 if item.active {
                                     noficationsManager.removeNotication(list: [item.id])
                                 }
+                                notificatSurahViewModel.deleteItem(id: item.id)
                             } label: {
                                 Label("Delete", systemImage: "trash.slash.fill")
                             }
@@ -47,7 +47,7 @@ struct NotificationView: View {
                     Button(action: {
                         routerManager.pushTab(to: 0)
                     }, label: {
-                        ListEmptyView(icon: "note", text: "notification doesn`t exist yet")
+                        ListEmptyView(icon: "note", text: "notificationDoesNotExistYet")
                             .frame(maxWidth: .infinity)
                     })
                 }
@@ -56,9 +56,9 @@ struct NotificationView: View {
                     showAlert = true
                 } label: {
                     ZStack {
-                        PermissionDenied(img: "clock.badge.exclamationmark.fill", text: "Notification Permission Denited")
+                        PermissionDenied(img: "clock.badge.exclamationmark.fill", text: "notificationPermissionDenied")
                             .frame(maxWidth: .infinity)
-                        AlertPermissions(showAlert: $showAlert, title: "Location allow", message: "open and allow notification please")
+                        AlertPermissions(showAlert: $showAlert, title: "notificationPermission", message: "allowNotificationToYsePlease")
                     }
                 }
                 .task {
@@ -66,7 +66,7 @@ struct NotificationView: View {
                 }
             }
         } header: {
-            Text("Notifications")
+            Text("notifications")
         }
         .task {
             noficationsManager.checkNotificationPermission()
@@ -98,5 +98,6 @@ struct NotificationView_Previews: PreviewProvider {
         .environmentObject(NotificatSurahViewModel())
         .environmentObject(RouterManager())
         .environmentObject(BadgeAppManager())
+        .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

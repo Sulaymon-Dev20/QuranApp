@@ -106,7 +106,7 @@ struct SheetView: View {
                     let item = NotificatSurah(
                         id: UUID().uuidString,
                         title: LocalizedStringKey(surah.title.localizedForm).stringValue(),
-                        subTitle: "Do not forget that the Qur'an is a witness in the judgment day",
+                        subTitle: surah.type == .makkiyah ? "makkiyah" : "madaniyah",
                         url: "surahs?index=\(surah.index)",
                         page: surah.pages,
                         time: self.date,

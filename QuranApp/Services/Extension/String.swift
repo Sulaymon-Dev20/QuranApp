@@ -23,4 +23,16 @@ extension String {
     public var intValue: Int {
         return (self as NSString).integerValue
     }
+    
+    public var lv: String {//localizedVal
+        return LocalizedStringKey(self).stringValue()
+    }
+
+    public func locVal(_ lanuageCode:String = "uz", capitalized:Bool = false) -> String {//localizedVal
+        if capitalized {
+            return LocalizedStringKey(self).stringValue(locale: lanuageCode).capitalized
+        } else {
+            return LocalizedStringKey(self).stringValue(locale: lanuageCode)
+        }
+    }
 }

@@ -11,7 +11,7 @@ struct PDFViewUI: View {
     
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
-    @EnvironmentObject var datas: SurahViewModel
+    @EnvironmentObject var surahViewModel: SurahViewModel
     @EnvironmentObject var juzViewModel: JuzViewModel
 
     @Environment(\.dismiss) var dismiss
@@ -20,7 +20,7 @@ struct PDFViewUI: View {
     @State var showTogBar: Bool = false
     
     var body: some View {
-        let item = getSurahByPage(page: routerManager.currentPDFPage)!
+        let item = surahViewModel.getSurahByPage(routerManager.currentPDFPage)!
         PDFViewer(pageNumber: $routerManager.currentPDFPage)
             .edgesIgnoringSafeArea(.all)
             .onTapGesture(count: 2) {
@@ -48,7 +48,7 @@ struct PDFViewUI: View {
                 ToolbarItem(placement: .principal) {
                     VStack {
                         Text(LocalizedStringKey(item.title.localizedForm).stringValue()).bold()
-                        Text("Page \(routerManager.currentPDFPage), Juz \(getJuz(routerManager.currentPDFPage))")
+                        Text("\("page".lv.capitalized) \(routerManager.currentPDFPage), \("juz".lv.capitalized) \(juzViewModel.getJuz(routerManager.currentPDFPage))")
                             .font(.caption2)
                     }
                 }
@@ -56,7 +56,7 @@ struct PDFViewUI: View {
                     BookmarkSwipe(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: routerManager.currentPDFPage), status: bookmarksViewModel.getPages().contains(routerManager.currentPDFPage))
                 }
                 ToolbarTitleMenu {
-                    ForEach(datas.items, id: \.index) { surah in
+                    ForEach(surahViewModel.items, id: \.index) { surah in
                         Button {
                             routerManager.currentPDFPage = surah.pages.intValue
                         } label: {
@@ -70,24 +70,6 @@ struct PDFViewUI: View {
                 routerManager.tabBarHide(status: true)
             }
     }
-    
-    func getSurahByPage(page: Int) -> SurahModel? {
-        for item in datas.items.reversed() {
-            if item.pages.intValue <= page {
-                return item
-            }
-        }
-        return nil
-    }
-    
-    func getJuz(_ page: Int) -> Int {
-        for item in juzViewModel.items.reversed() {
-            if item.page <= page {
-                return item.index
-            }
-        }
-        return -1
-    }
 }
 
 struct PDFViewUI_Previews: PreviewProvider {
@@ -100,5 +82,6 @@ struct PDFViewUI_Previews: PreviewProvider {
         .environmentObject(RouterManager())
         .environmentObject(SurahViewModel())
         .environmentObject(JuzViewModel())
+        .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

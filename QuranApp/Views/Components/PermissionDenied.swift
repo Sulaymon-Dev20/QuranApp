@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PermissionDenied: View {
     let img: String
-    let text: String
+    let text: LocalizedStringKey
     var body: some View {
         VStack {
             Image(systemName: img)

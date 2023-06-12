@@ -24,4 +24,13 @@ class JuzViewModel: ObservableObject {
         let juzs = try? JSONDecoder().decode([JuzModel].self, from: data!)
         self.items = juzs!
     }
+    
+    func getJuz(_ page: Int) -> Int {
+        for item in items.reversed() {
+            if item.page <= page {
+                return item.index
+            }
+        }
+        return -1
+    }
 }

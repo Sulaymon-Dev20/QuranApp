@@ -24,7 +24,7 @@ struct PrayTimeRowView: View {
                     ForEach(data, id: \.name) { item in
                         HStack {
                             Image(systemName: getImg(time: item.name))
-                            Text(item.name)
+                            Text(LocalizedStringKey(item.name))
                                 .bold()
                             Spacer()
                             Text(item.time.clockString)
@@ -40,17 +40,17 @@ struct PrayTimeRowView: View {
                     }
                     locationManager.getLocation()
                 } label: {
-                    PermissionDenied(img: "paperplane.circle.fill", text: "Location Denited")
+                    PermissionDenied(img: "paperplane.circle.fill", text: "locationPermissionDenied")
                         .frame(maxWidth: .infinity)
                 }
                 .opacity(show ? 0 : 1)
                 ProgressView()
                     .opacity(loading ? 1 : 0)
-                AlertPermissions(showAlert: $showAlert, title: "Location allow", message: "open and allow notification please")
+                AlertPermissions(showAlert: $showAlert, title: "locationPermission", message: "allowLocationToUsePlease")
             }
         } header: {
             HStack {
-                Text("select mathhab to time ")
+                Text("selectMadhabToCorrectPrayIime")
                 Spacer()
                 Picker("Vaqtini tanlang", selection: $prayerTimeViewModel.isHanafi, content: {
                     Text("hanafi")
@@ -69,7 +69,7 @@ struct PrayTimeRowView: View {
             } label: {
                 HStack(alignment: .center) {
                     Image(systemName: "paperplane")
-                    Text("Location update")
+                    Text("locationUpdate")
                 }
                 .opacity(show ? 1 : 0)
             }
