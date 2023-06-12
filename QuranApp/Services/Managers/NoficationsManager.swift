@@ -18,16 +18,14 @@ class NoficationsManager: ObservableObject {
     
     func request() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-//            self.hasPermission = success
+            //            self.hasPermission = success
         }
     }
     
     func getAuthStatus() async {
         let status = await UNUserNotificationCenter.current().notificationSettings()
         switch status.authorizationStatus {
-        case .authorized,
-                .provisional,
-                .ephemeral:
+        case .authorized, .provisional, .ephemeral:
             hasPermission = true
         default:
             hasPermission = false
@@ -61,15 +59,15 @@ class NoficationsManager: ObservableObject {
     
     func removeNotication(list idList:[String] = []) {
         if !idList.isEmpty {
-//            UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
-//               var identifiers: [String] = []
-//               for notification:UNNotificationRequest in notificationRequests {
-//                   if idList.contains(notification.identifier) {
-//                      identifiers.append(notification.identifier)
-//                   }
-//               }
-////               UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
-//            }
+            //            UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
+            //               var identifiers: [String] = []
+            //               for notification:UNNotificationRequest in notificationRequests {
+            //                   if idList.contains(notification.identifier) {
+            //                      identifiers.append(notification.identifier)
+            //                   }
+            //               }
+            ////               UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+            //            }
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: idList)
         } else {
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
