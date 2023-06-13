@@ -24,7 +24,7 @@ struct BookmarkRowView: View {
                     Spacer()
                 }
                 HStack{
-                    Text("\("page".locVal(language.language,capitalized: true)) \(pageNumber.toString), \("juz".locVal(language.language,capitalized: true)) \(juz.intValue)")
+                    Text("\("page".locVal(language.language,capitalized: true)) \(pageNumber), \("juz".locVal(language.language,capitalized: true)) \(juz.intValue)")
                     Spacer()
                 }
             }

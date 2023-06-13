@@ -56,4 +56,21 @@ class PrayerTimeManager: ObservableObject {
         self.isHanafi = isHanafi
         saveStorage()
     }
+    
+    func getIcon(time: String) -> String {
+        switch time {
+        case "fajr":
+            return "moon.fill"
+        case "sunrise":
+            return "sun.haze"
+        case "dhuhr":
+            return "sun.max.fill"
+        case "maghrib":
+            return "moon.haze.fill"
+        case "isha":
+            return "moon.stars"
+        default:
+            return "sun.max"
+        }
+    }
 }

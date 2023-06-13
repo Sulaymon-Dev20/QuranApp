@@ -36,13 +36,13 @@ struct SheetView: View {
                 .font(.largeTitle)
                 .padding(.bottom,40)
             
-            DatePicker("Natification time", selection: $date, displayedComponents: [.hourAndMinute])
+            DatePicker("notificationTime", selection: $date, displayedComponents: [.hourAndMinute])
             ZStack {
                 VStack {
                     HStack {
-                        Text("select mathhab to time ")
+                        Text("selectMadhabToCorrectPrayIime")
                         Spacer()
-                        Picker("Vaqtini tanlang", selection: $prayerTimeViewModel.isHanafi, content: {
+                        Picker("", selection: $prayerTimeViewModel.isHanafi, content: {
                             Text("hanafi")
                                 .tag(true)
                             Text("shafi")
@@ -52,9 +52,9 @@ struct SheetView: View {
                             prayerTimeViewModel.changeMashab(to: newValue)
                         }
                     }
-                    Picker("Vaqtini tanlang", selection: $date, content: {
+                    Picker("", selection: $date, content: {
                         ForEach(0..<data.count, id: \.self) { index in
-                            Text(data[index].name)
+                            Text(LocalizedStringKey(data[index].name))
                                 .tag(data[index].time)
                         }
                     })
@@ -68,7 +68,7 @@ struct SheetView: View {
                     } label: {
                         HStack {
                             Image(systemName: "paperplane")
-                            Text("Location update")
+                            Text("locationUpdate")
                         }
                     }
                 }
@@ -86,8 +86,8 @@ struct SheetView: View {
                 ProgressView()
                     .opacity(loading ? 1 : 0)
             }
-            AlertPermissions(showAlert: $showAlert, title: "Location allow", message: "open and allow notification please")
-            Toggle("Har kuni", isOn: $everyDay)
+            AlertPermissions(showAlert: $showAlert, title: "locationPermission", message: "allowLocationToUsePlease")
+            Toggle("everyDay", isOn: $everyDay)
             Spacer()
             HStack{
                 Button {
@@ -105,7 +105,7 @@ struct SheetView: View {
                     date.changeDay(day: date.intValue > Date().intValue ? date.day : date.day + 1)
                     let item = NotificatSurah(
                         id: UUID().uuidString,
-                        title: LocalizedStringKey(surah.title.localizedForm).stringValue(),
+                        title: surah.title,
                         subTitle: surah.type == .makkiyah ? "makkiyah" : "madaniyah",
                         url: "surahs?index=\(surah.index)",
                         page: surah.pages,
@@ -116,7 +116,7 @@ struct SheetView: View {
                     noficationsManager.pushNotication(item: item)
                     dismiss()
                 } label: {
-                    Text("Save")
+                    Text("save")
                         .bold()
                         .padding()
                         .background(Color.blue)

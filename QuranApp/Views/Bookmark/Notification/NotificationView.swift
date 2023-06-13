@@ -25,7 +25,7 @@ struct NotificationView: View {
                             onchange(status, activeToggle, item)
                         }
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                            Button {
+                            Button {//qiladigan ishla bor
                                 if item.active {
                                     noficationsManager.removeNotication(list: [item.id])
                                 }
@@ -98,6 +98,6 @@ struct NotificationView_Previews: PreviewProvider {
         .environmentObject(NotificatSurahViewModel())
         .environmentObject(RouterManager())
         .environmentObject(BadgeAppManager())
-        .environment(\.locale, Locale.init(identifier: "ar"))
+//        .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

@@ -158,3 +158,10 @@
 "locationPermission" = "Joylashuv ruxsati";
 "allowLocationToUsePlease" = "Iltimos, joylashuvdan foydalanishga ruxsat bering";
 "locationUpdate" = "Joylashuvni yangilash";
+"applicationColorMode" = "Ilova rang rejimi";
+"light" = "Oq";
+"dark" = "Qora";
+"system" = "Tizim rejimi";
+"notificationTime" = "Xabar berish vaqti";
+"everyDay" = "Har kuni";
+"save" = "Saqlash";

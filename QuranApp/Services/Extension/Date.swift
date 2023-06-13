@@ -13,7 +13,7 @@ extension Date {
         let minute = self.minute
         let hourText = hour.usefulDigits <= 1 ? "0\(hour)" : "\(hour)"
         let minuteText = minute.usefulDigits <= 1 ? "0\(minute)" : "\(minute)"
-        return "\(hourText) : \(minuteText)";
+        return "\(hourText) : \(minuteText)".convertedDigitsToLocale();
     }
     
     public var day: Int {

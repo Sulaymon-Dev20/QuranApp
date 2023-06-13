@@ -26,6 +26,7 @@
 		CE4CD5C52A328147006C1189 /* ColorSchemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4CD5C42A328147006C1189 /* ColorSchemeView.swift */; };
 		CE4CD5C72A32866E006C1189 /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4CD5C62A32866E006C1189 /* ColorSchemeManager.swift */; };
 		CE5468692A20BDFA00273458 /* ReviewsRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */; };
+		CE5801D42A38365300011370 /* LastPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5801D32A38365300011370 /* LastPageView.swift */; };
 		CE6C3F8B2A326F0400CCA217 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C3F8A2A326F0400CCA217 /* LocationModel.swift */; };
 		CE6F307E2A2BD4F5009534B6 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F307D2A2BD4F5009534B6 /* Highlight.swift */; };
 		CE7935DD2A1D74E300B89647 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = CE7935DC2A1D74E300B89647 /* Adhan */; };
@@ -132,6 +133,7 @@
 		CE4CD5C42A328147006C1189 /* ColorSchemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeView.swift; sourceTree = "<group>"; };
 		CE4CD5C62A32866E006C1189 /* ColorSchemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
 		CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsRequestManager.swift; sourceTree = "<group>"; };
+		CE5801D32A38365300011370 /* LastPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPageView.swift; sourceTree = "<group>"; };
 		CE6C3F8A2A326F0400CCA217 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		CE6F307D2A2BD4F5009534B6 /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		CE7935E02A1D83C900B89647 /* PrayerTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimeManager.swift; sourceTree = "<group>"; };
@@ -253,6 +255,14 @@
 				CE4CD5C42A328147006C1189 /* ColorSchemeView.swift */,
 			);
 			path = ColorScheme;
+			sourceTree = "<group>";
+		};
+		CE5801D22A38364600011370 /* LastPage */ = {
+			isa = PBXGroup;
+			children = (
+				CE5801D32A38365300011370 /* LastPageView.swift */,
+			);
+			path = LastPage;
 			sourceTree = "<group>";
 		};
 		CE7C84E02A03924200192CC5 = {
@@ -384,6 +394,7 @@
 		CE7C85332A0394F800192CC5 /* Bookmark */ = {
 			isa = PBXGroup;
 			children = (
+				CE5801D22A38364600011370 /* LastPage */,
 				CED05B782A21983C00A0C4B5 /* BookMark */,
 				CED05B752A2184F700A0C4B5 /* Notification */,
 				CED05B792A21989900A0C4B5 /* PrayTime */,
@@ -623,6 +634,7 @@
 				CE7C84EF2A03924200192CC5 /* ContentView.swift in Sources */,
 				CE7C85222A03934200192CC5 /* SurahModel.swift in Sources */,
 				CE7C85282A0393B500192CC5 /* SurahViewModel.swift in Sources */,
+				CE5801D42A38365300011370 /* LastPageView.swift in Sources */,
 				CEF7754A2A1D53FF0048F8D2 /* Route.swift in Sources */,
 				CE6C3F8B2A326F0400CCA217 /* LocationModel.swift in Sources */,
 				CE7C32C22A1C3A1500B2F8E3 /* NotificatSurahViewModel.swift in Sources */,

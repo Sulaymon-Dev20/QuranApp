@@ -23,8 +23,8 @@ struct PrayTimeRowView: View {
                 VStack {
                     ForEach(data, id: \.name) { item in
                         HStack {
-                            Image(systemName: getImg(time: item.name))
-                            Text(LocalizedStringKey(item.name))
+                            Image(systemName: prayerTimeViewModel.getIcon(time: item.name))
+                            Text(LocalizedStringKey(item.name.localizedForm))
                                 .bold()
                             Spacer()
                             Text(item.time.clockString)
@@ -52,7 +52,7 @@ struct PrayTimeRowView: View {
             HStack {
                 Text("selectMadhabToCorrectPrayIime")
                 Spacer()
-                Picker("Vaqtini tanlang", selection: $prayerTimeViewModel.isHanafi, content: {
+                Picker("", selection: $prayerTimeViewModel.isHanafi, content: {
                     Text("hanafi")
                         .tag(true)
                     Text("shafi")
@@ -61,7 +61,7 @@ struct PrayTimeRowView: View {
                 .onChange(of: prayerTimeViewModel.isHanafi) { newValue in
                     prayerTimeViewModel.changeMashab(to: newValue)
                 }
-                .opacity(show ? 1 : 0)
+                .frame(width: 120, alignment: .trailing)
             }
         } footer: {
             Button {
@@ -76,23 +76,6 @@ struct PrayTimeRowView: View {
         }
         .onAppear {
             locationManager.getLocation()
-        }
-    }
-    
-    func getImg(time: String) -> String {
-        switch time {
-        case "fajr":
-            return "moon.fill"
-        case "sunrise":
-            return "sun.haze"
-        case "dhuhr":
-            return "sun.max.fill"
-        case "maghrib":
-            return "moon.haze.fill"
-        case "isha":
-            return "moon.stars"
-        default:
-            return "sun.max"
         }
     }
 }
@@ -113,6 +96,7 @@ struct PrayTimeRowView_Previews: PreviewProvider {
             .environmentObject(NoficationsManager())
             .environmentObject(PrayerTimeManager())
             .environmentObject(LocationManager())
+            .environment(\.locale, Locale.init(identifier: "ar"))
         }
     }
 }

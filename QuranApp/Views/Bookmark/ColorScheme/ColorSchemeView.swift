@@ -12,10 +12,10 @@ struct ColorSchemeView: View {
     
     var body: some View {
         Section {
-            Picker("Vaqtini tanlang", selection: self.$colorSchemeManager.status, content: {
+            Picker("", selection: self.$colorSchemeManager.status, content: {
                 Text("light")
                     .tag(ColorSchemaStatus.light)
-                Text("dask")
+                Text("dark")
                     .tag(ColorSchemaStatus.dark)
                 Text("system")
                     .tag(ColorSchemaStatus.auto)
@@ -25,7 +25,7 @@ struct ColorSchemeView: View {
             }
             .pickerStyle(SegmentedPickerStyle())
         } header: {
-            Text("Application color")
+            Text("applicationColorMode")
         }
     }
 }

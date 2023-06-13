@@ -158,3 +158,10 @@
 "locationPermission" = "Location permission";
 "allowLocationToUsePlease" = "Allow location to use please";
 "locationUpdate" = "Location update";
+"applicationColorMode" = "Application color mode";
+"light" = "Light";
+"dark" = "Dark";
+"system" = "System Mode";
+"notificationTime" = "Notification time";
+"everyDay" = "Every Day";
+"save" = "Save";

@@ -158,3 +158,10 @@
 "locationPermission" = "Разрешение на местоположение";
 "allowLocationToUsePlease" = "Разрешите использовать местоположение, пожалуйста";
 "locationUpdate" = "Обновление местоположения";
+"applicationColorMode" = "Цветовой режим приложения";
+"light" = "Белый";
+"dark" = "Темный";
+"system" = "Системный режим";
+"notificationTime" = "Время уведомления";
+"everyDay" = "Каждый день";
+"save" = "Сохранять";

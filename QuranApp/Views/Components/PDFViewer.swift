@@ -20,8 +20,8 @@ struct PDFViewer: UIViewRepresentable {
         uiView.displayMode = .singlePage
         uiView.displayDirection = .horizontal
         uiView.usePageViewController(true)
-//        uiView.minScaleFactor = uiView.scaleFactorForSizeToFit
-//        uiView.maxScaleFactor = uiView.scaleFactorForSizeToFit
+        //        uiView.minScaleFactor = uiView.scaleFactorForSizeToFit
+        //        uiView.maxScaleFactor = uiView.scaleFactorForSizeToFit
         uiView.autoScales = true
         uiView.displaysRTL = true
         uiView.delegate = context.coordinator

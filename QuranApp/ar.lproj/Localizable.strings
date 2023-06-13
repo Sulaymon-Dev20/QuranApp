@@ -158,3 +158,10 @@
 "locationPermission" = "تم رفض إذن الموقع";
 "allowLocationToUsePlease" = "السماح للموقع لاستخدام من فضلك";
 "locationUpdate" = "تحديث الموقع";
+"applicationColorMode" = "وضع لون التطبيق";
+"light" = "أبيض";
+"dark" = "مظلم";
+"system" = "وضع النظام";
+"notificationTime" = "وقت الإخطار";
+"everyDay" = "كل يوم";
+"save" = "يحفظ";
