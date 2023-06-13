@@ -27,6 +27,7 @@
 		CE4CD5C72A32866E006C1189 /* ColorSchemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4CD5C62A32866E006C1189 /* ColorSchemeManager.swift */; };
 		CE5468692A20BDFA00273458 /* ReviewsRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */; };
 		CE5801D42A38365300011370 /* LastPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5801D32A38365300011370 /* LastPageView.swift */; };
+		CE5801D62A384C1000011370 /* NecessaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5801D52A384C1000011370 /* NecessaryButton.swift */; };
 		CE6C3F8B2A326F0400CCA217 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C3F8A2A326F0400CCA217 /* LocationModel.swift */; };
 		CE6F307E2A2BD4F5009534B6 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F307D2A2BD4F5009534B6 /* Highlight.swift */; };
 		CE7935DD2A1D74E300B89647 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = CE7935DC2A1D74E300B89647 /* Adhan */; };
@@ -134,6 +135,7 @@
 		CE4CD5C62A32866E006C1189 /* ColorSchemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSchemeManager.swift; sourceTree = "<group>"; };
 		CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsRequestManager.swift; sourceTree = "<group>"; };
 		CE5801D32A38365300011370 /* LastPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPageView.swift; sourceTree = "<group>"; };
+		CE5801D52A384C1000011370 /* NecessaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NecessaryButton.swift; sourceTree = "<group>"; };
 		CE6C3F8A2A326F0400CCA217 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		CE6F307D2A2BD4F5009534B6 /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		CE7935E02A1D83C900B89647 /* PrayerTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimeManager.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				CE011AD42A290BDC00D56334 /* ShareSwipe.swift */,
 				CE011AD62A2923F200D56334 /* BookmarkSwipe.swift */,
 				CE011AD82A2928B700D56334 /* SortButtonView.swift */,
+				CE5801D52A384C1000011370 /* NecessaryButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				CE7C85262A03938900192CC5 /* BookmarkModel.swift in Sources */,
 				CE011AD52A290BDC00D56334 /* ShareSwipe.swift in Sources */,
 				CE4CD5C72A32866E006C1189 /* ColorSchemeManager.swift in Sources */,
+				CE5801D62A384C1000011370 /* NecessaryButton.swift in Sources */,
 				CE7C852E2A03945B00192CC5 /* JuzViewModel.swift in Sources */,
 				CE7935E12A1D83C900B89647 /* PrayerTimeManager.swift in Sources */,
 				CE5468692A20BDFA00273458 /* ReviewsRequestManager.swift in Sources */,

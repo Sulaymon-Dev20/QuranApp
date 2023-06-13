@@ -15,19 +15,17 @@ struct BookmarkView: View {
     var body: some View {
         NavigationStack(path: self.$routerManager.path) {
             ScrollViewReader { proxy in
-                VStack {
-                    List {
-                        LastPageView()
-                            .id(0)
-                        BookmarkListView()
-                            .id(1)
-                        NotificationView()
-                            .id(2)
-                        PrayTimeRowView()
-                            .id(3)
-                        ColorSchemeView()
-                            .id(4)
-                    }
+                List {
+                    LastPageView()
+                        .id(0)
+                    BookmarkListView()
+                        .id(1)
+                    NotificationView()
+                        .id(2)
+                    PrayTimeRowView()
+                        .id(3)
+                    ColorSchemeView()
+                        .id(4)
                 }
                 .onAppear {
                     if badgeAppManager.count != 0 {
@@ -46,7 +44,7 @@ struct BookmarkView: View {
                     LanguageButtonView()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Text("asdf")
+                    NecessaryButton()
                 }
             }
             .navigationDestination(for: Route.self) {
