@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct LastPageView: View {
+    @EnvironmentObject var routerManager: RouterManager
+    @EnvironmentObject var surahViewModel: SurahViewModel
+    
     var body: some View {
-        Text("Hello, World!")
+        let item = surahViewModel.getSurahByPage(routerManager.currentPDFPage)!
+        Section("lastReadPage") {
+            BookmarkRowView(title: item.title, juz: item.juz[0].index, pageNumber: routerManager.currentPDFPage)
+                .overlay {
+                    NavigationLink(value: Route.menu(item: item)) {
+                        Text(">>>")
+                    }
+                    .opacity(0)
+                }
+        }
     }
 }
 
 struct LastPageView_Previews: PreviewProvider {
     static var previews: some View {
-        LastPageView()
+        List {
+            LastPageView()
+        }
+        .environmentObject(LanguageViewModel())
+        .environmentObject(RouterManager())
+        .environmentObject(SurahViewModel())
     }
 }

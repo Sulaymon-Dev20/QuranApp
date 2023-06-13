@@ -22,6 +22,8 @@ struct BookmarkView: View {
             ScrollViewReader { proxy in
                 VStack {
                     List {
+                        LastPageView()
+                            .id(0)
                         BookmarkListView(list: filterData(), sort: $sort, searchText: $searchText)
                             .id(1)
                         NotificationView()
@@ -88,5 +90,6 @@ struct BookmarkView_Previews: PreviewProvider {
             .environmentObject(LocationManager())
             .environmentObject(BadgeAppManager())
             .environmentObject(ColorSchemeManager())
+            .environmentObject(SurahViewModel())
     }
 }

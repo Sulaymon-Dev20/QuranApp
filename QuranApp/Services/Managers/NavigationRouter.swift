@@ -15,12 +15,18 @@ class RouterManager: ObservableObject {
     @Published var tabBarHideStatus: Bool = false
     @Published var currentPDFPage: Int = 2
     
+    let lastPageStorageKey:String = "lastPageStorageKey"
+    
     let view = PDFViewUI()
+    
+    init() {
+        getLastPage()
+    }
     
     func push(to item: Route) {
         path.append(item)
     }
-
+    
     func navigationDestination(_ route: Route) -> some View {
         return view
             .onAppear {
@@ -39,12 +45,13 @@ class RouterManager: ObservableObject {
                 }
             }
     }
-        
+    
     func pushTab(to item: Int) {
         tabValue = item
     }
     
     func tabBarHide(status: Bool) {
+        UserDefaults.standard.set(currentPDFPage, forKey: lastPageStorageKey)
         tabBarHideStatus = status
     }
     
@@ -59,6 +66,13 @@ class RouterManager: ObservableObject {
             return 2
         default:
             return 0
+        }
+    }
+    
+    func getLastPage() {
+        let lastPage = UserDefaults.standard.integer(forKey: lastPageStorageKey)
+        if lastPage != 0 {
+            self.currentPDFPage = lastPage
         }
     }
 }
