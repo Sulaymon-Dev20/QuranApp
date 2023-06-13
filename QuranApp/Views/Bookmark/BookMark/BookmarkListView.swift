@@ -12,18 +12,12 @@ struct BookmarkListView: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var noficationsManager: NoficationsManager
 
-    let list: [BookmarkModel]
-    
-    @Binding var sort: Bool
-    @Binding var searchText: String
-
-    @State var nativationStatus: Bool = false
-    @State var showAlert: Bool = false
+    @State var sort: Bool = false
 
     var body: some View {
-        Section(LocalizedStringKey("bookmarks")) {
-            if !list.isEmpty {
-                ForEach(sort ? list : list.reversed()) { item in
+        Section {
+            if !bookmarksViewModel.items.isEmpty {
+                ForEach(sort ? bookmarksViewModel.items : bookmarksViewModel.items.reversed()) { item in
                     BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
                         .overlay {
                             NavigationLink(value: Route.menu(item: item)) {
@@ -41,11 +35,9 @@ struct BookmarkListView: View {
                 }
                 .onDelete(perform: bookmarksViewModel.deleteItem)
                 .onMove { indexA, indexB in
-                    if searchText.count == 0 {
-                        var reversed = Array(sort ? list : list.reversed())
-                        reversed.move(fromOffsets: indexA, toOffset: indexB)
-                        bookmarksViewModel.items = sort ? reversed : reversed.reversed()
-                    }
+                    var reversed = Array(sort ? bookmarksViewModel.items : bookmarksViewModel.items.reversed())
+                    reversed.move(fromOffsets: indexA, toOffset: indexB)
+                    bookmarksViewModel.items = sort ? reversed : reversed.reversed()
                 }
             } else {
                 Button {
@@ -55,6 +47,12 @@ struct BookmarkListView: View {
                         .frame(maxWidth: .infinity)
                 }
             }
+        } header: {
+            HStack {
+                Text("bookmarks")
+                Spacer()
+                SortButtonView(sort: $sort)
+            }
         }
     }
 }
@@ -63,7 +61,7 @@ struct BookmarkListView: View {
 struct BookmarkListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            BookmarkListView(list: [], sort: .constant(false), searchText: .constant(""))
+            BookmarkListView()
         }
         .environmentObject(BookMarkViewModel())
         .environmentObject(RouterManager())

@@ -8,14 +8,9 @@
 import SwiftUI
 
 struct BookmarkView: View {
-    @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var noficationsManager: NoficationsManager
     @EnvironmentObject var badgeAppManager: BadgeAppManager
-    @EnvironmentObject var colorSchemeManager: ColorSchemeManager
-
-    @State var searchText: String = ""
-    @State var sort: Bool = false
     
     var body: some View {
         NavigationStack(path: self.$routerManager.path) {
@@ -24,7 +19,7 @@ struct BookmarkView: View {
                     List {
                         LastPageView()
                             .id(0)
-                        BookmarkListView(list: filterData(), sort: $sort, searchText: $searchText)
+                        BookmarkListView()
                             .id(1)
                         NotificationView()
                             .id(2)
@@ -34,7 +29,7 @@ struct BookmarkView: View {
                             .id(4)
                     }
                 }
-                .task {
+                .onAppear {
                     if badgeAppManager.count != 0 {
                         withAnimation(Animation.default.speed(0.5)) {
                             proxy.scrollTo(3)
@@ -51,27 +46,15 @@ struct BookmarkView: View {
                     LanguageButtonView()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    SortButtonView(sort: $sort)
+                    Text("asdf")
                 }
             }
-            .searchable(text: $searchText, placement: .toolbar, prompt: Text("search_bookmark"))
             .navigationDestination(for: Route.self) {
                 routerManager.navigationDestination($0)
             }
         }
         .task {
             noficationsManager.checkNotificationPermission()
-        }
-        .onDisappear {
-            searchText = ""
-        }
-    }
-    
-    func filterData() -> [BookmarkModel] {
-        if searchText.count > 0 {
-            return bookmarksViewModel.items.filter {LocalizedStringKey($0.title.localizedForm).stringValue().lowercased().contains(searchText.lowercased())}
-        } else {
-            return bookmarksViewModel.items
         }
     }
 }
