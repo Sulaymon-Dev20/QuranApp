@@ -20,7 +20,12 @@ struct NecessaryButton: View {
             } label: {
                 Label("Add your commend", systemImage: "text.bubble")
             }
-            Label("Donation", systemImage: "dollarsign.square")
+            Button {
+                 
+            } label: {
+                Label("Donation", systemImage: "dollarsign")
+            }
+            .disabled(true)
         } label: {
             Image(systemName: "list.bullet")
         }
