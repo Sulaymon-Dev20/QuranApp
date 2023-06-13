@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct NecessaryButton: View {
+    @Environment (\.openURL) var openURL
+    @EnvironmentObject var reviewsRequestManager: ReviewsRequestManager
+    
     var body: some View {
         Menu {
-            Label("Add your commend", systemImage: "text.bubble")
+            Button {
+                if let link = reviewsRequestManager.reviewLink {
+                    openURL(link)
+                }
+            } label: {
+                Label("Add your commend", systemImage: "text.bubble")
+            }
             Label("Donation", systemImage: "dollarsign.square")
         } label: {
             Image(systemName: "list.bullet")
@@ -20,6 +29,14 @@ struct NecessaryButton: View {
 
 struct NecessaryButton_Previews: PreviewProvider {
     static var previews: some View {
-        NecessaryButton()
+        NavigationStack {
+            Text("<_<")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NecessaryButton()
+                    }
+                }
+        }
+        .environmentObject(ReviewsRequestManager())
     }
 }
