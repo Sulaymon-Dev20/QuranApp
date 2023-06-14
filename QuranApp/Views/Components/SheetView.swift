@@ -12,6 +12,7 @@ struct SheetView: View {
     @EnvironmentObject var noficationsManager: NoficationsManager
     @EnvironmentObject var prayerTimeViewModel: PrayerTimeManager
     @EnvironmentObject var locationManager: LocationManager
+    @EnvironmentObject var languageViewModel: LanguageViewModel
 
     @Environment(\.dismiss) var dismiss
     
@@ -32,7 +33,7 @@ struct SheetView: View {
                 .font(.title)
                 .padding(.top, 40)
 
-            Text(date.clockString)
+            Text(date.clockString.convertedDigitsToLocale(languageViewModel.language))
                 .font(.largeTitle)
                 .padding(.bottom,40)
             
@@ -59,7 +60,7 @@ struct SheetView: View {
                         }
                     })
                     .onAppear {
-                        date = data[0].time
+//                        date = data[0].time
                     }
                     .padding(.bottom,20)
                     .pickerStyle(SegmentedPickerStyle())
@@ -107,7 +108,7 @@ struct SheetView: View {
                         id: UUID().uuidString,
                         title: surah.title,
                         subTitle: surah.type == .makkiyah ? "makkiyah" : "madaniyah",
-                        url: "surahs?index=\(surah.index)",
+                        url: "surahs?index=\(surah.pages)",
                         page: surah.pages,
                         time: self.date,
                         isEveryDay: everyDay,
@@ -139,5 +140,6 @@ struct SheetView_Previews: PreviewProvider {
             .environmentObject(PrayerTimeManager())
             .environmentObject(LocationManager())
             .environmentObject(BadgeAppManager())
+            .environmentObject(LanguageViewModel())
     }
 }

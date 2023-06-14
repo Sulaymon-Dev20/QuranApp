@@ -35,6 +35,8 @@ class RouterManager: ObservableObject {
                     switch item{
                     case let pageNumber as Int:
                         self.currentPDFPage = pageNumber
+                    case let pageNumberString as String:
+                        self.currentPDFPage = pageNumberString.intValue
                     case let surahModel as SurahModel:
                         self.currentPDFPage = surahModel.pages.intValue
                     case let bookmarkModel as BookmarkModel:

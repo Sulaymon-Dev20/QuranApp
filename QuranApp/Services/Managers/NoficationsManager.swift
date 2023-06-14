@@ -57,17 +57,18 @@ class NoficationsManager: ObservableObject {
         UNUserNotificationCenter.current().add(request)
     }
     
-    func removeNotication(list idList:[String] = []) {
+    func removeNotication(list idList:[String] = []) { 
         if !idList.isEmpty {
-            //            UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
-            //               var identifiers: [String] = []
-            //               for notification:UNNotificationRequest in notificationRequests {
-            //                   if idList.contains(notification.identifier) {
-            //                      identifiers.append(notification.identifier)
-            //                   }
-            //               }
-            ////               UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
-            //            }
+            UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
+//                var identifiers: [String] = []
+                for notification:UNNotificationRequest in notificationRequests {
+//                    if idList.contains(notification.identifier) {
+//                        identifiers.append(notification.identifier)
+//                    }
+                    print(notification.identifier)
+                }
+                //               UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
+            }
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: idList)
         } else {
             UNUserNotificationCenter.current().removeAllPendingNotificationRequests()

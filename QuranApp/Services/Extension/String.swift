@@ -42,11 +42,11 @@ extension String {
         components(separatedBy: characterSet).joined()
     }
 
-    func convertedDigitsToLocale() -> String {
+    func convertedDigitsToLocale(_ lanuage:String) -> String {
         let digits = Set(clippingCharacters(in: CharacterSet.decimalDigits.inverted))
         guard !digits.isEmpty else { return self }
 
-        Self.formatter.locale = UserDefaults.standard.string(forKey: "language") == "ar" ? Locale(identifier: "FA") : Locale(identifier: "EN")
+        Self.formatter.locale = lanuage == "ar" ? Locale(identifier: "FA") : Locale(identifier: "EN")
 
         let maps: [(original: String, converted: String)] = digits.map {
             let original = String($0)

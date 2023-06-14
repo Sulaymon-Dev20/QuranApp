@@ -11,10 +11,9 @@ struct NotificationView: View {
     @EnvironmentObject var noficationsManager: NoficationsManager
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
     @EnvironmentObject var routerManager: RouterManager
-    @EnvironmentObject var badgeAppManager: BadgeAppManager
-
+    
     @State var showAlert:Bool = false
-
+    
     var body: some View {
         let show = noficationsManager.hasPermission
         Section {
@@ -73,10 +72,10 @@ struct NotificationView: View {
             notificatSurahViewModel.checkStatus()
         }
     }
-
-    func onchange(_ status:Bool, _ activeToggle:Bool, _ item: NotificatSurah) {
-        if activeToggle {
-            notificatSurahViewModel.changeActive(id: item.id, time: item.time, active: status)
+    
+    func onchange(_ status:Bool, _ isActiveToggle:Bool, _ item: NotificatSurah) {
+        if isActiveToggle {
+//            notificatSurahViewModel.changeActive(id: item.id, time: item.time, active: status)
             if status {
                 noficationsManager.pushNotication(item: item)
             } else {
@@ -97,7 +96,6 @@ struct NotificationView_Previews: PreviewProvider {
         .environmentObject(NoficationsManager())
         .environmentObject(NotificatSurahViewModel())
         .environmentObject(RouterManager())
-        .environmentObject(BadgeAppManager())
-//        .environment(\.locale, Locale.init(identifier: "ar"))
+        //        .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

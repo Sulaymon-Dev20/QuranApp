@@ -59,9 +59,10 @@ class NotificatSurahViewModel: ObservableObject {
     }
     
     func changeActive(id: String, time: Date, active status: Bool) {
-        var item = items.first { $0.id == id }
-        item?.time = time
-        item?.active = status
+        if var item = items.first(where: { $0.id == id }) {
+            item.time = time
+            item.active = status
+        }
         saveStorage()
     }
     

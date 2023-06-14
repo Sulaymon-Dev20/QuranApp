@@ -16,7 +16,7 @@ struct LastPageView: View {
         Section("lastReadPage") {
             BookmarkRowView(title: item.title, juz: item.juz[0].index, pageNumber: routerManager.currentPDFPage)
                 .overlay {
-                    NavigationLink(value: Route.menu(item: item)) {
+                    NavigationLink(value: Route.menu(item: routerManager.currentPDFPage.toString)) {
                         Text(">>>")
                     }
                     .opacity(0)

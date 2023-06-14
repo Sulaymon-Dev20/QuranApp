@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct NotificationRowView: View {
+    @EnvironmentObject var languageViewModel: LanguageViewModel
+    
     @Binding var item: NotificatSurah
     
     let action: (_ status:Bool,_ activeToggle:Bool) -> Void
@@ -38,7 +40,7 @@ struct NotificationRowView: View {
             }
             Spacer()
             Toggle(isOn: $item.active) {
-                Text("\(item.time.clockString)")
+                Text(item.time.clockString.convertedDigitsToLocale(languageViewModel.language))
                     .bold()
                     .strikethrough(!item.active)
                     .frame(width: 60, alignment: .center)
@@ -68,5 +70,6 @@ struct NotificationRowView_Previews: PreviewProvider {
                 
             }
         }
+        .environmentObject(LanguageViewModel())
     }
 }

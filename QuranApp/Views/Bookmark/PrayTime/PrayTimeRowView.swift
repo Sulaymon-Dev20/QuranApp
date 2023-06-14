@@ -10,7 +10,8 @@ import SwiftUI
 struct PrayTimeRowView: View {
     @EnvironmentObject var prayerTimeViewModel: PrayerTimeManager
     @EnvironmentObject var locationManager: LocationManager
-    
+    @EnvironmentObject var languageViewModel: LanguageViewModel
+
     @State var showAlert: Bool = false
     
     var body: some View {
@@ -27,7 +28,7 @@ struct PrayTimeRowView: View {
                             Text(LocalizedStringKey(item.name.localizedForm))
                                 .bold()
                             Spacer()
-                            Text(item.time.clockString)
+                            Text(item.time.clockString.convertedDigitsToLocale(languageViewModel.language))
                                 .bold()
                                 .frame(width: 60, alignment: .center)
                         }.padding(.vertical, 5)
