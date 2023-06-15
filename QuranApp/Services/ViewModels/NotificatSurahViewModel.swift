@@ -79,16 +79,18 @@ class NotificatSurahViewModel: ObservableObject {
     
     func changeStatus(id: String, isEveryDay status: Bool) {
         if var item = items.first(where: { $0.id == id }) {
-            if status {
-                item.isEveryDay = status
-            } else {
-                item.id = UUID().uuidString
-                item.isEveryDay = status
-            }
+            item.isEveryDay = status
         }
         saveStorage()
     }
-    
+
+    func changeId(id: String) {
+        if var item = items.first(where: { $0.id == id }) {
+            item.id = UUID().uuidString
+        }
+        saveStorage()
+    }
+
     func saveStorage(){
         if let encodedData = try? JSONEncoder().encode(items) {
             UserDefaults.standard.set(encodedData, forKey: storageKey)

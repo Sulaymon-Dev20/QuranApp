@@ -20,8 +20,8 @@ struct NotificationView: View {
             if show {
                 if !notificatSurahViewModel.items.isEmpty {
                     ForEach($notificatSurahViewModel.items, id: \.id) { $item in
-                        NotificationRowView(item: $item) { status, activeToggle in
-                            onchange(status, activeToggle, item)
+                        NotificationRowView(item: $item) { activeToggle in
+                            onchange(activeToggle, item)
                         }
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                             Button {//qiladigan ishla bor
@@ -73,18 +73,15 @@ struct NotificationView: View {
         }
     }
     
-    func onchange(_ status:Bool, _ isActiveToggle:Bool, _ item: NotificatSurah) {
+    func onchange(_ isActiveToggle:Bool, _ item: NotificatSurah) {
         if isActiveToggle {
-            if status {
+            if item.active {
                 noficationsManager.pushNotication(item: item)
             } else {
                 noficationsManager.removeNotication(list: [item.id])
-                notificatSurahViewModel.changeStatus(id: item.id, isEveryDay: status)
-//                notificatSurahViewModel.changeId(id: item.id)
-//                noficationsManager.removeNotication(list: [item.id])
             }
         } else {
-            notificatSurahViewModel.changeStatus(id: item.id, isEveryDay: status)
+            notificatSurahViewModel.changeStatus(id: item.id, isEveryDay: item.isEveryDay)
             noficationsManager.pushNotication(item: item)
         }
     }
