@@ -10,19 +10,10 @@ import SwiftUI
 struct JuzRowView: View {
     let item: JuzModel
     @EnvironmentObject var language: LanguageViewModel
-
+    
     var body: some View {
         let text = LocalizedStringKey("juz").stringValue(locale: language.language)
-        Menu {
-            NavigationLink(value: Route.menu(item: item.page)) {
-                Label("\(item.index) \(text)", systemImage: "timelapse")
-            }
-            ForEach(item.surahs, id: \.index) { surahs in
-                NavigationLink(value: Route.menu(item: surahs.pageNumber.intValue)) {
-                    Label(LocalizedStringKey(surahs.title.localizedForm), systemImage: surahs.type == "Makkiyah" ? "moon.fill" : "sun.max.fill")
-                }
-            }
-        } label: {
+        HStack {
             HStack {
                 Image(systemName: "app")
                     .font(.system(size: 34.0))
@@ -33,8 +24,25 @@ struct JuzRowView: View {
                 Text(text)
                     .font(.title2)
                 Spacer()
+            }.overlay {
+                NavigationLink(value: Route.menu(item: item.page)) {
+                    Text(">>>")
+                }
+                .opacity(0)
             }
-            .foregroundColor(Color.primary)
+            Menu {
+                NavigationLink(value: Route.menu(item: item.page)) {
+                    Label("\(item.index) \(text)", systemImage: "timelapse")
+                }
+                ForEach(item.surahs, id: \.index) { surahs in
+                    NavigationLink(value: Route.menu(item: surahs.pageNumber.intValue)) {
+                        Label(LocalizedStringKey(surahs.title.localizedForm), systemImage: surahs.type == "Makkiyah" ? "moon.fill" : "sun.max.fill")
+                    }
+                }
+            } label: {
+                Image(systemName: "list.dash")
+                    .frame(width: 30, height: 30)
+            }
         }
     }
 }
