@@ -75,14 +75,13 @@ struct NotificationView: View {
     
     func onchange(_ status:Bool, _ isActiveToggle:Bool, _ item: NotificatSurah) {
         if isActiveToggle {
-//            notificatSurahViewModel.changeActive(id: item.id, time: item.time, active: status)f
             if status {
                 noficationsManager.pushNotication(item: item)
             } else {
                 noficationsManager.removeNotication(list: [item.id])
             }
         } else {
-            notificatSurahViewModel.changeStatus(id: item.id, active: status)
+            notificatSurahViewModel.changeStatus(id: item.id, isEveryDay: status)
             noficationsManager.pushNotication(item: item)
         }
     }

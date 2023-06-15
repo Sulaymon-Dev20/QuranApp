@@ -38,7 +38,7 @@ struct PrayTimeRowView: View {
                     Button {
                         showShare = true
                     } label: {
-                        Text("shareButton")
+                        Label("shareButton", systemImage: "square.and.arrow.up")
                     }
                 }
             } label: {

@@ -119,54 +119,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8448EDB8-400F-4F6F-BA3B-1D8076CC6699"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QuranApp/Views/Bookmark/Notification/NotificationView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "onchange(_:_:_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8448EDB8-400F-4F6F-BA3B-1D8076CC6699 - 16583faa6e1f5fb6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuranApp.NotificationView.onchange(Swift.Bool, Swift.Bool, QuranApp.NotificatSurah) -&gt; ()"
-                  moduleName = "QuranApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/IOS%20project/QuranApp/QuranApp/Views/Bookmark/Notification/NotificationView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "328">
-               </Location>
-               <Location
-                  uuid = "8448EDB8-400F-4F6F-BA3B-1D8076CC6699 - 16583faa6e1f5fb6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuranApp.NotificationView.onchange(Swift.Bool, Swift.Bool, QuranApp.NotificatSurah) -&gt; ()"
-                  moduleName = "QuranApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/IOS%20project/QuranApp/QuranApp/Views/Bookmark/Notification/NotificationView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "104">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "15530537-4520-445B-9A77-1B1469FA70F5"
             shouldBeEnabled = "No"
             ignoreCount = "0"

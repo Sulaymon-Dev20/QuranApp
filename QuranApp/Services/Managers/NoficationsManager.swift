@@ -59,8 +59,6 @@ class NoficationsManager: ObservableObject {
     
     func removeNotication(list idList:[String] = []) { 
         if !idList.isEmpty {
-            UNUserNotificationCenter.current().removeAllDeliveredNotifications()
-            print(UNUserNotificationCenter.current().accessibilityElementCount())
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: idList)
             UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers: idList)
         } else {

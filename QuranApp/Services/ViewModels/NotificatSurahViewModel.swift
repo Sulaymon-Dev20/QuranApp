@@ -77,7 +77,7 @@ class NotificatSurahViewModel: ObservableObject {
         saveStorage()
     }
     
-    func changeStatus(id: String,active status: Bool) {
+    func changeStatus(id: String, isEveryDay status: Bool) {
         var item = items.first { $0.id == id }
         item?.isEveryDay = status
         saveStorage()
