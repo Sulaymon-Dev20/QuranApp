@@ -17,9 +17,9 @@ struct LastPageView: View {
         let status = bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue)
         Section("lastReadPage") {
             ForEach(0...0, id: \.self) { number in
-                BookmarkRowView(title: item.title, juz: item.juz[0].index, pageNumber: routerManager.currentPDFPage)
+                SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages,status: status)
                     .overlay {
-                        NavigationLink(value: Route.menu(item: routerManager.currentPDFPage.toString)) {
+                        NavigationLink(value: Route.menu(item: item)) {
                             Text(">>>")
                         }
                         .opacity(0)
