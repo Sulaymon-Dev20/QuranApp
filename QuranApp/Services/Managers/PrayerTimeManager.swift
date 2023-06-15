@@ -42,7 +42,7 @@ class PrayerTimeManager: ObservableObject {
     func firstPrayTimeIndex(preyTimes items: [PrayTimeModel]) -> Int {
         for (index,item) in items.reversed().enumerated() {
             if item.time <= Date() {
-                return index - 1
+                return abs(index - items.count) - 1
             }
         }
         return 0

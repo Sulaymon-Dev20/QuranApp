@@ -79,6 +79,9 @@ struct NotificationView: View {
                 noficationsManager.pushNotication(item: item)
             } else {
                 noficationsManager.removeNotication(list: [item.id])
+                notificatSurahViewModel.changeStatus(id: item.id, isEveryDay: status)
+//                notificatSurahViewModel.changeId(id: item.id)
+//                noficationsManager.removeNotication(list: [item.id])
             }
         } else {
             notificatSurahViewModel.changeStatus(id: item.id, isEveryDay: status)
