@@ -26,7 +26,7 @@ struct JuzRowView: View {
                         .font(.title2)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text(getSurahsToString(item.surahs))
-                        .font(.caption)
+                        .font(.caption2)
                         .lineLimit(1)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
@@ -48,6 +48,7 @@ struct JuzRowView: View {
                 }
             } label: {
                 Image(systemName: "list.dash")
+                    .font(.title2)
                     .frame(width: 30, height: 30)
             }
         }

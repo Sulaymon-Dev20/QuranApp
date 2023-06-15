@@ -11,9 +11,9 @@ struct BookmarkListView: View {
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var noficationsManager: NoficationsManager
-
+    
     @State var sort: Bool = false
-
+    
     var body: some View {
         Section {
             if !bookmarksViewModel.items.isEmpty {
