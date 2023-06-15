@@ -47,6 +47,7 @@ struct PrayTimeRowView: View {
                         ForEach(Array(data.enumerated()), id: \.offset) { index, item in
                             HStack {
                                 Image(systemName: prayerTimeViewModel.getIcon(time: item.name))
+                                    .frame(width: 20, alignment: .center)
                                 Text(LocalizedStringKey(item.name.localizedForm))
                                     .bold()
                                 Spacer()
