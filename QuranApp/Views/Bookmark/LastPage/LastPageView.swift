@@ -30,7 +30,7 @@ struct LastPageView: View {
                         .opacity(0)
                     }
                     .swipeActions(edge: .trailing, allowsFullSwipe: !status) {
-                        BookmarkSwipe(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: item.pages.intValue), status: status)
+                        BookmarkSwipe(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: routerManager.currentPDFPage), status: status)
                             .tint(status ? .red : .green)
                     }
                     .swipeActions(edge: .leading) {
