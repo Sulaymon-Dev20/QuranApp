@@ -9,13 +9,12 @@ import Foundation
 import SwiftUI
 
 extension String {
-    static func localizedString(for key: String, locale: String = "uz") -> String {
+    static func localizedString(for key: String, locale: String = "uz", argument: String) -> String {
         let path = Bundle.main.path(forResource: locale, ofType: "lproj")!
         let bundle = Bundle(path: path)!
-        let localizedString = NSLocalizedString(key, bundle: bundle, comment: "")
-        return localizedString
+        return NSLocalizedString(key, bundle: bundle, comment: "").replacingOccurrences(of: "%@", with: argument)
     }
-    
+        
     public var localizedForm: String {
         return self.lowercased().replacingOccurrences(of: "-", with: "_")
     }

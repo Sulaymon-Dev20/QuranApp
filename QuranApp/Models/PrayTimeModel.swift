@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct PrayTimeModel: Codable {
+struct PrayTimeModel {
     let name: String
     let time: Date
+    let shareText: LocalizedStringKey
 }

@@ -166,3 +166,11 @@
 "everyDay" = "Every Day";
 "save" = "Save";
 "lastReadPage" = "Last read page";
+"prayTimeByDate %@" = "🌙 Pray time on %@";
+"fajr %@" = "🕰️ Fajr:                             %@";
+"sunrise %@" = "🕰️ Sunrise:                     %@";
+"dhuhr %@" = "🕰️ Dhuhr:                         %@";
+"asr %@" = "🕰️ Asr:                               %@";
+"maghrib %@" = "🕰️ Maghrib:                     %@";
+"isha %@" = "🕰️ Isha:                              %@";
+"shareButton" = "Share button";

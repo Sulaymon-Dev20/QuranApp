@@ -6,6 +6,17 @@
 //
 
 import SwiftUI
+import UIKit
+
+struct ActivityView: UIViewControllerRepresentable {
+    let text: String
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityView>) -> UIActivityViewController {
+        return UIActivityViewController(activityItems: [text], applicationActivities: nil)
+    }
+
+    func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityView>) {}
+}
 
 struct PrayTimeRowView: View {
     @EnvironmentObject var prayerTimeViewModel: PrayerTimeManager
@@ -13,41 +24,55 @@ struct PrayTimeRowView: View {
     @EnvironmentObject var languageViewModel: LanguageViewModel
 
     @State var showAlert: Bool = false
+    @State var showShare: Bool = false
     
     var body: some View {
         let show = locationManager.checkLocationPermission()
         let loading = locationManager.loading
         let location = locationManager.location
+        let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
         Section {
-            let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
-            ZStack {
-                VStack {
-                    ForEach(data, id: \.name) { item in
-                        HStack {
-                            Image(systemName: prayerTimeViewModel.getIcon(time: item.name))
-                            Text(LocalizedStringKey(item.name.localizedForm))
-                                .bold()
-                            Spacer()
-                            Text(item.time.clockString.convertedDigitsToLocale(languageViewModel.language))
-                                .bold()
-                                .frame(width: 60, alignment: .center)
-                        }.padding(.vertical, 5)
+            let commingIndex = prayerTimeViewModel.firstPrayTimeIndex(preyTimes: data)
+            Menu {
+                if show && !loading {
+                    Button {
+                        showShare = true
+                    } label: {
+                        Text("shareButton")
                     }
                 }
-                .blur(radius: show && !loading ? 0 : 8)
-                Button {
-                    if !show {
-                        showAlert = true
+            } label: {
+                ZStack {
+                    VStack {
+                        ForEach(Array(data.enumerated()), id: \.offset) { index, item in
+                            HStack {
+                                Image(systemName: prayerTimeViewModel.getIcon(time: item.name))
+                                Text(LocalizedStringKey(item.name.localizedForm))
+                                    .bold()
+                                Spacer()
+                                Text(item.time.clockString.convertedDigitsToLocale(languageViewModel.language))
+                                    .bold()
+                                    .frame(width: 60, alignment: .center)
+                            }
+                            .foregroundColor(index == commingIndex ? Color.blue : Color.primary)
+                            .padding(.vertical, 5)
+                        }
                     }
-                    locationManager.getLocation()
-                } label: {
-                    PermissionDenied(img: "paperplane.circle.fill", text: "locationPermissionDenied")
-                        .frame(maxWidth: .infinity)
+                    .blur(radius: show && !loading ? 0 : 8)
+                    Button {
+                        if !show {
+                            showAlert = true
+                        }
+                        locationManager.getLocation()
+                    } label: {
+                        PermissionDenied(img: "paperplane.circle.fill", text: "locationPermissionDenied")
+                            .frame(maxWidth: .infinity)
+                    }
+                    .opacity(show ? 0 : 1)
+                    ProgressView()
+                        .opacity(loading ? 1 : 0)
+                    AlertPermissions(showAlert: $showAlert, title: "locationPermission", message: "allowLocationToUsePlease")
                 }
-                .opacity(show ? 0 : 1)
-                ProgressView()
-                    .opacity(loading ? 1 : 0)
-                AlertPermissions(showAlert: $showAlert, title: "locationPermission", message: "allowLocationToUsePlease")
             }
         } header: {
             HStack {
@@ -78,6 +103,9 @@ struct PrayTimeRowView: View {
         .onAppear {
             locationManager.getLocation()
         }
+        .sheet(isPresented: $showShare, content: {
+            ActivityView(text: prayerTimeViewModel.shareText(data, lanuage: languageViewModel.language))
+        })
     }
 }
 

@@ -16,6 +16,18 @@ extension Date {
         return "\(hourText) : \(minuteText)";
     }
     
+    public var dateForm: String {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = "yyyy-MM-dd"
+        return dateformat.string(from: self)
+    }
+    
+    public var timeForm: String {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = "HH:mm"
+        return dateformat.string(from: self)
+    }
+    
     public var day: Int {
         return Calendar.current.component(.day, from: self)
     }

@@ -7,6 +7,7 @@
 
 import Foundation
 import Adhan
+import SwiftUI
 
 class PrayerTimeManager: ObservableObject {
     let mashabValue: String = "mashab"
@@ -28,12 +29,29 @@ class PrayerTimeManager: ObservableObject {
             formatter.timeStyle = .medium
             formatter.timeZone = TimeZone(identifier: TimeZone.current.identifier)!
             
-            res.append(PrayTimeModel(name: "fajr", time: prayers.fajr))
-            res.append(PrayTimeModel(name: "sunrise", time: prayers.sunrise))
-            res.append(PrayTimeModel(name: "dhuhr", time: prayers.dhuhr))
-            res.append(PrayTimeModel(name: "asr", time: prayers.asr))
-            res.append(PrayTimeModel(name: "maghrib", time: prayers.maghrib))
-            res.append(PrayTimeModel(name: "isha", time: prayers.isha))
+            res.append(PrayTimeModel(name: "fajr", time: prayers.fajr, shareText: LocalizedStringKey("fajr \(prayers.fajr)")))
+            res.append(PrayTimeModel(name: "sunrise", time: prayers.sunrise, shareText: LocalizedStringKey("sunrise \(prayers.sunrise)")))
+            res.append(PrayTimeModel(name: "dhuhr", time: prayers.dhuhr, shareText: LocalizedStringKey("dhuhr \(prayers.dhuhr.timeForm)")))
+            res.append(PrayTimeModel(name: "asr", time: prayers.asr, shareText: LocalizedStringKey("asr \(prayers.asr)")))
+            res.append(PrayTimeModel(name: "maghrib", time: prayers.maghrib, shareText: LocalizedStringKey("maghrib \(prayers.maghrib)")))
+            res.append(PrayTimeModel(name: "isha", time: prayers.isha, shareText: LocalizedStringKey("isha \(prayers.isha)")))
+        }
+        return res
+    }
+    
+    func firstPrayTimeIndex(preyTimes items: [PrayTimeModel]) -> Int {
+        for (index,item) in items.reversed().enumerated() {
+            if item.time <= Date() {
+                return index
+            }
+        }
+        return 0
+    }
+    
+    func shareText(_ items: [PrayTimeModel], lanuage:String) -> String {
+        var res:String = LocalizedStringKey("prayTimeByDate \(Date())").stringValue(argument: Date().dateForm.convertedDigitsToLocale(lanuage)) + "\n"
+        items.forEach { item in
+            res += item.shareText.stringValue(argument: item.time.timeForm.convertedDigitsToLocale(lanuage)) + "\n"
         }
         return res
     }

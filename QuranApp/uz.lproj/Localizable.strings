@@ -166,3 +166,11 @@
 "everyDay" = "Har kuni";
 "save" = "Saqlash";
 "lastReadPage" = "Oxirgi o'qilgan sahifa";
+"prayTimeByDate %@" = "🌙 Nomoz nomoz vaqtlari %@";
+"fajr %@" = "🕰️ Bomdod:                                  %@";
+"sunrise %@" = "🕰️ Quyosh chiqishi:                   %@";
+"dhuhr %@" = "🕰️ Peshin:                                     %@";
+"asr %@" = "🕰️ Asr:                                           %@";
+"maghrib %@" = "🕰️ Shom:                                       %@";
+"isha %@" = "🕰️ Xufton:                                      %@";
+"shareButton" = "Ulashish tugmasi";

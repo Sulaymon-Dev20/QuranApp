@@ -75,7 +75,7 @@ struct NotificationView: View {
     
     func onchange(_ status:Bool, _ isActiveToggle:Bool, _ item: NotificatSurah) {
         if isActiveToggle {
-//            notificatSurahViewModel.changeActive(id: item.id, time: item.time, active: status)
+//            notificatSurahViewModel.changeActive(id: item.id, time: item.time, active: status)f
             if status {
                 noficationsManager.pushNotication(item: item)
             } else {
