@@ -22,9 +22,12 @@ class MyAppDelegate: NSObject, UIApplicationDelegate, ObservableObject, UNUserNo
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
-        let routerManager = app?.routerManager
-        if let deepLink = response.notification.request.content.userInfo["link"] as? String, let url = URL(string: deepLink) {
-            routerManager?.pushDeepLink(to: url, list: app?.surahViewModel.items ?? [])
+        if let app {
+            let routerManager = app.routerManager
+            if let deepLink = response.notification.request.content.userInfo["link"] as? String, let url = URL(string: deepLink) {
+                routerManager.pushDeepLink(to: url, list: app.surahViewModel.items)
+            }
+            app.badgeAppManager.minusBadge(number: 1)
         }
     }
     

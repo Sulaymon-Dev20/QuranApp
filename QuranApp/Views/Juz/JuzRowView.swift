@@ -21,8 +21,15 @@ struct JuzRowView: View {
                         Text("\(item.index)")
                             .font(.system(size: 21.0))
                     }
-                Text(text)
-                    .font(.title2)
+                VStack {
+                    Text(text)
+                        .font(.title2)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text(getSurahsToString(item.surahs))
+                        .font(.caption)
+                        .lineLimit(1)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
                 Spacer()
             }.overlay {
                 NavigationLink(value: Route.menu(item: item.page)) {
@@ -45,13 +52,28 @@ struct JuzRowView: View {
             }
         }
     }
+    
+    func getSurahsToString(_ list:[Surah]) -> String {
+        var res = ""
+        list.forEach { item in
+            res += LocalizedStringKey(item.title.localizedForm).stringValue() + ", "
+        }
+        res = res.trimmingCharacters(in: .whitespacesAndNewlines)
+        res.removeLast()
+        return res
+    }
 }
 
 struct JuzRowView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             List {
-                JuzRowView(item: JuzModel(index: 1, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "2",type: "Makkiyah")]))
+                JuzRowView(item: JuzModel(index: 1, page:1, surahs:
+                                            [
+                                                Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "2",type: "Makkiyah"),
+                                                Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "2",type: "Makkiyah"),
+                                                Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "2",type: "Makkiyah")
+                                            ]))
                 JuzRowView(item: JuzModel(index: 1, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "2",type: "Makkiyah")]))
                 JuzRowView(item: JuzModel(index: 2, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "1",type: "Makkiyah")]))
                 JuzRowView(item: JuzModel(index: 5, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "9",type: "Makkiyah")]))
