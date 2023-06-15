@@ -14,12 +14,17 @@ struct LastPageView: View {
 
     var body: some View {
         let item = surahViewModel.getSurahByPage(routerManager.currentPDFPage)!
-        let status = bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue)
+        let status = bookmarksViewModel.getPages().contains(routerManager.currentPDFPage)
         Section("lastReadPage") {
-            ForEach(0...0, id: \.self) { number in
-                SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages,status: status)
+            ForEach(0...0, id: \.self) {_ in
+                SurahRowView(number: routerManager.currentPDFPage,
+                             name: item.title,
+                             type: item.type,
+                             verses: item.count,
+                             pageNumber: routerManager.currentPDFPage.toString,
+                             status: status)
                     .overlay {
-                        NavigationLink(value: Route.menu(item: item)) {
+                        NavigationLink(value: Route.menu(item: routerManager.currentPDFPage.toString)) {
                             Text(">>>")
                         }
                         .opacity(0)
