@@ -29,6 +29,7 @@ struct JuzRowView: View {
                         .font(.caption2)
                         .lineLimit(1)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(Color.gray)
                 }
                 Spacer()
             }.overlay {
