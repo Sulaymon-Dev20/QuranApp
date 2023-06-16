@@ -50,7 +50,7 @@ struct OnBoardingScreen: View {
                         .bold()
                         VStack(spacing: 15) {
                             let offset = -CGFloat(currentIndex) * size.width
-                            ResizableLottieView(onboardingItem: $item)
+                            ResizableLottieView(onboarding: $item.lottieView)
                                 .frame(height: size.width)
                                 .onAppear {
                                     if currentIndex == indexOf(item) {
@@ -132,10 +132,9 @@ struct OnBoardingScreen_Previews: PreviewProvider {
     }
 }
 
-struct ResizableLottieView: UIViewRepresentable {
-    
-    @Binding var onboardingItem: OnBoardingModel
-    
+struct ResizableLottieView: UIViewRepresentable {    
+    @Binding var onboarding: LottieAnimationView
+
     func makeUIView(context: Context) -> some UIView {
         let view = UIView()
         view.backgroundColor = .clear
@@ -148,7 +147,7 @@ struct ResizableLottieView: UIViewRepresentable {
     }
     
     func setupLottieView(_ to: UIView) {
-        let lottieView = onboardingItem.lottieView
+        let lottieView = self.onboarding
         lottieView.backgroundColor = .clear
         lottieView.translatesAutoresizingMaskIntoConstraints = false
         

@@ -68,6 +68,9 @@
 		CE7C854F2A03A7FA00192CC5 /* BookmarkRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C854E2A03A7FA00192CC5 /* BookmarkRowView.swift */; };
 		CE7C85512A03A88300192CC5 /* BookmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85502A03A88300192CC5 /* BookmarkListView.swift */; };
 		CE7C85572A03AFAB00192CC5 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85562A03AFAA00192CC5 /* LanguageViewModel.swift */; };
+		CE8D29CD2A3CED3D00CE06CA /* Commant.json in Resources */ = {isa = PBXBuildFile; fileRef = CE8D29CC2A3CED3D00CE06CA /* Commant.json */; };
+		CE8D29CF2A3CEF8900CE06CA /* Share.json in Resources */ = {isa = PBXBuildFile; fileRef = CE8D29CE2A3CEF8900CE06CA /* Share.json */; };
+		CE8D29D12A3CF2A200CE06CA /* NecessaryMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D29D02A3CF2A200CE06CA /* NecessaryMenuViewModel.swift */; };
 		CEC1A6802A1AD85300A10212 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A67F2A1AD85300A10212 /* LaunchScreenView.swift */; };
 		CEC1A6822A1ADA4100A10212 /* LaunchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A6812A1ADA4100A10212 /* LaunchScreenViewModel.swift */; };
 		CEC1A6872A1AE0BB00A10212 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A6862A1AE0BA00A10212 /* String.swift */; };
@@ -83,6 +86,8 @@
 		CEF71CDD2A1E450700979C5A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF71CDC2A1E450700979C5A /* LocationManager.swift */; };
 		CEF7754A2A1D53FF0048F8D2 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF775492A1D53FF0048F8D2 /* Route.swift */; };
 		CEF7EE142A3C2B29005D3821 /* DateTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7EE132A3C2B29005D3821 /* DateTimeView.swift */; };
+		CEF7EE1C2A3C7CCD005D3821 /* AlertCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7EE1B2A3C7CCD005D3821 /* AlertCustom.swift */; };
+		CEF7EE1E2A3C8F92005D3821 /* NecessaryMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7EE1D2A3C8F92005D3821 /* NecessaryMenuModel.swift */; };
 		CEFCA21E2A2CF007002B5F40 /* BadgeAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFCA21D2A2CF007002B5F40 /* BadgeAppManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -182,6 +187,9 @@
 		CE7C854E2A03A7FA00192CC5 /* BookmarkRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkRowView.swift; sourceTree = "<group>"; };
 		CE7C85502A03A88300192CC5 /* BookmarkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListView.swift; sourceTree = "<group>"; };
 		CE7C85562A03AFAA00192CC5 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
+		CE8D29CC2A3CED3D00CE06CA /* Commant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Commant.json; sourceTree = "<group>"; };
+		CE8D29CE2A3CEF8900CE06CA /* Share.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Share.json; sourceTree = "<group>"; };
+		CE8D29D02A3CF2A200CE06CA /* NecessaryMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NecessaryMenuViewModel.swift; sourceTree = "<group>"; };
 		CEC1A67C2A1AD66300A10212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CEC1A67F2A1AD85300A10212 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		CEC1A6812A1ADA4100A10212 /* LaunchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewModel.swift; sourceTree = "<group>"; };
@@ -198,6 +206,8 @@
 		CEF71CDC2A1E450700979C5A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		CEF775492A1D53FF0048F8D2 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		CEF7EE132A3C2B29005D3821 /* DateTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeView.swift; sourceTree = "<group>"; };
+		CEF7EE1B2A3C7CCD005D3821 /* AlertCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCustom.swift; sourceTree = "<group>"; };
+		CEF7EE1D2A3C8F92005D3821 /* NecessaryMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NecessaryMenuModel.swift; sourceTree = "<group>"; };
 		CEFCA21D2A2CF007002B5F40 /* BadgeAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAppManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -231,6 +241,8 @@
 		CE08879C2A23E35000FDE8B0 /* AnimationJsons */ = {
 			isa = PBXGroup;
 			children = (
+				CE8D29CE2A3CEF8900CE06CA /* Share.json */,
+				CE8D29CC2A3CED3D00CE06CA /* Commant.json */,
 				CE0887B02A24071000FDE8B0 /* Language.json */,
 				CE0887AE2A23FB8A00FDE8B0 /* Clock.json */,
 				CE0887A82A23F50800FDE8B0 /* Book.json */,
@@ -372,6 +384,7 @@
 				CEF775492A1D53FF0048F8D2 /* Route.swift */,
 				CE6F307D2A2BD4F5009534B6 /* Highlight.swift */,
 				CE6C3F8A2A326F0400CCA217 /* LocationModel.swift */,
+				CEF7EE1D2A3C8F92005D3821 /* NecessaryMenuModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -411,19 +424,14 @@
 		CE7C85362A03968100192CC5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				CE7C853A2A0396E600192CC5 /* PDFViewer.swift */,
-				CE7C853E2A03978300192CC5 /* PDFViewUI.swift */,
-				CE7C85442A0399A000192CC5 /* LanguageButtonView.swift */,
+				CEF7EE1A2A3C7C80005D3821 /* Alerts */,
+				CEF7EE192A3C7C3E005D3821 /* Swipes */,
+				CEF7EE182A3C7BF2005D3821 /* NavBar */,
+				CEF7EE172A3C7BE1005D3821 /* PDF */,
 				CE7C32BD2A1C328500B2F8E3 /* SheetView.swift */,
 				CEF640B92A1F8C7400FE7D17 /* PermissionDenied.swift */,
-				CE1B698A2A1FE7EA006FE3D1 /* AlertPermissions.swift */,
 				CED05B7C2A219D6100A0C4B5 /* ItemNotFoundView.swift */,
 				CED05B7E2A219DA500A0C4B5 /* ListEmptyView.swift */,
-				CE011AD22A290B5100D56334 /* NotificationSwipe.swift */,
-				CE011AD62A2923F200D56334 /* BookmarkSwipe.swift */,
-				CE011AD42A290BDC00D56334 /* ShareSwipe.swift */,
-				CE011AD82A2928B700D56334 /* SortButtonView.swift */,
-				CE5801D52A384C1000011370 /* NecessaryButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -436,6 +444,7 @@
 				CE7C852F2A03947C00192CC5 /* BookmarkViewModel.swift */,
 				CE7C85562A03AFAA00192CC5 /* LanguageViewModel.swift */,
 				CE7C32C12A1C3A1500B2F8E3 /* NotificatSurahViewModel.swift */,
+				CE8D29D02A3CF2A200CE06CA /* NecessaryMenuViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -479,6 +488,44 @@
 				CEF640BB2A1F929E00FE7D17 /* PrayTimeRowView.swift */,
 			);
 			path = PrayTime;
+			sourceTree = "<group>";
+		};
+		CEF7EE172A3C7BE1005D3821 /* PDF */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C853A2A0396E600192CC5 /* PDFViewer.swift */,
+				CE7C853E2A03978300192CC5 /* PDFViewUI.swift */,
+			);
+			path = PDF;
+			sourceTree = "<group>";
+		};
+		CEF7EE182A3C7BF2005D3821 /* NavBar */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C85442A0399A000192CC5 /* LanguageButtonView.swift */,
+				CE011AD82A2928B700D56334 /* SortButtonView.swift */,
+				CE5801D52A384C1000011370 /* NecessaryButton.swift */,
+			);
+			path = NavBar;
+			sourceTree = "<group>";
+		};
+		CEF7EE192A3C7C3E005D3821 /* Swipes */ = {
+			isa = PBXGroup;
+			children = (
+				CE011AD62A2923F200D56334 /* BookmarkSwipe.swift */,
+				CE011AD22A290B5100D56334 /* NotificationSwipe.swift */,
+				CE011AD42A290BDC00D56334 /* ShareSwipe.swift */,
+			);
+			path = Swipes;
+			sourceTree = "<group>";
+		};
+		CEF7EE1A2A3C7C80005D3821 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				CE1B698A2A1FE7EA006FE3D1 /* AlertPermissions.swift */,
+				CEF7EE1B2A3C7CCD005D3821 /* AlertCustom.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,6 +645,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE0887A92A23F50800FDE8B0 /* Book.json in Resources */,
+				CE8D29CD2A3CED3D00CE06CA /* Commant.json in Resources */,
 				CE0887A72A23F15400FDE8B0 /* Notification.json in Resources */,
 				CE7C84F42A03924300192CC5 /* Preview Assets.xcassets in Resources */,
 				CE0887AF2A23FB8A00FDE8B0 /* Clock.json in Resources */,
@@ -605,6 +653,7 @@
 				CE0887B12A24071000FDE8B0 /* Language.json in Resources */,
 				CE7C85182A03925E00192CC5 /* Localizable.strings in Resources */,
 				CE7C84F12A03924300192CC5 /* Assets.xcassets in Resources */,
+				CE8D29CF2A3CEF8900CE06CA /* Share.json in Resources */,
 				CE7C852B2A03942800192CC5 /* juz.json in Resources */,
 				CE7C852C2A03943D00192CC5 /* surah.json in Resources */,
 			);
@@ -641,7 +690,9 @@
 				CE7C85222A03934200192CC5 /* SurahModel.swift in Sources */,
 				CE7C85282A0393B500192CC5 /* SurahViewModel.swift in Sources */,
 				CE5801D42A38365300011370 /* LastPageView.swift in Sources */,
+				CEF7EE1E2A3C8F92005D3821 /* NecessaryMenuModel.swift in Sources */,
 				CEF7754A2A1D53FF0048F8D2 /* Route.swift in Sources */,
+				CE8D29D12A3CF2A200CE06CA /* NecessaryMenuViewModel.swift in Sources */,
 				CE6C3F8B2A326F0400CCA217 /* LocationModel.swift in Sources */,
 				CE7C32C22A1C3A1500B2F8E3 /* NotificatSurahViewModel.swift in Sources */,
 				CE011AD32A290B5100D56334 /* NotificationSwipe.swift in Sources */,
@@ -661,6 +712,7 @@
 				CEF7EE142A3C2B29005D3821 /* DateTimeView.swift in Sources */,
 				CE7C84ED2A03924200192CC5 /* QuranAppApp.swift in Sources */,
 				CEC1A6872A1AE0BB00A10212 /* String.swift in Sources */,
+				CEF7EE1C2A3C7CCD005D3821 /* AlertCustom.swift in Sources */,
 				CE7C85572A03AFAB00192CC5 /* LanguageViewModel.swift in Sources */,
 				CE7C85302A03947C00192CC5 /* BookmarkViewModel.swift in Sources */,
 				CE7C854B2A03A5C300192CC5 /* JuzRowView.swift in Sources */,

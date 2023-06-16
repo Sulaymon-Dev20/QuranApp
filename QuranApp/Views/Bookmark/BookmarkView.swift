@@ -11,19 +11,25 @@ struct BookmarkView: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var noficationsManager: NoficationsManager
     
+    @State var necessaryMenuModel: NecessaryMenuModel?
+    @State var showAlert:Bool = false
+
     var body: some View {
         NavigationStack(path: self.$routerManager.path) {
-            List {
-                LastPageView()
-                    .id(0)
-                BookmarkListView()
-                    .id(1)
-                NotificationView()
-                    .id(2)
-                PrayTimeRowView()
-                    .id(3)
-                ColorSchemeView()
-                    .id(4)
+            ZStack {
+                List {
+                    LastPageView()
+                        .id(0)
+                    BookmarkListView()
+                        .id(1)
+                    NotificationView()
+                        .id(2)
+                    PrayTimeRowView()
+                        .id(3)
+                    ColorSchemeView()
+                        .id(4)
+                }
+//                AlertCustom(showAlert: $showAlert, title: "asdf", message: "Asdf", icon: "Clock")
             }
             .onAppear {
 //                if badgeAppManager.count != 0 {

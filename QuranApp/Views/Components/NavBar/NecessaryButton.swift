@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct NecessaryButton: View {
-    @Environment (\.openURL) var openURL
     @EnvironmentObject var reviewsRequestManager: ReviewsRequestManager
     
     var body: some View {
         Menu {
             Button {
-                if let link = reviewsRequestManager.reviewLink {
-                    openURL(link)
-                }
             } label: {
                 Label("Add your commend", systemImage: "text.bubble")
+            }
+            Button {
+                 
+            } label: {
+                Label("Share with friends", systemImage: "globe.europe.africa")
             }
             Button {
                  
