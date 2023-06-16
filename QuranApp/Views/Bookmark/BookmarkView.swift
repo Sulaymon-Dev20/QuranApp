@@ -10,31 +10,25 @@ import SwiftUI
 struct BookmarkView: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var noficationsManager: NoficationsManager
-    @EnvironmentObject var badgeAppManager: BadgeAppManager
     
     var body: some View {
         NavigationStack(path: self.$routerManager.path) {
-            ScrollViewReader { proxy in
-                List {
-                    LastPageView()
-                        .id(0)
-                    BookmarkListView()
-                        .id(1)
-                    NotificationView()
-                        .id(2)
-                    PrayTimeRowView()
-                        .id(3)
-                    ColorSchemeView()
-                        .id(4)
-                }
-                .onAppear {
-                    if badgeAppManager.count != 0 {
-                        withAnimation(Animation.default.speed(0.5)) {
-                            proxy.scrollTo(3)
-                            badgeAppManager.setBadge(number: 0)
-                        }
-                    }
-                }
+            List {
+                LastPageView()
+                    .id(0)
+                BookmarkListView()
+                    .id(1)
+                NotificationView()
+                    .id(2)
+                PrayTimeRowView()
+                    .id(3)
+                ColorSchemeView()
+                    .id(4)
+            }
+            .onAppear {
+//                if badgeAppManager.count != 0 {
+//                    badgeAppManager.setBadge(number: 0)
+//                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("bookmarks")

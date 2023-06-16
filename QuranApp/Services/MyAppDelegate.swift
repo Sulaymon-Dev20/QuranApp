@@ -28,6 +28,7 @@ class MyAppDelegate: NSObject, UIApplicationDelegate, ObservableObject, UNUserNo
                 routerManager.pushDeepLink(to: url, list: app.surahViewModel.items)
             }
             app.badgeAppManager.minusBadge(number: 1)
+            app.badgeAppManager.update()
         }
     }
     

@@ -91,6 +91,7 @@ struct PrayTimeRowView: View {
                 })
                 .onChange(of: prayerTimeViewModel.isHanafi) { newValue in
                     prayerTimeViewModel.changeMashab(to: newValue)
+                    prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
                 }
                 .frame(width: 120, alignment: .trailing)
                 

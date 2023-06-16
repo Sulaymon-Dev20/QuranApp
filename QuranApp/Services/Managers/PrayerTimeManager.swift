@@ -67,12 +67,12 @@ class PrayerTimeManager: ObservableObject {
         self.isHanafi = value
     }
     
-    func changeMashab(to mashab: Madhab){
+    func changeMashab(to mashab: Madhab) {
         self.isHanafi = mashab == Madhab.hanafi
         saveStorage()
     }
 
-    func changeMashab(to isHanafi: Bool){
+    func changeMashab(to isHanafi: Bool) {
         self.isHanafi = isHanafi
         saveStorage()
     }

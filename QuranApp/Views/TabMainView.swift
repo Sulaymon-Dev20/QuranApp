@@ -10,7 +10,7 @@ import SwiftUI
 struct TabMainView: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var badgeAppManager: BadgeAppManager
-    
+        
     var body: some View {
         TabView(selection: $routerManager.tabValue) {
             SurahView()

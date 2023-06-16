@@ -42,10 +42,6 @@ struct QuranAppApp: App {
             .onAppear {
                 appDelegate.app = self
             }
-            .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
-                print("Active")
-                badgeAppManager.update()
-            }
             .preferredColorScheme(colorSchemeManager.getStatus())
             .onContinueUserActivity(CSSearchableItemActionType, perform: loadItem)
             .environmentObject(surahViewModel)
