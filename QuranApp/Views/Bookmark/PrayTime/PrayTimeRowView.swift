@@ -52,7 +52,7 @@ struct PrayTimeRowView: View {
                                 Spacer()
                                 if index == commingIndex {
                                     DateTimeView(time: item.time) {
-                                        prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
+                                        prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
                                     }
                                 }
                                 Text(item.time.clockString.convertedDigitsToLocale(languageViewModel.language))
@@ -93,6 +93,7 @@ struct PrayTimeRowView: View {
                     prayerTimeViewModel.changeMashab(to: newValue)
                 }
                 .frame(width: 120, alignment: .trailing)
+                
             }
         } footer: {
             Button {
