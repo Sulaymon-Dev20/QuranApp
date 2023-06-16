@@ -128,7 +128,7 @@ struct SheetView: View {
         }
         .onAppear {
             locationManager.getLocation()
-            prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
+            prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
         }
         .padding()
         .presentationDetents([.medium, .large])

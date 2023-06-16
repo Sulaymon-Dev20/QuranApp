@@ -16,10 +16,10 @@ class PrayerTimeManager: ObservableObject {
 
     init() {
         getValue()
-        getPrayTime(time: Date(), latitude: 0.0, longitude: 0.0)
+        updateTimes(time: Date(), latitude: 0.0, longitude: 0.0)
     }
 
-    func getPrayTime(time: Date, latitude lat: Double = 0 ,longitude long: Double = 0)  {
+    func updateTimes(time: Date, latitude lat: Double = 0 ,longitude long: Double = 0)  {
         let cal = Calendar(identifier: Calendar.Identifier.gregorian)
         let date = cal.dateComponents([.year, .month, .day], from: time)
         let coordinates = Coordinates(latitude: lat, longitude: long)

@@ -107,7 +107,7 @@ struct PrayTimeRowView: View {
         }
         .onAppear {
             locationManager.getLocation()
-            prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
+            prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
         }
         .sheet(isPresented: $showShare, content: {
             ActivityView(text: prayerTimeViewModel.shareText(lanuage: languageViewModel.language))
