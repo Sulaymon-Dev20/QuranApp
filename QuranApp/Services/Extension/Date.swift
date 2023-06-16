@@ -27,6 +27,12 @@ extension Date {
         dateformat.dateFormat = "HH:mm"
         return dateformat.string(from: self)
     }
+
+    public var fullTimeForm: String {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = "HH:mm:ss"
+        return dateformat.string(from: self)
+    }
     
     public var day: Int {
         return Calendar.current.component(.day, from: self)
@@ -48,5 +54,11 @@ extension Date {
         var component = Calendar.current.dateComponents(in: TimeZone.current, from: self)
         component.day = day
         self = Calendar.current.date(from: component)!
+    }
+
+    func diffTwoTime(from day: Date) -> Date {
+        let diffs = Calendar.current.dateComponents([.hour, .minute, .second], from: self, to: day)
+        let date = Calendar.current.date(from: diffs)!
+        return date
     }
 }

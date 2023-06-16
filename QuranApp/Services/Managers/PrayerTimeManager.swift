@@ -12,12 +12,14 @@ import SwiftUI
 class PrayerTimeManager: ObservableObject {
     let mashabValue: String = "mashab"
     @Published var isHanafi: Bool = true
+    @Published var prayTimes: [PrayTimeModel] = []
 
     init() {
         getValue()
+        getPrayTime(time: Date(), latitude: 0.0, longitude: 0.0)
     }
 
-    func getPrayTime(time: Date, latitude lat: Double = 0 ,longitude long: Double = 0) -> [PrayTimeModel] {
+    func getPrayTime(time: Date, latitude lat: Double = 0 ,longitude long: Double = 0)  {
         let cal = Calendar(identifier: Calendar.Identifier.gregorian)
         let date = cal.dateComponents([.year, .month, .day], from: time)
         let coordinates = Coordinates(latitude: lat, longitude: long)
@@ -36,21 +38,21 @@ class PrayerTimeManager: ObservableObject {
             res.append(PrayTimeModel(name: "maghrib", time: prayers.maghrib, shareText: LocalizedStringKey("maghrib \(prayers.maghrib)")))
             res.append(PrayTimeModel(name: "isha", time: prayers.isha, shareText: LocalizedStringKey("isha \(prayers.isha)")))
         }
-        return res
+        self.prayTimes = res
     }
     
-    func firstPrayTimeIndex(preyTimes items: [PrayTimeModel]) -> Int {
-        for (index,item) in items.reversed().enumerated() {
+    func firstPrayTimeIndex() -> Int {
+        for (index,item) in prayTimes.reversed().enumerated() {
             if item.time <= Date() {
-                return abs(index - items.count) - 1
+                return abs(index - prayTimes.count)
             }
         }
         return 0
     }
     
-    func shareText(_ items: [PrayTimeModel], lanuage:String) -> String {
+    func shareText(lanuage:String) -> String {
         var res:String = LocalizedStringKey("prayTimeByDate \(Date())").stringValue(argument: Date().dateForm.convertedDigitsToLocale(lanuage)) + "\n"
-        items.forEach { item in
+        prayTimes.forEach { item in
             res += item.shareText.stringValue(argument: item.time.timeForm.convertedDigitsToLocale(lanuage)) + "\n"
         }
         return res

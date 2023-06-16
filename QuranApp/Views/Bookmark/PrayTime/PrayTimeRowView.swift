@@ -30,9 +30,8 @@ struct PrayTimeRowView: View {
         let show = locationManager.checkLocationPermission()
         let loading = locationManager.loading
         let location = locationManager.location
-        let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
         Section {
-            let commingIndex = prayerTimeViewModel.firstPrayTimeIndex(preyTimes: data)
+            let commingIndex = prayerTimeViewModel.firstPrayTimeIndex()
             Menu {
                 if show && !loading {
                     Button {
@@ -44,13 +43,18 @@ struct PrayTimeRowView: View {
             } label: {
                 ZStack {
                     VStack {
-                        ForEach(Array(data.enumerated()), id: \.offset) { index, item in
+                        ForEach(Array(prayerTimeViewModel.prayTimes.enumerated()), id: \.offset) { index, item in
                             HStack {
                                 Image(systemName: prayerTimeViewModel.getIcon(time: item.name))
                                     .frame(width: 20, alignment: .center)
                                 Text(LocalizedStringKey(item.name.localizedForm))
                                     .bold()
                                 Spacer()
+                                if index == commingIndex {
+                                    DateTimeView(time: item.time) {
+                                        prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
+                                    }
+                                }
                                 Text(item.time.clockString.convertedDigitsToLocale(languageViewModel.language))
                                     .bold()
                                     .frame(width: 60, alignment: .center)
@@ -103,9 +107,10 @@ struct PrayTimeRowView: View {
         }
         .onAppear {
             locationManager.getLocation()
+            prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
         }
         .sheet(isPresented: $showShare, content: {
-            ActivityView(text: prayerTimeViewModel.shareText(data, lanuage: languageViewModel.language))
+            ActivityView(text: prayerTimeViewModel.shareText(lanuage: languageViewModel.language))
         })
     }
 }

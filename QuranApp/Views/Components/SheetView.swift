@@ -24,7 +24,7 @@ struct SheetView: View {
     
     var body: some View {
         let location = locationManager.location
-        let data = prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
+        let data = prayerTimeViewModel.prayTimes
         let show = locationManager.checkLocationPermission()
         let loading = locationManager.loading
         VStack {
@@ -60,7 +60,7 @@ struct SheetView: View {
                         }
                     })
                     .onAppear {
-//                        date = data[0].time
+                        date = data[0].time
                     }
                     .padding(.bottom,20)
                     .pickerStyle(SegmentedPickerStyle())
@@ -128,6 +128,7 @@ struct SheetView: View {
         }
         .onAppear {
             locationManager.getLocation()
+            prayerTimeViewModel.getPrayTime(time: Date(), latitude: location.lat, longitude: location.lang)
         }
         .padding()
         .presentationDetents([.medium, .large])

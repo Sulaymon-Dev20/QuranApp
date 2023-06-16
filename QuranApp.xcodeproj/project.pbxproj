@@ -28,7 +28,6 @@
 		CE5468692A20BDFA00273458 /* ReviewsRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */; };
 		CE5801D42A38365300011370 /* LastPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5801D32A38365300011370 /* LastPageView.swift */; };
 		CE5801D62A384C1000011370 /* NecessaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5801D52A384C1000011370 /* NecessaryButton.swift */; };
-		CE621C7E2A3B43E8005B4EE1 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE621C7D2A3B43E8005B4EE1 /* Test.swift */; };
 		CE6C3F8B2A326F0400CCA217 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C3F8A2A326F0400CCA217 /* LocationModel.swift */; };
 		CE6F307E2A2BD4F5009534B6 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F307D2A2BD4F5009534B6 /* Highlight.swift */; };
 		CE7935DD2A1D74E300B89647 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = CE7935DC2A1D74E300B89647 /* Adhan */; };
@@ -83,6 +82,7 @@
 		CEF640BE2A1F978100FE7D17 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF640BD2A1F978100FE7D17 /* NotificationView.swift */; };
 		CEF71CDD2A1E450700979C5A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF71CDC2A1E450700979C5A /* LocationManager.swift */; };
 		CEF7754A2A1D53FF0048F8D2 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF775492A1D53FF0048F8D2 /* Route.swift */; };
+		CEF7EE142A3C2B29005D3821 /* DateTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7EE132A3C2B29005D3821 /* DateTimeView.swift */; };
 		CEFCA21E2A2CF007002B5F40 /* BadgeAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFCA21D2A2CF007002B5F40 /* BadgeAppManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -137,7 +137,6 @@
 		CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsRequestManager.swift; sourceTree = "<group>"; };
 		CE5801D32A38365300011370 /* LastPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPageView.swift; sourceTree = "<group>"; };
 		CE5801D52A384C1000011370 /* NecessaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NecessaryButton.swift; sourceTree = "<group>"; };
-		CE621C7D2A3B43E8005B4EE1 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		CE6C3F8A2A326F0400CCA217 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		CE6F307D2A2BD4F5009534B6 /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		CE7935E02A1D83C900B89647 /* PrayerTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimeManager.swift; sourceTree = "<group>"; };
@@ -198,6 +197,7 @@
 		CEF640BD2A1F978100FE7D17 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		CEF71CDC2A1E450700979C5A /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		CEF775492A1D53FF0048F8D2 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		CEF7EE132A3C2B29005D3821 /* DateTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeView.swift; sourceTree = "<group>"; };
 		CEFCA21D2A2CF007002B5F40 /* BadgeAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAppManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -424,7 +424,6 @@
 				CE011AD42A290BDC00D56334 /* ShareSwipe.swift */,
 				CE011AD82A2928B700D56334 /* SortButtonView.swift */,
 				CE5801D52A384C1000011370 /* NecessaryButton.swift */,
-				CE621C7D2A3B43E8005B4EE1 /* Test.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -476,6 +475,7 @@
 		CED05B792A21989900A0C4B5 /* PrayTime */ = {
 			isa = PBXGroup;
 			children = (
+				CEF7EE132A3C2B29005D3821 /* DateTimeView.swift */,
 				CEF640BB2A1F929E00FE7D17 /* PrayTimeRowView.swift */,
 			);
 			path = PrayTime;
@@ -658,6 +658,7 @@
 				CE1B698B2A1FE7EA006FE3D1 /* AlertPermissions.swift in Sources */,
 				CED05B7F2A219DA500A0C4B5 /* ListEmptyView.swift in Sources */,
 				CE44A8FB2A1E6B4A002EE89C /* URL.swift in Sources */,
+				CEF7EE142A3C2B29005D3821 /* DateTimeView.swift in Sources */,
 				CE7C84ED2A03924200192CC5 /* QuranAppApp.swift in Sources */,
 				CEC1A6872A1AE0BB00A10212 /* String.swift in Sources */,
 				CE7C85572A03AFAB00192CC5 /* LanguageViewModel.swift in Sources */,
@@ -670,7 +671,6 @@
 				CEF71CDD2A1E450700979C5A /* LocationManager.swift in Sources */,
 				CE7C854F2A03A7FA00192CC5 /* BookmarkRowView.swift in Sources */,
 				CE7C85392A0396CB00192CC5 /* Bundle.swift in Sources */,
-				CE621C7E2A3B43E8005B4EE1 /* Test.swift in Sources */,
 				CE7C85472A039B0C00192CC5 /* JuzView.swift in Sources */,
 				CE35B35E2A215B7000499114 /* View.swift in Sources */,
 				CE7C85242A03936300192CC5 /* JuzModel.swift in Sources */,

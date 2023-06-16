@@ -113,6 +113,21 @@
                   endingLineNumber = "62"
                   offsetFromSymbolStart = "52">
                </Location>
+               <Location
+                  uuid = "EB26E0BD-6B58-44DB-9EFE-219003B46282 - eef388396fb7a22c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "QuranApp.NotificatSurahViewModel.changeActive(id: Swift.String, time: Foundation.Date, active: Swift.Bool) -&gt; ()"
+                  moduleName = "QuranApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user/Desktop/IOS%20project/QuranApp/QuranApp/Services/ViewModels/NotificatSurahViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "62"
+                  endingLineNumber = "62"
+                  offsetFromSymbolStart = "356">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -130,6 +145,22 @@
             endingLineNumber = "61"
             landmarkName = "removeNotication(list:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87E3C63D-F513-4FFC-9A19-D7DC919C80C3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QuranApp/Views/Components/SheetView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
