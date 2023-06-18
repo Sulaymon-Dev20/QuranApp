@@ -9,20 +9,22 @@ import SwiftUI
 
 struct NecessaryButton: View {
     @EnvironmentObject var reviewsRequestManager: ReviewsRequestManager
+    @EnvironmentObject var necessaryMenuViewModel: NecessaryMenuViewModel
     
     var body: some View {
         Menu {
             Button {
+                necessaryMenuViewModel.updateItem(menuType: .command)
             } label: {
                 Label("Add your commend", systemImage: "text.bubble")
             }
             Button {
-                 
+                necessaryMenuViewModel.updateItem(menuType: .share)
             } label: {
                 Label("Share with friends", systemImage: "globe.europe.africa")
             }
             Button {
-                 
+                necessaryMenuViewModel.updateItem(menuType: .donate)
             } label: {
                 Label("Donation", systemImage: "dollarsign")
             }
@@ -44,5 +46,6 @@ struct NecessaryButton_Previews: PreviewProvider {
                 }
         }
         .environmentObject(ReviewsRequestManager())
+        .environmentObject(NecessaryMenuViewModel())
     }
 }

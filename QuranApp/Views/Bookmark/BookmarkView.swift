@@ -10,10 +10,8 @@ import SwiftUI
 struct BookmarkView: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var noficationsManager: NoficationsManager
+    @EnvironmentObject var necessaryMenuViewModel: NecessaryMenuViewModel
     
-    @State var necessaryMenuModel: NecessaryMenuModel?
-    @State var showAlert:Bool = false
-
     var body: some View {
         NavigationStack(path: self.$routerManager.path) {
             ZStack {
@@ -29,12 +27,11 @@ struct BookmarkView: View {
                     ColorSchemeView()
                         .id(4)
                 }
-//                AlertCustom(showAlert: $showAlert, title: "asdf", message: "Asdf", icon: "Clock")
             }
             .onAppear {
-//                if badgeAppManager.count != 0 {
-//                    badgeAppManager.setBadge(number: 0)
-//                }
+                //                if badgeAppManager.count != 0 {
+                //                    badgeAppManager.setBadge(number: 0)
+                //                }
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("bookmarks")
@@ -50,9 +47,13 @@ struct BookmarkView: View {
             .navigationDestination(for: Route.self) {
                 routerManager.navigationDestination($0)
             }
+            //            .edgesIgnoringSafeArea(.all)
+            .task {
+                noficationsManager.checkNotificationPermission()
+            }
         }
-        .task {
-            noficationsManager.checkNotificationPermission()
+        .sheet(isPresented: $necessaryMenuViewModel.showModel) {
+            AlertCustom()
         }
     }
 }
@@ -72,5 +73,6 @@ struct BookmarkView_Previews: PreviewProvider {
             .environmentObject(BadgeAppManager())
             .environmentObject(ColorSchemeManager())
             .environmentObject(SurahViewModel())
+            .environmentObject(NecessaryMenuViewModel())
     }
 }

@@ -9,6 +9,8 @@ import SwiftUI
 import Lottie
 
 struct OnBoardingScreen: View {
+    @EnvironmentObject var reviewsManager: ReviewsRequestManager
+
     @State var onboardingItems: [OnBoardingModel] = [
         .init(title: "Xorijiy Tillar",
               subTitle: "Iltimos o`zingizga qulay bo`lishi uchun tilni tanlang",
@@ -27,7 +29,6 @@ struct OnBoardingScreen: View {
     ]
     
     @State var currentIndex: Int = 0
-    @EnvironmentObject var reviewsManager: ReviewsRequestManager
     
     var body: some View {
         GeometryReader {

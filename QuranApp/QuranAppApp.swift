@@ -26,6 +26,7 @@ struct QuranAppApp: App {
     @StateObject var reviewsManager: ReviewsRequestManager = ReviewsRequestManager()
     @StateObject var badgeAppManager: BadgeAppManager = BadgeAppManager()
     @StateObject var colorSchemeManager: ColorSchemeManager = ColorSchemeManager()
+    @StateObject var necessaryMenuViewModel: NecessaryMenuViewModel = NecessaryMenuViewModel()
 
     var body: some Scene {
         WindowGroup {
@@ -57,6 +58,7 @@ struct QuranAppApp: App {
             .environmentObject(reviewsManager)
             .environmentObject(badgeAppManager)
             .environmentObject(colorSchemeManager)
+            .environmentObject(necessaryMenuViewModel)
             .environment(\.locale, Locale.init(identifier: language.language))
         }
     }
