@@ -7,8 +7,9 @@
 
 import Foundation
 import Lottie
+import SwiftUI
 
-struct NecessaryMenuModel: Identifiable, Equatable {
+struct NecessaryMenuModel {
     var id: UUID = .init()
     var title: String
     var subTitle: String?
@@ -16,5 +17,5 @@ struct NecessaryMenuModel: Identifiable, Equatable {
     var lottieView: LottieAnimationView = .init()
     var isFill: Bool = false
     var loop: Bool = false
-    var link: URL
+    var action: () -> Void
 }
