@@ -54,7 +54,7 @@ struct PrayTimeRowView: View {
                 }
                 .opacity(show ? 0 : 1)
                 ProgressView()
-                    .opacity(loading ? 1 : 0)
+                    .opacity(show && loading ? 1 : 0)
                 AlertPermissions(showAlert: $showAlert, title: "locationPermission", message: "allowLocationToUsePlease")
             }
             .contextMenu {
