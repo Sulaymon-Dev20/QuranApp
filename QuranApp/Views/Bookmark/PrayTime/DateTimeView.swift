@@ -15,7 +15,7 @@ struct DateTimeView: View {
     @State var viewTime:Date = Date()
 
     var body: some View {
-        Text("\(viewTime.fullTimeForm)")
+        Text(viewTime.fullTimeForm.convertedDigitsToLocale())
             .font(.footnote)
             .frame(width: 90)
             .onReceive(timer, perform: { _ in

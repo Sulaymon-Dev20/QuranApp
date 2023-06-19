@@ -41,7 +41,7 @@ extension String {
         components(separatedBy: characterSet).joined()
     }
 
-    func convertedDigitsToLocale(_ lanuage:String) -> String {
+    func convertedDigitsToLocale(_ lanuage:String = UserDefaults.standard.string(forKey: "language") ?? "EN") -> String {
         let digits = Set(clippingCharacters(in: CharacterSet.decimalDigits.inverted))
         guard !digits.isEmpty else { return self }
 
