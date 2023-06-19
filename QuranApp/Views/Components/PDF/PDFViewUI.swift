@@ -6,6 +6,10 @@
 //
 
 import SwiftUI
+import StoreKit
+import CoreSpotlight
+import MobileCoreServices
+
 
 struct PDFViewUI: View {
     
@@ -13,7 +17,9 @@ struct PDFViewUI: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var surahViewModel: SurahViewModel
     @EnvironmentObject var juzViewModel: JuzViewModel
-
+    @EnvironmentObject var reviewsManager: ReviewsRequestManager
+    @Environment(\.requestReview) var requestReview: RequestReviewAction
+    
     @Environment(\.dismiss) var dismiss
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
@@ -68,6 +74,9 @@ struct PDFViewUI: View {
             }
             .onAppear {
                 routerManager.tabBarHide(status: true)
+                if reviewsManager.canAskReview(increaseNum: true) {
+                    requestReview()
+                }
             }
     }
 }
@@ -82,6 +91,7 @@ struct PDFViewUI_Previews: PreviewProvider {
         .environmentObject(RouterManager())
         .environmentObject(SurahViewModel())
         .environmentObject(JuzViewModel())
+        .environmentObject(ReviewsRequestManager())
         .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

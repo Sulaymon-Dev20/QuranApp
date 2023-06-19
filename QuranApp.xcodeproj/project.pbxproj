@@ -30,6 +30,7 @@
 		CE5801D62A384C1000011370 /* NecessaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5801D52A384C1000011370 /* NecessaryButton.swift */; };
 		CE6C3F8B2A326F0400CCA217 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6C3F8A2A326F0400CCA217 /* LocationModel.swift */; };
 		CE6EFC392A40399300455515 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EFC382A40399300455515 /* Color.swift */; };
+		CE6EFC3B2A40419700455515 /* ResizableLottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6EFC3A2A40419700455515 /* ResizableLottieView.swift */; };
 		CE6F307E2A2BD4F5009534B6 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F307D2A2BD4F5009534B6 /* Highlight.swift */; };
 		CE7935DD2A1D74E300B89647 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = CE7935DC2A1D74E300B89647 /* Adhan */; };
 		CE7935E12A1D83C900B89647 /* PrayerTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7935E02A1D83C900B89647 /* PrayerTimeManager.swift */; };
@@ -145,6 +146,7 @@
 		CE5801D52A384C1000011370 /* NecessaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NecessaryButton.swift; sourceTree = "<group>"; };
 		CE6C3F8A2A326F0400CCA217 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		CE6EFC382A40399300455515 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		CE6EFC3A2A40419700455515 /* ResizableLottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableLottieView.swift; sourceTree = "<group>"; };
 		CE6F307D2A2BD4F5009534B6 /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		CE7935E02A1D83C900B89647 /* PrayerTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimeManager.swift; sourceTree = "<group>"; };
 		CE7935E22A1D85F400B89647 /* PrayTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayTimeModel.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 				CEF640B92A1F8C7400FE7D17 /* PermissionDenied.swift */,
 				CED05B7C2A219D6100A0C4B5 /* ItemNotFoundView.swift */,
 				CED05B7E2A219DA500A0C4B5 /* ListEmptyView.swift */,
+				CE6EFC3A2A40419700455515 /* ResizableLottieView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				CE7C85572A03AFAB00192CC5 /* LanguageViewModel.swift in Sources */,
 				CE7C85302A03947C00192CC5 /* BookmarkViewModel.swift in Sources */,
 				CE6EFC392A40399300455515 /* Color.swift in Sources */,
+				CE6EFC3B2A40419700455515 /* ResizableLottieView.swift in Sources */,
 				CE7C854B2A03A5C300192CC5 /* JuzRowView.swift in Sources */,
 				CE011AD72A2923F200D56334 /* BookmarkSwipe.swift in Sources */,
 				CE0887A52A23E93600FDE8B0 /* OnBoardingScreen.swift in Sources */,
