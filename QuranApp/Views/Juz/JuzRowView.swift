@@ -50,7 +50,7 @@ struct JuzRowView: View {
             } label: {
                 Image(systemName: "list.dash")
                     .font(.title2)
-                    .frame(width: 30, height: 30)
+                    .frame(maxHeight: .infinity)
             }
         }
     }
