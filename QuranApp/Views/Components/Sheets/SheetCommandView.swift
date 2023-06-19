@@ -62,7 +62,7 @@ struct SheetCommandView: View {
                 }
         )
         .onAppear {
-            animation.play(toProgress: 1, loopMode: .loop)
+            animation.play(toProgress: 1, loopMode: .playOnce)
         }
     }
 }
