@@ -18,10 +18,9 @@ struct PDFViewUI: View {
     @EnvironmentObject var surahViewModel: SurahViewModel
     @EnvironmentObject var juzViewModel: JuzViewModel
     @EnvironmentObject var reviewsManager: ReviewsRequestManager
-    @Environment(\.requestReview) var requestReview: RequestReviewAction
     
+    @Environment(\.requestReview) var requestReview: RequestReviewAction
     @Environment(\.dismiss) var dismiss
-    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     @State var showTogBar: Bool = false
     
