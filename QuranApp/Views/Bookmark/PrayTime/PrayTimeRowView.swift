@@ -6,17 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
-
-struct ActivityView: UIViewControllerRepresentable {
-    let text: String
-    
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityView>) -> UIActivityViewController {
-        return UIActivityViewController(activityItems: [text], applicationActivities: nil)
-    }
-    
-    func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityView>) {}
-}
 
 struct PrayTimeRowView: View {
     @EnvironmentObject var prayerTimeViewModel: PrayerTimeManager
@@ -24,7 +13,6 @@ struct PrayTimeRowView: View {
     @EnvironmentObject var languageViewModel: LanguageViewModel
     
     @State var showAlert: Bool = false
-    @State var showShare: Bool = false
     
     var body: some View {
         let show = locationManager.checkLocationPermission()
@@ -71,9 +59,7 @@ struct PrayTimeRowView: View {
             }
             .contextMenu {
                 if show && !loading {
-                    Button {
-                        showShare = true
-                    } label: {
+                    ShareLink(item: prayerTimeViewModel.shareText(lanuage: languageViewModel.language)) {
                         Label("shareButton", systemImage: "square.and.arrow.up")
                     }
                 }
@@ -109,9 +95,6 @@ struct PrayTimeRowView: View {
             locationManager.getLocation()
             prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
         }
-        .sheet(isPresented: $showShare, content: {
-            ActivityView(text: prayerTimeViewModel.shareText(lanuage: languageViewModel.language))
-        })
     }
 }
 
