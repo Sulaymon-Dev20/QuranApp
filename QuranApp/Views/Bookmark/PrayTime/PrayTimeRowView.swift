@@ -10,11 +10,11 @@ import UIKit
 
 struct ActivityView: UIViewControllerRepresentable {
     let text: String
-
+    
     func makeUIViewController(context: UIViewControllerRepresentableContext<ActivityView>) -> UIActivityViewController {
         return UIActivityViewController(activityItems: [text], applicationActivities: nil)
     }
-
+    
     func updateUIViewController(_ uiViewController: UIActivityViewController, context: UIViewControllerRepresentableContext<ActivityView>) {}
 }
 
@@ -22,7 +22,7 @@ struct PrayTimeRowView: View {
     @EnvironmentObject var prayerTimeViewModel: PrayerTimeManager
     @EnvironmentObject var locationManager: LocationManager
     @EnvironmentObject var languageViewModel: LanguageViewModel
-
+    
     @State var showAlert: Bool = false
     @State var showShare: Bool = false
     
@@ -32,51 +32,50 @@ struct PrayTimeRowView: View {
         let location = locationManager.location
         Section {
             let commingIndex = prayerTimeViewModel.firstPrayTimeIndex()
-            Menu {
+            ZStack {
+                VStack {
+                    ForEach(Array(prayerTimeViewModel.prayTimes.enumerated()), id: \.offset) { index, item in
+                        HStack {
+                            Image(systemName: prayerTimeViewModel.getIcon(time: item.name))
+                                .frame(width: 20, alignment: .center)
+                            Text(LocalizedStringKey(item.name.localizedForm))
+                                .bold()
+                            Spacer()
+                            if index == commingIndex {
+                                DateTimeView(time: item.time) {
+                                    prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
+                                }
+                            }
+                            Text(item.time.clockString.convertedDigitsToLocale(languageViewModel.language))
+                                .bold()
+                                .frame(width: 60, alignment: .center)
+                        }
+                        .foregroundColor(index == commingIndex ? Color.blue : Color.primary)
+                        .padding(.vertical, 5)
+                    }
+                }
+                .blur(radius: show && !loading ? 0 : 8)
+                Button {
+                    if !show {
+                        showAlert = true
+                    }
+                    locationManager.getLocation()
+                } label: {
+                    PermissionDenied(img: "paperplane.circle.fill", text: "locationPermissionDenied")
+                        .frame(maxWidth: .infinity)
+                }
+                .opacity(show ? 0 : 1)
+                ProgressView()
+                    .opacity(loading ? 1 : 0)
+                AlertPermissions(showAlert: $showAlert, title: "locationPermission", message: "allowLocationToUsePlease")
+            }
+            .contextMenu {
                 if show && !loading {
                     Button {
                         showShare = true
                     } label: {
                         Label("shareButton", systemImage: "square.and.arrow.up")
                     }
-                }
-            } label: {
-                ZStack {
-                    VStack {
-                        ForEach(Array(prayerTimeViewModel.prayTimes.enumerated()), id: \.offset) { index, item in
-                            HStack {
-                                Image(systemName: prayerTimeViewModel.getIcon(time: item.name))
-                                    .frame(width: 20, alignment: .center)
-                                Text(LocalizedStringKey(item.name.localizedForm))
-                                    .bold()
-                                Spacer()
-                                if index == commingIndex {
-                                    DateTimeView(time: item.time) {
-                                        prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
-                                    }
-                                }
-                                Text(item.time.clockString.convertedDigitsToLocale(languageViewModel.language))
-                                    .bold()
-                                    .frame(width: 60, alignment: .center)
-                            }
-                            .foregroundColor(index == commingIndex ? Color.blue : Color.primary)
-                            .padding(.vertical, 5)
-                        }
-                    }
-                    .blur(radius: show && !loading ? 0 : 8)
-                    Button {
-                        if !show {
-                            showAlert = true
-                        }
-                        locationManager.getLocation()
-                    } label: {
-                        PermissionDenied(img: "paperplane.circle.fill", text: "locationPermissionDenied")
-                            .frame(maxWidth: .infinity)
-                    }
-                    .opacity(show ? 0 : 1)
-                    ProgressView()
-                        .opacity(loading ? 1 : 0)
-                    AlertPermissions(showAlert: $showAlert, title: "locationPermission", message: "allowLocationToUsePlease")
                 }
             }
         } header: {
@@ -94,7 +93,6 @@ struct PrayTimeRowView: View {
                     prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
                 }
                 .frame(width: 120, alignment: .trailing)
-                
             }
         } footer: {
             Button {

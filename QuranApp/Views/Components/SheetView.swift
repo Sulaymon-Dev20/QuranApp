@@ -91,7 +91,7 @@ struct SheetView: View {
             AlertPermissions(showAlert: $showAlert, title: "locationPermission", message: "allowLocationToUsePlease")
             Toggle("everyDay", isOn: $everyDay)
             Spacer()
-            HStack{
+            HStack {
                 Button {
                     dismiss()
                 } label: {

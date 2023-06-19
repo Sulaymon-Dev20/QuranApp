@@ -12,6 +12,7 @@ import CoreSpotlight
 struct QuranAppApp: App {
     
     @UIApplicationDelegateAdaptor private var appDelegate: MyAppDelegate
+    @Environment(\.colorScheme) var colorScheme
     
     @StateObject var launchScreenViewModel: LaunchScreenViewModel = LaunchScreenViewModel()
     @StateObject var surahViewModel: SurahViewModel = SurahViewModel()
@@ -43,7 +44,8 @@ struct QuranAppApp: App {
             .onAppear {
                 appDelegate.app = self
             }
-            .preferredColorScheme(colorSchemeManager.getStatus())
+            .environment(\.colorScheme, colorSchemeManager.getStatus() ?? colorScheme)
+//            .preferredColorScheme(colorSchemeManager.getStatus())
             .onContinueUserActivity(CSSearchableItemActionType, perform: loadItem)
             .environmentObject(surahViewModel)
             .environmentObject(launchScreenViewModel)
