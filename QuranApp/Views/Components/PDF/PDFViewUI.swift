@@ -10,7 +10,6 @@ import StoreKit
 import CoreSpotlight
 import MobileCoreServices
 
-
 struct PDFViewUI: View {
     
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
@@ -73,9 +72,7 @@ struct PDFViewUI: View {
             }
             .onAppear {
                 routerManager.tabBarHide(status: true)
-                if reviewsManager.canAskReview(increaseNum: true) {
-                    requestReview()
-                }
+                reviewsManager.increase()
             }
     }
 }

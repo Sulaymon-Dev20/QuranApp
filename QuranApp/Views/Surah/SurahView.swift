@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import StoreKit
+import CoreSpotlight
+import MobileCoreServices
 
 struct SurahView: View {
     @EnvironmentObject var datas: SurahViewModel
     @EnvironmentObject var routeManager: RouterManager
-    
+    @EnvironmentObject var reviewsManager: ReviewsRequestManager
+    @Environment(\.requestReview) var requestReview: RequestReviewAction
+
     @State var searchText: String = ""
     @State var sort: Bool = false
     
@@ -32,6 +37,9 @@ struct SurahView: View {
                 .navigationDestination(for: Route.self) {
                     routeManager.navigationDestination($0)
                 }
+        }
+        .onAppear {
+//            requestReview()
         }
         .onDisappear {
             searchText = ""

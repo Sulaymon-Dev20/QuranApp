@@ -1,37 +1,40 @@
 //
-//  AlertCustom.swift
+//  SheetCommandView.swift
 //  QuranApp
 //
-//  Created by Sulaymon on 16/06/23.
+//  Created by Sulaymon on 20/06/23.
 //
 
 import SwiftUI
 import Lottie
 
-struct AlertCustom: View {
-    @EnvironmentObject var necessaryMenuViewModel: NecessaryMenuViewModel
-//    @Environment (\.openURL) var openURL
+struct SheetCommandView: View {
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var reviewsRequestManager: ReviewsRequestManager
+    
+    @State private var animation:LottieAnimationView = LottieAnimationView(name: "Commant", bundle: .main)
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .trailing, vertical: .center)) {
             VStack {
-                ResizableLottieView(onboarding: $necessaryMenuViewModel.item.lottieView)
-                    .aspectRatio(contentMode: necessaryMenuViewModel.item.isFill ? .fill : .fit)
+                ResizableLottieView(onboarding: $animation)
+                    .aspectRatio(contentMode: .fill)
                     .frame(height: 200)
-                Text(necessaryMenuViewModel.item.title)
+                Text("Commandlar")
                     .multilineTextAlignment(.center)
                     .frame(width: 300)
                     .bold()
                     .font(.title)
-                if let subTitle = necessaryMenuViewModel.item.subTitle {
-                    Text(subTitle)
-                        .multilineTextAlignment(.center)
-                        .font(.callout)
-                }
+                Text("subTitle")
+                    .multilineTextAlignment(.center)
+                    .font(.callout)
                 Button {
-                    necessaryMenuViewModel.item.action()
+                    if let link = reviewsRequestManager.reviewLink {
+                        UIApplication.shared.open(link, options: [:])
+                    }
+                    dismiss()
                 } label: {
-                    Text(necessaryMenuViewModel.item.button)
+                    Text("share")
                         .font(.title2)
                         .foregroundColor(Color.white)
                         .padding(.horizontal, 20)
@@ -55,20 +58,18 @@ struct AlertCustom: View {
             Color.primary.opacity(0.15)
                 .edgesIgnoringSafeArea(.all)
                 .onTapGesture {
-                    necessaryMenuViewModel.showModel = false
+                    dismiss()
                 }
         )
         .onAppear {
-            necessaryMenuViewModel.item.lottieView.play(toProgress: 1, loopMode: necessaryMenuViewModel.item.loop ? .loop : .playOnce)
+            animation.play(toProgress: 1, loopMode: .loop)
         }
     }
 }
 
-struct AlertCustom_Previews: PreviewProvider {
+struct SheetCommandView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            AlertCustom()
-        }
-        .environmentObject(NecessaryMenuViewModel())
+        SheetCommandView()
+            .environmentObject(ReviewsRequestManager())
     }
 }

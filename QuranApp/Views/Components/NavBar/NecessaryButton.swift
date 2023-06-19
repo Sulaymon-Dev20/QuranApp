@@ -14,21 +14,15 @@ struct NecessaryButton: View {
     var body: some View {
         Menu {
             Button {
-                necessaryMenuViewModel.updateItem(menuType: .command)
+                necessaryMenuViewModel.updateStatus(.command)
             } label: {
                 Label("Add your commend", systemImage: "text.bubble")
             }
             Button {
-                necessaryMenuViewModel.updateItem(menuType: .share)
+                necessaryMenuViewModel.updateStatus(.share)
             } label: {
                 Label("Share with friends", systemImage: "globe.europe.africa")
             }
-            Button {
-                necessaryMenuViewModel.updateItem(menuType: .donate)
-            } label: {
-                Label("Donation", systemImage: "dollarsign")
-            }
-            .disabled(true)
         } label: {
             Image(systemName: "list.bullet")
         }

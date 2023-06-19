@@ -53,7 +53,7 @@ struct BookmarkView: View {
             }
         }
         .sheet(isPresented: $necessaryMenuViewModel.showModel) {
-            AlertCustom()
+            necessaryMenuViewModel.sheetDestination()
         }
     }
 }
