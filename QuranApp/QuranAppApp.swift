@@ -44,8 +44,8 @@ struct QuranAppApp: App {
             .onAppear {
                 appDelegate.app = self
             }
-            .environment(\.colorScheme, colorSchemeManager.getStatus() ?? colorScheme)
-//            .preferredColorScheme(colorSchemeManager.getStatus())
+//            .environment(\.colorScheme, colorSchemeManager.getStatus() ?? colorScheme)
+            .preferredColorScheme(colorSchemeManager.getStatus())
             .onContinueUserActivity(CSSearchableItemActionType, perform: loadItem)
             .environmentObject(surahViewModel)
             .environmentObject(launchScreenViewModel)

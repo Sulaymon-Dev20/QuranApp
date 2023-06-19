@@ -61,7 +61,7 @@ struct SheetView: View {
                         }
                     })
                     .onAppear {
-                        date = data[0].time
+//                        date = data[0].time
                     }
                     .padding(.bottom,20)
                     .pickerStyle(SegmentedPickerStyle())

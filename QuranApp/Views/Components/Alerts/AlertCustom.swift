@@ -10,7 +10,7 @@ import Lottie
 
 struct AlertCustom: View {
     @EnvironmentObject var necessaryMenuViewModel: NecessaryMenuViewModel
-    @Environment (\.openURL) var openURL
+//    @Environment (\.openURL) var openURL
     
     var body: some View {
         ZStack(alignment: Alignment(horizontal: .trailing, vertical: .center)) {
@@ -45,7 +45,7 @@ struct AlertCustom: View {
             .padding(.horizontal, 30)
             .background(
                 Rectangle()
-                    .foregroundColor(Color(red: 235, green: 235, blue: 235))
+                    .foregroundColor(Color.dynamicColor)
             )
             .cornerRadius(25)
         }
