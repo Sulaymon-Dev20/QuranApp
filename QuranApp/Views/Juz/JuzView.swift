@@ -10,33 +10,18 @@ import SwiftUI
 struct JuzView: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var datas: JuzViewModel
-    
-    @State var sort: Bool = false
-    
+        
     var body: some View {
-        NavigationStack(path: self.$routerManager.path) {
-            ZStack {
-                List {
-                    ForEach(sort ? datas.items.reversed() : datas.items, id: \.index) { item in
-                        JuzRowView(item: item)
-                    }
-                }
-                .animation(.linear(duration: 3.0), value: sort)
+        List {
+            ForEach(routerManager.sort ? datas.items.reversed() : datas.items, id: \.index) { item in
+                JuzRowView(item: item)
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("juz")
-            .toolbar(routerManager.tabBarHideStatus ? .hidden : .visible, for: .tabBar)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    LanguageButtonView()
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    SortButtonView(sort: $sort)
-                }
-            }
-            .navigationDestination(for: Route.self) {
-                routerManager.navigationDestination($0)
-            }
+        }
+        .animation(.linear(duration: 3.0), value: routerManager.sort)
+        .onAppear {
+            //            requestReview()
+        }
+        .onDisappear {
         }
     }
 }

@@ -13,44 +13,25 @@ struct BookmarkView: View {
     @EnvironmentObject var necessaryMenuViewModel: NecessaryMenuViewModel
     
     var body: some View {
-        NavigationStack(path: self.$routerManager.path) {
-            ZStack {
-                List {
-                    LastPageView()
-                        .id(0)
-                    BookmarkListView()
-                        .id(1)
-                    NotificationView()
-                        .id(2)
-                    PrayTimeRowView()
-                        .id(3)
-                    ColorSchemeView()
-                        .id(4)
-                }
-            }
-            .onAppear {
-                //                if badgeAppManager.count != 0 {
-                //                    badgeAppManager.setBadge(number: 0)
-                //                }
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle("bookmarks")
-            .toolbar(routerManager.tabBarHideStatus ? .hidden : .visible, for: .tabBar)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    LanguageButtonView()
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NecessaryButton()
-                }
-            }
-            .navigationDestination(for: Route.self) {
-                routerManager.navigationDestination($0)
-            }
-            //            .edgesIgnoringSafeArea(.all)
-            .task {
-                noficationsManager.checkNotificationPermission()
-            }
+        List {
+            LastPageView()
+                .id(0)
+            BookmarkListView()
+                .id(1)
+            NotificationView()
+                .id(2)
+            PrayTimeRowView()
+                .id(3)
+            ColorSchemeView()
+                .id(4)
+        }
+        .onAppear {
+            //                if badgeAppManager.count != 0 {
+            //                    badgeAppManager.setBadge(number: 0)
+            //                }
+        }
+        .task {
+            noficationsManager.checkNotificationPermission()
         }
         .sheet(isPresented: $necessaryMenuViewModel.showModel) {
             necessaryMenuViewModel.sheetDestination()

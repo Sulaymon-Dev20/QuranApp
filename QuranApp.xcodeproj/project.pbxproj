@@ -73,6 +73,9 @@
 		CE8D29CD2A3CED3D00CE06CA /* Commant.json in Resources */ = {isa = PBXBuildFile; fileRef = CE8D29CC2A3CED3D00CE06CA /* Commant.json */; };
 		CE8D29CF2A3CEF8900CE06CA /* Share.json in Resources */ = {isa = PBXBuildFile; fileRef = CE8D29CE2A3CEF8900CE06CA /* Share.json */; };
 		CE8D29D12A3CF2A200CE06CA /* NecessaryMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D29D02A3CF2A200CE06CA /* NecessaryMenuViewModel.swift */; };
+		CE9DBADA2A456269003AC4B5 /* TestContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9DBAD92A456269003AC4B5 /* TestContentView.swift */; };
+		CEA77A192A44E763002011BC /* IphoneNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA77A182A44E763002011BC /* IphoneNavigationStack.swift */; };
+		CEA77A1B2A44E7C6002011BC /* IpadNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA77A1A2A44E7C6002011BC /* IpadNavigationStack.swift */; };
 		CEC1A6802A1AD85300A10212 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A67F2A1AD85300A10212 /* LaunchScreenView.swift */; };
 		CEC1A6822A1ADA4100A10212 /* LaunchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A6812A1ADA4100A10212 /* LaunchScreenViewModel.swift */; };
 		CEC1A6872A1AE0BB00A10212 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A6862A1AE0BA00A10212 /* String.swift */; };
@@ -195,6 +198,9 @@
 		CE8D29CC2A3CED3D00CE06CA /* Commant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Commant.json; sourceTree = "<group>"; };
 		CE8D29CE2A3CEF8900CE06CA /* Share.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Share.json; sourceTree = "<group>"; };
 		CE8D29D02A3CF2A200CE06CA /* NecessaryMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NecessaryMenuViewModel.swift; sourceTree = "<group>"; };
+		CE9DBAD92A456269003AC4B5 /* TestContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestContentView.swift; sourceTree = "<group>"; };
+		CEA77A182A44E763002011BC /* IphoneNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneNavigationStack.swift; sourceTree = "<group>"; };
+		CEA77A1A2A44E7C6002011BC /* IpadNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadNavigationStack.swift; sourceTree = "<group>"; };
 		CEC1A67C2A1AD66300A10212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CEC1A67F2A1AD85300A10212 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		CEC1A6812A1ADA4100A10212 /* LaunchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewModel.swift; sourceTree = "<group>"; };
@@ -355,6 +361,7 @@
 		CE7C851E2A0392FC00192CC5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEA77A172A44E720002011BC /* Main */,
 				CE7C85362A03968100192CC5 /* Components */,
 				CE7C85312A0394CC00192CC5 /* Surah */,
 				CE7C85322A0394F000192CC5 /* Juz */,
@@ -454,6 +461,16 @@
 				CE8D29D02A3CF2A200CE06CA /* NecessaryMenuViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CEA77A172A44E720002011BC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CEA77A182A44E763002011BC /* IphoneNavigationStack.swift */,
+				CEA77A1A2A44E7C6002011BC /* IpadNavigationStack.swift */,
+				CE9DBAD92A456269003AC4B5 /* TestContentView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		CEC1A6832A1ADE5500A10212 /* Extension */ = {
@@ -702,6 +719,7 @@
 				CE7C32C02A1C36DC00B2F8E3 /* NoficationsManager.swift in Sources */,
 				CEF640BE2A1F978100FE7D17 /* NotificationView.swift in Sources */,
 				CE7C32BE2A1C328500B2F8E3 /* SheetView.swift in Sources */,
+				CEA77A192A44E763002011BC /* IphoneNavigationStack.swift in Sources */,
 				CE7C853F2A03978300192CC5 /* PDFViewUI.swift in Sources */,
 				CE7C84EF2A03924200192CC5 /* ContentView.swift in Sources */,
 				CE7C85222A03934200192CC5 /* SurahModel.swift in Sources */,
@@ -736,6 +754,7 @@
 				CE6EFC3B2A40419700455515 /* ResizableLottieView.swift in Sources */,
 				CE7C854B2A03A5C300192CC5 /* JuzRowView.swift in Sources */,
 				CE011AD72A2923F200D56334 /* BookmarkSwipe.swift in Sources */,
+				CEA77A1B2A44E7C6002011BC /* IpadNavigationStack.swift in Sources */,
 				CE0887A52A23E93600FDE8B0 /* OnBoardingScreen.swift in Sources */,
 				CE7C85352A03959A00192CC5 /* TabMainView.swift in Sources */,
 				CE7935E32A1D85F400B89647 /* PrayTimeModel.swift in Sources */,
@@ -759,6 +778,7 @@
 				CE011AD52A290BDC00D56334 /* ShareSwipe.swift in Sources */,
 				CE4CD5C72A32866E006C1189 /* ColorSchemeManager.swift in Sources */,
 				CE5801D62A384C1000011370 /* NecessaryButton.swift in Sources */,
+				CE9DBADA2A456269003AC4B5 /* TestContentView.swift in Sources */,
 				CE7C852E2A03945B00192CC5 /* JuzViewModel.swift in Sources */,
 				CE7935E12A1D83C900B89647 /* PrayerTimeManager.swift in Sources */,
 				CE5468692A20BDFA00273458 /* ReviewsRequestManager.swift in Sources */,

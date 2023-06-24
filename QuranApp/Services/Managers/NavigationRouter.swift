@@ -14,7 +14,10 @@ class RouterManager: ObservableObject {
     @Published var tabValue: Int = 0
     @Published var tabBarHideStatus: Bool = false
     @Published var currentPDFPage: Int = 2
-    
+
+    @Published var searchText: String = ""
+    @Published var sort: Bool = false
+
     let lastPageStorageKey:String = "lastPageStorageKey"
     
     let view = PDFViewUI()
@@ -42,10 +45,42 @@ class RouterManager: ObservableObject {
                     case let bookmarkModel as BookmarkModel:
                         self.currentPDFPage = bookmarkModel.pageNumber
                     default:
-                        self.currentPDFPage = 1
+                        self.getLastPage()
                     }
                 }
             }
+    }
+    
+    func getNavigationTitle(view index:Int) -> LocalizedStringKey {
+        switch index {
+        case 0:
+            return "surahs"
+        case 1:
+            return "juz"
+        case 2:
+            return "bookmarks"
+        default:
+            return "bookmarks"
+        }
+    }
+    
+    func navigationBarTrailing(view index:Int) -> AnyView {
+        let flag: Binding<Bool> = .init(get: { () -> Bool in
+            return self.sort
+        }, set: { (value) in
+            self.sort = value
+        })
+
+        switch index {
+        case 0:
+            return AnyView(SortButtonView(sort: flag))
+        case 1:
+            return AnyView(SortButtonView(sort: flag))
+        case 2:
+            return AnyView(NecessaryButton())
+        default:
+            return AnyView(SortButtonView(sort: flag))
+        }
     }
     
     func pushTab(to item: Int) {
@@ -69,6 +104,10 @@ class RouterManager: ObservableObject {
         default:
             return 0
         }
+    }
+    
+    func setCurrentPage(to pageNumber: Int) {
+        self.currentPDFPage = pageNumber
     }
     
     func getLastPage() {

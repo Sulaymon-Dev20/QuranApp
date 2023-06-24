@@ -10,7 +10,11 @@ import UIKit
 
 class BadgeAppManager: ObservableObject {
     
-    @Published private(set) var count:Int = UIApplication.shared.applicationIconBadgeNumber
+    @Published private(set) var count:Int = 0
+    
+    init() {
+        update()
+    }
     
     func update() {
         count = UIApplication.shared.applicationIconBadgeNumber

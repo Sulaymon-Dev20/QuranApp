@@ -37,6 +37,7 @@ struct PDFViewUI: View {
             .toolbar(showTogBar ? .hidden : .visible, for: .navigationBar)
             .animation(Animation.easeInOut(duration: 0.9).delay(0.6), value: showTogBar)
             .toolbarBackground(.visible, for: .navigationBar)
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -48,6 +49,7 @@ struct PDFViewUI: View {
                             Text("back")
                         }
                     }
+                    .opacity(UIDevice.current.userInterfaceIdiom == .pad ? 0 : 1)
                 }
                 ToolbarItem(placement: .principal) {
                     VStack {
@@ -62,7 +64,8 @@ struct PDFViewUI: View {
                 ToolbarTitleMenu {
                     ForEach(surahViewModel.items, id: \.index) { surah in
                         Button {
-                            routerManager.currentPDFPage = surah.pages.intValue
+                            routerManager.setCurrentPage(to: surah.pages.intValue)
+//                            routerManager.currentPDFPage = surah.pages.intValue
                         } label: {
                             Label(LocalizedStringKey(surah.title.localizedForm), systemImage: surah.type == .madaniyah ? "moon.fill" : "sun.max.fill")
                         }
@@ -79,9 +82,14 @@ struct PDFViewUI: View {
 
 struct PDFViewUI_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack {
+        NavigationSplitView {
+            List {
+                Text("asdf")
+                Text("asdf")
+                Text("asdf")
+            }
+        } detail: {
             PDFViewUI()
-                .navigationBarTitleDisplayMode(.inline)
         }
         .environmentObject(BookMarkViewModel())
         .environmentObject(RouterManager())

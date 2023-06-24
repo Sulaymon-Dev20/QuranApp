@@ -8,28 +8,11 @@
 import SwiftUI
 
 struct TabMainView: View {
-    @EnvironmentObject var routerManager: RouterManager
-    @EnvironmentObject var badgeAppManager: BadgeAppManager
-        
     var body: some View {
-        TabView(selection: $routerManager.tabValue) {
-            SurahView()
-                .tabItem {
-                    Image(systemName: "book.circle")
-                    Text("surahs")
-                }
-                .tag(0)
-            JuzView()
-                .tabItem {
-                    Label("juz", systemImage: "mountain.2.circle.fill")
-                }
-                .tag(1)
-            BookmarkView()
-                .badge(badgeAppManager.count)
-                .tabItem {
-                    Label("bookmarks", systemImage: "bookmark.circle")
-                }
-                .tag(2)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            IpadNavigationStack()
+        } else {
+            IphoneNavigationStack()
         }
     }
 }
@@ -39,16 +22,18 @@ struct TabMainView_Previews: PreviewProvider {
         TabMainView()
             .environmentObject(SurahViewModel())
             .environmentObject(LaunchScreenViewModel())
-            .environmentObject(BookMarkViewModel())
-            .environmentObject(LocationManager())
-            .environmentObject(NoficationsManager())
             .environmentObject(LanguageViewModel())
+            .environmentObject(BookMarkViewModel())
+            .environmentObject(NotificatSurahViewModel())
             .environmentObject(RouterManager())
             .environmentObject(JuzViewModel())
-            .environmentObject(NotificatSurahViewModel())
+            .environmentObject(LocationManager())
+            .environmentObject(NoficationsManager())
             .environmentObject(PrayerTimeManager())
             .environmentObject(ReviewsRequestManager())
             .environmentObject(BadgeAppManager())
             .environmentObject(ColorSchemeManager())
+            .environmentObject(NecessaryMenuViewModel())
     }
 }
+
