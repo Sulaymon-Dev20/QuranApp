@@ -20,27 +20,20 @@ struct NotificationView: View {
             if show {
                 if !notificatSurahViewModel.items.isEmpty {
                     ForEach($notificatSurahViewModel.items, id: \.id) { $item in
-//                        Menu {
-//                            NavigationLink(value: Route.menu(item: item.page.intValue)) {
-//                                Label("open", systemImage: "app")
-//                            }
-//                        } label: {
-                            NotificationRowView(item: $item) { activeToggle in
-                                onchange(activeToggle, item)
-                            }
-                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                                Button {//qiladigan ishla bor
-                                    if item.active {
-                                        noficationsManager.removeNotication(list: [item.id])
-                                    }
-                                    notificatSurahViewModel.deleteItem(id: item.id)
-                                } label: {
-                                    Label("Delete", systemImage: "trash.slash.fill")
+                        NotificationRowView(item: $item) { activeToggle in
+                            onchange(activeToggle, item)
+                        }
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button {//qiladigan ishla bor
+                                if item.active {
+                                    noficationsManager.removeNotication(list: [item.id])
                                 }
-                                .tint(.red)
+                                notificatSurahViewModel.deleteItem(id: item.id)
+                            } label: {
+                                Label("Delete", systemImage: "trash.slash.fill")
                             }
-//                        }
-//                        .buttonStyle(.plain)
+                            .tint(.red)
+                        }
                     }
                     .onMove(perform: notificatSurahViewModel.moveItem)
                 } else {
