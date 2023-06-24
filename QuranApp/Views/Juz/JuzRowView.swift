@@ -48,9 +48,15 @@ struct JuzRowView: View {
                     }
                 }
             } label: {
-                Image(systemName: "list.dash")
-                    .font(.title2)
-                    .frame(maxHeight: .infinity)
+                HStack {
+                    Spacer()
+                    Image(systemName: "list.dash")
+                        .font(.title2)
+                }
+                .frame(maxHeight: .infinity)
+                .frame(maxWidth: .infinity)
+                .frame(width: 80)
+                .contentShape(Rectangle())
             }
         }
     }

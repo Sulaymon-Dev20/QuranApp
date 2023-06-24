@@ -31,14 +31,34 @@ struct NotificationRowView: View {
             .toggleStyle(.button)
             .tint(.blue)
             .disabled(!item.active)
-            VStack(alignment: .leading) {
-                Text(LocalizedStringKey(item.title.localizedForm))
-                    .bold()
-                Text(LocalizedStringKey(item.subTitle))
-                    .lineLimit(1)
-                    .font(.caption)
+            Menu {
+                NavigationLink(value: Route.menu(item: item.page.intValue)) {
+                    Label("open", systemImage: "arrowshape.zigzag.right")
+                }
+                Button {
+                    item.active = !item.active
+                    action(true)
+                } label: {
+                    Label(item.active ? "disactive" : "active", systemImage: item.active ? "speaker.slash" : "speaker.wave.2.fill")
+                }
+                Button(role: .destructive) {
+                    
+                } label: {
+                    Label("delete", systemImage: "trash")
+                }
+            } label: {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(LocalizedStringKey(item.title.localizedForm))
+                            .bold()
+                        Text(LocalizedStringKey(item.subTitle))
+                            .lineLimit(1)
+                            .font(.caption)
+                    }
+                    Spacer()
+                }
             }
-            Spacer()
+            .buttonStyle(.plain)
             Toggle(isOn: $item.active) {
                 Text(item.time.clockString.convertedDigitsToLocale(languageViewModel.language))
                     .bold()

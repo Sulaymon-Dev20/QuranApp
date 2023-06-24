@@ -20,26 +20,27 @@ struct NotificationView: View {
             if show {
                 if !notificatSurahViewModel.items.isEmpty {
                     ForEach($notificatSurahViewModel.items, id: \.id) { $item in
-                        NotificationRowView(item: $item) { activeToggle in
-                            onchange(activeToggle, item)
-                        }
-                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                            Button {//qiladigan ishla bor
-                                if item.active {
-                                    noficationsManager.removeNotication(list: [item.id])
+//                        Menu {
+//                            NavigationLink(value: Route.menu(item: item.page.intValue)) {
+//                                Label("open", systemImage: "app")
+//                            }
+//                        } label: {
+                            NotificationRowView(item: $item) { activeToggle in
+                                onchange(activeToggle, item)
+                            }
+                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                Button {//qiladigan ishla bor
+                                    if item.active {
+                                        noficationsManager.removeNotication(list: [item.id])
+                                    }
+                                    notificatSurahViewModel.deleteItem(id: item.id)
+                                } label: {
+                                    Label("Delete", systemImage: "trash.slash.fill")
                                 }
-                                notificatSurahViewModel.deleteItem(id: item.id)
-                            } label: {
-                                Label("Delete", systemImage: "trash.slash.fill")
+                                .tint(.red)
                             }
-                            .tint(.red)
-                        }
-                        .overlay {
-                            NavigationLink(value: Route.menu(item: item.page.intValue)) {
-                                Text(">>>")
-                            }
-                            .opacity(0)
-                        }
+//                        }
+//                        .buttonStyle(.plain)
                     }
                     .onMove(perform: notificatSurahViewModel.moveItem)
                 } else {
