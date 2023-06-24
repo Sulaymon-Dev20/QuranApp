@@ -26,23 +26,7 @@ struct SurahListView: View {
                 List (list, id: \.title) { item in
                     let status = bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue)
                     VStack {
-                        if UIDevice.current.userInterfaceIdiom == .pad {
-                            Button {
-                                routerManager.setCurrentPage(to: item.pages.intValue)
-                            } label: {
-                                SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages,status: status)
-                                    .contentShape(Rectangle())
-                            }
-                            .buttonStyle(.plain)
-                        } else {
-                            SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages,status: status)
-                                .overlay {
-                                    NavigationLink(value: Route.menu(item: item)) {
-                                        Text(">>>")
-                                    }
-                                    .opacity(0)
-                                }
-                        }
+                        SurahRowView(item: item, status: status)
                     }
                     .swipeActions(edge: .trailing, allowsFullSwipe: !status) {
                         BookmarkSwipe(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: item.pages.intValue), status: status)

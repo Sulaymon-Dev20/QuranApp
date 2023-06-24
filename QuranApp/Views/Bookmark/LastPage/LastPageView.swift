@@ -11,24 +11,13 @@ struct LastPageView: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var surahViewModel: SurahViewModel
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
-
+    
     var body: some View {
         let item = surahViewModel.getSurahByPage(routerManager.currentPDFPage)!
         let status = bookmarksViewModel.getPages().contains(routerManager.currentPDFPage)
         Section("lastReadPage") {
             ForEach(0...0, id: \.self) {_ in
-                SurahRowView(number: routerManager.currentPDFPage,
-                             name: item.title,
-                             type: item.type,
-                             verses: item.count,
-                             pageNumber: routerManager.currentPDFPage.toString,
-                             status: status)
-                    .overlay {
-                        NavigationLink(value: Route.menu(item: routerManager.currentPDFPage.toString)) {
-                            Text(">>>")
-                        }
-                        .opacity(0)
-                    }
+                SurahRowView(item: item, status: status)
                     .swipeActions(edge: .trailing, allowsFullSwipe: !status) {
                         BookmarkSwipe(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: routerManager.currentPDFPage), status: status)
                             .tint(status ? .red : .green)

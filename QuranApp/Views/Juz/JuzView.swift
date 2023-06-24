@@ -23,15 +23,15 @@ struct JuzView: View {
     
     func filterData() -> [JuzModel] {
         if routerManager.searchText.count > 0 {
-            //            return datas.items.filter {
-            //                return LocalizedStringKey($0.title.localizedForm).stringValue().lowercased().contains(routerManager.searchText.lowercased())
-            //            }
-            return datas.items
+            return datas.items.filter { juz in
+                juz.surahs.contains { surah in
+                    return LocalizedStringKey(surah.title.localizedForm).stringValue().lowercased().contains(routerManager.searchText.lowercased())
+                }
+            }
         } else {
             return datas.items
         }
-    }
-    
+    }    
 }
 
 struct JuzView_Previews: PreviewProvider {

@@ -15,26 +15,7 @@ struct JuzListView: View {
     var body: some View {
         if !list.isEmpty {
             List (list, id: \.index) { item in
-                VStack {
-                    if UIDevice.current.userInterfaceIdiom == .pad {
-                        Button {
-                            routerManager.setCurrentPage(to: item.page)
-                        } label: {
-                            JuzRowView(item: item)
-                                .contentShape(Rectangle())
-                        }
-                        .buttonStyle(.plain)
-                    } else {
-                        JuzRowView(item: item)
-                            .overlay {
-                                NavigationLink(value: Route.menu(item: item)) {
-                                    Text(">>>")
-                                }
-                                .opacity(0)
-                            }
-                    }
-                    
-                }
+                JuzRowView(item: item)
             }
         } else {
             ItemNotFoundView()

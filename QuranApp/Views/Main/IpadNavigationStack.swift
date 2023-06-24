@@ -26,12 +26,12 @@ struct IpadNavigationStack: View {
             }
         } content: {
             routerManager.tabValue?.view
+                .navigationDestination(for: Route.self) {
+                    routerManager.navigationDestination($0)
+                }
         } detail: {
             NavigationStack(path: self.$routerManager.path) {
                 routerManager.view
-            }
-            .navigationDestination(for: Route.self) {
-                routerManager.navigationDestination($0)
             }
         }
     }

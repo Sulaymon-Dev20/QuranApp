@@ -33,24 +33,11 @@ struct PDFViewUI: View {
             .onTapGesture {
                 showTogBar.toggle()
             }
-            .navigationBarBackButtonHidden(true)
             .toolbar(showTogBar ? .hidden : .visible, for: .navigationBar)
             .animation(Animation.easeInOut(duration: 0.9).delay(0.6), value: showTogBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        routerManager.tabBarHide(status: false)
-                        dismiss()
-                    } label: {
-                        HStack {
-                            Image(systemName: "chevron.backward")
-                            Text("back")
-                        }
-                    }
-                    .opacity(UIDevice.current.userInterfaceIdiom == .pad ? 0 : 1)
-                }
                 ToolbarItem(placement: .principal) {
                     VStack {
                         Text(LocalizedStringKey(item.title.localizedForm).stringValue()).bold()
