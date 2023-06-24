@@ -15,12 +15,12 @@ struct SurahView: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var reviewsManager: ReviewsRequestManager
     @Environment(\.requestReview) var requestReview: RequestReviewAction
-        
+    
     var body: some View {
         SurahListView(list: routerManager.sort ? filterData().reversed() : filterData())
-            .onAppear {
-                //            requestReview()
-            }
+            .viewTabToolbar(searchText: $routerManager.searchText,
+                            title: routerManager.getNavigationTitle(),
+                            navigationBarTrailing: routerManager.navigationBarTrailing())
             .onDisappear {
                 routerManager.searchText = ""
             }

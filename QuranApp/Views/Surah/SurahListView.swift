@@ -19,18 +19,16 @@ struct SurahListView: View {
     @State var nativationStatus: Bool = false
     @State var showAlert: Bool = false
     @State var index: SurahModel?
-    @State var selection: SurahModel?
     
     var body: some View {
         if !list.isEmpty {
             ZStack {
-                List (list, id: \.title, selection: $selection) { item in
+                List (list, id: \.title) { item in
                     let status = bookmarksViewModel.getPages().contains((item.pages as NSString).integerValue)
                     VStack {
                         if UIDevice.current.userInterfaceIdiom == .pad {
                             Button {
                                 routerManager.setCurrentPage(to: item.pages.intValue)
-                                selection = item
                             } label: {
                                 SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages,status: status)
                                     .contentShape(Rectangle())

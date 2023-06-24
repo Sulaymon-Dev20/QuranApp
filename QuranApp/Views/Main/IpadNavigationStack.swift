@@ -9,14 +9,11 @@ import SwiftUI
 
 struct IpadNavigationStack: View {
     @EnvironmentObject var routerManager: RouterManager
-    @State var list:[String] = ["surahs", "juz", "bookmarks"]
     
     var body: some View {
         NavigationSplitView {
             List(tabViewItemsList, selection: $routerManager.tabValue) { item in
-                NavigationLink {
-                    item.view
-                } label: {
+                NavigationLink(value: item) {
                     Label(item.title, systemImage: item.icon)
                 }
             }
@@ -26,15 +23,9 @@ struct IpadNavigationStack: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     LanguageButtonView()
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    routerManager.navigationBarTrailing()
-                }
             }
         } content: {
             routerManager.tabValue?.view
-                .viewTabToolbar(searchText: $routerManager.searchText,
-                                title: routerManager.getNavigationTitle(),
-                                navigationBarTrailing: routerManager.navigationBarTrailing())
         } detail: {
             NavigationStack(path: self.$routerManager.path) {
                 routerManager.view

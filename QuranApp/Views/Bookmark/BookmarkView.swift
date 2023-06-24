@@ -30,6 +30,12 @@ struct BookmarkView: View {
             //                    badgeAppManager.setBadge(number: 0)
             //                }
         }
+        .viewTabToolbar(searchText: $routerManager.searchText,
+                        title: routerManager.getNavigationTitle(),
+                        navigationBarTrailing: routerManager.navigationBarTrailing())
+        .onDisappear {
+            routerManager.searchText = ""
+        }
         .task {
             noficationsManager.checkNotificationPermission()
         }
