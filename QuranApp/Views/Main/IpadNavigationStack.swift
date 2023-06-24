@@ -30,9 +30,7 @@ struct IpadNavigationStack: View {
                     routerManager.navigationDestination($0)
                 }
         } detail: {
-            NavigationStack(path: self.$routerManager.path) {
-                routerManager.view
-            }
+            routerManager.view
         }
     }
 }

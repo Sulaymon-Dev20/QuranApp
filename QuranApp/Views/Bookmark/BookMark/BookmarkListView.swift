@@ -18,13 +18,7 @@ struct BookmarkListView: View {
         Section {
             if !bookmarksViewModel.items.isEmpty {
                 ForEach(sort ? bookmarksViewModel.items : bookmarksViewModel.items.reversed()) { item in
-                    BookmarkRowView(title: item.title, juz: item.juz, pageNumber: item.pageNumber)
-                        .overlay {
-                            NavigationLink(value: Route.menu(item: item)) {
-                                Text(">>>")
-                            }
-                            .opacity(0)
-                        }
+                    BookmarkRowView(item: item)
                         .swipeActions(edge: .trailing, allowsFullSwipe: false, content: {
                             BookmarkSwipe(item: item, status: true)
                                 .tint(.red)

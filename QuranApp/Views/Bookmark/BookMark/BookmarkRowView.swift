@@ -8,10 +8,7 @@
 import SwiftUI
 
 struct BookmarkRowView: View {
-    @EnvironmentObject var language: LanguageViewModel
-
-    let title, juz: String
-    let pageNumber: Int
+    let item: BookmarkModel
     
     var body: some View {
         HStack {
@@ -19,17 +16,23 @@ struct BookmarkRowView: View {
                 .font(.system(size: 34.0))
             VStack{
                 HStack{
-                    Text(LocalizedStringKey(title.localizedForm))
+                    Text(LocalizedStringKey(item.title.localizedForm))
                         .bold()
                     Spacer()
                 }
                 HStack{
-                    Text("\("page".locVal(language.language,capitalized: true)) \(pageNumber), \("juz".locVal(language.language,capitalized: true)) \(juz.intValue)")
+                    Text("\("page".lv) \(item.pageNumber), \("juz".lv) \(item.juz.intValue)")
                     Spacer()
                 }
             }
-            Text("\(pageNumber)")
+            Text("\(item.pageNumber)")
                 .font(.system(size: 34.0))
+        }
+        .overlay {
+            NavigationLink(value: Route.menu(item: item)) {
+                Text(">>>")
+            }
+            .opacity(0)
         }
     }
 }
@@ -37,11 +40,10 @@ struct BookmarkRowView: View {
 struct BookmarkRowView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            BookmarkRowView(title: "Al-Imran", juz: "3", pageNumber: 50)
-            BookmarkRowView(title: "Al-Imran", juz: "3", pageNumber: 50)
-            BookmarkRowView(title: "Al-Imran", juz: "3", pageNumber: 50)
+            BookmarkRowView(item: BookmarkModel(title: "Al-Imran", juz: "3", pageNumber: 50))
+            BookmarkRowView(item: BookmarkModel(title: "Al-Imran", juz: "3", pageNumber: 50))
+            BookmarkRowView(item: BookmarkModel(title: "Al-Imran", juz: "3", pageNumber: 50))
         }
-        .environmentObject(LanguageViewModel())
         .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

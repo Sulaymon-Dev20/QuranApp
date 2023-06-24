@@ -32,8 +32,9 @@ struct JuzRowView: View {
                         .foregroundColor(Color.gray)
                 }
                 Spacer()
-            }.overlay {
-                NavigationLink(value: Route.menu(item: item.page)) {
+            }
+            .overlay {
+                NavigationLink(value: Route.menu(item: item)) {
                     Text(">>>")
                 }
                 .opacity(0)
