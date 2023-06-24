@@ -11,42 +11,34 @@ struct TestContentView: View {
     @State var mainMenu: MenuItem? = MenuItem(id: 1, title: "asdf")
     @State var subMenu: SubMenuItem?
     @State var path: [SubMenuItem] = []
-       
+    
     var body: some View {
         NavigationSplitView {
-            List(allCases, id: \.title, selection: $mainMenu) { item in
+            List(allCases, selection: $mainMenu) { item in
                 NavigationLink(value: item) {
                     Text(item.title)
                 }
             }
         } content: {
-                List(allCases2, selection: $subMenu) { item in
-                    NavigationLink(value: item) {
-                        Text(item.title)
-                    }
+            List(allCases2, selection: $subMenu) { item in
+                NavigationLink(value: item) {
+                    Text(item.title)
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .onChange(of: subMenu) { sm in
-                    // Manually set the path
-                    if let sm {
-                        path = [sm]
-                    }
-                }
-            
+            }
+            .navigationBarTitleDisplayMode(.inline)
         } detail: {
             NavigationStack(path: $path) {
-    
                 Text("tushunmadim aka")
             }
             .navigationDestination(for: SubMenuItem.self) { selected in
-//                    DetailView(item: selected)
+                //                    DetailView(item: selected)
                 Text("\(selected.title)")
             }
         }
     }
 }
 
-struct MenuItem:Hashable, Equatable {
+struct MenuItem:Identifiable, Hashable, Equatable {
     var id: Int
     var title:String
 }

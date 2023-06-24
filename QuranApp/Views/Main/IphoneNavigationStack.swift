@@ -9,36 +9,33 @@ import SwiftUI
 
 struct IphoneNavigationStack: View {
     @EnvironmentObject var routerManager: RouterManager
-
+    
     var body: some View {
+        let tabview: Binding<Int> = .init(get: { () -> Int in
+            return routerManager.tabValue!.id
+        }, set: { (value) in
+            routerManager.pushTab(to: value)
+        })
         NavigationStack(path: self.$routerManager.path) {
-            TabView(selection: $routerManager.tabValue) {
-                SurahView()
-                    .tabItem {
-                        Label("surahs", systemImage: "book.circle")
-                    }
-                    .tag(0)
-                JuzView()
-                    .tabItem {
-                        Label("juz", systemImage: "mountain.2.circle.fill")
-                    }
-                    .tag(1)
-                BookmarkView()
-                    .tabItem {
-                        Label("bookmarks", systemImage: "bookmark.circle")
-                    }
-                    .tag(2)
+            TabView(selection: tabview) {
+                ForEach(tabViewItemsList) { item in
+                    item.view
+                        .tabItem {
+                            Label(item.title, systemImage: item.icon)
+                        }
+                        .tag(item.id)
+                }
             }
             .searchable(text: $routerManager.searchText, placement: .toolbar, prompt: Text("search_surah"))
             .navigationBarTitleDisplayMode(.inline)
-            .navigationTitle(routerManager.getNavigationTitle(view: routerManager.tabValue))
+            .navigationTitle(routerManager.getNavigationTitle())
             .toolbar(routerManager.tabBarHideStatus ? .hidden : .visible, for: .tabBar)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     LanguageButtonView()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    routerManager.navigationBarTrailing(view: routerManager.tabValue)
+                    routerManager.navigationBarTrailing()
                 }
             }
             .navigationDestination(for: Route.self) {
@@ -48,8 +45,23 @@ struct IphoneNavigationStack: View {
     }
 }
 
+
 struct IphoneNavigationStack_Previews: PreviewProvider {
     static var previews: some View {
         IphoneNavigationStack()
+            .environmentObject(SurahViewModel())
+            .environmentObject(LaunchScreenViewModel())
+            .environmentObject(LanguageViewModel())
+            .environmentObject(BookMarkViewModel())
+            .environmentObject(NotificatSurahViewModel())
+            .environmentObject(RouterManager())
+            .environmentObject(JuzViewModel())
+            .environmentObject(LocationManager())
+            .environmentObject(NoficationsManager())
+            .environmentObject(PrayerTimeManager())
+            .environmentObject(ReviewsRequestManager())
+            .environmentObject(BadgeAppManager())
+            .environmentObject(ColorSchemeManager())
+            .environmentObject(NecessaryMenuViewModel())
     }
 }

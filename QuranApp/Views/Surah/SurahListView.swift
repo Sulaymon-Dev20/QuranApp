@@ -19,7 +19,7 @@ struct SurahListView: View {
     @State var nativationStatus: Bool = false
     @State var showAlert: Bool = false
     @State var index: SurahModel?
-    @State var selection: String?
+    @State var selection: SurahModel?
     
     var body: some View {
         if !list.isEmpty {
@@ -30,7 +30,7 @@ struct SurahListView: View {
                         if UIDevice.current.userInterfaceIdiom == .pad {
                             Button {
                                 routerManager.setCurrentPage(to: item.pages.intValue)
-                                selection = item.title
+                                selection = item
                             } label: {
                                 SurahRowView(number: (item.index as NSString).integerValue, name: item.title, type: item.type, verses: item.count, pageNumber: item.pages,status: status)
                                     .contentShape(Rectangle())
@@ -58,9 +58,6 @@ struct SurahListView: View {
                                 noficationsManager.request()
                             }
                         ShareSwipe(title: LocalizedStringKey(item.title).stringValue(), index: item.pages)
-                    }
-                    .onAppear {
-                        //                        selection = item.title
                     }
                 }
                 AlertPermissions(showAlert: $showAlert, title: "Location allow", message: "open and allow notification please")

@@ -10,32 +10,15 @@ import SwiftUI
 struct IpadNavigationStack: View {
     @EnvironmentObject var routerManager: RouterManager
     @State var list:[String] = ["surahs", "juz", "bookmarks"]
-    @State private var selectedPerson: Int? = 0
     
     var body: some View {
         NavigationSplitView {
-            List {
+            List(tabViewItemsList, selection: $routerManager.tabValue) { item in
                 NavigationLink {
-                    SurahView()
+                    item.view
                 } label: {
-                    Label("surahs", systemImage: "book.circle")
+                    Label(item.title, systemImage: item.icon)
                 }
-                NavigationLink {
-                    JuzView()
-                } label: {
-                    Label("juz", systemImage: "mountain.2.circle.fill")
-                }
-                NavigationLink {
-                    BookmarkView()
-                } label: {
-                    Label("bookmarks", systemImage: "bookmark.circle")
-                }
-            }
-            .onAppear {
-                print("asdf")
-            }
-            .onDisappear{
-                print("dis")
             }
             .navigationTitle("Menu")
             .navigationBarTitleDisplayMode(.inline)
@@ -44,19 +27,14 @@ struct IpadNavigationStack: View {
                     LanguageButtonView()
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    routerManager.navigationBarTrailing(view: routerManager.tabValue)
+                    routerManager.navigationBarTrailing()
                 }
             }
         } content: {
-            SurahView()
-                .searchable(text: $routerManager.searchText, placement: .toolbar, prompt: Text("search_surah"))
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle(routerManager.getNavigationTitle(view: routerManager.tabValue))
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        routerManager.navigationBarTrailing(view: routerManager.tabValue)
-                    }
-                }
+            routerManager.tabValue?.view
+                .viewTabToolbar(searchText: $routerManager.searchText,
+                                title: routerManager.getNavigationTitle(),
+                                navigationBarTrailing: routerManager.navigationBarTrailing())
         } detail: {
             NavigationStack(path: self.$routerManager.path) {
                 routerManager.view
@@ -85,6 +63,5 @@ struct IpadNavigationStack_Previews: PreviewProvider {
             .environmentObject(BadgeAppManager())
             .environmentObject(ColorSchemeManager())
             .environmentObject(NecessaryMenuViewModel())
-        
     }
 }

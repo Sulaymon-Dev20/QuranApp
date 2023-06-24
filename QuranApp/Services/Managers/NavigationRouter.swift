@@ -11,13 +11,13 @@ import SwiftUI
 class RouterManager: ObservableObject {
     
     @Published var path = [Route]()
-    @Published var tabValue: Int = 0
+    @Published var tabValue: TabViewItemsModel? = TabViewItemsModel(id: 0, title: "surahs", icon: "book.circle", view: AnyView(SurahView()))
     @Published var tabBarHideStatus: Bool = false
     @Published var currentPDFPage: Int = 2
-
+    
     @Published var searchText: String = ""
     @Published var sort: Bool = false
-
+    
     let lastPageStorageKey:String = "lastPageStorageKey"
     
     let view = PDFViewUI()
@@ -51,40 +51,43 @@ class RouterManager: ObservableObject {
             }
     }
     
-    func getNavigationTitle(view index:Int) -> LocalizedStringKey {
-        switch index {
+    func getNavigationTitle() -> LocalizedStringKey {
+        switch self.tabValue?.id {
         case 0:
             return "surahs"
         case 1:
             return "juz"
-        case 2:
-            return "bookmarks"
         default:
             return "bookmarks"
         }
     }
     
-    func navigationBarTrailing(view index:Int) -> AnyView {
+    func navigationBarTrailing() -> AnyView {
         let flag: Binding<Bool> = .init(get: { () -> Bool in
             return self.sort
         }, set: { (value) in
             self.sort = value
         })
-
-        switch index {
+        
+        switch self.tabValue?.id {
         case 0:
             return AnyView(SortButtonView(sort: flag))
         case 1:
             return AnyView(SortButtonView(sort: flag))
-        case 2:
-            return AnyView(NecessaryButton())
         default:
-            return AnyView(SortButtonView(sort: flag))
+            return AnyView(NecessaryButton())
         }
     }
     
     func pushTab(to item: Int) {
-        tabValue = item
+        switch item {
+        case 0:
+            self.tabValue = TabViewItemsModel(id: 0, title: "surahs", icon: "book.circle", view: AnyView(SurahView()));
+        case 1:
+            self.tabValue = TabViewItemsModel(id: 1, title: "juz", icon: "mountain.2.circle", view: AnyView(JuzView()));
+        default:
+            self.tabValue = TabViewItemsModel(id: 2, title: "bookmarks", icon: "bookmark.circle", view: AnyView(BookmarkView()))
+        }
     }
     
     func tabBarHide(status: Bool) {

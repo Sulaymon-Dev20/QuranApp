@@ -94,6 +94,7 @@
 		CEF7754A2A1D53FF0048F8D2 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF775492A1D53FF0048F8D2 /* Route.swift */; };
 		CEF7EE142A3C2B29005D3821 /* DateTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7EE132A3C2B29005D3821 /* DateTimeView.swift */; };
 		CEF7EE1E2A3C8F92005D3821 /* NecessaryMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7EE1D2A3C8F92005D3821 /* NecessaryMenuModel.swift */; };
+		CEFA69BB2A4754500079FE79 /* TabViewItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA69BA2A4754500079FE79 /* TabViewItemsModel.swift */; };
 		CEFCA21E2A2CF007002B5F40 /* BadgeAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFCA21D2A2CF007002B5F40 /* BadgeAppManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -220,6 +221,7 @@
 		CEF775492A1D53FF0048F8D2 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		CEF7EE132A3C2B29005D3821 /* DateTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeView.swift; sourceTree = "<group>"; };
 		CEF7EE1D2A3C8F92005D3821 /* NecessaryMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NecessaryMenuModel.swift; sourceTree = "<group>"; };
+		CEFA69BA2A4754500079FE79 /* TabViewItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewItemsModel.swift; sourceTree = "<group>"; };
 		CEFCA21D2A2CF007002B5F40 /* BadgeAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAppManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -389,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7C85212A03934200192CC5 /* SurahModel.swift */,
+				CEFA69BA2A4754500079FE79 /* TabViewItemsModel.swift */,
 				CE7C85232A03936300192CC5 /* JuzModel.swift */,
 				CE7C85252A03938900192CC5 /* BookmarkModel.swift */,
 				CE7935E22A1D85F400B89647 /* PrayTimeModel.swift */,
@@ -777,6 +780,7 @@
 				CEE46E932A40E81A00828B55 /* SheetShareFriendsView.swift in Sources */,
 				CE011AD52A290BDC00D56334 /* ShareSwipe.swift in Sources */,
 				CE4CD5C72A32866E006C1189 /* ColorSchemeManager.swift in Sources */,
+				CEFA69BB2A4754500079FE79 /* TabViewItemsModel.swift in Sources */,
 				CE5801D62A384C1000011370 /* NecessaryButton.swift in Sources */,
 				CE9DBADA2A456269003AC4B5 /* TestContentView.swift in Sources */,
 				CE7C852E2A03945B00192CC5 /* JuzViewModel.swift in Sources */,
