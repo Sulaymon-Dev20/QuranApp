@@ -36,12 +36,6 @@ struct SurahRowView: View {
                 }
                 .badge(Int(item.pages.intValue))
             }
-            .overlay {
-                NavigationLink(value: Route.menu(item: item)) {
-                    Text(">>>")
-                }
-                .opacity(0)
-            }
             if status {
                 HStack {
                     Spacer()
