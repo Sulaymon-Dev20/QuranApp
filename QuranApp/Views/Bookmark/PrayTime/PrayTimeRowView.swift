@@ -104,17 +104,7 @@ struct PrayTimeRowView_Previews: PreviewProvider {
             List {
                 PrayTimeRowView()
             }
-            .environmentObject(SurahViewModel())
-            .environmentObject(LaunchScreenViewModel())
-            .environmentObject(LanguageViewModel())
-            .environmentObject(BookMarkViewModel())
-            .environmentObject(NotificatSurahViewModel())
-            .environmentObject(RouterManager())
-            .environmentObject(JuzViewModel())
-            .environmentObject(NoficationsManager())
-            .environmentObject(PrayerTimeManager())
-            .environmentObject(LocationManager())
-            .environment(\.locale, Locale.init(identifier: "ar"))
+            .environmentAllObject()
         }
     }
 }

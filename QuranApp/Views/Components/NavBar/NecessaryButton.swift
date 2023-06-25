@@ -39,7 +39,6 @@ struct NecessaryButton_Previews: PreviewProvider {
                     }
                 }
         }
-        .environmentObject(ReviewsRequestManager())
-        .environmentObject(NecessaryMenuViewModel())
+        .environmentAllObject()
     }
 }

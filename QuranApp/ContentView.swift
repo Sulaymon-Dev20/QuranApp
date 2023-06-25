@@ -32,18 +32,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(SurahViewModel())
-            .environmentObject(LaunchScreenViewModel())
-            .environmentObject(LanguageViewModel())
-            .environmentObject(BookMarkViewModel())
-            .environmentObject(NotificatSurahViewModel())
-            .environmentObject(RouterManager())
-            .environmentObject(JuzViewModel())
-            .environmentObject(NoficationsManager())
-            .environmentObject(PrayerTimeManager())
-            .environmentObject(LocationManager())
-            .environmentObject(ReviewsRequestManager())
-            .environmentObject(BadgeAppManager())
-            .environmentObject(ColorSchemeManager())
+            .environmentAllObject()
     }
 }

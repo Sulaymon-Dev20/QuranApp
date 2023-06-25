@@ -70,6 +70,6 @@ struct SheetCommandView: View {
 struct SheetCommandView_Previews: PreviewProvider {
     static var previews: some View {
         SheetCommandView()
-            .environmentObject(ReviewsRequestManager())
+            .environmentAllObject()
     }
 }

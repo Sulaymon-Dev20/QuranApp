@@ -62,7 +62,6 @@ struct SurahRowView_Previews: PreviewProvider {
         List {
             SurahRowView(item: SurahModel(place: Place.mecca, type: TypeEnum.madaniyah, count: 12, title: "asdf", titleAr: "asdf", index: "adsf", pages: "asdf", juz: []), status: false)
         }
-        .environmentObject(RouterManager())
-        .environment(\.locale, Locale.init(identifier: "ar"))
+        .environmentAllObject()
     }
 }

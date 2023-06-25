@@ -78,11 +78,6 @@ struct PDFViewUI_Previews: PreviewProvider {
         } detail: {
             PDFViewUI()
         }
-        .environmentObject(BookMarkViewModel())
-        .environmentObject(RouterManager())
-        .environmentObject(SurahViewModel())
-        .environmentObject(JuzViewModel())
-        .environmentObject(ReviewsRequestManager())
-        .environment(\.locale, Locale.init(identifier: "ar"))
+        .environmentAllObject()
     }
 }

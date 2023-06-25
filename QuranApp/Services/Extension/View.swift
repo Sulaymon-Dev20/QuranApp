@@ -44,5 +44,25 @@ extension View {
         }
         .foregroundColor(Color.primary)
     }
+    
+    @ViewBuilder
+    func environmentAllObject(language:String = "ar") -> some View {
+        self
+            .environmentObject(SurahViewModel())
+            .environmentObject(LaunchScreenViewModel())
+            .environmentObject(LanguageViewModel())
+            .environmentObject(BookMarkViewModel())
+            .environmentObject(NotificatSurahViewModel())
+            .environmentObject(RouterManager())
+            .environmentObject(JuzViewModel())
+            .environmentObject(LocationManager())
+            .environmentObject(NoficationsManager())
+            .environmentObject(PrayerTimeManager())
+            .environmentObject(ReviewsRequestManager())
+            .environmentObject(BadgeAppManager())
+            .environmentObject(ColorSchemeManager())
+            .environmentObject(NecessaryMenuViewModel())
+            .environment(\.locale, Locale.init(identifier: language))
+    }
 }
 

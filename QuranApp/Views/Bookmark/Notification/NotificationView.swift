@@ -86,9 +86,6 @@ struct NotificationView_Previews: PreviewProvider {
         NavigationStack {
             NotificationView()
         }
-        .environmentObject(NoficationsManager())
-        .environmentObject(NotificatSurahViewModel())
-        .environmentObject(RouterManager())
-        //        .environment(\.locale, Locale.init(identifier: "ar"))
+        .environmentAllObject()
     }
 }

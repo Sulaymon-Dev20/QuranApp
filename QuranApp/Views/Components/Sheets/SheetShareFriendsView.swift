@@ -64,6 +64,6 @@ struct SheetShareFriendsView: View {
 struct ShareFriendsView_Previews: PreviewProvider {
     static var previews: some View {
         SheetShareFriendsView()
-            .environmentObject(ReviewsRequestManager())
+            .environmentAllObject()
     }
 }

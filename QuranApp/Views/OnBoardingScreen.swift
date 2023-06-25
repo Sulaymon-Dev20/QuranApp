@@ -128,7 +128,6 @@ struct OnBoardingScreen_Previews: PreviewProvider {
         NavigationView {
             OnBoardingScreen()
         }
-        .environmentObject(ReviewsRequestManager())
-        .environmentObject(LanguageViewModel())
+        .environmentAllObject()
     }
 }

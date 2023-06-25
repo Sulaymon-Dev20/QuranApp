@@ -37,9 +37,6 @@ struct LastPageView_Previews: PreviewProvider {
                 LastPageView()
             }
         }
-        .environmentObject(LanguageViewModel())
-        .environmentObject(RouterManager())
-        .environmentObject(SurahViewModel())
-        .environmentObject(BookMarkViewModel())
+        .environmentAllObject()
     }
 }

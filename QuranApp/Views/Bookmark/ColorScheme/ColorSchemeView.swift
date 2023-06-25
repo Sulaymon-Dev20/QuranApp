@@ -37,6 +37,6 @@ struct ColorSchemeView_Previews: PreviewProvider {
                 ColorSchemeView()
             }
         }
-        .environmentObject(ColorSchemeManager())
+        .environmentAllObject()
     }
 }

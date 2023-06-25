@@ -20,20 +20,7 @@ struct TabMainView: View {
 struct TabMainView_Previews: PreviewProvider {
     static var previews: some View {
         TabMainView()
-            .environmentObject(SurahViewModel())
-            .environmentObject(LaunchScreenViewModel())
-            .environmentObject(LanguageViewModel())
-            .environmentObject(BookMarkViewModel())
-            .environmentObject(NotificatSurahViewModel())
-            .environmentObject(RouterManager())
-            .environmentObject(JuzViewModel())
-            .environmentObject(LocationManager())
-            .environmentObject(NoficationsManager())
-            .environmentObject(PrayerTimeManager())
-            .environmentObject(ReviewsRequestManager())
-            .environmentObject(BadgeAppManager())
-            .environmentObject(ColorSchemeManager())
-            .environmentObject(NecessaryMenuViewModel())
+            .environmentAllObject()
     }
 }
 

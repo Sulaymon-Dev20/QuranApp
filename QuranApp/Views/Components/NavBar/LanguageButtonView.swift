@@ -74,7 +74,6 @@ struct LanguageButtonView: View {
 struct LanguageButtonView_Previews: PreviewProvider {
     static var previews: some View {
         LanguageButtonView()
-            .environmentObject(LanguageViewModel())
-        //            .environment(\.locale, Locale.init(identifier: "uz"))
+            .environmentAllObject()
     }
 }

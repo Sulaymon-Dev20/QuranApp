@@ -25,6 +25,6 @@ struct BookmarkSwipe: View {
 struct BookmarkSwipe_Previews: PreviewProvider {
     static var previews: some View {
         BookmarkSwipe(item: BookmarkModel(title: "asdf", juz: "asdf", pageNumber: 12),status: false)
-            .environmentObject(BookMarkViewModel())
+            .environmentAllObject()
     }
 }

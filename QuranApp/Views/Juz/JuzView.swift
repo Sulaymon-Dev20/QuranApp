@@ -37,10 +37,6 @@ struct JuzView: View {
 struct JuzView_Previews: PreviewProvider {
     static var previews: some View {
         JuzView()
-            .environmentObject(JuzViewModel())
-            .environmentObject(BookMarkViewModel())
-            .environmentObject(LanguageViewModel())
-            .environmentObject(RouterManager())
-        //            .environment(\.locale, Locale.init(identifier: "ar"))
+            .environmentAllObject()
     }
 }

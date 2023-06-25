@@ -44,6 +44,5 @@ struct BookmarkRowView_Previews: PreviewProvider {
             BookmarkRowView(item: BookmarkModel(title: "Al-Imran", juz: "3", pageNumber: 50))
             BookmarkRowView(item: BookmarkModel(title: "Al-Imran", juz: "3", pageNumber: 50))
         }
-        .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

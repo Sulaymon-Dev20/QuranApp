@@ -93,9 +93,7 @@ struct JuzRowView_Previews: PreviewProvider {
                 JuzRowView(item: JuzModel(index: 12, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "12",type: "Makkiyah")]))
                 JuzRowView(item: JuzModel(index: 12, page:1, surahs: [Surah(titleAr: "", title: "Al-Fatiha", index: 2, verse: VerseNew(start: 12, end: 12), pageNumber: "12",type: "Makkiyah")]))
             }
-            .environment(\.locale, Locale.init(identifier: "ru"))
-            .environmentObject(LanguageViewModel())
-            .environmentObject(RouterManager())
+            .environmentAllObject()
         }
     }
 }

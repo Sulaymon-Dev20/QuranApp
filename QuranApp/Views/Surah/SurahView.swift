@@ -41,13 +41,7 @@ struct SurahView: View {
             NavigationStack {
                 SurahView()
             }
-            .environmentObject(SurahViewModel())
-            .environmentObject(BookMarkViewModel())
-            .environmentObject(NotificatSurahViewModel())
-            .environmentObject(LanguageViewModel())
-            .environmentObject(RouterManager())
-            .environmentObject(ReviewsRequestManager())
-            .environmentObject(NoficationsManager())
+            .environmentAllObject()
         }
     }
 }

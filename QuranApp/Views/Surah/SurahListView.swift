@@ -57,9 +57,6 @@ struct SurahListView: View {
 struct SurahListView_Previews: PreviewProvider {
     static var previews: some View {
         SurahListView(list: [SurahModel(place: Place.mecca, type: TypeEnum.makkiyah, count: 22, title: "al_fatiha", titleAr: "String", index: "12", pages: "12", juz: [Juz(index: "asdf", verse: Verse(start: "12", end: "12"))])])
-            .environmentObject(BookMarkViewModel())
-            .environmentObject(NotificatSurahViewModel())
-            .environmentObject(NoficationsManager())
-            .environmentObject(RouterManager())
+            .environmentAllObject()
     }
 }

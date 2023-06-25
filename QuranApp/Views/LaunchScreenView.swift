@@ -42,7 +42,7 @@ struct LaunchScreenView: View {
 struct LaunchScreenView_Previews: PreviewProvider {
     static var previews: some View {
         LaunchScreenView()
-            .environmentObject(LaunchScreenViewModel())
+            .environmentAllObject()
     }
 }
 

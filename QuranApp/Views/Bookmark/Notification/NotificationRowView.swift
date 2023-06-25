@@ -91,6 +91,6 @@ struct NotificationRowView_Previews: PreviewProvider {
                 
             }
         }
-        .environmentObject(LanguageViewModel())
+        .environmentAllObject()
     }
 }

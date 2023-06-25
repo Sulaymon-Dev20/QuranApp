@@ -48,18 +48,6 @@ struct BookmarkView: View {
 struct BookmarkView_Previews: PreviewProvider {
     static var previews: some View {
         BookmarkView()
-            .previewDevice("iPhone 14 Pro Max")
-            .environmentObject(BookMarkViewModel())
-            .environmentObject(LanguageViewModel())
-            .environmentObject(RouterManager())
-            .environmentObject(NotificatSurahViewModel())
-            .environmentObject(PrayerTimeManager())
-            .environmentObject(NoficationsManager())
-            .environmentObject(NotificatSurahViewModel())
-            .environmentObject(LocationManager())
-            .environmentObject(BadgeAppManager())
-            .environmentObject(ColorSchemeManager())
-            .environmentObject(SurahViewModel())
-            .environmentObject(NecessaryMenuViewModel())
+            .environmentAllObject()
     }
 }

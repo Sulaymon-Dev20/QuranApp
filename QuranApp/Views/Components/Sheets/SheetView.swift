@@ -139,9 +139,6 @@ struct SheetView: View {
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
         SheetView(surah: SurahModel(place: Place.mecca, type: TypeEnum.madaniyah, count: 12, title: "Surah Yasin", titleAr: "String", index: "1", pages: "1", juz: []))
-            .environmentObject(PrayerTimeManager())
-            .environmentObject(LocationManager())
-            .environmentObject(BadgeAppManager())
-            .environmentObject(LanguageViewModel())
+            .environmentAllObject()
     }
 }

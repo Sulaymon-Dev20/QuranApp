@@ -55,12 +55,6 @@ struct BookmarkListView_Previews: PreviewProvider {
         NavigationStack {
             BookmarkListView()
         }
-        .environmentObject(BookMarkViewModel())
-        .environmentObject(RouterManager())
-        .environmentObject(NotificatSurahViewModel())
-        .environmentObject(NoficationsManager())
-        .environmentObject(PrayerTimeManager())
-        .environmentObject(LanguageViewModel())
-        .environment(\.locale, Locale.init(identifier: "ar"))
+        .environmentAllObject()
     }
 }

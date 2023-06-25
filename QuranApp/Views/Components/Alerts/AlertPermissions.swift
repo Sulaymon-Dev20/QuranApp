@@ -37,6 +37,5 @@ struct AlertPermissions: View {
 struct Alert_Previews: PreviewProvider {
     static var previews: some View {
         AlertPermissions(showAlert: .constant(true), title: "Location allow", message: "open and allow notification please")
-            .environment(\.locale, Locale.init(identifier: "ar"))
     }
 }

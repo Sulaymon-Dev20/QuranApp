@@ -35,8 +35,6 @@ struct NotificationSwipe: View {
 struct NotificationSwipe_Previews: PreviewProvider {
     static var previews: some View {
         NotificationSwipe(nativationStatus: .constant(false), showAlert: .constant(false), index: "001")
-            .environmentObject(NoficationsManager())
-            .environmentObject(BookMarkViewModel())
-            .environmentObject(NotificatSurahViewModel())
+            .environmentAllObject()
     }
 }
