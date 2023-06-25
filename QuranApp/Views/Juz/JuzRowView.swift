@@ -15,30 +15,28 @@ struct JuzRowView: View {
     var body: some View {
         let text = LocalizedStringKey("juz").stringValue(locale: language.language)
         HStack {
-            Button {
-                routerManager.setCurrentPage(to: item.index)
-            } label: {
-                HStack {
-                    Image(systemName: "app")
-                        .font(.system(size: 34.0))
-                        .overlay {
-                            Text("\(item.index)")
-                                .font(.system(size: 21.0))
-                        }
-                    VStack {
-                        Text(text)
-                            .font(.title2)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Text(getSurahsToString(item.surahs))
-                            .font(.caption2)
-                            .lineLimit(1)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .foregroundColor(Color.gray)
+            HStack {
+                Image(systemName: "app")
+                    .font(.system(size: 34.0))
+                    .overlay {
+                        Text("\(item.index)")
+                            .font(.system(size: 21.0))
                     }
-                    Spacer()
+                VStack {
+                    Text(text)
+                        .font(.title2)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text(getSurahsToString(item.surahs))
+                        .font(.caption2)
+                        .lineLimit(1)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(Color.gray)
                 }
+                Spacer()
             }
-            .foregroundColor(Color.primary)
+            .navigationButton(action: {
+                routerManager.setCurrentPage(to: item.index)
+            })
             .hiddinNativiation(value: Route.menu(item: item))
             Menu {
                 NavigationLink(value: Route.menu(item: item.page)) {
