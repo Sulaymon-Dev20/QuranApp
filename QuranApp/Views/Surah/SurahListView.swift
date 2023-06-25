@@ -21,26 +21,24 @@ struct SurahListView: View {
     
     var body: some View {
         if !list.isEmpty {
-            ZStack {
-                List (list, id: \.title) { item in
-                    let status = bookmarksViewModel.getPages().contains(item.pages.intValue)
-                    SurahRowView(item: item, status: status)
-                        .swipeActions(edge: .trailing, allowsFullSwipe: !status) {
-                            BookmarkSwipe(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: item.pages.intValue), status: status)
-                                .tint(status ? .red : .green)
-                        }
-                        .swipeActions(edge: .leading) {
-                            NotificationSwipe(nativationStatus: $nativationStatus, showAlert: $showAlert, index: item.index)
-                                .task {
-                                    self.index = item
-                                    noficationsManager.checkNotificationPermission()
-                                    noficationsManager.request()
-                                }
-                            ShareSwipe(title: LocalizedStringKey(item.title).stringValue(), index: item.pages)
-                        }
-                }
-                AlertPermissions(showAlert: $showAlert, title: "Location allow", message: "open and allow notification please")
+            List (list, id: \.title) { item in
+                let status = bookmarksViewModel.getPages().contains(item.pages.intValue)
+                SurahRowView(item: item, status: status)
+                    .swipeActions(edge: .trailing, allowsFullSwipe: !status) {
+                        BookmarkSwipe(item: BookmarkModel(title: item.title, juz: item.juz[0].index, pageNumber: item.pages.intValue), status: status)
+                            .tint(status ? .red : .green)
+                    }
+                    .swipeActions(edge: .leading) {
+                        NotificationSwipe(nativationStatus: $nativationStatus, showAlert: $showAlert, index: item.index)
+                            .task {
+                                self.index = item
+                                noficationsManager.checkNotificationPermission()
+                                noficationsManager.request()
+                            }
+                        ShareSwipe(title: LocalizedStringKey(item.title).stringValue(), index: item.pages)
+                    }
             }
+            .alertPermissions(showAlert: $showAlert, title: "locationPermission", message: "allowLocationToUsePlease")
             .task {
                 noficationsManager.checkNotificationPermission()
             }

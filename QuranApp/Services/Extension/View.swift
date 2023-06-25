@@ -16,6 +16,26 @@ extension View {
     }
     
     @ViewBuilder
+    func alertPermissions(showAlert: Binding<Bool>, title: LocalizedStringKey, message: LocalizedStringKey) -> some View {
+        self
+            .alert(isPresented: showAlert) {
+                Alert(
+                    title: Text(title),
+                    message: Text(message),
+                    primaryButton: .destructive(Text("cancel")),
+                    secondaryButton: .default(
+                        Text("allow"),
+                        action: {
+                            if let url = URL(string: UIApplication.openSettingsURLString) {
+                                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                            }
+                        }
+                    )
+                )
+            }
+    }
+    
+    @ViewBuilder
     func hiddinNativiation(value: Route) -> some View {
         self
             .overlay {

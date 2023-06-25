@@ -13,7 +13,7 @@ struct SheetView: View {
     @EnvironmentObject var prayerTimeViewModel: PrayerTimeManager
     @EnvironmentObject var locationManager: LocationManager
     @EnvironmentObject var languageViewModel: LanguageViewModel
-
+    
     @Environment(\.dismiss) var dismiss
     
     @State var date: Date = Date()
@@ -32,63 +32,62 @@ struct SheetView: View {
                 .bold()
                 .font(.title)
                 .padding(.top, 40)
-
+            
             Text(date.clockString.convertedDigitsToLocale(languageViewModel.language))
                 .font(.largeTitle)
                 .padding(.bottom,40)
             
             DatePicker("notificationTime", selection: $date, displayedComponents: [.hourAndMinute])
-            ZStack {
-                VStack {
-                    HStack {
-                        Text("selectMadhabToCorrectPrayIime")
-                        Spacer()
-                        Picker("", selection: $prayerTimeViewModel.isHanafi, content: {
-                            Text("hanafi")
-                                .tag(true)
-                            Text("shafi")
-                                .tag(false)
-                        })
-                        .onChange(of: prayerTimeViewModel.isHanafi) { newValue in
-                            prayerTimeViewModel.changeMashab(to: newValue)
-                            prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
-                        }
-                    }
-                    Picker("", selection: $date, content: {
-                        ForEach(0..<data.count, id: \.self) { index in
-                            Text(LocalizedStringKey(data[index].name))
-                                .tag(data[index].time)
-                        }
+            VStack {
+                HStack {
+                    Text("selectMadhabToCorrectPrayIime")
+                    Spacer()
+                    Picker("", selection: $prayerTimeViewModel.isHanafi, content: {
+                        Text("hanafi")
+                            .tag(true)
+                        Text("shafi")
+                            .tag(false)
                     })
-                    .onAppear {
-//                        date = data[0].time
-                    }
-                    .padding(.bottom,20)
-                    .pickerStyle(SegmentedPickerStyle())
-                    Button {
-                        locationManager.request()
-                    } label: {
-                        HStack {
-                            Image(systemName: "paperplane")
-                            Text("locationUpdate")
-                        }
+                    .onChange(of: prayerTimeViewModel.isHanafi) { newValue in
+                        prayerTimeViewModel.changeMashab(to: newValue)
+                        prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
                     }
                 }
-                .blur(radius: show && !loading ? 0 : 8)
+                Picker("", selection: $date, content: {
+                    ForEach(0..<data.count, id: \.self) { index in
+                        Text(LocalizedStringKey(data[index].name))
+                            .tag(data[index].time)
+                    }
+                })
+                .onAppear {
+                    //                        date = data[0].time
+                }
+                .padding(.bottom,20)
+                .pickerStyle(SegmentedPickerStyle())
                 Button {
-                    locationManager.getLocation()
-                    if !show {
-                        showAlert = true
-                    }
+                    locationManager.request()
                 } label: {
-                    PermissionDenied(img: "paperplane.circle.fill", text: "Location Denited")
-                        .frame(maxWidth: .infinity)
+                    HStack {
+                        Image(systemName: "paperplane")
+                        Text("locationUpdate")
+                    }
                 }
-                .opacity(show ? 0 : 1)
-                ProgressView()
-                    .opacity(show && loading ? 1 : 0)
             }
-            AlertPermissions(showAlert: $showAlert, title: "locationPermission", message: "allowLocationToUsePlease")
+            .blur(radius: show && !loading ? 0 : 8)
+            Button {
+                locationManager.getLocation()
+                if !show {
+                    showAlert = true
+                }
+            } label: {
+                PermissionDenied(img: "paperplane.circle.fill", text: "Location Denited")
+                    .frame(maxWidth: .infinity)
+            }
+            .opacity(show ? 0 : 1)
+            ProgressView()
+                .opacity(show && loading ? 1 : 0)
+            
+                .alertPermissions(showAlert: $showAlert, title: "locationPermission", message: "allowLocationToUsePlease")
             Toggle("everyDay", isOn: $everyDay)
             Spacer()
             HStack {

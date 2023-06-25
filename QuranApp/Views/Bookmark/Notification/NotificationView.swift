@@ -48,11 +48,9 @@ struct NotificationView: View {
                 Button {
                     showAlert = true
                 } label: {
-                    ZStack {
-                        PermissionDenied(img: "clock.badge.exclamationmark.fill", text: "notificationPermissionDenied")
-                            .frame(maxWidth: .infinity)
-                        AlertPermissions(showAlert: $showAlert, title: "notificationPermission", message: "allowNotificationToYsePlease")
-                    }
+                    PermissionDenied(img: "clock.badge.exclamationmark.fill", text: "notificationPermissionDenied")
+                        .frame(maxWidth: .infinity)
+                        .alertPermissions(showAlert: $showAlert, title: "notificationPermission", message: "allowNotificationToYsePlease")
                 }
                 .task {
                     noficationsManager.request()
