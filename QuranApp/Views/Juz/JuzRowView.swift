@@ -35,7 +35,7 @@ struct JuzRowView: View {
                 Spacer()
             }
             .navigationButton(action: {
-                routerManager.setCurrentPage(to: item.index)
+                routerManager.setCurrentPage(to: item.page)
             })
             .hiddinNativiation(value: Route.menu(item: item))
             Menu {
