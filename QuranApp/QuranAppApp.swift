@@ -66,7 +66,6 @@ struct QuranAppApp: App {
     }
     
     func loadItem(_ userActivity: NSUserActivity) {
-        print("nima gapla")
         if let uniqueIdentifier = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String {
             //            viewModel.selectItem(with: uniqueIdentifier)
             print(uniqueIdentifier)
