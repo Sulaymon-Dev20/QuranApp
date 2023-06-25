@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BookmarkView: View {
+struct BookmarkMainView: View {
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var noficationsManager: NoficationsManager
     @EnvironmentObject var necessaryMenuViewModel: NecessaryMenuViewModel
@@ -16,7 +16,7 @@ struct BookmarkView: View {
         List {
             LastPageView()
                 .id(0)
-            BookmarkListView()
+            BookmarkView()
                 .id(1)
             NotificationView()
                 .id(2)
@@ -35,8 +35,6 @@ struct BookmarkView: View {
                         navigationBarTrailing: routerManager.navigationBarTrailing())
         .onDisappear {
             routerManager.searchText = ""
-        }
-        .task {
             noficationsManager.checkNotificationPermission()
         }
         .sheet(isPresented: $necessaryMenuViewModel.showModel) {
@@ -45,9 +43,9 @@ struct BookmarkView: View {
     }
 }
 
-struct BookmarkView_Previews: PreviewProvider {
+struct BookmarkMainView_Previews: PreviewProvider {
     static var previews: some View {
-        BookmarkView()
+        BookmarkMainView()
             .environmentAllObject()
     }
 }

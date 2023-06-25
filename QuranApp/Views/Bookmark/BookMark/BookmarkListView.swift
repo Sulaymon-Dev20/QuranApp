@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct BookmarkListView: View {
+    let list: [BookmarkModel]
+    
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
-    @EnvironmentObject var noficationsManager: NoficationsManager
-        
+    
     var body: some View {
-        Section {
-            if !bookmarksViewModel.items.isEmpty {
-                ForEach(routerManager.sort ? bookmarksViewModel.items : bookmarksViewModel.items.reversed()) { item in
+        if !bookmarksViewModel.items.isEmpty {
+            if !list.isEmpty {
+                ForEach(routerManager.sort ? list : list.reversed()) { item in
                     BookmarkRowView(item: item)
                         .swipeActions(edge: .trailing, allowsFullSwipe: false, content: {
                             BookmarkSwipe(item: item, status: true)
@@ -32,18 +33,14 @@ struct BookmarkListView: View {
                     bookmarksViewModel.items = routerManager.sort ? reversed : reversed.reversed()
                 }
             } else {
-                Button {
-                    routerManager.pushTab(to: 0)
-                } label: {
-                    ListEmptyView(icon: "book.circle", text: "bookmark_does_not_have_yet")
-                        .frame(maxWidth: .infinity)
-                }
+                ItemNotFoundView()
             }
-        } header: {
-            HStack {
-                Text("bookmarks")
-                Spacer()
-                SortButtonView(sort: $routerManager.sort)
+        } else {
+            Button {
+                routerManager.pushTab(to: 0)
+            } label: {
+                ListEmptyView(icon: "book.circle", text: "bookmark_does_not_have_yet")
+                    .frame(maxWidth: .infinity)
             }
         }
     }
@@ -53,7 +50,7 @@ struct BookmarkListView: View {
 struct BookmarkListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            BookmarkListView()
+            BookmarkListView(list: [])
         }
         .environmentAllObject()
     }

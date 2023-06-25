@@ -66,7 +66,7 @@
 		CE7C85472A039B0C00192CC5 /* JuzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85462A039B0C00192CC5 /* JuzView.swift */; };
 		CE7C85492A03A35D00192CC5 /* SurahListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85482A03A35C00192CC5 /* SurahListView.swift */; };
 		CE7C854B2A03A5C300192CC5 /* JuzRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C854A2A03A5C300192CC5 /* JuzRowView.swift */; };
-		CE7C854D2A03A7BF00192CC5 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C854C2A03A7BF00192CC5 /* BookmarkView.swift */; };
+		CE7C854D2A03A7BF00192CC5 /* BookmarkMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C854C2A03A7BF00192CC5 /* BookmarkMainView.swift */; };
 		CE7C854F2A03A7FA00192CC5 /* BookmarkRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C854E2A03A7FA00192CC5 /* BookmarkRowView.swift */; };
 		CE7C85512A03A88300192CC5 /* BookmarkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85502A03A88300192CC5 /* BookmarkListView.swift */; };
 		CE7C85572A03AFAB00192CC5 /* LanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85562A03AFAA00192CC5 /* LanguageViewModel.swift */; };
@@ -84,6 +84,7 @@
 		CED05B7F2A219DA500A0C4B5 /* ListEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED05B7E2A219DA500A0C4B5 /* ListEmptyView.swift */; };
 		CEE46E932A40E81A00828B55 /* SheetShareFriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE46E922A40E81900828B55 /* SheetShareFriendsView.swift */; };
 		CEE46E952A40EC1A00828B55 /* SheetCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE46E942A40EC1A00828B55 /* SheetCommandView.swift */; };
+		CEE50A872A48D9DA00B5C399 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE50A862A48D9DA00B5C399 /* BookmarkView.swift */; };
 		CEF640B62A1F71F700FE7D17 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF640B52A1F71F700FE7D17 /* Date.swift */; };
 		CEF640B82A1F736D00FE7D17 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF640B72A1F736D00FE7D17 /* Int.swift */; };
 		CEF640BA2A1F8C7400FE7D17 /* PermissionDenied.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF640B92A1F8C7400FE7D17 /* PermissionDenied.swift */; };
@@ -191,7 +192,7 @@
 		CE7C85462A039B0C00192CC5 /* JuzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuzView.swift; sourceTree = "<group>"; };
 		CE7C85482A03A35C00192CC5 /* SurahListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahListView.swift; sourceTree = "<group>"; };
 		CE7C854A2A03A5C300192CC5 /* JuzRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuzRowView.swift; sourceTree = "<group>"; };
-		CE7C854C2A03A7BF00192CC5 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
+		CE7C854C2A03A7BF00192CC5 /* BookmarkMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkMainView.swift; sourceTree = "<group>"; };
 		CE7C854E2A03A7FA00192CC5 /* BookmarkRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkRowView.swift; sourceTree = "<group>"; };
 		CE7C85502A03A88300192CC5 /* BookmarkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkListView.swift; sourceTree = "<group>"; };
 		CE7C85562A03AFAA00192CC5 /* LanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewModel.swift; sourceTree = "<group>"; };
@@ -210,6 +211,7 @@
 		CED05B7E2A219DA500A0C4B5 /* ListEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEmptyView.swift; sourceTree = "<group>"; };
 		CEE46E922A40E81900828B55 /* SheetShareFriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetShareFriendsView.swift; sourceTree = "<group>"; };
 		CEE46E942A40EC1A00828B55 /* SheetCommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetCommandView.swift; sourceTree = "<group>"; };
+		CEE50A862A48D9DA00B5C399 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		CEF640B52A1F71F700FE7D17 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CEF640B72A1F736D00FE7D17 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		CEF640B92A1F8C7400FE7D17 /* PermissionDenied.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionDenied.swift; sourceTree = "<group>"; };
@@ -431,7 +433,7 @@
 				CED05B752A2184F700A0C4B5 /* Notification */,
 				CED05B792A21989900A0C4B5 /* PrayTime */,
 				CE4CD5C32A328125006C1189 /* ColorScheme */,
-				CE7C854C2A03A7BF00192CC5 /* BookmarkView.swift */,
+				CE7C854C2A03A7BF00192CC5 /* BookmarkMainView.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -502,6 +504,7 @@
 			children = (
 				CE7C854E2A03A7FA00192CC5 /* BookmarkRowView.swift */,
 				CE7C85502A03A88300192CC5 /* BookmarkListView.swift */,
+				CEE50A862A48D9DA00B5C399 /* BookmarkView.swift */,
 			);
 			path = BookMark;
 			sourceTree = "<group>";
@@ -760,8 +763,9 @@
 				CEF640BA2A1F8C7400FE7D17 /* PermissionDenied.swift in Sources */,
 				CE434ED82A1D098B003D83EE /* NavigationRouter.swift in Sources */,
 				CEF640B82A1F736D00FE7D17 /* Int.swift in Sources */,
+				CEE50A872A48D9DA00B5C399 /* BookmarkView.swift in Sources */,
 				CED05B772A21852000A0C4B5 /* NotificationRowView.swift in Sources */,
-				CE7C854D2A03A7BF00192CC5 /* BookmarkView.swift in Sources */,
+				CE7C854D2A03A7BF00192CC5 /* BookmarkMainView.swift in Sources */,
 				CE7C85512A03A88300192CC5 /* BookmarkListView.swift in Sources */,
 				CE0887A32A23E88C00FDE8B0 /* OnBoardingModel.swift in Sources */,
 				CEC1A6892A1AE0D700A10212 /* LocalizedStringKey.swift in Sources */,

@@ -16,6 +16,7 @@ struct ItemNotFoundView: View {
             Text("cannot_find")
                 .bold()
         }
+        .frame(maxWidth: .infinity, alignment: .center)
     }
 }
 

@@ -25,5 +25,5 @@ struct TabViewItemsModel: Identifiable, Hashable, Equatable {
 let tabViewItemsList: [TabViewItemsModel] = [
     TabViewItemsModel(id: 0, title: "surahs", icon: "book.circle", view: AnyView(SurahView())),
     TabViewItemsModel(id: 1, title: "juz", icon: "mountain.2.circle", view: AnyView(JuzView())),
-    TabViewItemsModel(id: 2, title: "bookmarks", icon: "bookmark.circle", view: AnyView(BookmarkView()))
+    TabViewItemsModel(id: 2, title: "bookmarks", icon: "bookmark.circle", view: AnyView(BookmarkMainView()))
 ]
