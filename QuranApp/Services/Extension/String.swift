@@ -32,11 +32,11 @@ extension String {
         components(separatedBy: characterSet).joined()
     }
 
-    func convertedDigitsToLocale(_ lanuage:String = UserDefaults.standard.string(forKey: "language") ?? "EN") -> String {
+    func convertedDigitsToLocale(_ lanuage:String = UserDefaults.standard.string(forKey: "uz.suyo.QuranApp.language") ?? "EN") -> String {
         let digits = Set(clippingCharacters(in: CharacterSet.decimalDigits.inverted))
         guard !digits.isEmpty else { return self }
 
-        Self.formatter.locale = lanuage == "ar" ? Locale(identifier: "FA") : Locale(identifier: "EN")
+        Self.formatter.locale = Locale(identifier: lanuage == "ar" ? "FA" : "EN")
 
         let maps: [(original: String, converted: String)] = digits.map {
             let original = String($0)
