@@ -8,13 +8,19 @@
 import SwiftUI
 import PDFKit
 
+#if os(iOS) || os(tvOS)
+public typealias PlatformViewRepresentable = UIViewRepresentable
+#elseif os(macOS)
+public typealias PlatformViewRepresentable = NSViewRepresentable
+#endif
+
 let document2 = PDFDocument(url: Bundle.main.url(forResource: "data", withExtension: "pdf")!)!
 
-struct PDFViewer: UIViewRepresentable {
-    
+struct PDFViewer: PlatformViewRepresentable {
     let uiView = PDFKit.PDFView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
     @Binding var pageNumber: Int
     
+#if os(iOS)
     func makeUIView(context: Context) -> PDFKit.PDFView {
         uiView.document = document2
         uiView.displayMode = .singlePage
@@ -43,6 +49,34 @@ struct PDFViewer: UIViewRepresentable {
     func makeCoordinator() -> Coordinator {
         return Coordinator(self)
     }
+    
+#elseif os(macOS)
+    func makeNSView(context: Context) -> PDFView {
+        uiView.document = document2
+        uiView.displayMode = .twoUp
+        uiView.displayDirection = .horizontal
+        uiView.autoScales = true
+        uiView.displaysRTL = true
+        uiView.backgroundColor = NSColor.white
+        uiView.delegate = context.coordinator
+        if let page = uiView.document?.page(at: pageNumber - 1) {
+            uiView.go(to: page)
+        }
+        return uiView
+    }
+    
+    func updateNSView(_ nsView: PDFView, context: Context) {
+        uiView.document = document2
+        if let page = uiView.document?.page(at: pageNumber - 1) {
+            uiView.go(to: page)
+        }
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        return Coordinator(self)
+    }
+    
+#endif
 }
 
 class Coordinator: NSObject, PDFViewDelegate {

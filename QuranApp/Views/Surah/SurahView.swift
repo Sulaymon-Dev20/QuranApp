@@ -6,15 +6,10 @@
 //
 
 import SwiftUI
-import StoreKit
-import CoreSpotlight
-import MobileCoreServices
 
 struct SurahView: View {
     @EnvironmentObject var datas: SurahViewModel
     @EnvironmentObject var routerManager: RouterManager
-//    @EnvironmentObject var reviewsManager: ReviewsRequestManager
-//    @Environment(\.requestReview) var requestReview: RequestReviewAction
     
     var body: some View {
         SurahListView(list: routerManager.sort ? filterData().reversed() : filterData())

@@ -6,9 +6,6 @@
 //
 
 import SwiftUI
-import StoreKit
-import CoreSpotlight
-import MobileCoreServices
 
 struct PDFViewUI: View {
     
@@ -17,9 +14,6 @@ struct PDFViewUI: View {
     @EnvironmentObject var surahViewModel: SurahViewModel
     @EnvironmentObject var juzViewModel: JuzViewModel
     @EnvironmentObject var reviewsManager: ReviewsRequestManager
-    
-    @Environment(\.requestReview) var requestReview: RequestReviewAction
-    @Environment(\.dismiss) var dismiss
     
     @State var showTogBar: Bool = false
     
@@ -52,7 +46,6 @@ struct PDFViewUI: View {
                     ForEach(surahViewModel.items, id: \.index) { surah in
                         Button {
                             routerManager.setCurrentPage(to: surah.pages.intValue)
-//                            routerManager.currentPDFPage = surah.pages.intValue
                         } label: {
                             Label(LocalizedStringKey(surah.title.localizedForm), systemImage: surah.type == .madaniyah ? "moon.fill" : "sun.max.fill")
                         }

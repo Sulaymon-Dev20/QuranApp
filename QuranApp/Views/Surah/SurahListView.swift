@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreSpotlight
 
 struct SurahListView: View {
     
