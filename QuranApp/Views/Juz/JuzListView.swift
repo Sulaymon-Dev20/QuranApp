@@ -10,8 +10,6 @@ import SwiftUI
 struct JuzListView: View {
     let list: [JuzModel]
     
-    @EnvironmentObject var routerManager: RouterManager
-    
     var body: some View {
         if !list.isEmpty {
             List (list, id: \.index) { item in

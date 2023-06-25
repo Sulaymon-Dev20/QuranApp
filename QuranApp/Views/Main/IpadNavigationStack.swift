@@ -28,9 +28,6 @@ struct IpadNavigationStack: View {
             routerManager.tabValue?.view
                 .navigationDestination(for: Route.self) {
                     routerManager.navigationDestination($0)
-                        .task {
-                            print("trol")
-                        }
                 }
         } detail: {
             routerManager.view

@@ -15,5 +15,24 @@ extension View {
             MyAppDelegate.orientationLock = orientation
         }
     }
+    
+    @ViewBuilder
+    func hiddinNativiation(value: Route) -> some View {
+        self
+            .overlay {
+                NavigationLink(value: value) {
+                    Text(">>>")
+                }
+                .opacity(0)
+            }
+    }
+    
+    
+    @ViewBuilder
+    func hideIfPad() -> some View {
+        if UIDevice.current.userInterfaceIdiom != .pad {
+            self
+        }
+    }
 }
 

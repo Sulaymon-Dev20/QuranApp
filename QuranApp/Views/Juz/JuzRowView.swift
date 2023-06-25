@@ -10,35 +10,36 @@ import SwiftUI
 struct JuzRowView: View {
     let item: JuzModel
     @EnvironmentObject var language: LanguageViewModel
+    @EnvironmentObject var routerManager: RouterManager
     
     var body: some View {
         let text = LocalizedStringKey("juz").stringValue(locale: language.language)
         HStack {
-            HStack {
-                Image(systemName: "app")
-                    .font(.system(size: 34.0))
-                    .overlay {
-                        Text("\(item.index)")
-                            .font(.system(size: 21.0))
+            Button {
+                routerManager.setCurrentPage(to: item.index)
+            } label: {
+                HStack {
+                    Image(systemName: "app")
+                        .font(.system(size: 34.0))
+                        .overlay {
+                            Text("\(item.index)")
+                                .font(.system(size: 21.0))
+                        }
+                    VStack {
+                        Text(text)
+                            .font(.title2)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Text(getSurahsToString(item.surahs))
+                            .font(.caption2)
+                            .lineLimit(1)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(Color.gray)
                     }
-                VStack {
-                    Text(text)
-                        .font(.title2)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text(getSurahsToString(item.surahs))
-                        .font(.caption2)
-                        .lineLimit(1)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(Color.gray)
+                    Spacer()
                 }
-                Spacer()
             }
-            .overlay {
-                NavigationLink(value: Route.menu(item: item)) {
-                    Text(">>>")
-                }
-                .opacity(0)
-            }
+            .foregroundColor(Color.primary)
+            .hiddinNativiation(value: Route.menu(item: item))
             Menu {
                 NavigationLink(value: Route.menu(item: item.page)) {
                     Label("\(item.index) \(text)", systemImage: "timelapse")
@@ -59,6 +60,7 @@ struct JuzRowView: View {
                 .frame(width: 80)
                 .contentShape(Rectangle())
             }
+            .hideIfPad()
         }
     }
     
@@ -95,6 +97,7 @@ struct JuzRowView_Previews: PreviewProvider {
             }
             .environment(\.locale, Locale.init(identifier: "ru"))
             .environmentObject(LanguageViewModel())
+            .environmentObject(RouterManager())
         }
     }
 }
