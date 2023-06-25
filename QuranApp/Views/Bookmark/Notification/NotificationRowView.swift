@@ -33,11 +33,10 @@ struct NotificationRowView: View {
             .tint(.blue)
             .disabled(!item.active)
             Menu {
-                Label("open", systemImage: "arrowshape.zigzag.right")
-                    .navigationButton(action: {
-                        routerManager.setCurrentPage(to: item.page.intValue)
-                    })
-                    .hiddinNativiation(value: Route.menu(item: item.page.intValue))
+                NavigationLink(value: Route.menu(item: item.page.intValue)) {
+                    Label("open", systemImage: "arrowshape.zigzag.right")
+                }
+                .hideIfPad()
                 Button {
                     item.active = !item.active
                     action(true)
