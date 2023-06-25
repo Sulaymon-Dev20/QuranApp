@@ -15,34 +15,32 @@ struct SurahRowView: View {
     
     var body: some View {
         ZStack {
-            Button {
-                routerManager.setCurrentPage(to: item.pages.intValue)
-            } label: {
-                HStack {
-                    Image(systemName: "square.dashed")
-                        .font(.system(size: 34.0))
-                        .overlay {
-                            Text("\(item.index)")
-                                .font(.system(size: 11.0))
-                        }
-                    VStack{
-                        HStack {
-                            Text(LocalizedStringKey(item.title.localizedForm))
-                                .bold()
-                            Spacer()
-                        }
-                        HStack {
-                            Text(LocalizedStringKey(item.type == TypeEnum.madaniyah ? "madaniyah" : "makkiyah"))
-                                .fontWeight(Font.Weight.ultraLight)
-                            Text("\(item.count)")
-                                .fontWeight(Font.Weight.ultraLight)
-                            Spacer()
-                        }
+            HStack {
+                Image(systemName: "square.dashed")
+                    .font(.system(size: 34.0))
+                    .overlay {
+                        Text("\(item.index)")
+                            .font(.system(size: 11.0))
                     }
-                    .badge(Int(item.pages.intValue))
+                VStack{
+                    HStack {
+                        Text(LocalizedStringKey(item.title.localizedForm))
+                            .bold()
+                        Spacer()
+                    }
+                    HStack {
+                        Text(LocalizedStringKey(item.type == TypeEnum.madaniyah ? "madaniyah" : "makkiyah"))
+                            .fontWeight(Font.Weight.ultraLight)
+                        Text("\(item.count)")
+                            .fontWeight(Font.Weight.ultraLight)
+                        Spacer()
+                    }
                 }
+                .badge(Int(item.pages.intValue))
             }
-            .foregroundColor(Color.primary)
+            .navigationButton(action: {
+                routerManager.setCurrentPage(to: item.pages.intValue)
+            })
             .hiddinNativiation(value: Route.menu(item: item))
             if status {
                 HStack {

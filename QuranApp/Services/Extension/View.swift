@@ -34,5 +34,15 @@ extension View {
             self
         }
     }
+    
+    @ViewBuilder
+    func navigationButton(action event: @escaping () -> Void) -> some View {
+        Button {
+            event()
+        } label: {
+            self
+        }
+        .foregroundColor(Color.primary)
+    }
 }
 
