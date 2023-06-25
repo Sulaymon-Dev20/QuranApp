@@ -34,7 +34,7 @@ struct PrayTimeRowView: View {
                                     prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
                                 }
                             }
-                            Text(item.time.clockString.convertedDigitsToLocale(languageViewModel.language))
+                            Text(item.time.clockString.convertedDigitsToLocale())
                                 .bold()
                                 .frame(width: 60, alignment: .center)
                         }

@@ -12,7 +12,7 @@ extension LocalizedStringKey {
         Mirror(reflecting: self).children.first(where: { $0.label == "key" })?.value as? String
     }
 
-    func stringValue(locale: String = UserDefaults.standard.string(forKey: "language") ?? "en", argument:String = "") -> String {
+    func stringValue(locale: String = UserDefaults.standard.string(forKey: "uz.suyo.QuranApp.language") ?? "en", argument:String = "") -> String {
         return .localizedString(for: self.stringKey ?? "en", locale: locale, argument: argument)
     }
 }

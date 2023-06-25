@@ -19,7 +19,7 @@ struct SurahRowView: View {
                 Image(systemName: "square.dashed")
                     .font(.system(size: 34.0))
                     .overlay {
-                        Text("\(item.index)")
+                        Text("\(item.index)".convertedDigitsToLocale())
                             .font(.system(size: 11.0))
                     }
                 VStack{

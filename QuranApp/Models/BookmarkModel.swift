@@ -10,9 +10,5 @@ import Foundation
 struct BookmarkModel: Codable, Identifiable, Hashable {
     var id = UUID()
     let title, juz: String
-    let pageNumber: Int
-    
-    func toString() -> String {
-        return title+"|"+juz+"|\(pageNumber)";
-    }
+    let pageNumber: Int    
 }

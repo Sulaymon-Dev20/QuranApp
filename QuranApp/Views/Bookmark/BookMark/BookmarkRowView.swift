@@ -23,7 +23,7 @@ struct BookmarkRowView: View {
                     Spacer()
                 }
                 HStack{
-                    Text("\("page".lv) \(item.pageNumber), \("juz".lv) \(item.juz.intValue)")
+                    Text(LocalizedStringKey("page").stringValue()+" \(item.pageNumber), \(LocalizedStringKey("juz").stringValue()) \(item.juz.intValue)".convertedDigitsToLocale())
                     Spacer()
                 }
             }
