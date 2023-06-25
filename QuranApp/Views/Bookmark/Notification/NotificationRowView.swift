@@ -9,7 +9,8 @@ import SwiftUI
 
 struct NotificationRowView: View {
     @EnvironmentObject var languageViewModel: LanguageViewModel
-    
+    @EnvironmentObject var routerManager: RouterManager
+
     @Binding var item: NotificatSurah
     
     let action: (_ activeToggle:Bool) -> Void
@@ -32,9 +33,11 @@ struct NotificationRowView: View {
             .tint(.blue)
             .disabled(!item.active)
             Menu {
-                NavigationLink(value: Route.menu(item: item.page.intValue)) {
-                    Label("open", systemImage: "arrowshape.zigzag.right")
-                }
+                Label("open", systemImage: "arrowshape.zigzag.right")
+                    .navigationButton(action: {
+                        routerManager.setCurrentPage(to: item.page.intValue)
+                    })
+                    .hiddinNativiation(value: Route.menu(item: item.page.intValue))
                 Button {
                     item.active = !item.active
                     action(true)

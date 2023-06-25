@@ -11,13 +11,11 @@ struct BookmarkListView: View {
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var noficationsManager: NoficationsManager
-    
-    @State var sort: Bool = false
-    
+        
     var body: some View {
         Section {
             if !bookmarksViewModel.items.isEmpty {
-                ForEach(sort ? bookmarksViewModel.items : bookmarksViewModel.items.reversed()) { item in
+                ForEach(routerManager.sort ? bookmarksViewModel.items : bookmarksViewModel.items.reversed()) { item in
                     BookmarkRowView(item: item)
                         .swipeActions(edge: .trailing, allowsFullSwipe: false, content: {
                             BookmarkSwipe(item: item, status: true)
@@ -29,9 +27,9 @@ struct BookmarkListView: View {
                 }
                 .onDelete(perform: bookmarksViewModel.deleteItem)
                 .onMove { indexA, indexB in
-                    var reversed = Array(sort ? bookmarksViewModel.items : bookmarksViewModel.items.reversed())
+                    var reversed = Array(routerManager.sort ? bookmarksViewModel.items : bookmarksViewModel.items.reversed())
                     reversed.move(fromOffsets: indexA, toOffset: indexB)
-                    bookmarksViewModel.items = sort ? reversed : reversed.reversed()
+                    bookmarksViewModel.items = routerManager.sort ? reversed : reversed.reversed()
                 }
             } else {
                 Button {
@@ -45,7 +43,7 @@ struct BookmarkListView: View {
             HStack {
                 Text("bookmarks")
                 Spacer()
-                SortButtonView(sort: $sort)
+                SortButtonView(sort: $routerManager.sort)
             }
         }
     }

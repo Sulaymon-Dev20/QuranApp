@@ -10,6 +10,8 @@ import SwiftUI
 struct BookmarkRowView: View {
     let item: BookmarkModel
     
+    @EnvironmentObject var routerManager: RouterManager
+
     var body: some View {
         HStack {
             Image(systemName: "book.closed")
@@ -28,12 +30,10 @@ struct BookmarkRowView: View {
             Text("\(item.pageNumber)")
                 .font(.system(size: 34.0))
         }
-        .overlay {
-            NavigationLink(value: Route.menu(item: item)) {
-                Text(">>>")
-            }
-            .opacity(0)
-        }
+        .navigationButton(action: {
+            routerManager.setCurrentPage(to: item.pageNumber)
+        })
+        .hiddinNativiation(value: Route.menu(item: item))
     }
 }
 
