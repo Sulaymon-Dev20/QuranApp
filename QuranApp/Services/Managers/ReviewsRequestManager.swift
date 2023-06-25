@@ -12,7 +12,7 @@ class ReviewsRequestManager: ObservableObject {
     private(set) var reviewLink = URL(string: "https://apps.apple.com/app/id6448216007?action=write-review")//test
     @Published var count:Int = 0
 
-    let storageKey = "reviewsRequestManager"
+    let storageKey = "uz.suyo.QuranApp.reviewsRequestManager"
     let limit = 30
 
     init() {

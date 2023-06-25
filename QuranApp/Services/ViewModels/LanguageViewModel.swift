@@ -11,7 +11,7 @@ class LanguageViewModel: ObservableObject {
     
     @Published var language:String = "en"
     
-    let languageKey:String = "language"
+    let languageKey:String = "uz.suyo.QuranApp.language"
     
     init() {
         getLanguage()

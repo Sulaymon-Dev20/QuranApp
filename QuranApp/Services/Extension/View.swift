@@ -5,7 +5,6 @@
 //  Created by Sulaymon on 27/05/23.
 //
 
-import Foundation
 import SwiftUI
 
 extension View {
@@ -43,6 +42,19 @@ extension View {
             self
         }
         .foregroundColor(Color.primary)
+    }
+    
+    @ViewBuilder
+    func viewTabToolbar(searchText: Binding<String>, title: LocalizedStringKey, navigationBarTrailing: AnyView) -> some View {
+        self
+            .searchable(text: searchText, placement: .toolbar, prompt: Text("search_surah"))
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(title)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    navigationBarTrailing
+                }
+            }
     }
     
     @ViewBuilder

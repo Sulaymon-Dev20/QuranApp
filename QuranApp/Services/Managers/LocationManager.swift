@@ -11,7 +11,7 @@ import CoreLocation
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     let manager = CLLocationManager()
 
-    let storageKey:String = "location"
+    let storageKey:String = "uz.suyo.QuranApp.location"
 
     @Published var authorizationStatus: Bool = false
     @Published var loading: Bool = false

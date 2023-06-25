@@ -14,10 +14,6 @@ struct SurahModel:Codable, Hashable {
     let count: Int
     let title, titleAr, index, pages: String
     let juz: [Juz]
-    
-    func toString() -> String {
-        return title+"|"+titleAr+"|"+index+"|\(type)"
-    }
 }
 
 // MARK: - Juz

@@ -15,7 +15,7 @@ class BookMarkViewModel: ObservableObject {
         }
     }
     
-    let bookmarkKey:String = "book_mark_list"
+    let bookmarkKey:String = "uz.suyo.QuranApp.bookmark.list"
     
     init() {
         getItems()

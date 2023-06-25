@@ -5,7 +5,6 @@
 //  Created by Sulaymon on 23/05/23.
 //
 
-import Foundation
 import SwiftUI
 
 class RouterManager: ObservableObject {
@@ -19,7 +18,7 @@ class RouterManager: ObservableObject {
     @Published var searchText: String = ""
     @Published var sort: Bool = false
     
-    let lastPageStorageKey:String = "lastPageStorageKey"
+    let lastPageStorageKey:String = "uz.suyo.QuranApp.lastPageStorageKey"
     
     let view = PDFViewUI()
     

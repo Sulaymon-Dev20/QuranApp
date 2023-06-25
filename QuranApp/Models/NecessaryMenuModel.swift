@@ -5,9 +5,8 @@
 //  Created by Sulaymon on 16/06/23.
 //
 
-import Foundation
-import Lottie
 import SwiftUI
+import Lottie
 
 struct NecessaryMenuModel {
     var id: UUID = .init()

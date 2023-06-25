@@ -5,12 +5,11 @@
 //  Created by Sulaymon on 24/05/23.
 //
 
-import Foundation
-import Adhan
 import SwiftUI
+import Adhan
 
 class PrayerTimeManager: ObservableObject {
-    let mashabValue: String = "mashab"
+    let storageKey: String = "uz.suyo.QuranApp.mashab"
     @Published var isHanafi: Bool = true
     @Published var prayTimes: [PrayTimeModel] = []
 
@@ -59,11 +58,11 @@ class PrayerTimeManager: ObservableObject {
     }
     
     func saveStorage() {
-        UserDefaults.standard.set(isHanafi, forKey: mashabValue)
+        UserDefaults.standard.set(isHanafi, forKey: storageKey)
     }
 
     func getValue() {
-        let value = UserDefaults.standard.bool(forKey: mashabValue)
+        let value = UserDefaults.standard.bool(forKey: storageKey)
         self.isHanafi = value
     }
     

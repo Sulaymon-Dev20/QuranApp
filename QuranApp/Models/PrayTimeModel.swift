@@ -5,7 +5,6 @@
 //  Created by Sulaymon on 24/05/23.
 //
 
-import Foundation
 import SwiftUI
 
 struct PrayTimeModel {

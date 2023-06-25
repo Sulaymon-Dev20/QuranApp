@@ -15,7 +15,7 @@ class NotificatSurahViewModel: ObservableObject {
         }
     }
     
-    let storageKey:String = "notificat_surah"
+    let storageKey:String = "uz.suyo.QuranApp.notificat.surah"
     
     init() {
         getItems()

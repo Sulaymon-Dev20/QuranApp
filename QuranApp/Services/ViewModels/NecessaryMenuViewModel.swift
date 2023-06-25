@@ -5,7 +5,6 @@
 //  Created by Sulaymon on 17/06/23.
 //
 
-import Foundation
 import SwiftUI
 
 class NecessaryMenuViewModel: ObservableObject {

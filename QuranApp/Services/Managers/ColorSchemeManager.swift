@@ -5,13 +5,12 @@
 //  Created by Sulaymon on 09/06/23.
 //
 
-import Foundation
 import SwiftUI
 
 class ColorSchemeManager: ObservableObject {
     @Published var status: ColorSchemaStatus = .auto
     
-    let storageKey = "systemColor"
+    let storageKey = "uz.suyo.QuranApp.systemColor"
     
     init() {
         getValue()
