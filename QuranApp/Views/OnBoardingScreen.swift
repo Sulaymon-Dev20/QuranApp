@@ -12,19 +12,19 @@ struct OnBoardingScreen: View {
     @EnvironmentObject var reviewsManager: ReviewsRequestManager
     
     @State var onboardingItems: [OnBoardingModel] = [
-        .init(title: "Xorijiy Tillar",
-              subTitle: "Iltimos o`zingizga qulay bo`lishi uchun tilni tanlang",
+        .init(title: "languageViewTitle",
+              subTitle: "languageViewSubTitle",
               lottieView: .init(name:"Language", bundle: .main),
               loop: true),
-        .init(title: "Eslatma tizimi",
-              subTitle: "ushbu ilovada siz aynan bir surani kunning istalgan qismni belgilab eslatma qoldirishingiz mumkin",
+        .init(title: "clockViewTitle",
+              subTitle: "clockViewSubTitle",
               lottieView: .init(name:"Notification", bundle: .main)),
-        .init(title: "Nomoz vaqtlari",
-              subTitle: "ilovada qulaylik uchun nomoz vaqtlar ham mabjud va siz aynan bir surani nomoz vaqtiga qarab esmani bergilashingiz mumkin",
+        .init(title: "prayTimeViewTitle",
+              subTitle: "prayTimeViewSubTitle",
               lottieView: .init(name:"Clock", bundle: .main),
               loop: true),
-        .init(title: "Qurani karim",
-              subTitle: "ushbu ilovaning asosiy maqsadi ham qurani karim bo`lib offline ishlari uchun qo`ldan kelgancha harakat qilingan !",
+        .init(title: "holyBookViewTitle",
+              subTitle: "holyBookViewSubTitle",
               lottieView: .init(name:"Book", bundle: .main))
     ]
     
@@ -37,13 +37,13 @@ struct OnBoardingScreen: View {
                 ForEach($onboardingItems) { $item in
                     VStack {
                         HStack {
-                            Button("Back"){
+                            Button("back"){
                                 if currentIndex > 0 {
                                     currentIndex -= 1
                                 }
                             }
                             Spacer(minLength: 0)
-                            Button("Skip"){
+                            Button("skip"){
                                 currentIndex = onboardingItems.count - 1
                             }
                         }
@@ -78,7 +78,7 @@ struct OnBoardingScreen: View {
                             if currentIndex == 0 {
                                 LanguageButtonView(miniView: false)
                             }
-                            Text(finalPage ? "Start" : "Next")
+                            Text(finalPage ? "open" : "next")
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
                                 .padding(.vertical, 12)
@@ -99,11 +99,11 @@ struct OnBoardingScreen: View {
                                     }
                                 }
                             HStack {
-                                Text("Teams of Service")
-                                Text("Privary Policy")
+                                Text("Developer:")
+                                Text("Sulaymon Yahyo")
+                                    .underline(true, color: .primary)
                             }
                             .font(.caption2)
-                            .underline(true, color: .primary)
                             .offset(y: 5)
                         }
                     }

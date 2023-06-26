@@ -174,3 +174,14 @@
 "maghrib %@" = "🕰️ Maghrib:                     %@";
 "isha %@" = "🕰️ Isha:                              %@";
 "shareButton" = "Share information";
+"languageViewTitle" = "language View Title";
+"languageViewSubTitle" = "Language View Sub Title";
+"clockViewTitle" = "Clock View Title";
+"clockViewSubTitle" = "Clock View Sub title";
+"prayTimeViewTitle" = "Pray Time View Title";
+"prayTimeViewSubTitle" = "Pray Time View Sub Title";
+"holyBookViewTitle" = "Qurani karim";
+"holyBookViewSubTitle" = "Holy Book View Sub Title";
+"skip" = "Skip";
+"next" = "Next";
+"open" = "Open";

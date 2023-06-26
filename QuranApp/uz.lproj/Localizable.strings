@@ -174,3 +174,14 @@
 "maghrib %@" = "🕰️ Shom:                                       %@";
 "isha %@" = "🕰️ Xufton:                                      %@";
 "shareButton" = "Ma'lumot almashish";
+"languageViewTitle" = "language View Title";
+"languageViewSubTitle" = "Iltimos o`zingizga qulay bo`lishi uchun tilni tanlang";
+"clockViewTitle" = "Eslatma tizimi";
+"clockViewSubTitle" = "Ushbu ilovada siz aynan bir surani kunning istalgan qismni belgilab eslatma qoldirishingiz mumkin";
+"prayTimeViewTitle" = "Nomoz vaqtlari";
+"prayTimeViewSubTitle" = "Ilovada qulaylik uchun nomoz vaqtlar ham mabjud va siz aynan bir surani nomoz vaqtiga qarab esmani bergilashingiz mumkin";
+"holyBookViewTitle" = "Qurani karim";
+"holyBookViewSubTitle" = "Ushbu ilovaning asosiy maqsadi ham qurani karim bo`lib offline ishlari uchun qo`ldan kelgancha harakat qilingan !";
+"skip" = "Oʻtkazib yuborish";
+"next" = "Keyingisi";
+"open" = "Ochiq";
