@@ -10,7 +10,7 @@ import Lottie
 
 struct OnBoardingScreen: View {
     @EnvironmentObject var reviewsManager: ReviewsRequestManager
-
+    
     @State var onboardingItems: [OnBoardingModel] = [
         .init(title: "Xorijiy Tillar",
               subTitle: "Iltimos o`zingizga qulay bo`lishi uchun tilni tanlang",
@@ -49,10 +49,11 @@ struct OnBoardingScreen: View {
                         }
                         .tint(Color.red)
                         .bold()
+                        Spacer()
                         VStack(spacing: 15) {
                             let offset = -CGFloat(currentIndex) * size.width
                             ResizableLottieView(onboarding: $item.lottieView)
-                                .frame(height: size.width)
+                                .frame(height: size.width / 3)
                                 .onAppear {
                                     if currentIndex == indexOf(item) {
                                         onboardingItems[currentIndex].lottieView.play(toProgress: 1)
@@ -125,9 +126,7 @@ struct OnBoardingScreen: View {
 
 struct OnBoardingScreen_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
-            OnBoardingScreen()
-        }
-        .environmentAllObject()
+        OnBoardingScreen()
+            .environmentAllObject()
     }
 }
