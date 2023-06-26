@@ -9,8 +9,15 @@ import SwiftUI
 import Adhan
 
 class PrayerTimeManager: ObservableObject {
-    let storageKey: String = "uz.suyo.QuranApp.mashab"
+    let storageMashabKey: String = "uz.suyo.QuranApp.mashab"
+    let storageCalculationMethodKey: String = "uz.suyo.QuranApp.calculation.method"
+
+    let calculationMehods:[String] = [
+        "muslimWorldLeague", "egyptian", "karachi", "ummAlQura", "dubai", "moonsightingCommittee", "northAmerica", "kuwait", "qatar", "singapore", "tehran", "turkey"
+    ]
+    
     @Published var isHanafi: Bool = true
+    @Published var calculationMehod: String = "moonsightingCommittee"
     @Published var prayTimes: [PrayTimeModel] = []
 
     init() {
@@ -22,7 +29,7 @@ class PrayerTimeManager: ObservableObject {
         let cal = Calendar(identifier: Calendar.Identifier.gregorian)
         let date = cal.dateComponents([.year, .month, .day], from: time)
         let coordinates = Coordinates(latitude: lat, longitude: long)
-        var params = CalculationMethod.moonsightingCommittee.params
+        var params = CalculationMethod(rawValue: self.calculationMehod)!.params
         params.madhab = isHanafi ? Madhab.hanafi : Madhab.shafi
         var res:[PrayTimeModel] = []
         if let prayers = PrayerTimes(coordinates: coordinates, date: date, calculationParameters: params) {
@@ -56,13 +63,9 @@ class PrayerTimeManager: ObservableObject {
         }
         return res
     }
-    
-    func saveStorage() {
-        UserDefaults.standard.set(isHanafi, forKey: storageKey)
-    }
 
     func getValue() {
-        let value = UserDefaults.standard.bool(forKey: storageKey)
+        let value = UserDefaults.standard.bool(forKey: storageMashabKey)
         self.isHanafi = value
     }
     
@@ -74,6 +77,16 @@ class PrayerTimeManager: ObservableObject {
     func changeMashab(to isHanafi: Bool) {
         self.isHanafi = isHanafi
         saveStorage()
+    }
+    
+    func changeCalculationMethod(to:String) {
+        self.calculationMehod = to
+        saveStorage()
+    }
+
+    func saveStorage() {
+        UserDefaults.standard.set(isHanafi, forKey: storageMashabKey)
+        UserDefaults.standard.set(calculationMehod, forKey: storageMashabKey)
     }
     
     func getIcon(time: String) -> String {

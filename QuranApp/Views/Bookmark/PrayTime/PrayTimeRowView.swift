@@ -15,8 +15,8 @@ struct PrayTimeRowView: View {
     @State var showAlert: Bool = false
     
     var body: some View {
-        let show = locationManager.checkLocationPermission()
-        let loading = locationManager.loading
+        let show = !locationManager.checkLocationPermission()
+        let loading = !locationManager.loading
         let location = locationManager.location
         Section {
             let commingIndex = prayerTimeViewModel.firstPrayTimeIndex()
@@ -61,6 +61,29 @@ struct PrayTimeRowView: View {
                 if show && !loading {
                     ShareLink(item: prayerTimeViewModel.shareText(lanuage: languageViewModel.language)) {
                         Label("shareButton", systemImage: "square.and.arrow.up")
+                    }
+                    Picker("selectMadhabToCorrectPrayIime", selection: $prayerTimeViewModel.isHanafi, content: {
+                        Text("hanafi")
+                            .tag(true)
+                        Text("shafi")
+                            .tag(false)
+                    })
+                    .pickerStyle(.menu)
+                    .onChange(of: prayerTimeViewModel.isHanafi) { newValue in
+                        prayerTimeViewModel.changeMashab(to: newValue)
+                        prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
+                    }
+                    Picker("selectCalculationTime", selection: $prayerTimeViewModel.calculationMehod, content: {
+                        ForEach(prayerTimeViewModel.calculationMehods, id: \.self) { methods in
+//                            Text(LocalizedStringKey(methods))
+                            Text(methods)
+                                .tag(methods)
+                        }
+                    })
+                    .pickerStyle(.menu)
+                    .onChange(of: prayerTimeViewModel.calculationMehod) { newValue in
+                        prayerTimeViewModel.changeCalculationMethod(to: newValue)
+                        prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
                     }
                 }
             }
