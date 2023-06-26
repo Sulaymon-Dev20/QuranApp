@@ -15,8 +15,8 @@ struct PrayTimeRowView: View {
     @State var showAlert: Bool = false
     
     var body: some View {
-        let show = !locationManager.checkLocationPermission()
-        let loading = !locationManager.loading
+        let show = locationManager.checkLocationPermission()
+        let loading = locationManager.loading
         let location = locationManager.location
         Section {
             let commingIndex = prayerTimeViewModel.firstPrayTimeIndex()
