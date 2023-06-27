@@ -91,7 +91,6 @@ extension View {
             .environmentObject(NoficationsManager())
             .environmentObject(PrayerTimeManager())
             .environmentObject(ReviewsRequestManager())
-            .environmentObject(BadgeAppManager())
             .environmentObject(ColorSchemeManager())
             .environmentObject(NecessaryMenuViewModel())
             .environment(\.locale, Locale.init(identifier: language))

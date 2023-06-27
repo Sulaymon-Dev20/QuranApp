@@ -173,8 +173,8 @@
             filePath = "QuranApp/Services/MyAppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "registerForNotification()"
             landmarkType = "7">
          </BreakpointContent>

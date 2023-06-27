@@ -25,7 +25,6 @@ struct QuranAppApp: App {
     @StateObject var prayerTimeManager: PrayerTimeManager = PrayerTimeManager()
     @StateObject var locationManager: LocationManager = LocationManager()
     @StateObject var reviewsManager: ReviewsRequestManager = ReviewsRequestManager()
-    @StateObject var badgeAppManager: BadgeAppManager = BadgeAppManager()
     @StateObject var colorSchemeManager: ColorSchemeManager = ColorSchemeManager()
     @StateObject var necessaryMenuViewModel: NecessaryMenuViewModel = NecessaryMenuViewModel()
 
@@ -58,7 +57,6 @@ struct QuranAppApp: App {
             .environmentObject(noficationsManager)
             .environmentObject(prayerTimeManager)
             .environmentObject(reviewsManager)
-            .environmentObject(badgeAppManager)
             .environmentObject(colorSchemeManager)
             .environmentObject(necessaryMenuViewModel)
             .environment(\.locale, Locale.init(identifier: language.language))

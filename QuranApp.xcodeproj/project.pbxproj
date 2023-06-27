@@ -95,7 +95,6 @@
 		CEF7EE142A3C2B29005D3821 /* DateTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7EE132A3C2B29005D3821 /* DateTimeView.swift */; };
 		CEF7EE1E2A3C8F92005D3821 /* NecessaryMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7EE1D2A3C8F92005D3821 /* NecessaryMenuModel.swift */; };
 		CEFA69BB2A4754500079FE79 /* TabViewItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA69BA2A4754500079FE79 /* TabViewItemsModel.swift */; };
-		CEFCA21E2A2CF007002B5F40 /* BadgeAppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFCA21D2A2CF007002B5F40 /* BadgeAppManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,7 +221,6 @@
 		CEF7EE132A3C2B29005D3821 /* DateTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeView.swift; sourceTree = "<group>"; };
 		CEF7EE1D2A3C8F92005D3821 /* NecessaryMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NecessaryMenuModel.swift; sourceTree = "<group>"; };
 		CEFA69BA2A4754500079FE79 /* TabViewItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewItemsModel.swift; sourceTree = "<group>"; };
-		CEFCA21D2A2CF007002B5F40 /* BadgeAppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeAppManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,7 +271,6 @@
 				CE7C32BF2A1C36DB00B2F8E3 /* NoficationsManager.swift */,
 				CE434ED72A1D098B003D83EE /* NavigationRouter.swift */,
 				CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */,
-				CEFCA21D2A2CF007002B5F40 /* BadgeAppManager.swift */,
 				CE4CD5C62A32866E006C1189 /* ColorSchemeManager.swift */,
 			);
 			path = Managers;
@@ -778,7 +775,6 @@
 				CE7C852E2A03945B00192CC5 /* JuzViewModel.swift in Sources */,
 				CE7935E12A1D83C900B89647 /* PrayerTimeManager.swift in Sources */,
 				CE5468692A20BDFA00273458 /* ReviewsRequestManager.swift in Sources */,
-				CEFCA21E2A2CF007002B5F40 /* BadgeAppManager.swift in Sources */,
 				CE7C32C42A1C3A5100B2F8E3 /* NotificatSurah.swift in Sources */,
 				CEC1A6802A1AD85300A10212 /* LaunchScreenView.swift in Sources */,
 			);
