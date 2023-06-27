@@ -11,6 +11,7 @@ struct BookmarkRowView: View {
     let item: BookmarkModel
     
     @EnvironmentObject var routerManager: RouterManager
+    @EnvironmentObject var languageViewModel: LanguageViewModel
 
     var body: some View {
         HStack {
@@ -23,7 +24,7 @@ struct BookmarkRowView: View {
                     Spacer()
                 }
                 HStack{
-                    Text(LocalizedStringKey("page").stringValue()+" \(item.pageNumber), \(LocalizedStringKey("juz").stringValue()) \(item.juz.intValue)".convertedDigitsToLocale())
+                    Text(LocalizedStringKey("page").stringValue()+" \(item.pageNumber), \(LocalizedStringKey("juz").stringValue()) \(item.juz.intValue)".convertedDigitsToLocale(languageViewModel.language))
                     Spacer()
                 }
             }

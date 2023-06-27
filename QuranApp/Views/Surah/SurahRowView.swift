@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SurahRowView: View {
     @EnvironmentObject var routerManager: RouterManager
-    
+    @EnvironmentObject var languageViewModel: LanguageViewModel
+
     let item: SurahModel
     let status: Bool
     
@@ -19,7 +20,7 @@ struct SurahRowView: View {
                 Image(systemName: "square.dashed")
                     .font(.system(size: 34.0))
                     .overlay {
-                        Text("\(item.index)".convertedDigitsToLocale())
+                        Text("\(item.index)".convertedDigitsToLocale(languageViewModel.language))
                             .font(.system(size: 11.0))
                     }
                 VStack{

@@ -75,8 +75,7 @@ struct PrayTimeRowView: View {
                     }
                     Picker("selectCalculationTime", selection: $prayerTimeViewModel.calculationMehod, content: {
                         ForEach(prayerTimeViewModel.calculationMehods, id: \.self) { methods in
-//                            Text(LocalizedStringKey(methods))
-                            Text(methods)
+                            Label(methods, systemImage: "moon.fill")
                                 .tag(methods)
                         }
                     })
