@@ -126,18 +126,21 @@ struct SheetView: View {
                 }
             }
         }
+        .padding()
         .onAppear {
             locationManager.getLocation()
             prayerTimeViewModel.updateTimes(time: Date(), latitude: location.lat, longitude: location.lang)
         }
-        .padding()
-        .presentationDetents([.medium, .large])
+        .presentationDetents([.height(520), .large])
     }
 }
 
 struct SheetView_Previews: PreviewProvider {
     static var previews: some View {
-        SheetView(surah: SurahModel(place: Place.mecca, type: TypeEnum.madaniyah, count: 12, title: "Surah Yasin", titleAr: "String", index: "1", pages: "1", juz: []))
+        Text("asdf")
+            .sheet(isPresented: .constant(true)) {
+                SheetView(surah: SurahModel(place: Place.mecca, type: TypeEnum.madaniyah, count: 12, title: "Surah Yasin", titleAr: "String", index: "1", pages: "1", juz: []))
+            }
             .environmentAllObject()
     }
 }

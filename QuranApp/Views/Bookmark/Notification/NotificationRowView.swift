@@ -10,11 +10,11 @@ import SwiftUI
 struct NotificationRowView: View {
     @EnvironmentObject var languageViewModel: LanguageViewModel
     @EnvironmentObject var routerManager: RouterManager
+    @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
+    @EnvironmentObject var noficationsManager: NoficationsManager
 
     @Binding var item: NotificatSurah
-    
-    let action: (_ activeToggle:Bool) -> Void
-    
+        
     var body: some View {
         HStack {
             Toggle(isOn: $item.isEveryDay) {
@@ -27,7 +27,7 @@ struct NotificationRowView: View {
             }
             .frame(maxWidth: 45)
             .onChange(of: item.active) { newValue in
-                action(false)
+                notificatSurahViewModel.changeStatus(id: item.id, isEveryDay: newValue)
             }
             .toggleStyle(.button)
             .tint(.blue)
@@ -38,13 +38,13 @@ struct NotificationRowView: View {
                 }
                 .hideIfPad()
                 Button {
-                    item.active = !item.active
-                    action(true)
+                    notificatSurahViewModel.changeActive(id: item.id, time: item.time, active: !item.active)
                 } label: {
                     Label(item.active ? "disactive" : "active", systemImage: item.active ? "speaker.slash" : "speaker.wave.2.fill")
                 }
                 Button(role: .destructive) {
-                    
+                    noficationsManager.removeNotication(list: [item.id])
+                    notificatSurahViewModel.deleteItem(id: item.id)
                 } label: {
                     Label("delete", systemImage: "trash")
                 }
@@ -68,7 +68,12 @@ struct NotificationRowView: View {
                     .frame(width: 60, alignment: .center)
             }
             .onChange(of: item.active) { newValue in
-                action(true)
+                notificatSurahViewModel.changeActive(id: item.id, time: item.time, active: !item.active)
+                if newValue {
+                    noficationsManager.pushNotication(item: item)
+                } else {
+                    noficationsManager.removeNotication(list: [item.id])
+                }
             }
             .frame(width: 120, alignment: .leading)
         }
@@ -78,18 +83,10 @@ struct NotificationRowView: View {
 struct NotificationRowView_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir", url: "url", page: "12", time: Date(), isEveryDay: true, active: true))) { item in
-                
-            }
-            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir", url: "url", page: "12", time: Date(), isEveryDay: false, active: true))) {
-                print($0)
-            }
-            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir", url: "url", page: "12", time: Date(), isEveryDay: true, active: false))) { item in
-                
-            }
-            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir", url: "url", page: "12", time: Date(), isEveryDay: false, active: false))) { item in
-                
-            }
+            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir", url: "url", page: "12", time: Date(), isEveryDay: true, active: true)))
+            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir", url: "url", page: "12", time: Date(), isEveryDay: false, active: true)))
+            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir", url: "url", page: "12", time: Date(), isEveryDay: true, active: false)))
+            NotificationRowView(item: .constant(NotificatSurah(id: "idid", title: "surah Yasin", subTitle: "nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir nimadir", url: "url", page: "12", time: Date(), isEveryDay: false, active: false)))
         }
         .environmentAllObject()
     }

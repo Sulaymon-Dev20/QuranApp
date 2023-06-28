@@ -20,20 +20,18 @@ struct NotificationView: View {
             if show {
                 if !notificatSurahViewModel.items.isEmpty {
                     ForEach($notificatSurahViewModel.items, id: \.id) { $item in
-                        NotificationRowView(item: $item) { activeToggle in
-                            onchange(activeToggle, item)
-                        }
-                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                            Button {//qiladigan ishla bor
-                                if item.active {
-                                    noficationsManager.removeNotication(list: [item.id])
+                        NotificationRowView(item: $item)
+                            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                                Button {//qiladigan ishla bor
+                                    if item.active {
+                                        noficationsManager.removeNotication(list: [item.id])
+                                    }
+                                    notificatSurahViewModel.deleteItem(id: item.id)
+                                } label: {
+                                    Label("Delete", systemImage: "trash.slash.fill")
                                 }
-                                notificatSurahViewModel.deleteItem(id: item.id)
-                            } label: {
-                                Label("Delete", systemImage: "trash.slash.fill")
+                                .tint(.red)
                             }
-                            .tint(.red)
-                        }
                     }
                     .onMove(perform: notificatSurahViewModel.moveItem)
                 } else {
@@ -62,19 +60,6 @@ struct NotificationView: View {
         .task {
             noficationsManager.checkNotificationPermission()
             notificatSurahViewModel.checkStatus()
-        }
-    }
-    
-    func onchange(_ isActiveToggle:Bool, _ item: NotificatSurah) {
-        if isActiveToggle {
-            if item.active {
-                noficationsManager.pushNotication(item: item)
-            } else {
-                noficationsManager.removeNotication(list: [item.id])
-            }
-        } else {
-            notificatSurahViewModel.changeStatus(id: item.id, isEveryDay: item.isEveryDay)
-            noficationsManager.pushNotication(item: item)
         }
     }
 }
