@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SheetView: View {
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
-    @EnvironmentObject var noficationsManager: NoficationsManager
+    @EnvironmentObject var noficationsManager: NotificationManager
     @EnvironmentObject var prayerTimeViewModel: PrayerTimeManager
     @EnvironmentObject var locationManager: LocationManager
     @EnvironmentObject var languageViewModel: LanguageViewModel

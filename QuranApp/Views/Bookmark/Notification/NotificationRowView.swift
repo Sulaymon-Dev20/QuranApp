@@ -11,7 +11,7 @@ struct NotificationRowView: View {
     @EnvironmentObject var languageViewModel: LanguageViewModel
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
-    @EnvironmentObject var noficationsManager: NoficationsManager
+    @EnvironmentObject var noficationsManager: NotificationManager
 
     @Binding var item: NotificatSurah
         

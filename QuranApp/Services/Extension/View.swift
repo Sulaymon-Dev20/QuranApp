@@ -88,7 +88,7 @@ extension View {
             .environmentObject(RouterManager())
             .environmentObject(JuzViewModel())
             .environmentObject(LocationManager())
-            .environmentObject(NoficationsManager())
+            .environmentObject(NotificationManager())
             .environmentObject(PrayerTimeManager())
             .environmentObject(ReviewsRequestManager())
             .environmentObject(ColorSchemeManager())

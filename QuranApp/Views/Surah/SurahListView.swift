@@ -11,7 +11,7 @@ struct SurahListView: View {
     
     let list: [SurahModel]
     
-    @EnvironmentObject var noficationsManager: NoficationsManager
+    @EnvironmentObject var noficationsManager: NotificationManager
     @EnvironmentObject var bookmarksViewModel: BookMarkViewModel
     @EnvironmentObject var routerManager: RouterManager
     

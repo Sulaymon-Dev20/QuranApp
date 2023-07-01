@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BookmarkMainView: View {
     @EnvironmentObject var routerManager: RouterManager
-    @EnvironmentObject var noficationsManager: NoficationsManager
+    @EnvironmentObject var noficationsManager: NotificationManager
     @EnvironmentObject var necessaryMenuViewModel: NecessaryMenuViewModel
     
     var body: some View {

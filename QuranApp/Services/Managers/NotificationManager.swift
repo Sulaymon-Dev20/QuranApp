@@ -8,7 +8,7 @@
 import SwiftUI
 import UserNotifications
 
-class NoficationsManager: ObservableObject {
+class NotificationManager: ObservableObject {
     
     @Published var hasPermission:Bool = false
     

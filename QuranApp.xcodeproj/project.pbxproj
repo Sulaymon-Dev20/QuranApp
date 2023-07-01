@@ -36,7 +36,7 @@
 		CE7935E12A1D83C900B89647 /* PrayerTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7935E02A1D83C900B89647 /* PrayerTimeManager.swift */; };
 		CE7935E32A1D85F400B89647 /* PrayTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7935E22A1D85F400B89647 /* PrayTimeModel.swift */; };
 		CE7C32BE2A1C328500B2F8E3 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C32BD2A1C328500B2F8E3 /* SheetView.swift */; };
-		CE7C32C02A1C36DC00B2F8E3 /* NoficationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C32BF2A1C36DB00B2F8E3 /* NoficationsManager.swift */; };
+		CE7C32C02A1C36DC00B2F8E3 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C32BF2A1C36DB00B2F8E3 /* NotificationManager.swift */; };
 		CE7C32C22A1C3A1500B2F8E3 /* NotificatSurahViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C32C12A1C3A1500B2F8E3 /* NotificatSurahViewModel.swift */; };
 		CE7C32C42A1C3A5100B2F8E3 /* NotificatSurah.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C32C32A1C3A5100B2F8E3 /* NotificatSurah.swift */; };
 		CE7C84ED2A03924200192CC5 /* QuranAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C84EC2A03924200192CC5 /* QuranAppApp.swift */; };
@@ -155,7 +155,7 @@
 		CE7935E02A1D83C900B89647 /* PrayerTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerTimeManager.swift; sourceTree = "<group>"; };
 		CE7935E22A1D85F400B89647 /* PrayTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayTimeModel.swift; sourceTree = "<group>"; };
 		CE7C32BD2A1C328500B2F8E3 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
-		CE7C32BF2A1C36DB00B2F8E3 /* NoficationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoficationsManager.swift; sourceTree = "<group>"; };
+		CE7C32BF2A1C36DB00B2F8E3 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		CE7C32C12A1C3A1500B2F8E3 /* NotificatSurahViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificatSurahViewModel.swift; sourceTree = "<group>"; };
 		CE7C32C32A1C3A5100B2F8E3 /* NotificatSurah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificatSurah.swift; sourceTree = "<group>"; };
 		CE7C84E92A03924200192CC5 /* QuranApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,7 +268,7 @@
 			children = (
 				CE7935E02A1D83C900B89647 /* PrayerTimeManager.swift */,
 				CEF71CDC2A1E450700979C5A /* LocationManager.swift */,
-				CE7C32BF2A1C36DB00B2F8E3 /* NoficationsManager.swift */,
+				CE7C32BF2A1C36DB00B2F8E3 /* NotificationManager.swift */,
 				CE434ED72A1D098B003D83EE /* NavigationRouter.swift */,
 				CE5468682A20BDFA00273458 /* ReviewsRequestManager.swift */,
 				CE4CD5C62A32866E006C1189 /* ColorSchemeManager.swift */,
@@ -709,7 +709,7 @@
 				CE5F4C232A47961800D9C6F9 /* JuzListView.swift in Sources */,
 				CE7C853B2A0396E600192CC5 /* PDFViewer.swift in Sources */,
 				CEC1A6822A1ADA4100A10212 /* LaunchScreenViewModel.swift in Sources */,
-				CE7C32C02A1C36DC00B2F8E3 /* NoficationsManager.swift in Sources */,
+				CE7C32C02A1C36DC00B2F8E3 /* NotificationManager.swift in Sources */,
 				CEF640BE2A1F978100FE7D17 /* NotificationView.swift in Sources */,
 				CE7C32BE2A1C328500B2F8E3 /* SheetView.swift in Sources */,
 				CEA77A192A44E763002011BC /* IphoneNavigationStack.swift in Sources */,

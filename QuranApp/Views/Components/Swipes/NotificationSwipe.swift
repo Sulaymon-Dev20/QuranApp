@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotificationSwipe: View {
-    @EnvironmentObject var noficationsManager: NoficationsManager
+    @EnvironmentObject var noficationsManager: NotificationManager
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
 
     @Binding var nativationStatus: Bool

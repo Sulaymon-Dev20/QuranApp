@@ -19,7 +19,7 @@ struct QuranAppApp: App {
     @StateObject var bookmarksViewModel: BookMarkViewModel = BookMarkViewModel()
     @StateObject var notificatSurahViewModel: NotificatSurahViewModel = NotificatSurahViewModel()
     @StateObject var juzViewModel: JuzViewModel = JuzViewModel()
-    @StateObject var noficationsManager: NoficationsManager = NoficationsManager()
+    @StateObject var noficationsManager: NotificationManager = NotificationManager()
     @StateObject var language: LanguageViewModel = LanguageViewModel()
     @StateObject var routerManager: RouterManager = RouterManager()
     @StateObject var prayerTimeManager: PrayerTimeManager = PrayerTimeManager()

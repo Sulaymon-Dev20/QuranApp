@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NotificationView: View {
-    @EnvironmentObject var noficationsManager: NoficationsManager
+    @EnvironmentObject var noficationsManager: NotificationManager
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
     @EnvironmentObject var routerManager: RouterManager
     
