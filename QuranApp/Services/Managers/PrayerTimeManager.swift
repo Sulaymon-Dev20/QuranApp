@@ -65,8 +65,8 @@ class PrayerTimeManager: ObservableObject {
     }
 
     func getValue() {
-        let value = UserDefaults.standard.bool(forKey: storageMashabKey)
-        self.isHanafi = value
+        self.isHanafi = UserDefaults.standard.bool(forKey: storageMashabKey)
+        self.calculationMehod = UserDefaults.standard.string(forKey: storageCalculationMethodKey) ?? "moonsightingCommittee"
     }
     
     func changeMashab(to mashab: Madhab) {
@@ -86,7 +86,7 @@ class PrayerTimeManager: ObservableObject {
 
     func saveStorage() {
         UserDefaults.standard.set(isHanafi, forKey: storageMashabKey)
-        UserDefaults.standard.set(calculationMehod, forKey: storageMashabKey)
+        UserDefaults.standard.set(calculationMehod, forKey: storageCalculationMethodKey)
     }
     
     func getIcon(time: String) -> String {
