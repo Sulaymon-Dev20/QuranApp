@@ -18,7 +18,7 @@ class NotificationManager: ObservableObject {
     
     func request() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            //            self.hasPermission = success
+            self.hasPermission = success
         }
     }
     
@@ -65,8 +65,6 @@ class NotificationManager: ObservableObject {
                       identifiers.append(notification.identifier)
                    }
                }
-                print(idList)
-                print(identifiers)
                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
             }
         } else {

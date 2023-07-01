@@ -43,7 +43,7 @@ struct NotificationRowView: View {
                 }
                 .hideIfPad()
                 Button {
-                    notificatSurahViewModel.changeActive(id: item.id, time: item.time, active: !item.active)
+                    changeActiveStatus(!item.active)
                 } label: {
                     Label(item.active ? "disactive" : "active", systemImage: item.active ? "speaker.slash" : "speaker.wave.2.fill")
                 }
@@ -73,15 +73,20 @@ struct NotificationRowView: View {
                     .frame(width: 60, alignment: .center)
             }
             .onChange(of: item.active) { newValue in
-                notificatSurahViewModel.changeActive(id: item.id, time: item.time, active: !item.active)
-                if newValue {
-                    checkDate()
-                    notificationsManager.pushNotication(item: item)
-                } else {
-                    notificationsManager.removeNotication(list: [item.id])
-                }
+                changeActiveStatus(newValue)
             }
             .frame(width: 120, alignment: .leading)
+        }
+    }
+    
+    func changeActiveStatus(_ newValue:Bool) {
+        item.active = newValue
+        notificatSurahViewModel.changeActive(id: item.id, time: item.time, active: !item.active)
+        if newValue {
+            checkDate()
+            notificationsManager.pushNotication(item: item)
+        } else {
+            notificationsManager.removeNotication(list: [item.id])
         }
     }
     
