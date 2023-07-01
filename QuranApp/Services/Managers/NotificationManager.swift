@@ -17,8 +17,8 @@ class NotificationManager: ObservableObject {
     }
     
     func request() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
-            self.hasPermission = success
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { success, error in
+            self.hasPermission = success//bug 
         }
     }
     
