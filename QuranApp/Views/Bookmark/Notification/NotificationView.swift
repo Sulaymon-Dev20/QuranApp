@@ -48,8 +48,8 @@ struct NotificationView: View {
                 } label: {
                     PermissionDenied(img: "clock.badge.exclamationmark.fill", text: "notificationPermissionDenied")
                         .frame(maxWidth: .infinity)
-                        .alertPermissions(showAlert: $showAlert, title: "notificationPermission", message: "allowNotificationToYsePlease")
                 }
+                .alertPermissions(showAlert: $showAlert, title: "notificationPermission", message: "allowNotificationToYsePlease")
                 .task {
                     noficationsManager.request()
                 }

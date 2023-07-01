@@ -42,10 +42,9 @@ class NoficationsManager: ObservableObject {
     
     func pushNotication(item: NotificatSurah) {
         let content = UNMutableNotificationContent()
-        content.title = item.title
-        content.subtitle = item.subTitle
+        content.title = LocalizedStringKey(item.title.localizedForm).stringValue()
+        content.subtitle = LocalizedStringKey(item.subTitle).stringValue()
         content.sound = UNNotificationSound.default
-        content.badge = NSNumber(integerLiteral: UIApplication.shared.applicationIconBadgeNumber + 1)
         content.userInfo["link"] = "holyquran://\(item.url)"
         content.userInfo["notification"] = true
         var dateComponents = DateComponents(hour: item.time.hour, minute: item.time.minute, second: 2)
