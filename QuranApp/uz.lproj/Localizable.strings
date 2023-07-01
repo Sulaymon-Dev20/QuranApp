@@ -166,7 +166,7 @@
 "everyDay" = "Har kuni";
 "save" = "Saqlash";
 "lastReadPage" = "Oxirgi o'qilgan sahifa";
-"prayTimeByDate %@" = "🌙 Nomoz nomoz vaqtlari %@";
+"prayTimeByDate %@" = "🌙 Nomoz vaqtlari          %@";
 "fajr %@" = "🕰️ Bomdod:                                  %@";
 "sunrise %@" = "🕰️ Quyosh chiqishi:                   %@";
 "dhuhr %@" = "🕰️ Peshin:                                     %@";

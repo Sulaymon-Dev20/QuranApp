@@ -11,7 +11,7 @@ struct NotificationRowView: View {
     @EnvironmentObject var languageViewModel: LanguageViewModel
     @EnvironmentObject var routerManager: RouterManager
     @EnvironmentObject var notificatSurahViewModel: NotificatSurahViewModel
-    @EnvironmentObject var noficationsManager: NotificationManager
+    @EnvironmentObject var notificationsManager: NotificationManager
 
     @Binding var item: NotificatSurah
         
@@ -27,7 +27,12 @@ struct NotificationRowView: View {
             }
             .frame(maxWidth: 45)
             .onChange(of: item.active) { newValue in
+                if !newValue {
+                    checkDate()
+                }
                 notificatSurahViewModel.changeStatus(id: item.id, isEveryDay: newValue)
+                notificationsManager.removeNotication(list: [item.id])
+                notificationsManager.pushNotication(item: item)
             }
             .toggleStyle(.button)
             .tint(.blue)
@@ -43,7 +48,7 @@ struct NotificationRowView: View {
                     Label(item.active ? "disactive" : "active", systemImage: item.active ? "speaker.slash" : "speaker.wave.2.fill")
                 }
                 Button(role: .destructive) {
-                    noficationsManager.removeNotication(list: [item.id])
+                    notificationsManager.removeNotication(list: [item.id])
                     notificatSurahViewModel.deleteItem(id: item.id)
                 } label: {
                     Label("delete", systemImage: "trash")
@@ -70,12 +75,19 @@ struct NotificationRowView: View {
             .onChange(of: item.active) { newValue in
                 notificatSurahViewModel.changeActive(id: item.id, time: item.time, active: !item.active)
                 if newValue {
-                    noficationsManager.pushNotication(item: item)
+                    checkDate()
+                    notificationsManager.pushNotication(item: item)
                 } else {
-                    noficationsManager.removeNotication(list: [item.id])
+                    notificationsManager.removeNotication(list: [item.id])
                 }
             }
             .frame(width: 120, alignment: .leading)
+        }
+    }
+    
+    func checkDate() {
+        if item.time.isExpired() {
+            item.time.updateDayTomerrow()
         }
     }
 }

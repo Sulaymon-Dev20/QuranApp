@@ -27,7 +27,7 @@ extension Date {
         dateformat.dateFormat = "HH:mm"
         return dateformat.string(from: self)
     }
-
+    
     public var fullTimeForm: String {
         let dateformat = DateFormatter()
         dateformat.dateFormat = "HH:mm:ss"
@@ -55,10 +55,46 @@ extension Date {
         component.day = day
         self = Calendar.current.date(from: component)!
     }
-
+    
     func diffTwoTime(from day: Date) -> Date {
         let diffs = Calendar.current.dateComponents([.hour, .minute, .second], from: self, to: day)
         let date = Calendar.current.date(from: diffs)!
         return date
+    }
+    
+    func isExpired() -> Bool {
+        return self.intValue <= Date().intValue
+    }
+    
+    mutating func setTime(day: Int, hour: Int, min: Int, sec: Int) {
+        let x: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute, .second]
+        let cal = Calendar.current
+        var components = cal.dateComponents(x, from: self)
+
+        components.timeZone = TimeZone.current
+        components.day = day
+        components.hour = hour
+        components.minute = min
+        components.second = sec
+        
+        if let time = cal.date(from: components) {
+            self = time
+        }
+    }
+    
+    mutating func updateDayTomerrow() {
+        let x: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute, .second]
+        let cal = Calendar.current
+        var components = cal.dateComponents(x, from: self)
+
+        components.timeZone = TimeZone.current
+        components.day = self.day + 1
+        components.hour = self.hour
+        components.minute = self.minute
+        components.second = 0
+        
+        if let time = cal.date(from: components) {
+            self = time
+        }
     }
 }
