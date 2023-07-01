@@ -58,7 +58,6 @@
 		CE7C85352A03959A00192CC5 /* TabMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85342A03959A00192CC5 /* TabMainView.swift */; };
 		CE7C85392A0396CB00192CC5 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85382A0396CB00192CC5 /* Bundle.swift */; };
 		CE7C853B2A0396E600192CC5 /* PDFViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C853A2A0396E600192CC5 /* PDFViewer.swift */; };
-		CE7C853D2A03974600192CC5 /* data.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CE7C853C2A03974600192CC5 /* data.pdf */; };
 		CE7C853F2A03978300192CC5 /* PDFViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C853E2A03978300192CC5 /* PDFViewUI.swift */; };
 		CE7C85412A0398CD00192CC5 /* SurahRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85402A0398CD00192CC5 /* SurahRowView.swift */; };
 		CE7C85432A03994200192CC5 /* SurahView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7C85422A03994200192CC5 /* SurahView.swift */; };
@@ -75,6 +74,7 @@
 		CE8D29D12A3CF2A200CE06CA /* NecessaryMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D29D02A3CF2A200CE06CA /* NecessaryMenuViewModel.swift */; };
 		CEA77A192A44E763002011BC /* IphoneNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA77A182A44E763002011BC /* IphoneNavigationStack.swift */; };
 		CEA77A1B2A44E7C6002011BC /* IpadNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA77A1A2A44E7C6002011BC /* IpadNavigationStack.swift */; };
+		CEB9A93C2A4F1AEC005C7C1D /* data.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CEB9A93B2A4F1AEC005C7C1D /* data.pdf */; };
 		CEC1A6802A1AD85300A10212 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A67F2A1AD85300A10212 /* LaunchScreenView.swift */; };
 		CEC1A6822A1ADA4100A10212 /* LaunchScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A6812A1ADA4100A10212 /* LaunchScreenViewModel.swift */; };
 		CEC1A6872A1AE0BB00A10212 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC1A6862A1AE0BA00A10212 /* String.swift */; };
@@ -183,7 +183,6 @@
 		CE7C85342A03959A00192CC5 /* TabMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMainView.swift; sourceTree = "<group>"; };
 		CE7C85382A0396CB00192CC5 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		CE7C853A2A0396E600192CC5 /* PDFViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewer.swift; sourceTree = "<group>"; };
-		CE7C853C2A03974600192CC5 /* data.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = data.pdf; sourceTree = "<group>"; };
 		CE7C853E2A03978300192CC5 /* PDFViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewUI.swift; sourceTree = "<group>"; };
 		CE7C85402A0398CD00192CC5 /* SurahRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahRowView.swift; sourceTree = "<group>"; };
 		CE7C85422A03994200192CC5 /* SurahView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurahView.swift; sourceTree = "<group>"; };
@@ -200,6 +199,7 @@
 		CE8D29D02A3CF2A200CE06CA /* NecessaryMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NecessaryMenuViewModel.swift; sourceTree = "<group>"; };
 		CEA77A182A44E763002011BC /* IphoneNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneNavigationStack.swift; sourceTree = "<group>"; };
 		CEA77A1A2A44E7C6002011BC /* IpadNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IpadNavigationStack.swift; sourceTree = "<group>"; };
+		CEB9A93B2A4F1AEC005C7C1D /* data.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = data.pdf; sourceTree = "<group>"; };
 		CEC1A67C2A1AD66300A10212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CEC1A67F2A1AD85300A10212 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		CEC1A6812A1ADA4100A10212 /* LaunchScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewModel.swift; sourceTree = "<group>"; };
@@ -331,11 +331,11 @@
 		CE7C84F22A03924300192CC5 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				CEB9A93B2A4F1AEC005C7C1D /* data.pdf */,
 				CE08879C2A23E35000FDE8B0 /* AnimationJsons */,
 				CE7C84F32A03924300192CC5 /* Preview Assets.xcassets */,
 				CE7C85292A03940B00192CC5 /* surah.json */,
 				CE7C852A2A03942800192CC5 /* juz.json */,
-				CE7C853C2A03974600192CC5 /* data.pdf */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -672,10 +672,10 @@
 			files = (
 				CE0887A92A23F50800FDE8B0 /* Book.json in Resources */,
 				CE8D29CD2A3CED3D00CE06CA /* Commant.json in Resources */,
+				CEB9A93C2A4F1AEC005C7C1D /* data.pdf in Resources */,
 				CE0887A72A23F15400FDE8B0 /* Notification.json in Resources */,
 				CE7C84F42A03924300192CC5 /* Preview Assets.xcassets in Resources */,
 				CE0887AF2A23FB8A00FDE8B0 /* Clock.json in Resources */,
-				CE7C853D2A03974600192CC5 /* data.pdf in Resources */,
 				CE0887B12A24071000FDE8B0 /* Language.json in Resources */,
 				CE7C85182A03925E00192CC5 /* Localizable.strings in Resources */,
 				CE7C84F12A03924300192CC5 /* Assets.xcassets in Resources */,
