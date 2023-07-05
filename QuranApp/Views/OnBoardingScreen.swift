@@ -99,9 +99,12 @@ struct OnBoardingScreen: View {
                                     }
                                 }
                             HStack {
-                                Text("Developer:")
+                                Text("Support by:")
                                 Text("Sulaymon Yahyo")
                                     .underline(true, color: .primary)
+                                    .onTapGesture {
+                                        UIApplication.shared.open(URL(string: "https://sulaymonyahyo.com/contact")!, options: [:], completionHandler: nil)
+                                    }
                             }
                             .font(.caption2)
                             .offset(y: 5)

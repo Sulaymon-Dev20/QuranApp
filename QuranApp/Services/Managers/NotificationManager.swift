@@ -18,7 +18,9 @@ class NotificationManager: ObservableObject {
     
     func request() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { success, error in
-            self.hasPermission = success//bug 
+            DispatchQueue.main.async {
+                self.hasPermission = success
+            }
         }
     }
     

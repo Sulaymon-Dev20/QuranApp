@@ -11,7 +11,6 @@ class RouterManager: ObservableObject {
     
     @Published var path = [Route]()
     @Published var tabValue: TabViewItemsModel? = TabViewItemsModel(id: 0, title: "surahs", icon: "book.circle", view: AnyView(SurahView()))
-    @Published var tabValueTest: Int? = 0
     @Published var tabBarHideStatus: Bool = false
     @Published var currentPDFPage: Int = 2
     
