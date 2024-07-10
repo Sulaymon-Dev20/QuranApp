@@ -1,4 +1,5 @@
 {
+  "originHash" : "2dd552c12493221049a5ea37a3eacf4c682e7d47135c24ade88cafb78effa329",
   "pins" : [
     {
       "identity" : "adhan-swift",
@@ -15,9 +16,9 @@
       "location" : "https://GitHub.com/airbnb/lottie-ios",
       "state" : {
         "branch" : "master",
-        "revision" : "df55b4c72c64b0d688d1d24633fae9f1257fe82e"
+        "revision" : "fe4c6fe3a0aa66cdeb51d549623c82ca9704b9a5"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

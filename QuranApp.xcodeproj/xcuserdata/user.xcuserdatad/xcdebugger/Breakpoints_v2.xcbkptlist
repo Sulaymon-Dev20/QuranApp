@@ -34,38 +34,6 @@
             endingLineNumber = "22"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "D62D03AD-F98B-4205-BF91-0828F4480AAC - b8665961be2c557"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuranApp.PDFViewUI.body.getter : some"
-                  moduleName = "QuranApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/IOS%20project/QuranApp/QuranApp/Views/Components/PDFViewUI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "712">
-               </Location>
-               <Location
-                  uuid = "D62D03AD-F98B-4205-BF91-0828F4480AAC - b8665961be2c6b4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuranApp.PDFViewUI.body.getter : some"
-                  moduleName = "QuranApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/IOS%20project/QuranApp/QuranApp/Views/Components/PDFViewUI.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "2928">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -82,53 +50,6 @@
             endingLineNumber = "62"
             landmarkName = "changeActive(id:time:active:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EB26E0BD-6B58-44DB-9EFE-219003B46282 - eef388396fb7a22c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuranApp.NotificatSurahViewModel.changeActive(id: Swift.String, time: Foundation.Date, active: Swift.Bool) -&gt; ()"
-                  moduleName = "QuranApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/IOS%20project/QuranApp/QuranApp/Services/ViewModels/NotificatSurahViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "288">
-               </Location>
-               <Location
-                  uuid = "EB26E0BD-6B58-44DB-9EFE-219003B46282 - f08dbf9f4f32c024"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (QuranApp.NotificatSurah) -&gt; Swift.Bool in QuranApp.NotificatSurahViewModel.changeActive(id: Swift.String, time: Foundation.Date, active: Swift.Bool) -&gt; ()"
-                  moduleName = "QuranApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/IOS%20project/QuranApp/QuranApp/Services/ViewModels/NotificatSurahViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "52">
-               </Location>
-               <Location
-                  uuid = "EB26E0BD-6B58-44DB-9EFE-219003B46282 - eef388396fb7a22c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "QuranApp.NotificatSurahViewModel.changeActive(id: Swift.String, time: Foundation.Date, active: Swift.Bool) -&gt; ()"
-                  moduleName = "QuranApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/user/Desktop/IOS%20project/QuranApp/QuranApp/Services/ViewModels/NotificatSurahViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "356">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
