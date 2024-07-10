@@ -20,6 +20,7 @@ features such as prayer times, Qibla direction, and a comprehensive library of Q
 <div align="center">
    <img src="/github/video.gif" alt="App" width="150"/>
    <h1>Application View</h1>
+   <p>don`t worry it is not glitching just reduced video</p>
 </div>
 
 ## How to Start
