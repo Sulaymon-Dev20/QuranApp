@@ -2,7 +2,7 @@
 
 <div align="center">
    <p> بسم الله الرحمن الرحيم</p>
-   <img src="/.git/img/App.jpg" alt="Application Icon" width="150"/>
+   <img src="/github/App.jpg" alt="Application Icon" width="150"/>
    <h1>Quran Application</h1>
 </div>
 
@@ -18,7 +18,7 @@
 Quran Center is an application designed to help users read, listen, and study the Quran with ease. The app provides
 features such as prayer times, Qibla direction, and a comprehensive library of Quranic texts and translations.
 <div align="center">
-   <img src="/.git/img/video.gif" alt="App" width="150"/>
+   <img src="/github/video.gif" alt="App" width="150"/>
    <h1>Application View</h1>
 </div>
 
