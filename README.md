@@ -22,7 +22,11 @@ features such as prayer times, Qibla direction, and a comprehensive library of Q
    <h1>Application View</h1>
    <p>don`t worry it is not glitching just reduced video</p>
 </div>
-
+<div align="center">
+   <img src="/github/first.png" alt="drawing" style="width:150px;"/>
+   <img src="/github/holy.png" alt="drawing" style="width:150px;"/>
+   <img src="/github/last.png" alt="drawing" style="width:150px;"/>
+</div>
 ## How to Start
 
 ### Step-by-Step Guide
