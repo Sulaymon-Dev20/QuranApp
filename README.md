@@ -27,6 +27,7 @@ features such as prayer times, Qibla direction, and a comprehensive library of Q
    <img src="/github/holy.png" alt="drawing" style="width:150px;"/>
    <img src="/github/last.png" alt="drawing" style="width:150px;"/>
 </div>
+
 ## How to Start
 
 ### Step-by-Step Guide
